@@ -1,3 +1,6 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
+
+def photo_gallery(request):
+    return HttpResponse("Photo gallery page")
