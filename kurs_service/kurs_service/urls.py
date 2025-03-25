@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from about.views import about
 from check_list.views import check_list
@@ -57,4 +59,4 @@ urlpatterns = [
     path('site_login/', site_login, name='site_login'),
     path('site_signup/', site_signup, name='site_signup'),
     path('warranty/', warranty, name='warranty'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])

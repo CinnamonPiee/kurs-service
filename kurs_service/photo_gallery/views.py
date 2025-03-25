@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def photo_gallery(request):
-    return HttpResponse("Photo gallery page")
+    context = {
+        'title': 'Фото-галерея | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "photo_gallery/photo_gallery.html", context=context)

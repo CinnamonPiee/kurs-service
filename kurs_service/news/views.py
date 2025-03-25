@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def news(request):
-    return HttpResponse("News page")
+    context = {
+        'title': 'Новости | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "news/news.html", context=context)

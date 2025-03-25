@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def check_list(request):
-    return HttpResponse("Check list page")
+    context = {
+        'title': 'Чен лист | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "check_list/check_list.html", context=context)

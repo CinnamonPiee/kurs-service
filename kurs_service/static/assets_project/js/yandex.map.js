@@ -28,7 +28,7 @@ $(document).ready(function () {
             balloonContentHeader: '<a href = "/" class="map-link">OOO "КУРС"</a><br>' +
                 '<span class="map-link-description">Прозрачный автосервис<br/>у нас один курс.</span>',
             // Let's set the content of the main part of the balloon.
-            balloonContentBody: '<img src="/frontend/web/assets_project/img/imgLogo/sports-car-auto.png" height="100" width="150"> <br/> ' +
+            balloonContentBody: '<img src="static/assets_project/img/imgLogo/sports-car-auto.png" height="100" width="150"> <br/> ' +
                 '<a href="tel:8(800)444-13-18" class="map-link-phone">8 (910) 448-45-06</a><br/>' +
                 '<b>Время работы</b> <br/> С 9:00 до 20:00',
             // Let's set the content of the bottom part of the balloon.

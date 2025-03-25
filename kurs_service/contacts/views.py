@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def contacts(request):
-    return HttpResponse("Contacts page")
+    context = {
+        'title': 'Контакты | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "contacts/contacts.html", context=context)

@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def reviews(request):
-    return HttpResponse("Reviews page")
+    context = {
+        'title': 'Отзывы | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "reviews/reviews.html", context=context)

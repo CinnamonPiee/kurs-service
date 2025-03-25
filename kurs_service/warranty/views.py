@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def warranty(request):
-    return HttpResponse("Warranty page")
+    context = {
+        'title': 'Гарантия | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "warranty/warranty.html", context=context)

@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def insurance(request):
-    return HttpResponse("Insurance page")
+    context = {
+        'title': 'Страхование | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "insurance/insurance.html", context=context)

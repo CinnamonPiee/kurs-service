@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def diagnostics(request):
-    return HttpResponse("Diagnostics page")
+    context = {
+        'title': 'Диагностика | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "diagnostics/diagnostics.html", context=context)

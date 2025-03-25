@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def online_appointment(request):
-    return HttpResponse("Online appointment page")
+    context = {
+        'title': 'Онлайн запись | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "online_appointment/online_appointment.html", context=context)

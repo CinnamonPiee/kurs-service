@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def evacuation(request):
-    return HttpResponse("Evacuation page")
+    context = {
+        'title': 'Эвакуация | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "evacuation/evacuation.html", context=context)

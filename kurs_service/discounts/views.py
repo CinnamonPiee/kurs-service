@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def discounts(request):
-    return HttpResponse("Discounts page")
+    context = {
+        'title': 'Акции | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "discounts/discounts.html", context=context)

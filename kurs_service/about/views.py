@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def about(request):
-    return render(request, )
+    context = {
+        'title': 'О сервисе | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "about/about.html", context=context)

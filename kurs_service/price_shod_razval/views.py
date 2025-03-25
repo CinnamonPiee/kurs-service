@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def price_shod_razval(request):
-    return HttpResponse("Price shod razval page")
+    context = {
+        'title': 'Прайс развал-схождение | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "price_shod_razval/price_shod_razval.html", context=context)

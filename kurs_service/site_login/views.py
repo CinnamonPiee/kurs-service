@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def site_login(request):
-    return HttpResponse("Site login page")
+    context = {
+        'title': 'Вход | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "site_login/site_login.html", context=context)

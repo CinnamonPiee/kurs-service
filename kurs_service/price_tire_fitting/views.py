@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def price_tire_fitting(request):
-    return HttpResponse("Price tire fitting page")
+    context = {
+        'title': 'Прайс развал-схождение | OOO &quot;КУРС&quot;',
+    }
+    return render(request, "price_tire_fitting/price_tire_fitting.html", context=context)
