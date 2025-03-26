@@ -1,0 +1,146 @@
+{% extends "main_page/base.html" %}
+{% load static %}
+
+
+{% block title %}
+<title>{{ title }}</title>
+{% endblock title %}
+
+
+{% block content %}
+	<ul class="breadcrumb">
+		<li><a href="/">Главная</a></li>
+		<li class="active">Контакты</li>
+	</ul>
+
+	<div class="site-contact">
+		<div class="header-contacts">
+			<div class="header-contacts-title">
+				<h1>Наши операторы<br>с точностью помогут вам!<br><span style="color: darkred">8 (910) 448-45-06</span></h1>
+			</div>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">Наши контактные данные и режим работы</h3>
+	<div class="contacts-data">
+		<div class="row">
+			<div class="col-lg-3 col-xs-6 contacts-block">
+				<div class="col-lg-2 col-xs-3">
+					<p class="weekdays">Пн</p>
+					<p class="weekdays">Вт</p>
+					<p class="weekdays">Ср</p>
+					<p class="weekdays">Чт</p>
+					<p class="weekdays">Пт</p>
+					<p class="output">Сб</p>
+					<p class="output">Вс</p>
+				</div>
+				<div class="col-lg-10 col-xs-9">
+					<p class="weekdays-hors"> с 9:00 до 20:00</p>
+					<p class="weekdays-hors"> с 9:00 до 20:00</p>
+					<p class="weekdays-hors"> с 9:00 до 20:00</p>
+					<p class="weekdays-hors"> с 9:00 до 20:00</p>
+					<p class="weekdays-hors"> с 9:00 до 20:00</p>
+					<p class="weekdays-hors">с 9:00 до 17:00</p>
+					<p class="weekdays-hors">Выходной</p>
+				</div>
+			</div>
+			<div class="col-lg-2 col-xs-6 qr-code contacts-block">
+				<img class="qr-code-v-card" src="{% static "/assets_project/img/imgLogo/qr-code-v-card.png" %}" alt=""><br> <img
+					class="camera-qr-code" src="{% static "/assets_project/img/imgLogo/camera-qr-code.png" %}" alt=""><br>
+				<p>Отсканируйте QR-code</p>
+			</div>
+			<div class="col-lg-4 col-xs-6 contacts-block">
+				<p>
+					<li><a class="link-cal-number" href="mailto:kurs_service@mail.ru"><img
+								src="{% static "/assets_project/img/imgLogo/email.png" %}" alt="unnamed"><span>
+								kurs_service@mail.ru</span></a></li>
+				</p>
+				<p>
+					<img src="{% static "/assets_project/img/imgLogo/adress.png" %}" alt="unnamed"> Москва ул. 1-я Мытищинская 16 с.1
+				</p>
+				<p class="bottom-days">
+					<img src="{% static "/assets_project/img/imgLogo/open-icon.png" %}" alt="unnamed"> Работаем без выходных и
+					праздников
+				</p>
+				<p>
+					<li><a class="link-cal-number" href="whatsapp://send?phone=+79104484506"><img
+								src="{% static "/assets_project/img/imgLogo/WhatsAppPNG.png" %}" alt="unnamed"><span> +7 (910)
+								448-45-06</span></a></li>
+				</p>
+			</div>
+			<div class="col-lg-3 col-xs-6 contacts-block">
+				<div class="phone-service-all">
+					<p>
+						<li><a class="link-call-number" href="tel:+79104484506"><span><i class="fa fa-mobile" aria-hidden="true"></i>
+									Мобильный <br> +7 (910) 448-45-06</span></a></li>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">Контакты и реквизиты компании ООО "КУРС"</h3>
+	<div class="row">
+		<div class="col-lg-8 data-kurs-doc">
+			<p> Телефон: +7 (910) 448-45-06</p>
+			<p> Фактический адрес: 129626 Россия, г. Москва, Москва ул. 1-я Мытищинская 16 с.1</p>
+			<p> Юридический адрес: 143900 Россия, Московская область, г. Балашиха, ул. Некрасова, д.11А кв.167.</p>
+			<p> ИНН 5001134581</p>
+			<p> КПП 500101001</p>
+			<p> р/с 40702810438000150574</p>
+			<p> к/с 30101810400000000225</p>
+			<p> БИК 044525225</p>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">Схема прохода и проезда</h3>
+	<div class="contacts-driving-directions">
+		<div class="row">
+			<div class="col-lg-8">
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<div class="transport col-lg-6 col-xs-6" style="margin-top: 10px; ">
+							<img class="line-metro" src="{% static "/assets_project/img/imgLogo/line-metro-lite-blue.png" %}" alt="">
+							<p><img src="{% static "/assets_project/img/imgLogo/train.png" %}" alt=""> - ж/д станция "РИЖСКАЯ"</p>
+							<p><img src="{% static "/assets_project/img/imgLogo/foot.png" %}" alt=""> - 12 минут пешком</p>
+							<p><img src="{% static "/assets_project/img/imgLogo/taxi.png" %}" alt=""> - 5 минут на такси или каршеринге
+							</p>
+						</div>
+					</div>
+					<div data-key="2">
+						<div class="transport col-lg-6 col-xs-6" style="margin-top: 10px; ">
+							<img class="line-metro" src="{% static "/assets_project/img/imgLogo/line-metro-orange.png" %}" alt="">
+							<p><img src="{% static "/assets_project/img/imgLogo/metro.png" %}" alt=""> - метро "АЛЕКСЕЕВСКАЯ"</p>
+							<p><img src="{% static "/assets_project/img/imgLogo/foot.png" %}" alt=""> - 12 минут пешком</p>
+							<p><img src="{% static "/assets_project/img/imgLogo/taxi.png" %}" alt=""> - 5 минут на такси или каршеринге
+							</p>
+						</div>
+					</div>
+					<div data-key="3">
+						<div class="transport col-lg-6 col-xs-6" style="margin-top: 10px; ">
+							<img class="line-metro" src="{% static "/assets_project/img/imgLogo/line-metro-orange.png" %}" alt="">
+							<p><img src="{% static "/assets_project/img/imgLogo/metro.png" %}" alt=""> - метро "РИЖСКАЯ"</p>
+							<p><img src="{% static "/assets_project/img/imgLogo/foot.png" %}" alt=""> - 15 минут пешком</p>
+							<p><img src="{% static "/assets_project/img/imgLogo/taxi.png" %}" alt=""> - 5 минут на такси или каршеринге
+							</p>
+						</div>
+					</div>
+					<div data-key="4">
+						<div class="transport col-lg-6 col-xs-6" style="margin-top: 10px; ">
+							<img class="line-metro" src="{% static "/assets_project/img/imgLogo/line-metro-green.png" %}" alt="">
+							<p><img src="{% static "/assets_project/img/imgLogo/train.png" %}" alt=""> - ж/д станция "МОСКВА - 3"</p>
+							<p><img src="{% static "/assets_project/img/imgLogo/foot.png" %}" alt=""> - 11 минут пешком</p>
+							<p><img src="{% static "/assets_project/img/imgLogo/taxi.png" %}" alt=""> - 6 минут на такси или каршеринге
+							</p>
+						</div>
+					</div>
+					<div style="clear:both;float:none;"></div>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<p>
+					<a href="{% static "/assets_project/img/imgLogo/karta-kurs.png" %}" data-fancybox>
+						<img src="{% static "/assets_project/img/imgLogo/karta-kurs-min.png" %}" />
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
