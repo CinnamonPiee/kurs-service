@@ -1,0 +1,640 @@
+{% extends "main_page/main_page.html" %} 
+{% load static %} 
+
+
+{% block title %}
+<title>{{ title }}</title>
+{% endblock title %} 
+
+
+{% block content %}
+	<ul class="breadcrumb">
+		<li><a href="/">Главная</a></li>
+		<li class="active">Страхование</li>
+	</ul>
+	<div class="insuranse-container">
+		<div class="insuranse">
+			<div class="insuranse-title hidden-xs hidden-md">
+				<h1>Страхование автомобиля<br /><br />персональный расчет</h1>
+			</div>
+			<div class="insuranse-title hidden-lg hidden-md">
+				<h1>Страхование<br />автомобиля<br />персональный<br />расчет</h1>
+			</div>
+		</div>
+		<div class="form-insurance">
+			<h3 class="pretty-header left-right-line-short-header">
+				Заполните форму и специалист точно рассчитает стоимость страхования
+			</h3>
+			<div class="form-insurance">
+				<form
+					id="w0"
+					class="order-insurance-form"
+					action="/insurance/add-insurance"
+					method="post"
+				>
+					<input
+						type="hidden"
+						name="_csrf-frontend"
+						value="mBhhtdN4tMf90tqkVKXSUp1W3w_if3sOJug8gU7vd_HqVTv0kRzytIum7eoQ4rQb32K4XKlJK2VPnl_FebdCqw=="
+					/>
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="form-group field-order-insurance-form-surname required">
+								<label class="control-label" for="order-insurance-form-surname"
+									>Фамилия</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-surname"
+									class="form-control"
+									name="order-insurance-form[surname]"
+									aria-required="true"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div
+								class="form-group field-order-insurance-form-username required"
+							>
+								<label class="control-label" for="order-insurance-form-username"
+									>Имя</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-username"
+									class="form-control"
+									name="order-insurance-form[username]"
+									aria-required="true"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div
+								class="form-group field-order-insurance-form-patronymic required"
+							>
+								<label class="control-label" for="order-insurance-form-patronymic"
+									>Отчество</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-patronymic"
+									class="form-control"
+									name="order-insurance-form[patronymic]"
+									aria-required="true"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<div class="form-group field-order-insurance-form-age required">
+								<label class="control-label" for="order-insurance-form-age"
+									>Дата рождения</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-age"
+									class="form-control"
+									name="order-insurance-form[age]"
+									aria-required="true"
+									data-plugin-inputmask="inputmask_55a8ea7c"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<div
+								class="form-group field-order-insurance-form-driving_experience required"
+							>
+								<label
+									class="control-label"
+									for="order-insurance-form-driving_experience"
+									>Стаж вождения</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-driving_experience"
+									class="form-control"
+									name="order-insurance-form[driving_experience]"
+									aria-required="true"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group field-order-insurance-form-vin required">
+								<label class="control-label" for="order-insurance-form-vin"
+									>VIN</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-vin"
+									class="form-control"
+									name="order-insurance-form[vin]"
+									aria-required="true"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<div
+								class="form-group field-order-insurance-form-car_make required"
+							>
+								<label class="control-label" for="order-insurance-form-car_make"
+									>Марка автомобиля</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-car_make"
+									class="form-control"
+									name="order-insurance-form[car_make]"
+									aria-required="true"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<div
+								class="form-group field-order-insurance-form-car_model required"
+							>
+								<label class="control-label" for="order-insurance-form-car_model"
+									>Модель автомобиля</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-car_model"
+									class="form-control"
+									name="order-insurance-form[car_model]"
+									aria-required="true"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3">
+							<div
+								class="form-group field-order-insurance-form-engine_power required"
+							>
+								<label
+									class="control-label"
+									for="order-insurance-form-engine_power"
+									>Мощность двигателя</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-engine_power"
+									class="form-control"
+									name="order-insurance-form[engine_power]"
+									aria-required="true"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div
+								class="form-group field-order-insurance-form-call_number required"
+							>
+								<label
+									class="control-label"
+									for="order-insurance-form-call_number"
+									>Номер телефона</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-call_number"
+									class="form-control"
+									name="order-insurance-form[call_number]"
+									aria-required="true"
+									data-plugin-inputmask="inputmask_8b2a4bfb"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="form-group field-order-insurance-form-email required">
+								<label class="control-label" for="order-insurance-form-email"
+									>Адрес электронной почты</label
+								>
+								<input
+									type="text"
+									id="order-insurance-form-email"
+									class="form-control"
+									name="order-insurance-form[email]"
+									aria-required="true"
+									data-plugin-inputmask="inputmask_b02ee1d6"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="form-group field-datetimepicker required">
+								<label class="control-label" for="datetimepicker"
+									>Выберите дату и время</label
+								>
+								<div id="datetimepicker-datetime" class="input-group date">
+									<input
+										type="text"
+										id="datetimepicker"
+										class="form-control"
+										name="order-insurance-form[date_time_order]"
+										convertFormat
+										aria-required="true"
+										data-datetimepicker-source="datetimepicker-datetime"
+										data-datetimepicker-type="3"
+										data-krajee-datetimepicker="datetimepicker_1b94f0f5"
+									/><span
+										class="input-group-addon kv-datetime-remove"
+										title="Очистить поле"
+										><i class="glyphicon glyphicon-remove kv-dp-icon"></i></span
+									><span
+										class="input-group-addon kv-datetime-picker"
+										title="Выбрать дату &amp; время"
+										><i class="glyphicon glyphicon-calendar kv-dp-icon"></i
+									></span>
+								</div>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3 col-lg-offset-9">
+							<button
+								type="submit"
+								class="kursStyleButton"
+								0="orderServicesModalForm"
+							>
+								Жду звонка
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="benefits-insurance">
+			<h3 class="pretty-header left-right-line-short-header">
+				Преимущества в страховании у нас
+			</h3>
+			<div class="row centered">
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<div class="col-lg-3">
+							<img
+								src="{% static "/assets_project/img/imgLogo/123456.jpg" %}"
+								alt=""
+							/>
+							<h4>Честная цена</h4>
+							<p>
+								Мы не зависим от страховых компаний и не завышаем цены: это
+								неправильно и незаконно. А ещё у нас нет цели навязать
+								дополнительные услуги. Мы лишь помогаем выбрать лучшие условия и
+								сразу купить полис
+							</p>
+						</div>
+					</div>
+					<div data-key="2">
+						<div class="col-lg-3">
+							<img
+								src="{% static "/assets_project/img/imgLogo/diagnosticheskaya_karta.png" %}"
+								alt=""
+							/>
+							<h4>Диагностическая карта</h4>
+							<p>
+								Без диагностической карты не представляется возможным оформить
+								договор и получить полис. Мы имеем соответствующую лицензию
+								(проверить можно на портале Российского союза автостраховщиков –
+								РСА). Правильно пройти процедуру технического осмотра помогут наши
+								специалисты.
+							</p>
+						</div>
+					</div>
+					<div data-key="3">
+						<div class="col-lg-3">
+							<img
+								src="{% static "/assets_project/img/imgLogo/2016-resources-1.png" %}"
+								alt=""
+							/>
+							<h4>Максимум информации</h4>
+							<p>
+								Мы знаем о страховании всё и поможем вам на каждом этапе. Не
+								укажете часть данных при расчёте? Расскажем, как это повлияет на
+								цену. Одна из компаний выплачивает хуже остальных? Вы узнаете об
+								этом заранее
+							</p>
+						</div>
+					</div>
+					<div data-key="4">
+						<div class="col-lg-3">
+							<img
+								src="{% static "/assets_project/img/imgLogo/osago-doc.jpg" %}"
+								alt=""
+							/>
+							<h4>Настоящие полисы</h4>
+							<p>
+								Покупать ОСАГО у нас так же надёжно, как в страховой компании. Мы
+								работаем с ними напрямую, и даже оплата происходит на их стороне.
+								Ещё до того, как полис будет у вас на почте, он попадёт в базы
+								ГИБДД, РСА и страховой
+							</p>
+						</div>
+					</div>
+					<div style="clear: both; float: none"></div>
+				</div>
+			</div>
+		</div>
+		<div class="faq">
+			<h3 class="pretty-header left-right-line-short-header">
+				Часто задаваемые вопросы
+			</h3>
+			<div class="wrapper-faq">
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<div class="item-faq">
+							<div data-toggle-id="answer-1" class="question arrow">
+								<h4 class="title-question">
+									А откуда экономия? Цены ведь во всех страховых одинаковые
+								</h4>
+							</div>
+							<div id="answer-1" class="answer" hidden>
+								<p>
+									С сентября 2020 страховые компании могут устанавливать базовые
+									тарифы учитывая большое количество различных факторов. Сейчас
+									базовые ставки могут отличаться в диапазоне от 2471 руб. до 5436
+									руб. Узнав цену в каждой из них, вы сможете выбрать более
+									низкую. Так и сэкономите.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="2">
+						<div class="item-faq">
+							<div data-toggle-id="answer-2" class="question arrow">
+								<h4 class="title-question">
+									Зависит ли цена полиса от размера страховой компании?
+								</h4>
+							</div>
+							<div id="answer-2" class="answer" hidden>
+								<p>
+									Нет. Цены зависят только от величины базового тарифа, который
+									установила страховая в вашем регионе. Он варьируется от 2471 до
+									5436 ₽. Размер компании не влияет на тариф, поэтому стоимость
+									полиса в крупной страховой иногда может быть ниже, чем в
+									малоизвестной.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="3">
+						<div class="item-faq">
+							<div data-toggle-id="answer-3" class="question arrow">
+								<h4 class="title-question">
+									Как понять, что вы продаёте настоящие полисы?
+								</h4>
+							</div>
+							<div id="answer-3" class="answer" hidden>
+								<p>
+									Всё очень просто: мы оформляем полис напрямую в страховой, и он
+									сразу попадает в базу российского союза автостраховщиков (РСА).
+									Именно через неё сотрудники ГИБДД проверяют его подлинность. Вы
+									можете проверить полис в любое время на сайте РСА.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="4">
+						<div class="item-faq">
+							<div data-toggle-id="answer-4" class="question arrow">
+								<h4 class="title-question">
+									Как понять, что вы не накручиваете цены?
+								</h4>
+							</div>
+							<div id="answer-4" class="answer" hidden>
+								<p>
+									Закон исключает возможность накрутки цен — у нас они точь-в-точь
+									как в страховых. Удобство в том, что вам не нужно ходить от
+									сайта к сайту. Мы покажем цены сразу в 15 страховых компаниях, а
+									вы сможете выбрать самую оптимальную.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="5">
+						<div class="item-faq">
+							<div data-toggle-id="answer-5" class="question arrow">
+								<h4 class="title-question">
+									Что вы делаете, чтобы защитить данные клиентов?
+								</h4>
+							</div>
+							<div id="answer-5" class="answer" hidden>
+								<p>
+									Мы отправляем данные напрямую в страховые компании, минуя третьи
+									лица и агентов. Это значит, что никто, включая страховые, не
+									будет названивать вам и назойливо предлагать другие услуги.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="6">
+						<div class="item-faq">
+							<div data-toggle-id="answer-6" class="question arrow">
+								<h4 class="title-question">
+									Учитываете ли вы историю вождения при расчёте?
+								</h4>
+							</div>
+							<div id="answer-6" class="answer" hidden>
+								<p>
+									Да, именно поэтому наши цены не отличаются от цен на сайтах
+									страховых или у агентов. Кстати, если вы недавно поменяли права,
+									выберите соответствующую опцию при оформлении, чтобы ваша скидка
+									за безопасное вождение сохранилась.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="7">
+						<div class="item-faq">
+							<div data-toggle-id="answer-7" class="question arrow">
+								<h4 class="title-question">
+									За год не было аварий, но полис подорожал. Почему?
+								</h4>
+							</div>
+							<div id="answer-7" class="answer" hidden>
+								<p>
+									Скорее всего, страховая просто увеличила базовый коэффициент для
+									вашего региона. Да, она может так делать, причём несколько раз
+									за год. Удобство — в том, что вы можете выбрать ту страховую, у
+									которой цена наоборот снизилась.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="8">
+						<div class="item-faq">
+							<div data-toggle-id="answer-8" class="question arrow">
+								<h4 class="title-question">
+									Нужно ли продлять полис в той же компании, чтобы сохранить
+									скидку за безопасное вождение?
+								</h4>
+							</div>
+							<div id="answer-8" class="answer" hidden>
+								<p>
+									Нет. Выбирайте любую страховую или меняйте её хоть каждый год.
+									История вождения и страхования сохраняется в российском союзе
+									автостраховщиков (РСА), поэтому все ваши данные и положенные
+									скидки будут ждать вас в любой страховой компании.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="9">
+						<div class="item-faq">
+							<div data-toggle-id="answer-9" class="question arrow">
+								<h4 class="title-question">
+									Что делать, если положенной скидки за безопасное вождение нет?
+								</h4>
+							</div>
+							<div id="answer-9" class="answer" hidden>
+								<p>
+									Если у вас не было аварий, то это ошибка страховой. В этом
+									случае обратитесь в нашу службу заботы о клиентах: в WhatsApp,
+									по телефону или почте. Мы сами сделаем все необходимые запросы,
+									чтобы восстановить корректную историю вождения.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="10">
+						<div class="item-faq">
+							<div data-toggle-id="answer-10" class="question arrow">
+								<h4 class="title-question">
+									На какой срок можно оформить полис?
+								</h4>
+							</div>
+							<div id="answer-10" class="answer" hidden>
+								<p>Вы можете оформить ОСАГО сроком на 12, 6 и 3 месяцев.</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="11">
+						<div class="item-faq">
+							<div data-toggle-id="answer-11" class="question arrow">
+								<h4 class="title-question">Куда обращаться, если попал в ДТП?</h4>
+							</div>
+							<div id="answer-11" class="answer" hidden>
+								<p>
+									Подробная информация на этот счёт есть в полисе. Коротко: если у
+									участников ДТП нет разногласий, и точно понятно, кто виноват, то
+									можно оформить европротокол и сообщить об этом в страховую в
+									течение одного дня после ДТП. При этом нужно будет: 1. Заполнить
+									заявление о происшествии 2. Предоставить европротокол или
+									постановление из ГИБДД 3. Провести осмотр автомобиля в страховой
+									4. Дождаться решения о выплате в течение 30 дней
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="12">
+						<div class="item-faq">
+							<div data-toggle-id="answer-12" class="question arrow">
+								<h4 class="title-question">
+									Что такое диагностическая карта и насколько она важна?
+								</h4>
+							</div>
+							<div id="answer-12" class="answer" hidden>
+								<p>
+									Диагностическую карту выдают после прохождения техосмотра. По
+									закону её номер нужен для оформления ОСАГО, если автомобиль
+									старше трёх лет. Если вы ошибётесь или введёте заведомо ложные
+									данные карты, страховая вправе отказать в выплате.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="13">
+						<div class="item-faq">
+							<div data-toggle-id="answer-13" class="question arrow">
+								<h4 class="title-question">Зачем вообще нужен полис ОСАГО?</h4>
+							</div>
+							<div id="answer-13" class="answer" hidden>
+								<p>
+									Чтобы не платить из своего кармана в случае ДТП по вашей вине.
+									Деньги потерпевшим выплатит страховая: на ремонт автомобиля и в
+									случае, если пострадали люди. Размеры максимальных выплат
+									установлены законом: 400 тыс. ₽ — на ремонт автомобиля, 500 тыс.
+									₽ — в случае, если пострадали люди.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="14">
+						<div class="item-faq">
+							<div data-toggle-id="answer-14" class="question arrow">
+								<h4 class="title-question">
+									Что делать, если я хочу вписать в полис ещё одного водителя?
+								</h4>
+							</div>
+							<div id="answer-14" class="answer" hidden>
+								<p>
+									Обратитесь в страховую. Если история вождения (КБМ) нового
+									водителя хуже вашей, то нужно будет лично прийти в офис
+									страховой. Если же КБМ лучше или равен вашему, то изменения
+									внесут дистанционно и отправят обновлённый полис на почту.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="15">
+						<div class="item-faq">
+							<div data-toggle-id="answer-15" class="question arrow">
+								<h4 class="title-question">
+									На какой территории действует ОСАГО?
+								</h4>
+							</div>
+							<div id="answer-15" class="answer" hidden>
+								<p>
+									Полис ОСАГО действует на всей территории Российской Федерации.
+									Если же вы собрались выехать на автомобиле за рубеж, то стоит
+									оформить полис «Зелёная карта». Это близкий аналог ОСАГО,
+									который действует на территории 44 стран.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="16">
+						<div class="item-faq">
+							<div data-toggle-id="answer-16" class="question arrow">
+								<h4 class="title-question">
+									Я продал машину. Можно ли вернуть стоимость полиса?
+								</h4>
+							</div>
+							<div id="answer-16" class="answer" hidden>
+								<p>
+									Конечно. Для этого нужно обратиться в страховую компанию за
+									расторжением договора. Но будьте готовы, что она удержит
+									примерно 30% стоимости полиса, а оставшиеся 70% выплатит
+									пропорционально прошедшему сроку действия.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div style="clear: both; float: none"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
