@@ -1,281 +1,178 @@
-{% extends "main_page/base.html" %}
+{% extends "main_page/base.html" %} 
 {% load static %}
 
-
 {% block title %}
-	<title>Главная страница | OOO &quot;КУРС&quot;</title>
-{% endblock title %}
+<title>{{ title }}</title>
+{% endblock title %} 
 
 
 {% block content %}
-	<div class="site-index">
-		<div class="slider-kurs">
-			<div class="box hidden-xs" id="slider-kurs">
-				<div class="side side1">
-					<a href="/"
-						><img
-							src="{% static "/assets_project/img/img-slide/toyota-lexus-slide-2.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side2">
-					<a href="online-appointment/index"
-						><img
-							src="{% static "/assets_project/img/img-slide/armored-car-slide.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side3">
-					<a href="online-appointment/index"
-						><img
-							src="{% static "/assets_project/img/img-slide/online-slide.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side4">
-					<a href="evacuation/index"
-						><img
-							src="{% static "/assets_project/img/img-slide/elevator-slide.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side5">
-					<a href="insurance/index"
-						><img
-							src="{% static "/assets_project/img/img-slide/strahovka-slide.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side6">
-					<a href="insurance/index"
-						><img
-							src="{% static "/assets_project/img/img-slide/tire-fitting-slide.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side7">
-					<a href="insurance/index"
-						><img
-							src="{% static "/assets_project/img/img-slide/razval-slide.jpg" %}"
-							alt=""
-					/></a>
-				</div>
+<div class="site-index">
+	<div class="slider-kurs">
+		<div class="box hidden-xs" id="slider-kurs">
+			<div class="side side1">
+				<a href="/"
+					><img
+						src="{% static "/assets_project/img/img-slide/toyota-lexus-slide-2.jpg" %}"
+						alt=""
+				/></a>
 			</div>
-			<div class="box hidden-lg" id="slider-kurs-mobile">
-				<div class="side side1">
-					<a href="online-appointment/index"
-						><img
-							class="img-responsive"
-							src="{% static "/assets_project/img/img-slide/toyota-lexus-slide-mobile.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side1">
-					<a href="online-appointment/index"
-						><img
-							class="img-responsive"
-							src="{% static "/assets_project/img/img-slide/armored-car-slide-mobile.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side2">
-					<a href="online-appointment/index"
-						><img
-							class="img-responsive"
-							src="{% static "/assets_project/img/img-slide/online-slide-mobile.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side3">
-					<a href="evacuation/index"
-						><img
-							class="img-responsive"
-							src="{% static "/assets_project/img/img-slide/evacuation-mobile.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side4">
-					<a href="insurance/index"
-						><img
-							class="img-responsive"
-							src="{% static "/assets_project/img/img-slide/strahovka-slide-mobile.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side5">
-					<a href="insurance/index"
-						><img
-							class="img-responsive"
-							src="{% static "/assets_project/img/img-slide/tire-fitting-slide-mobile.jpg" %}"
-							alt=""
-					/></a>
-				</div>
-				<div class="side side6">
-					<a href="insurance/index"
-						><img
-							class="img-responsive"
-							src="{% static "/assets_project/img/img-slide/razval-slide-mobile.jpg" %}"
-							alt=""
-					/></a>
-				</div>
+			<div class="side side2">
+				<a href="online-appointment/index"
+					><img
+						src="{% static "/assets_project/img/img-slide/armored-car-slide.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side3">
+				<a href="online-appointment/index"
+					><img
+						src="{% static "/assets_project/img/img-slide/online-slide.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side4">
+				<a href="evacuation/index"
+					><img
+						src="{% static "/assets_project/img/img-slide/elevator-slide.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side5">
+				<a href="insurance/index"
+					><img
+						src="{% static "/assets_project/img/img-slide/strahovka-slide.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side6">
+				<a href="insurance/index"
+					><img
+						src="{% static "/assets_project/img/img-slide/tire-fitting-slide.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side7">
+				<a href="insurance/index"
+					><img
+						src="{% static "/assets_project/img/img-slide/razval-slide.jpg" %}"
+						alt=""
+				/></a>
 			</div>
 		</div>
-		<div class="advantages">
-			<hr />
-			<div class="row">
-				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<div class="col-lg-3 col-xs-6">
-							<div class="item-advantage">
-								<h2><span>4</span> подъемника</h2>
-								<h3><span>6</span> тонн максимально</h3>
-								<p>Мы поднимем даже бронированные автомобили</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="2">
-						<div class="col-lg-3 col-xs-6">
-							<div class="item-advantage">
-								<h2><span>6</span> автомобилей</h2>
-								<h3><span>6</span> сотрудников</h3>
-								<p>Готовы отремонтировать одновременно и качественно</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="3">
-						<div class="col-lg-3 col-xs-6">
-							<div class="item-advantage">
-								<h2><span>22</span> радиус</h2>
-								<h3><span>4+1</span> шиномонтаж</h3>
-								<p>Шиномонтаж запасного колеса в подарок</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="4">
-						<div class="col-lg-3 col-xs-6">
-							<div class="item-advantage">
-								<h2><span>60-90</span> минут</h2>
-								<h3><span>1</span> автомобиль</h3>
-								<p>Качественное проведение ТО по всем пунктам</p>
-							</div>
-						</div>
-					</div>
-					<div style="clear: both; float: none"></div>
-				</div>
+		<div class="box hidden-lg" id="slider-kurs-mobile">
+			<div class="side side1">
+				<a href="online-appointment/index"
+					><img
+						class="img-responsive"
+						src="{% static "/assets_project/img/img-slide/toyota-lexus-slide-mobile.jpg" %}"
+						alt=""
+				/></a>
 			</div>
-			<hr />
+			<div class="side side1">
+				<a href="online-appointment/index"
+					><img
+						class="img-responsive"
+						src="{% static "/assets_project/img/img-slide/armored-car-slide-mobile.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side2">
+				<a href="online-appointment/index"
+					><img
+						class="img-responsive"
+						src="{% static "/assets_project/img/img-slide/online-slide-mobile.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side3">
+				<a href="evacuation/index"
+					><img
+						class="img-responsive"
+						src="{% static "/assets_project/img/img-slide/evacuation-mobile.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side4">
+				<a href="insurance/index"
+					><img
+						class="img-responsive"
+						src="{% static "/assets_project/img/img-slide/strahovka-slide-mobile.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side5">
+				<a href="insurance/index"
+					><img
+						class="img-responsive"
+						src="{% static "/assets_project/img/img-slide/tire-fitting-slide-mobile.jpg" %}"
+						alt=""
+				/></a>
+			</div>
+			<div class="side side6">
+				<a href="insurance/index"
+					><img
+						class="img-responsive"
+						src="{% static "/assets_project/img/img-slide/razval-slide-mobile.jpg" %}"
+						alt=""
+				/></a>
+			</div>
 		</div>
-		<div class="sale-news-stock hidden-xs">
-			<div class="row">
-				<div class="col-lg-4 col-xs-4">
-					<div class="stock">
-						<div class="container-content">
-							<div class="title">
-								<h3 class="centered">АКЦИИ</h3>
-							</div>
-							<br />
-							<div class="container-content">
-								<div id="list-wrapper" class="list-wrapper">
-									<div data-key="1">
-										<div class="item-stock-news-sale">
-											<div class="item-header">
-												<img
-													class="logo"
-													src="{% static "/assets_project/img/img-logo-discounts/toyota-lexus.jpg" %}"
-													alt=""
-												/>
-											</div>
-											<div class="item-content">
-												<img
-													class="img-item-sale"
-													src="{% static "/assets_project/img/img-discounts/last-znakomstvo.jpg" %}"
-													alt=""
-												/>
-												<h4 class="centered">Первый визит скидка 5%</h4>
-												<p>
-													ООО "КУРС" предоставляет 5% скидку владельцам
-													TOYOTA и LEXUS на...
-												</p>
-											</div>
-											<div class="item-footer centered">
-												<button
-													class="kursStyleButton add-to-sale"
-													data-sale="1"
-													data-title="Первый визит скидка 5%"
-												>
-													ПОЛУЧИТЬ ВЫГОДУ
-												</button>
-											</div>
-										</div>
-										<br />
-									</div>
-									<div style="clear: both; float: none"></div>
-								</div>
-							</div>
-						</div>
-						<div class="title">
-							<a href="discounts/index"
-								><h4 class="link-sale centered">Все АКЦИИ</h4></a
-							>
+	</div>
+	<div class="advantages">
+		<hr />
+		<div class="row">
+			<div id="list-wrapper" class="list-wrapper">
+				<div data-key="1">
+					<div class="col-lg-3 col-xs-6">
+						<div class="item-advantage">
+							<h2><span>4</span> подъемника</h2>
+							<h3><span>6</span> тонн максимально</h3>
+							<p>Мы поднимем даже бронированные автомобили</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-xs-4">
-					<div class="stock">
-						<div class="container-content">
-							<div class="title">
-								<h3 class="centered">АКЦИИ</h3>
-							</div>
-							<br />
-							<div class="container-content">
-								<div id="list-wrapper" class="list-wrapper">
-									<div data-key="7">
-										<div class="item-stock-news-sale">
-											<div class="item-header">
-												<img
-													class="logo"
-													src="{% static "/assets_project/img/img-logo-discounts/percent.png" %}"
-													alt=""
-												/>
-											</div>
-											<div class="item-content">
-												<img
-													class="img-item-sale"
-													src="{% static "/assets_project/img/img-discounts/shinomontaz-sale.jpg" %}"
-													alt=""
-												/>
-												<h4 class="centered">Пятое колесо в подарок</h4>
-												<p>Пятое колесо в подарок при условии...</p>
-											</div>
-											<div class="item-footer centered">
-												<button
-													class="kursStyleButton add-to-sale"
-													data-sale="7"
-													data-title="Пятое колесо в подарок"
-												>
-													ПОЛУЧИТЬ ВЫГОДУ
-												</button>
-											</div>
-										</div>
-										<br />
-									</div>
-									<div style="clear: both; float: none"></div>
-								</div>
-							</div>
-						</div>
-						<div class="title">
-							<a href="discounts/index"
-								><h4 class="link-sale centered">Все АКЦИИ</h4></a
-							>
+				<div data-key="2">
+					<div class="col-lg-3 col-xs-6">
+						<div class="item-advantage">
+							<h2><span>6</span> автомобилей</h2>
+							<h3><span>6</span> сотрудников</h3>
+							<p>Готовы отремонтировать одновременно и качественно</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-xs-4">
-					<div class="title">
-						<h3 class="centered">НОВОСТИ</h3>
+				<div data-key="3">
+					<div class="col-lg-3 col-xs-6">
+						<div class="item-advantage">
+							<h2><span>22</span> радиус</h2>
+							<h3><span>4+1</span> шиномонтаж</h3>
+							<p>Шиномонтаж запасного колеса в подарок</p>
+						</div>
 					</div>
-					<br />
-					<div class="news">
+				</div>
+				<div data-key="4">
+					<div class="col-lg-3 col-xs-6">
+						<div class="item-advantage">
+							<h2><span>60-90</span> минут</h2>
+							<h3><span>1</span> автомобиль</h3>
+							<p>Качественное проведение ТО по всем пунктам</p>
+						</div>
+					</div>
+				</div>
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+		<hr />
+	</div>
+	<div class="sale-news-stock hidden-xs">
+		<div class="row">
+			<div class="col-lg-4 col-xs-4">
+				<div class="stock">
+					<div class="container-content">
+						<div class="title">
+							<h3 class="centered">АКЦИИ</h3>
+						</div>
+						<br />
 						<div class="container-content">
 							<div id="list-wrapper" class="list-wrapper">
 								<div data-key="1">
@@ -283,28 +180,30 @@
 										<div class="item-header">
 											<img
 												class="logo"
-												src="{% static "/assets_project/img/img-news/news.jpg" %}"
+												src="{% static "/assets_project/img/img-logo-discounts/toyota-lexus.jpg" %}"
 												alt=""
 											/>
 										</div>
 										<div class="item-content">
 											<img
 												class="img-item-sale"
-												src="{% static "/assets_project/img/img-news/covid.jpg" %}"
+												src="{% static "/assets_project/img/img-discounts/last-znakomstvo.jpg" %}"
 												alt=""
 											/>
-											<h4 class="centered">
-												Вакцинация персонала от COVID-19
-											</h4>
+											<h4 class="centered">Первый визит скидка 5%</h4>
 											<p>
-												Важная информация! Сотрудники ООО "КУРС" для
-												безопасности своего и вашего здоровья...
+												ООО "КУРС" предоставляет 5% скидку владельцам TOYOTA и
+												LEXUS на...
 											</p>
 										</div>
-										<div class="item-footer link-news centered">
-											<a class="kursStyleButton" href="news/index"
-												>ПРОЧЕСТЬ НОВОСТИ</a
+										<div class="item-footer centered">
+											<button
+												class="kursStyleButton add-to-sale"
+												data-sale="1"
+												data-title="Первый визит скидка 5%"
 											>
+												ПОЛУЧИТЬ ВЫГОДУ
+											</button>
 										</div>
 									</div>
 									<br />
@@ -314,1055 +213,772 @@
 						</div>
 					</div>
 					<div class="title">
-						<a href="news/index"
-							><h4 class="link-sale centered">Все новости</h4></a
+						<a href="discounts/index"
+							><h4 class="link-sale centered">Все АКЦИИ</h4></a
 						>
 					</div>
 				</div>
 			</div>
-		</div>
-		<h3 class="pretty-header left-right-line-short-header">
-			Направление в деятельности
-		</h3>
-		<div class="direction-kurs">
-			<div class="row">
-				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<div class="col-lg-3 col-xs-6 centered">
-							<div class="item-direction-activity">
-								<img
-									src="{% static "/assets_project/img/img-direction-activity/diagnostics.png" %}"
-									alt="diagnostics.png"
-								/>
-								<h4>Диагностика</h4>
-								<p class="body-text">
-									Мы выполняем диагностику всех систем автомобиля согласно
-									марки и модели. Профессиональное оборудование позволяет
-									выявить любую неисправность и устранить ее, в отличии от
-									оборудования стандартного, общего типа.
-								</p>
-								<p class="footer">от 800 ₽</p>
+			<div class="col-lg-4 col-xs-4">
+				<div class="stock">
+					<div class="container-content">
+						<div class="title">
+							<h3 class="centered">АКЦИИ</h3>
+						</div>
+						<br />
+						<div class="container-content">
+							<div id="list-wrapper" class="list-wrapper">
+								<div data-key="7">
+									<div class="item-stock-news-sale">
+										<div class="item-header">
+											<img
+												class="logo"
+												src="{% static "/assets_project/img/img-logo-discounts/percent.png" %}"
+												alt=""
+											/>
+										</div>
+										<div class="item-content">
+											<img
+												class="img-item-sale"
+												src="{% static "/assets_project/img/img-discounts/shinomontaz-sale.jpg" %}"
+												alt=""
+											/>
+											<h4 class="centered">Пятое колесо в подарок</h4>
+											<p>Пятое колесо в подарок при условии...</p>
+										</div>
+										<div class="item-footer centered">
+											<button
+												class="kursStyleButton add-to-sale"
+												data-sale="7"
+												data-title="Пятое колесо в подарок"
+											>
+												ПОЛУЧИТЬ ВЫГОДУ
+											</button>
+										</div>
+									</div>
+									<br />
+								</div>
+								<div style="clear: both; float: none"></div>
 							</div>
 						</div>
 					</div>
-					<div data-key="2">
-						<div class="col-lg-3 col-xs-6 centered">
-							<div class="item-direction-activity">
-								<img
-									src="{% static "/assets_project/img/img-direction-activity/oil-filter.jpg" %}"
-									alt="oil-filter.jpg"
-								/>
-								<h4>Техническое обслуживание</h4>
-								<p class="body-text">
-									Проводим комплекс мероприятий, направленных на контроль
-									технического состояния авто, предотвращение
-									возникновения неполадок или своевременное их устранение.
-									Периодическое техническое обслуживание – гарантия
-									надежной работы вашего автомобиля.
-								</p>
-								<p class="footer">от 4500 ₽</p>
-							</div>
-						</div>
+					<div class="title">
+						<a href="discounts/index"
+							><h4 class="link-sale centered">Все АКЦИИ</h4></a
+						>
 					</div>
-					<div data-key="3">
-						<div class="col-lg-3 col-xs-6 centered">
-							<div class="item-direction-activity">
-								<img
-									src="{% static "/assets_project/img/img-direction-activity/key.jpg" %}"
-									alt="key.jpg"
-								/>
-								<h4>Слесарный ремонт</h4>
-								<p class="body-text">
-									Предоставляем качественный слесарный ремонт,
-									предусматривающий восстановление деталей автомобиля.
-									Наиболее часто в ходе работ ремонтируются элементы
-									подвески, двигателя, выхлопной и топливной системы, и
-									трансмиссии.
-								</p>
-								<p class="footer">н/ч 1500 ₽</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="4">
-						<div class="col-lg-3 col-xs-6 centered">
-							<div class="item-direction-activity">
-								<img
-									src="{% static "/assets_project/img/img-direction-activity/battery.png" %}"
-									alt="battery.png"
-								/>
-								<h4>Электрика</h4>
-								<p class="body-text">
-									Диагностика электроцепей автомобиля, выявление
-									неисправностей, проверка контактных групп, замер
-									вольтажа и ампеража тока выдаваемого генератором.
-									Согласование выполняемых работ с клиентом. Ремонт.
-								</p>
-								<p class="footer">н/ч 1500 ₽</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="5">
-						<div class="col-lg-3 col-xs-6 centered">
-							<div class="item-direction-activity">
-								<img
-									src="{% static "/assets_project/img/img-direction-activity/tire.jpeg" %}"
-									alt="tire.jpeg"
-								/>
-								<h4>Шиномантаж</h4>
-								<p class="body-text">
-									Согласование выполняемых работ с клиентом. Снятие колес
-									и произведение демонтажа шин с диска, очистка диска от
-									продуктов прошлого монтажа, замена вентиля или проверка
-									на целостность датчиков давления шин. Монтаж шин,
-									балансировка. Установка на автомобиль.
-								</p>
-								<p class="footer">от 2000 ₽</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="6">
-						<div class="col-lg-3 col-xs-6 centered">
-							<div class="item-direction-activity">
-								<img
-									src="{% static "/assets_project/img/img-direction-activity/descent-collapse.png" %}"
-									alt="descent-collapse.png"
-								/>
-								<h4>Сход-развал</h4>
-								<p class="body-text">
-									Диагностика узлов подвески. Согласование выполняемых
-									работ с клиентом. Произведение замеров углов схождения,
-									развала колес по всем осям автомобиля, а также
-									кастера(угол наклона стойки) передней оси. Настройка
-									согласно марки и модели автомобиля.
-								</p>
-								<p class="footer">от 2500 ₽</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="7">
-						<div class="col-lg-3 col-xs-6 centered">
-							<div class="item-direction-activity">
-								<img
-									src="{% static "/assets_project/img/img-direction-activity/dvs.png" %}"
-									alt="dvs.png"
-								/>
-								<h4>Капитальный ремонт ДВС</h4>
-								<p class="body-text">
-									Диагностика по всем пунктам. Снятие ДВС и дефектовка при
-									клиенте, это очень важно чтобы вы понимали весь объем
-									предстоящего ремонта. Согласование с клиентом ремонта по
-									каждому пункту, включая запасные части и работу. Ремонт.
-									Гарантийные обязательства.
-								</p>
-								<p class="footer">н/ч 2000 ₽</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="8">
-						<div class="col-lg-3 col-xs-6 centered">
-							<div class="item-direction-activity">
-								<img
-									src="{% static "/assets_project/img/img-direction-activity/akpp.png" %}"
-									alt="akpp.png"
-								/>
-								<h4>Ремонт КПП, АКПП, CVT</h4>
-								<p class="body-text">
-									Диагностика по всем пунктам. Снятие узла и отправка к
-									официальным представителям изготовителя на дефектовку и
-									последующий ремонт. Согласование с клиентом ремонта по
-									каждому пункту, включая запасные части и работу. Ремонт.
-									Гарантийные обязательства.
-								</p>
-								<p class="footer">от 40000 ₽</p>
-							</div>
-						</div>
-					</div>
-					<div style="clear: both; float: none"></div>
 				</div>
 			</div>
-		</div>
-		<h3 class="pretty-header left-right-line-short-header">
-			Всегда в наличии
-		</h3>
-		<div class="consumables">
-			<div class="row">
-				<div class="col-lg-12">
-					<h3 class="centered">
-						Бочковые и оригинальные масла, оригинальные запасные части и
-						аналоги
-					</h3>
+			<div class="col-lg-4 col-xs-4">
+				<div class="title">
+					<h3 class="centered">НОВОСТИ</h3>
 				</div>
-				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<div class="col-lg-4">
-							<div class="item-oil-details">
-								<div class="col-lg-8 col-xs-8">
-									<h4>Бочковые масла</h4>
-									<p>
-										Масло MOBIL для любых типов двигателей, трансмиссий. С
-										разной вязкостью, температурным режимом, бензиновые и
-										дизельные ДВС.
-									</p>
-								</div>
-								<div class="col-lg-4 col-xs-4">
-									<img
-										src="{% static "/assets_project/img/imgLogo/mobil-original.png" %}"
-										alt=""
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-key="2">
-						<div class="col-lg-4">
-							<div class="item-oil-details">
-								<div class="col-lg-8 col-xs-8">
-									<h4>Фасованные масла</h4>
-									<p>
-										Оригинальные моторные, трансмиссионные масла от
-										проверенных поставщиков. Сертифицированная продукция
-										со 100% гарантией.
-									</p>
-								</div>
-								<div class="col-lg-4 col-xs-4">
-									<img
-										src="{% static "/assets_project/img/imgLogo/toyota-oil.png" %}"
-										alt=""
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-key="3">
-						<div class="col-lg-4">
-							<div class="item-oil-details">
-								<div class="col-lg-8 col-xs-8">
-									<h4>Оригинальные детали и аналоги</h4>
-									<p>
-										Мы на прямую сотрудничаем с проверенными поставщиками.
-										Сертифицированная продукция со 100% гарантией.
-									</p>
-								</div>
-								<div class="col-lg-4 col-xs-4">
-									<img
-										src="{% static "/assets_project/img/imgLogo/content_bu.jpg" %}"
-										alt=""
-									/>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div style="clear: both; float: none"></div>
-				</div>
-			</div>
-		</div>
-		<h3 class="pretty-header left-right-line-short-header">
-			Cиловое дополнительное оборудование
-		</h3>
-		<div class="preview-power hidden-xs hidden-sm">
-			<div class="row">
-				<div class="col-lg-3">
-					<img
-						class="left"
-						src="{% static "/assets_project/img/imgLogo/land-cruser-power.jpg" %}"
-					/>
-				</div>
-				<div class="col-lg-6">
-					<p>
-						ООО "КУРС" совместно с компанией АМЗ предоставляет возможность
-						приобретения и установки оборудования для участия в
-						соревнованиях по трофи-рейду в категориях ТР-1, ТР-2, ТР-3, а
-						так же для экспедиций, путешествий, патрулирования лесов, -
-						иными словами - для тяжелой ежедневной эксплуатации в условиях
-						российского бездорожья.
-					</p>
-				</div>
-				<div class="col-lg-3">
-					<img
-						class="right"
-						src="{% static "/assets_project/img/imgLogo/land-cruser-power-2.jpg" %}"
-					/>
-				</div>
-			</div>
-		</div>
-		<div class="power-accessories-block">
-			<div class="row">
-				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<div class="col-lg-3 col-xs-6">
-							<div class="power-accessories centered">
-								<div class="power-accessories-header">
-									<h4>Усиленные бамперы</h4>
-								</div>
-								<div class="power-accessories-body">
-									<a
-										href="{% static "/assets_project/img/imgLogo/bumper-reinforced.png" %}"
-										data-fancybox="images"
-									>
-										<img
-											src="{% static "/assets_project/img/imgLogo/bumper-reinforced.png" %}"
-										/>
-									</a>
-									<p>
-										Эргономичность и дизайн, компактность, прочность,
-										соответствие действующему законодательству<br />
-									</p>
-								</div>
-								<div class="power-accessories-footer">
-									<button
-										class="kursStyleButton add-to-order-power"
-										data-title="Усиленные бамперы"
-										data-power="1"
-									>
-										Узнать стоимость
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-key="2">
-						<div class="col-lg-3 col-xs-6">
-							<div class="power-accessories centered">
-								<div class="power-accessories-header">
-									<h4>Усиленные пороги</h4>
-								</div>
-								<div class="power-accessories-body">
-									<a
-										href="{% static "/assets_project/img/imgLogo/rapids.png" %}"
-										data-fancybox="images"
-									>
-										<img
-											src="{% static "/assets_project/img/imgLogo/rapids.png" %}"
-										/>
-									</a>
-									<p>
-										Силовые пороги выполняют важную функцию защиты кузова
-										автомобиля от повреждений с боков и грязи.<br />
-									</p>
-								</div>
-								<div class="power-accessories-footer">
-									<button
-										class="kursStyleButton add-to-order-power"
-										data-title="Усиленные пороги"
-										data-power="2"
-									>
-										Узнать стоимость
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-key="3">
-						<div class="col-lg-3 col-xs-6">
-							<div class="power-accessories centered">
-								<div class="power-accessories-header">
-									<h4>Лебедки</h4>
-								</div>
-								<div class="power-accessories-body">
-									<a
-										href="{% static "/assets_project/img/imgLogo/winch.png" %}"
-										data-fancybox="images"
-									>
-										<img
-											src="{% static "/assets_project/img/imgLogo/winch.png" %}"
-										/>
-									</a>
-									<p>
-										Лебедки электрические с тяговым усилием 4310 и 5443
-										килограмм.<br />
-									</p>
-								</div>
-								<div class="power-accessories-footer">
-									<button
-										class="kursStyleButton add-to-order-power"
-										data-title="Лебедки"
-										data-power="3"
-									>
-										Узнать стоимость
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-key="4">
-						<div class="col-lg-3 col-xs-6">
-							<div class="power-accessories centered">
-								<div class="power-accessories-header">
-									<h4>Экспедиционная корзина</h4>
-								</div>
-								<div class="power-accessories-body">
-									<a
-										href="{% static "/assets_project/img/imgLogo/expedition-basket.png" %}"
-										data-fancybox="images"
-									>
-										<img
-											src="{% static "/assets_project/img/imgLogo/expedition-basket.png" %}"
-										/>
-									</a>
-									<p>
-										Отличается не только большим размером, но и усиленной
-										конструкцией, выполненной в виде корзины.<br />
-									</p>
-								</div>
-								<div class="power-accessories-footer">
-									<button
-										class="kursStyleButton add-to-order-power"
-										data-title="Экспедиционная корзина"
-										data-power="4"
-									>
-										Узнать стоимость
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-key="5">
-						<div class="col-lg-3 col-xs-6">
-							<div class="power-accessories centered">
-								<div class="power-accessories-header">
-									<h4>Усиленные защиты кузова и ДВС</h4>
-								</div>
-								<div class="power-accessories-body">
-									<a
-										href="{% static "/assets_project/img/imgLogo/power-crankcase-protection.png" %}"
-										data-fancybox="images"
-									>
-										<img
-											src="{% static "/assets_project/img/imgLogo/power-crankcase-protection.png" %}"
-										/>
-									</a>
-									<p>
-										Предотвращает механические повреждения агрегатов
-										автомобиля, вызываемых дефектами дороги и воздействием
-										посторонних предметов.<br />
-									</p>
-								</div>
-								<div class="power-accessories-footer">
-									<button
-										class="kursStyleButton add-to-order-power"
-										data-title="Усиленные защиты кузова и ДВС"
-										data-power="5"
-									>
-										Узнать стоимость
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-key="6">
-						<div class="col-lg-3 col-xs-6">
-							<div class="power-accessories centered">
-								<div class="power-accessories-header">
-									<h4>Шноркель</h4>
-								</div>
-								<div class="power-accessories-body">
-									<a
-										href="{% static "/assets_project/img/imgLogo/snorkel.png" %}"
-										data-fancybox="images"
-									>
-										<img
-											src="{% static "/assets_project/img/imgLogo/snorkel.png" %}"
-										/>
-									</a>
-									<p>
-										Впускная труба автомобильного двигателя, выведенная на
-										уровень крыши автомобиля или выше.<br />
-									</p>
-								</div>
-								<div class="power-accessories-footer">
-									<button
-										class="kursStyleButton add-to-order-power"
-										data-title="Шноркель"
-										data-power="6"
-									>
-										Узнать стоимость
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-key="7">
-						<div class="col-lg-3 col-xs-6">
-							<div class="power-accessories centered">
-								<div class="power-accessories-header">
-									<h4>Увеличенные или доп. бензобаки</h4>
-								</div>
-								<div class="power-accessories-body">
-									<a
-										href="{% static "/assets_project/img/imgLogo/additional-gas-tank.png" %}"
-										data-fancybox="images"
-									>
-										<img
-											src="{% static "/assets_project/img/imgLogo/additional-gas-tank.png" %}"
-										/>
-									</a>
-									<p>
-										Повышение автономности наших машин через увеличение
-										возимого запаса топлива.<br />
-									</p>
-								</div>
-								<div class="power-accessories-footer">
-									<button
-										class="kursStyleButton add-to-order-power"
-										data-title="Увеличенные или доп. бензобаки"
-										data-power="7"
-									>
-										Узнать стоимость
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div data-key="8">
-						<div class="col-lg-3 col-xs-6">
-							<div class="power-accessories centered">
-								<div class="power-accessories-header">
-									<h4>Дополнительное оборудование</h4>
-								</div>
-								<div class="power-accessories-body">
-									<a
-										href="{% static "/assets_project/img/imgLogo/powe_accessories.png" %}"
-										data-fancybox="images"
-									>
-										<img
-											src="{% static "/assets_project/img/imgLogo/powe_accessories.png" %}"
-										/>
-									</a>
-									<p>
-										Фаркопы, площадки для лебедки, устройство подъема за
-										колесо, крюки, грузинские якоря<br />
-									</p>
-								</div>
-								<div class="power-accessories-footer">
-									<button
-										class="kursStyleButton add-to-order-power"
-										data-title="Дополнительное оборудование"
-										data-power="8"
-									>
-										Узнать стоимость
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div style="clear: both; float: none"></div>
-				</div>
-			</div>
-		</div>
-
-		<h3 class="pretty-header left-right-line-short-header">
-			Наши преимущества
-		</h3>
-		<div class="about-company-info">
-			<div class="embed-responsive embed-responsive-16by9 video">
-				<video
-					class="overlay"
-					src="{% static "/assets_project/video/diagnostics.mp4" %}"
-					type="video/mp4"
-					autoplay=""
-					loop=""
-					preload="auto"
-					muted=""
-					id="video"
-				></video>
-				<div class="row">
-					<div class="col-lg-1 hidden-xs hidden-md"></div>
-					<div class="col-lg-10">
+				<br />
+				<div class="news">
+					<div class="container-content">
 						<div id="list-wrapper" class="list-wrapper">
 							<div data-key="1">
-								<p>
-									Здравствуйте, меня зовут Бакин Евгений Олегович и я
-									являюсь генеральным директором компании ООО"КУРС". Наш
-									автосервис основывается на качестве обслуживания и
-									прозрачности цен. Мы стремимся к тому чтобы клиенты
-									изначально понимали все до самых мелочей предстоящего
-									ремонта или обслуживания автомобиля. Широкий профиль
-									услуг таких как шиномонтаж, сход и развал колес
-									автомобиля, слесарный или капитальный ремонт и
-									проведение планового технического обслуживания
-									транспортного средства. Для достижения целей руководство
-									уделяет особое внимание обновлению оборудования
-									мастерской и с постоянной переодичностью проводит
-									обучение сотрудников. На данном этапе оборудование и
-									квалификация сотрудников позволяет производить ремонт
-									любой сложности, включая ремонт бронированных
-									автомобилей, у которых не только большая масса но и
-									дополнительно установленная защита всех элементов.<br /><span
-										>Мы будем рады знакомству с Вами!</span
-									>
-								</p>
+								<div class="item-stock-news-sale">
+									<div class="item-header">
+										<img
+											class="logo"
+											src="{% static "/assets_project/img/img-news/news.jpg" %}"
+											alt=""
+										/>
+									</div>
+									<div class="item-content">
+										<img
+											class="img-item-sale"
+											src="{% static "/assets_project/img/img-news/covid.jpg" %}"
+											alt=""
+										/>
+										<h4 class="centered">Вакцинация персонала от COVID-19</h4>
+										<p>
+											Важная информация! Сотрудники ООО "КУРС" для безопасности
+											своего и вашего здоровья...
+										</p>
+									</div>
+									<div class="item-footer link-news centered">
+										<a class="kursStyleButton" href="news/index"
+											>ПРОЧЕСТЬ НОВОСТИ</a
+										>
+									</div>
+								</div>
+								<br />
 							</div>
 							<div style="clear: both; float: none"></div>
 						</div>
 					</div>
-					<div class="col-lg-1 hidden-xs hidden-md"></div>
+				</div>
+				<div class="title">
+					<a href="news/index"
+						><h4 class="link-sale centered">Все новости</h4></a
+					>
 				</div>
 			</div>
 		</div>
-		<h3 class="pretty-header left-right-line-short-header">
-			Часто задаваемые вопросы
-		</h3>
-		<div class="direction-kurs">
-			<div class="faq">
-				<div class="wrapper-faq">
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		Направление в деятельности
+	</h3>
+	<div class="direction-kurs">
+		<div class="row">
+			<div id="list-wrapper" class="list-wrapper">
+				<div data-key="1">
+					<div class="col-lg-3 col-xs-6 centered">
+						<div class="item-direction-activity">
+							<img
+								src="{% static "/assets_project/img/img-direction-activity/diagnostics.png" %}"
+								alt="diagnostics.png"
+							/>
+							<h4>Диагностика</h4>
+							<p class="body-text">
+								Мы выполняем диагностику всех систем автомобиля согласно марки и
+								модели. Профессиональное оборудование позволяет выявить любую
+								неисправность и устранить ее, в отличии от оборудования
+								стандартного, общего типа.
+							</p>
+							<p class="footer">от 800 ₽</p>
+						</div>
+					</div>
+				</div>
+				<div data-key="2">
+					<div class="col-lg-3 col-xs-6 centered">
+						<div class="item-direction-activity">
+							<img
+								src="{% static "/assets_project/img/img-direction-activity/oil-filter.jpg" %}"
+								alt="oil-filter.jpg"
+							/>
+							<h4>Техническое обслуживание</h4>
+							<p class="body-text">
+								Проводим комплекс мероприятий, направленных на контроль
+								технического состояния авто, предотвращение возникновения
+								неполадок или своевременное их устранение. Периодическое
+								техническое обслуживание – гарантия надежной работы вашего
+								автомобиля.
+							</p>
+							<p class="footer">от 4500 ₽</p>
+						</div>
+					</div>
+				</div>
+				<div data-key="3">
+					<div class="col-lg-3 col-xs-6 centered">
+						<div class="item-direction-activity">
+							<img
+								src="{% static "/assets_project/img/img-direction-activity/key.jpg" %}"
+								alt="key.jpg"
+							/>
+							<h4>Слесарный ремонт</h4>
+							<p class="body-text">
+								Предоставляем качественный слесарный ремонт, предусматривающий
+								восстановление деталей автомобиля. Наиболее часто в ходе работ
+								ремонтируются элементы подвески, двигателя, выхлопной и
+								топливной системы, и трансмиссии.
+							</p>
+							<p class="footer">н/ч 1500 ₽</p>
+						</div>
+					</div>
+				</div>
+				<div data-key="4">
+					<div class="col-lg-3 col-xs-6 centered">
+						<div class="item-direction-activity">
+							<img
+								src="{% static "/assets_project/img/img-direction-activity/battery.png" %}"
+								alt="battery.png"
+							/>
+							<h4>Электрика</h4>
+							<p class="body-text">
+								Диагностика электроцепей автомобиля, выявление неисправностей,
+								проверка контактных групп, замер вольтажа и ампеража тока
+								выдаваемого генератором. Согласование выполняемых работ с
+								клиентом. Ремонт.
+							</p>
+							<p class="footer">н/ч 1500 ₽</p>
+						</div>
+					</div>
+				</div>
+				<div data-key="5">
+					<div class="col-lg-3 col-xs-6 centered">
+						<div class="item-direction-activity">
+							<img
+								src="{% static "/assets_project/img/img-direction-activity/tire.jpeg" %}"
+								alt="tire.jpeg"
+							/>
+							<h4>Шиномантаж</h4>
+							<p class="body-text">
+								Согласование выполняемых работ с клиентом. Снятие колес и
+								произведение демонтажа шин с диска, очистка диска от продуктов
+								прошлого монтажа, замена вентиля или проверка на целостность
+								датчиков давления шин. Монтаж шин, балансировка. Установка на
+								автомобиль.
+							</p>
+							<p class="footer">от 2000 ₽</p>
+						</div>
+					</div>
+				</div>
+				<div data-key="6">
+					<div class="col-lg-3 col-xs-6 centered">
+						<div class="item-direction-activity">
+							<img
+								src="{% static "/assets_project/img/img-direction-activity/descent-collapse.png" %}"
+								alt="descent-collapse.png"
+							/>
+							<h4>Сход-развал</h4>
+							<p class="body-text">
+								Диагностика узлов подвески. Согласование выполняемых работ с
+								клиентом. Произведение замеров углов схождения, развала колес по
+								всем осям автомобиля, а также кастера(угол наклона стойки)
+								передней оси. Настройка согласно марки и модели автомобиля.
+							</p>
+							<p class="footer">от 2500 ₽</p>
+						</div>
+					</div>
+				</div>
+				<div data-key="7">
+					<div class="col-lg-3 col-xs-6 centered">
+						<div class="item-direction-activity">
+							<img
+								src="{% static "/assets_project/img/img-direction-activity/dvs.png" %}"
+								alt="dvs.png"
+							/>
+							<h4>Капитальный ремонт ДВС</h4>
+							<p class="body-text">
+								Диагностика по всем пунктам. Снятие ДВС и дефектовка при
+								клиенте, это очень важно чтобы вы понимали весь объем
+								предстоящего ремонта. Согласование с клиентом ремонта по каждому
+								пункту, включая запасные части и работу. Ремонт. Гарантийные
+								обязательства.
+							</p>
+							<p class="footer">н/ч 2000 ₽</p>
+						</div>
+					</div>
+				</div>
+				<div data-key="8">
+					<div class="col-lg-3 col-xs-6 centered">
+						<div class="item-direction-activity">
+							<img
+								src="{% static "/assets_project/img/img-direction-activity/akpp.png" %}"
+								alt="akpp.png"
+							/>
+							<h4>Ремонт КПП, АКПП, CVT</h4>
+							<p class="body-text">
+								Диагностика по всем пунктам. Снятие узла и отправка к
+								официальным представителям изготовителя на дефектовку и
+								последующий ремонт. Согласование с клиентом ремонта по каждому
+								пункту, включая запасные части и работу. Ремонт. Гарантийные
+								обязательства.
+							</p>
+							<p class="footer">от 40000 ₽</p>
+						</div>
+					</div>
+				</div>
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">Всегда в наличии</h3>
+	<div class="consumables">
+		<div class="row">
+			<div class="col-lg-12">
+				<h3 class="centered">
+					Бочковые и оригинальные масла, оригинальные запасные части и аналоги
+				</h3>
+			</div>
+			<div id="list-wrapper" class="list-wrapper">
+				<div data-key="1">
+					<div class="col-lg-4">
+						<div class="item-oil-details">
+							<div class="col-lg-8 col-xs-8">
+								<h4>Бочковые масла</h4>
+								<p>
+									Масло MOBIL для любых типов двигателей, трансмиссий. С разной
+									вязкостью, температурным режимом, бензиновые и дизельные ДВС.
+								</p>
+							</div>
+							<div class="col-lg-4 col-xs-4">
+								<img
+									src="{% static "/assets_project/img/imgLogo/mobil-original.png" %}"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-key="2">
+					<div class="col-lg-4">
+						<div class="item-oil-details">
+							<div class="col-lg-8 col-xs-8">
+								<h4>Фасованные масла</h4>
+								<p>
+									Оригинальные моторные, трансмиссионные масла от проверенных
+									поставщиков. Сертифицированная продукция со 100% гарантией.
+								</p>
+							</div>
+							<div class="col-lg-4 col-xs-4">
+								<img
+									src="{% static "/assets_project/img/imgLogo/toyota-oil.png" %}"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-key="3">
+					<div class="col-lg-4">
+						<div class="item-oil-details">
+							<div class="col-lg-8 col-xs-8">
+								<h4>Оригинальные детали и аналоги</h4>
+								<p>
+									Мы на прямую сотрудничаем с проверенными поставщиками.
+									Сертифицированная продукция со 100% гарантией.
+								</p>
+							</div>
+							<div class="col-lg-4 col-xs-4">
+								<img
+									src="{% static "/assets_project/img/imgLogo/content_bu.jpg" %}"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		Cиловое дополнительное оборудование
+	</h3>
+	<div class="preview-power hidden-xs hidden-sm">
+		<div class="row">
+			<div class="col-lg-3">
+				<img
+					class="left"
+					src="{% static "/assets_project/img/imgLogo/land-cruser-power.jpg" %}"
+				/>
+			</div>
+			<div class="col-lg-6">
+				<p>
+					ООО "КУРС" совместно с компанией АМЗ предоставляет возможность
+					приобретения и установки оборудования для участия в соревнованиях по
+					трофи-рейду в категориях ТР-1, ТР-2, ТР-3, а так же для экспедиций,
+					путешествий, патрулирования лесов, - иными словами - для тяжелой
+					ежедневной эксплуатации в условиях российского бездорожья.
+				</p>
+			</div>
+			<div class="col-lg-3">
+				<img
+					class="right"
+					src="{% static "/assets_project/img/imgLogo/land-cruser-power-2.jpg" %}"
+				/>
+			</div>
+		</div>
+	</div>
+	<div class="power-accessories-block">
+		<div class="row">
+			<div id="list-wrapper" class="list-wrapper">
+				<div data-key="1">
+					<div class="col-lg-3 col-xs-6">
+						<div class="power-accessories centered">
+							<div class="power-accessories-header">
+								<h4>Усиленные бамперы</h4>
+							</div>
+							<div class="power-accessories-body">
+								<a
+									href="{% static "/assets_project/img/imgLogo/bumper-reinforced.png" %}"
+									data-fancybox="images"
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/bumper-reinforced.png" %}"
+									/>
+								</a>
+								<p>
+									Эргономичность и дизайн, компактность, прочность, соответствие
+									действующему законодательству<br />
+								</p>
+							</div>
+							<div class="power-accessories-footer">
+								<button
+									class="kursStyleButton add-to-order-power"
+									data-title="Усиленные бамперы"
+									data-power="1"
+								>
+									Узнать стоимость
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-key="2">
+					<div class="col-lg-3 col-xs-6">
+						<div class="power-accessories centered">
+							<div class="power-accessories-header">
+								<h4>Усиленные пороги</h4>
+							</div>
+							<div class="power-accessories-body">
+								<a
+									href="{% static "/assets_project/img/imgLogo/rapids.png" %}"
+									data-fancybox="images"
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/rapids.png" %}"
+									/>
+								</a>
+								<p>
+									Силовые пороги выполняют важную функцию защиты кузова
+									автомобиля от повреждений с боков и грязи.<br />
+								</p>
+							</div>
+							<div class="power-accessories-footer">
+								<button
+									class="kursStyleButton add-to-order-power"
+									data-title="Усиленные пороги"
+									data-power="2"
+								>
+									Узнать стоимость
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-key="3">
+					<div class="col-lg-3 col-xs-6">
+						<div class="power-accessories centered">
+							<div class="power-accessories-header">
+								<h4>Лебедки</h4>
+							</div>
+							<div class="power-accessories-body">
+								<a
+									href="{% static "/assets_project/img/imgLogo/winch.png" %}"
+									data-fancybox="images"
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/winch.png" %}"
+									/>
+								</a>
+								<p>
+									Лебедки электрические с тяговым усилием 4310 и 5443
+									килограмм.<br />
+								</p>
+							</div>
+							<div class="power-accessories-footer">
+								<button
+									class="kursStyleButton add-to-order-power"
+									data-title="Лебедки"
+									data-power="3"
+								>
+									Узнать стоимость
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-key="4">
+					<div class="col-lg-3 col-xs-6">
+						<div class="power-accessories centered">
+							<div class="power-accessories-header">
+								<h4>Экспедиционная корзина</h4>
+							</div>
+							<div class="power-accessories-body">
+								<a
+									href="{% static "/assets_project/img/imgLogo/expedition-basket.png" %}"
+									data-fancybox="images"
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/expedition-basket.png" %}"
+									/>
+								</a>
+								<p>
+									Отличается не только большим размером, но и усиленной
+									конструкцией, выполненной в виде корзины.<br />
+								</p>
+							</div>
+							<div class="power-accessories-footer">
+								<button
+									class="kursStyleButton add-to-order-power"
+									data-title="Экспедиционная корзина"
+									data-power="4"
+								>
+									Узнать стоимость
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-key="5">
+					<div class="col-lg-3 col-xs-6">
+						<div class="power-accessories centered">
+							<div class="power-accessories-header">
+								<h4>Усиленные защиты кузова и ДВС</h4>
+							</div>
+							<div class="power-accessories-body">
+								<a
+									href="{% static "/assets_project/img/imgLogo/power-crankcase-protection.png" %}"
+									data-fancybox="images"
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/power-crankcase-protection.png" %}"
+									/>
+								</a>
+								<p>
+									Предотвращает механические повреждения агрегатов автомобиля,
+									вызываемых дефектами дороги и воздействием посторонних
+									предметов.<br />
+								</p>
+							</div>
+							<div class="power-accessories-footer">
+								<button
+									class="kursStyleButton add-to-order-power"
+									data-title="Усиленные защиты кузова и ДВС"
+									data-power="5"
+								>
+									Узнать стоимость
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-key="6">
+					<div class="col-lg-3 col-xs-6">
+						<div class="power-accessories centered">
+							<div class="power-accessories-header">
+								<h4>Шноркель</h4>
+							</div>
+							<div class="power-accessories-body">
+								<a
+									href="{% static "/assets_project/img/imgLogo/snorkel.png" %}"
+									data-fancybox="images"
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/snorkel.png" %}"
+									/>
+								</a>
+								<p>
+									Впускная труба автомобильного двигателя, выведенная на уровень
+									крыши автомобиля или выше.<br />
+								</p>
+							</div>
+							<div class="power-accessories-footer">
+								<button
+									class="kursStyleButton add-to-order-power"
+									data-title="Шноркель"
+									data-power="6"
+								>
+									Узнать стоимость
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-key="7">
+					<div class="col-lg-3 col-xs-6">
+						<div class="power-accessories centered">
+							<div class="power-accessories-header">
+								<h4>Увеличенные или доп. бензобаки</h4>
+							</div>
+							<div class="power-accessories-body">
+								<a
+									href="{% static "/assets_project/img/imgLogo/additional-gas-tank.png" %}"
+									data-fancybox="images"
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/additional-gas-tank.png" %}"
+									/>
+								</a>
+								<p>
+									Повышение автономности наших машин через увеличение возимого
+									запаса топлива.<br />
+								</p>
+							</div>
+							<div class="power-accessories-footer">
+								<button
+									class="kursStyleButton add-to-order-power"
+									data-title="Увеличенные или доп. бензобаки"
+									data-power="7"
+								>
+									Узнать стоимость
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-key="8">
+					<div class="col-lg-3 col-xs-6">
+						<div class="power-accessories centered">
+							<div class="power-accessories-header">
+								<h4>Дополнительное оборудование</h4>
+							</div>
+							<div class="power-accessories-body">
+								<a
+									href="{% static "/assets_project/img/imgLogo/powe_accessories.png" %}"
+									data-fancybox="images"
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/powe_accessories.png" %}"
+									/>
+								</a>
+								<p>
+									Фаркопы, площадки для лебедки, устройство подъема за колесо,
+									крюки, грузинские якоря<br />
+								</p>
+							</div>
+							<div class="power-accessories-footer">
+								<button
+									class="kursStyleButton add-to-order-power"
+									data-title="Дополнительное оборудование"
+									data-power="8"
+								>
+									Узнать стоимость
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+	</div>
+
+	<h3 class="pretty-header left-right-line-short-header">Наши преимущества</h3>
+	<div class="about-company-info">
+		<div class="embed-responsive embed-responsive-16by9 video">
+			<video
+				class="overlay"
+				src="{% static "/assets_project/video/diagnostics.mp4" %}"
+				type="video/mp4"
+				autoplay=""
+				loop=""
+				preload="auto"
+				muted=""
+				id="video"
+			></video>
+			<div class="row">
+				<div class="col-lg-1 hidden-xs hidden-md"></div>
+				<div class="col-lg-10">
 					<div id="list-wrapper" class="list-wrapper">
 						<div data-key="1">
-							<div class="item-faq">
-								<div data-toggle-id="answer-1" class="question arrow">
-									<h4 class="title-question">
-										Какие формы оплаты у ООО "КУРС"?
-									</h4>
-								</div>
-								<div id="answer-1" class="answer" hidden>
-									<p>
-										Произвести расчет за проделанные работы можно
-										наличными, безналичным (банковской картой, переводом).
-									</p>
-								</div>
-							</div>
-						</div>
-						<div data-key="2">
-							<div class="item-faq">
-								<div data-toggle-id="answer-2" class="question arrow">
-									<h4 class="title-question">
-										Какие виды работ вы производите?
-									</h4>
-								</div>
-								<div id="answer-2" class="answer" hidden>
-									<p>
-										ООО "КУРС" производит огромный спектр оказания услуг:
-										шиномонтаж, сход-развал колес, диагностика всех
-										систем, техническое обслуживание, слесарный ремонт,
-										капитальный ремонт ДВС и КПП всех видов и т.д.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div data-key="3">
-							<div class="item-faq">
-								<div data-toggle-id="answer-3" class="question arrow">
-									<h4 class="title-question">
-										Могу ли я оставить автомобиль для проведения
-										диагностических работ?
-									</h4>
-								</div>
-								<div id="answer-3" class="answer" hidden>
-									<p>
-										Да!, Специалисты ООО "КУРС" проведут весь спектр
-										диагностических работы, Администратор составит смету
-										необходимого ремонта и согласует с Вами, сроки и
-										стоимость обслуживания. После этого на автомобиле
-										проводятся все согласованные с Вами работы. Так же Вы
-										получаете скидку на обслуживание 10% в случае ремонта
-										автомобиля в этот же день.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div data-key="4">
-							<div class="item-faq">
-								<div data-toggle-id="answer-4" class="question arrow">
-									<h4 class="title-question">
-										У меня сломался автомобиль и я не знаю что делать. Вы
-										поможете?
-									</h4>
-								</div>
-								<div id="answer-4" class="answer" hidden>
-									<p>
-										Мы отправим вам эвакуатор в любое удобное для Вас
-										время. Специалисты ООО "КУРС" произведут диагностику
-										всех систем и согласуют с Вами все работы которые
-										нужно произвести с автомобилем. В случае капитального
-										ремонта любого из узлов, эвакуация для вас за наш
-										счет!
-									</p>
-								</div>
-							</div>
-						</div>
-						<div data-key="5">
-							<div class="item-faq">
-								<div data-toggle-id="answer-5" class="question arrow">
-									<h4 class="title-question">
-										Я покупаю автомобиль, можно произвести диагностику у
-										вас перед покупкой?
-									</h4>
-								</div>
-								<div id="answer-5" class="answer" hidden>
-									<p>
-										Мы проводим диагностику автомобиля более чем по 40
-										пунктам. Диагностика включает в себя — полный осмотр
-										ходовой части, рулевой, тормозной, ДВС, МКПП, проверку
-										и состояния всех технических жидкостей и фильтров,
-										замер компрессионного давления бензинового и
-										дизельного двс, сканируется электронная система
-										автомобиля на наличие неисправностей, а также
-										корректную работу датчиков и сенсоров. На стенде
-										регулировки углов установки колес, мы проверяем
-										наличие смещение ходовой части, а так же проводим
-										анализ возможных неисправностей.
-									</p>
-								</div>
-							</div>
+							<p>
+								Здравствуйте, меня зовут Бакин Евгений Олегович и я являюсь
+								генеральным директором компании ООО"КУРС". Наш автосервис
+								основывается на качестве обслуживания и прозрачности цен. Мы
+								стремимся к тому чтобы клиенты изначально понимали все до самых
+								мелочей предстоящего ремонта или обслуживания автомобиля.
+								Широкий профиль услуг таких как шиномонтаж, сход и развал колес
+								автомобиля, слесарный или капитальный ремонт и проведение
+								планового технического обслуживания транспортного средства. Для
+								достижения целей руководство уделяет особое внимание обновлению
+								оборудования мастерской и с постоянной переодичностью проводит
+								обучение сотрудников. На данном этапе оборудование и
+								квалификация сотрудников позволяет производить ремонт любой
+								сложности, включая ремонт бронированных автомобилей, у которых
+								не только большая масса но и дополнительно установленная защита
+								всех элементов.<br /><span
+									>Мы будем рады знакомству с Вами!</span
+								>
+							</p>
 						</div>
 						<div style="clear: both; float: none"></div>
 					</div>
 				</div>
+				<div class="col-lg-1 hidden-xs hidden-md"></div>
 			</div>
 		</div>
-		<h3 class="pretty-header left-right-line-short-header">
-			Всё то, чтобы считаться лучшими
-		</h3>
-		<div class="advantages-section" id="advantages">
-			<div class="range-services-kurs">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="advantages">
-							<div id="list-wrapper" class="list-wrapper">
-								<div data-key="5">
-									<div
-										class="element wow fadeInDown"
-										style="
-											visibility: visible;
-											animation-name: fadeInDown;
-										"
-									>
-										<div class="row">
-											<div class="col-xs-2">
-												<div class="img-wrapper">
-													<img
-														src="{% static "/assets_project/img/imgLogo/icon1.png" %}"
-														alt=""
-													/>
-												</div>
-											</div>
-											<div class="col-xs-10">
-												<div class="title-h4">Полный спектр услуг</div>
-												<div class="text gray f16">
-													От диагностики до капитального ремонта. Кроме
-													того, у нас можно заказать запчасти для
-													автомобилей.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div data-key="6">
-									<div
-										class="element wow fadeInDown"
-										style="
-											visibility: visible;
-											animation-name: fadeInDown;
-										"
-									>
-										<div class="row">
-											<div class="col-xs-2">
-												<div class="img-wrapper">
-													<img
-														src="{% static "/assets_project/img/imgLogo/icon2.png" %}"
-														alt=""
-													/>
-												</div>
-											</div>
-											<div class="col-xs-10">
-												<div class="title-h4">Демократичные цены</div>
-												<div class="text gray f16">
-													Мы стараемся дать лучшие цены. Так как
-													рассчитываем на постоянное сотрудничество.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div data-key="7">
-									<div
-										class="element wow fadeInDown"
-										style="
-											visibility: visible;
-											animation-name: fadeInDown;
-										"
-									>
-										<div class="row">
-											<div class="col-xs-2">
-												<div class="img-wrapper">
-													<img
-														src="{% static "/assets_project/img/imgLogo/icon3.png" %}"
-														alt=""
-													/>
-												</div>
-											</div>
-											<div class="col-xs-10">
-												<div class="title-h4">
-													Высокая квалификация мастеров
-												</div>
-												<div class="text gray f16">
-													Специалисты нашего сервиса – профессионалы с
-													опытом работы более от10 лет в сфере ремонта
-													авто
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div data-key="8">
-									<div
-										class="element wow fadeInDown"
-										style="
-											visibility: visible;
-											animation-name: fadeInDown;
-										"
-									>
-										<div class="row">
-											<div class="col-xs-2">
-												<div class="img-wrapper">
-													<img
-														src="{% static "/assets_project/img/imgLogo/icon4.png" %}"
-														alt=""
-													/>
-												</div>
-											</div>
-											<div class="col-xs-10">
-												<div class="title-h4">
-													Ваш автомобиль в сохранности
-												</div>
-												<div class="text gray f16">
-													На время выполнения работ и ожидания запчастей
-													для ремонта, ваш автомобиль будет находится на
-													закрытой и охраняемой территории
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div style="clear: both; float: none"></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="advantages">
-							<div id="list-wrapper" class="list-wrapper">
-								<div data-key="9">
-									<div
-										class="element wow fadeInDown"
-										style="
-											visibility: visible;
-											animation-name: fadeInDown;
-										"
-									>
-										<div class="row">
-											<div class="col-xs-2">
-												<div class="img-wrapper">
-													<img
-														src="{% static "/assets_project/img/imgLogo/icon5.png" %}"
-														alt=""
-													/>
-												</div>
-											</div>
-											<div class="col-xs-10">
-												<div class="title-h4">
-													Статус сертифицированного техцентра
-												</div>
-												<div class="text gray f16">
-													У нас имеются все необходимые сертификаты и
-													гарантия на все проделанные работы.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div data-key="10">
-									<div
-										class="element wow fadeInDown"
-										style="
-											visibility: visible;
-											animation-name: fadeInDown;
-										"
-									>
-										<div class="row">
-											<div class="col-xs-2">
-												<div class="img-wrapper">
-													<img
-														src="{% static "/assets_project/img/imgLogo/icon6.png" %}"
-														alt=""
-													/>
-												</div>
-											</div>
-											<div class="col-xs-10">
-												<div class="title-h4">Акции и спеццены</div>
-												<div class="text gray f16">
-													Каждый месяц у нас проводятся акции и скидки на
-													определенные виды услуг, за которыми удобно
-													следить в разделе новости и социальных сетях
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div data-key="11">
-									<div
-										class="element wow fadeInDown"
-										style="
-											visibility: visible;
-											animation-name: fadeInDown;
-										"
-									>
-										<div class="row">
-											<div class="col-xs-2">
-												<div class="img-wrapper">
-													<img
-														src="{% static "/assets_project/img/imgLogo/icon7.png" %}"
-														alt=""
-													/>
-												</div>
-											</div>
-											<div class="col-xs-10">
-												<div class="title-h4">
-													Профессиональное оборудование
-												</div>
-												<div class="text gray f16">
-													Мы используем только профессиональное
-													оборудование и линейки материалов от ведущих
-													мировых производителей
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div data-key="12">
-									<div
-										class="element wow fadeInDown"
-										style="
-											visibility: visible;
-											animation-name: fadeInDown;
-										"
-									>
-										<div class="row">
-											<div class="col-xs-2">
-												<div class="img-wrapper">
-													<img
-														src="{% static "/assets_project/img/imgLogo/icon8.png" %}"
-														alt=""
-													/>
-												</div>
-											</div>
-											<div class="col-xs-10">
-												<div class="title-h4">
-													Зона отдыха, журналы и бесплатный чай/кофе
-												</div>
-												<div class="text gray f16">
-													Вы всегда можете подождать окончание работ в
-													уютной комнате ожидания.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div style="clear: both; float: none"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<h3 class="pretty-header left-right-line-short-header">
-			Профессиональное оборудование
-		</h3>
-		<div class="photo_professional_equipment">
-			<div class="row">
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		Часто задаваемые вопросы
+	</h3>
+	<div class="direction-kurs">
+		<div class="faq">
+			<div class="wrapper-faq">
 				<div id="list-wrapper" class="list-wrapper">
 					<div data-key="1">
-						<div class="photo col-lg-3 col-xs-6">
-							<a
-								href="{% static "/assets_project/img/img-photo-gallery/29.jpeg" %}"
-								data-fancybox="images"
-							>
-								<img
-									src="{% static "/assets_project/img/img-photo-gallery/29.jpeg" %}"
-								/>
-							</a>
+						<div class="item-faq">
+							<div data-toggle-id="answer-1" class="question arrow">
+								<h4 class="title-question">Какие формы оплаты у ООО "КУРС"?</h4>
+							</div>
+							<div id="answer-1" class="answer" hidden>
+								<p>
+									Произвести расчет за проделанные работы можно наличными,
+									безналичным (банковской картой, переводом).
+								</p>
+							</div>
 						</div>
 					</div>
 					<div data-key="2">
-						<div class="photo col-lg-3 col-xs-6">
-							<a
-								href="{% static "/assets_project/img/img-photo-gallery/30.jpeg" %}"
-								data-fancybox="images"
-							>
-								<img
-									src="{% static "/assets_project/img/img-photo-gallery/30.jpeg" %}"
-								/>
-							</a>
+						<div class="item-faq">
+							<div data-toggle-id="answer-2" class="question arrow">
+								<h4 class="title-question">Какие виды работ вы производите?</h4>
+							</div>
+							<div id="answer-2" class="answer" hidden>
+								<p>
+									ООО "КУРС" производит огромный спектр оказания услуг:
+									шиномонтаж, сход-развал колес, диагностика всех систем,
+									техническое обслуживание, слесарный ремонт, капитальный ремонт
+									ДВС и КПП всех видов и т.д.
+								</p>
+							</div>
 						</div>
 					</div>
 					<div data-key="3">
-						<div class="photo col-lg-3 col-xs-6">
-							<a
-								href="{% static "/assets_project/img/img-photo-gallery/31.jpeg" %}"
-								data-fancybox="images"
-							>
-								<img
-									src="{% static "/assets_project/img/img-photo-gallery/31.jpeg" %}"
-								/>
-							</a>
+						<div class="item-faq">
+							<div data-toggle-id="answer-3" class="question arrow">
+								<h4 class="title-question">
+									Могу ли я оставить автомобиль для проведения диагностических
+									работ?
+								</h4>
+							</div>
+							<div id="answer-3" class="answer" hidden>
+								<p>
+									Да!, Специалисты ООО "КУРС" проведут весь спектр
+									диагностических работы, Администратор составит смету
+									необходимого ремонта и согласует с Вами, сроки и стоимость
+									обслуживания. После этого на автомобиле проводятся все
+									согласованные с Вами работы. Так же Вы получаете скидку на
+									обслуживание 10% в случае ремонта автомобиля в этот же день.
+								</p>
+							</div>
 						</div>
 					</div>
 					<div data-key="4">
-						<div class="photo col-lg-3 col-xs-6">
-							<a
-								href="{% static "/assets_project/img/img-photo-gallery/32.jpeg" %}"
-								data-fancybox="images"
-							>
-								<img
-									src="{% static "/assets_project/img/img-photo-gallery/32.jpeg" %}"
-								/>
-							</a>
+						<div class="item-faq">
+							<div data-toggle-id="answer-4" class="question arrow">
+								<h4 class="title-question">
+									У меня сломался автомобиль и я не знаю что делать. Вы
+									поможете?
+								</h4>
+							</div>
+							<div id="answer-4" class="answer" hidden>
+								<p>
+									Мы отправим вам эвакуатор в любое удобное для Вас время.
+									Специалисты ООО "КУРС" произведут диагностику всех систем и
+									согласуют с Вами все работы которые нужно произвести с
+									автомобилем. В случае капитального ремонта любого из узлов,
+									эвакуация для вас за наш счет!
+								</p>
+							</div>
 						</div>
 					</div>
 					<div data-key="5">
-						<div class="photo col-lg-3 col-xs-6">
-							<a
-								href="{% static "/assets_project/img/img-photo-gallery/33.jpeg" %}"
-								data-fancybox="images"
-							>
-								<img
-									src="{% static "/assets_project/img/img-photo-gallery/33.jpeg" %}"
-								/>
-							</a>
-						</div>
-					</div>
-					<div data-key="6">
-						<div class="photo col-lg-3 col-xs-6">
-							<a
-								href="{% static "/assets_project/img/img-photo-gallery/35.jpeg" %}"
-								data-fancybox="images"
-							>
-								<img
-									src="{% static "/assets_project/img/img-photo-gallery/35.jpeg" %}"
-								/>
-							</a>
-						</div>
-					</div>
-					<div data-key="7">
-						<div class="photo col-lg-3 col-xs-6">
-							<a
-								href="{% static "/assets_project/img/img-photo-gallery/36.jpeg" %}"
-								data-fancybox="images"
-							>
-								<img
-									src="{% static "/assets_project/img/img-photo-gallery/36.jpeg" %}"
-								/>
-							</a>
-						</div>
-					</div>
-					<div data-key="8">
-						<div class="photo col-lg-3 col-xs-6">
-							<a
-								href="{% static "/assets_project/img/img-photo-gallery/37.jpeg" %}"
-								data-fancybox="images"
-							>
-								<img
-									src="{% static "/assets_project/img/img-photo-gallery/37.jpeg" %}"
-								/>
-							</a>
+						<div class="item-faq">
+							<div data-toggle-id="answer-5" class="question arrow">
+								<h4 class="title-question">
+									Я покупаю автомобиль, можно произвести диагностику у вас перед
+									покупкой?
+								</h4>
+							</div>
+							<div id="answer-5" class="answer" hidden>
+								<p>
+									Мы проводим диагностику автомобиля более чем по 40 пунктам.
+									Диагностика включает в себя — полный осмотр ходовой части,
+									рулевой, тормозной, ДВС, МКПП, проверку и состояния всех
+									технических жидкостей и фильтров, замер компрессионного
+									давления бензинового и дизельного двс, сканируется электронная
+									система автомобиля на наличие неисправностей, а также
+									корректную работу датчиков и сенсоров. На стенде регулировки
+									углов установки колес, мы проверяем наличие смещение ходовой
+									части, а так же проводим анализ возможных неисправностей.
+								</p>
+							</div>
 						</div>
 					</div>
 					<div style="clear: both; float: none"></div>
@@ -1370,6 +986,332 @@
 			</div>
 		</div>
 	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		Всё то, чтобы считаться лучшими
+	</h3>
+	<div class="advantages-section" id="advantages">
+		<div class="range-services-kurs">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="advantages">
+						<div id="list-wrapper" class="list-wrapper">
+							<div data-key="5">
+								<div
+									class="element wow fadeInDown"
+									style="visibility: visible; animation-name: fadeInDown"
+								>
+									<div class="row">
+										<div class="col-xs-2">
+											<div class="img-wrapper">
+												<img
+													src="{% static "/assets_project/img/imgLogo/icon1.png" %}"
+													alt=""
+												/>
+											</div>
+										</div>
+										<div class="col-xs-10">
+											<div class="title-h4">Полный спектр услуг</div>
+											<div class="text gray f16">
+												От диагностики до капитального ремонта. Кроме того, у
+												нас можно заказать запчасти для автомобилей.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="6">
+								<div
+									class="element wow fadeInDown"
+									style="visibility: visible; animation-name: fadeInDown"
+								>
+									<div class="row">
+										<div class="col-xs-2">
+											<div class="img-wrapper">
+												<img
+													src="{% static "/assets_project/img/imgLogo/icon2.png" %}"
+													alt=""
+												/>
+											</div>
+										</div>
+										<div class="col-xs-10">
+											<div class="title-h4">Демократичные цены</div>
+											<div class="text gray f16">
+												Мы стараемся дать лучшие цены. Так как рассчитываем на
+												постоянное сотрудничество.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="7">
+								<div
+									class="element wow fadeInDown"
+									style="visibility: visible; animation-name: fadeInDown"
+								>
+									<div class="row">
+										<div class="col-xs-2">
+											<div class="img-wrapper">
+												<img
+													src="{% static "/assets_project/img/imgLogo/icon3.png" %}"
+													alt=""
+												/>
+											</div>
+										</div>
+										<div class="col-xs-10">
+											<div class="title-h4">Высокая квалификация мастеров</div>
+											<div class="text gray f16">
+												Специалисты нашего сервиса – профессионалы с опытом
+												работы более от10 лет в сфере ремонта авто
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="8">
+								<div
+									class="element wow fadeInDown"
+									style="visibility: visible; animation-name: fadeInDown"
+								>
+									<div class="row">
+										<div class="col-xs-2">
+											<div class="img-wrapper">
+												<img
+													src="{% static "/assets_project/img/imgLogo/icon4.png" %}"
+													alt=""
+												/>
+											</div>
+										</div>
+										<div class="col-xs-10">
+											<div class="title-h4">Ваш автомобиль в сохранности</div>
+											<div class="text gray f16">
+												На время выполнения работ и ожидания запчастей для
+												ремонта, ваш автомобиль будет находится на закрытой и
+												охраняемой территории
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="clear: both; float: none"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="advantages">
+						<div id="list-wrapper" class="list-wrapper">
+							<div data-key="9">
+								<div
+									class="element wow fadeInDown"
+									style="visibility: visible; animation-name: fadeInDown"
+								>
+									<div class="row">
+										<div class="col-xs-2">
+											<div class="img-wrapper">
+												<img
+													src="{% static "/assets_project/img/imgLogo/icon5.png" %}"
+													alt=""
+												/>
+											</div>
+										</div>
+										<div class="col-xs-10">
+											<div class="title-h4">
+												Статус сертифицированного техцентра
+											</div>
+											<div class="text gray f16">
+												У нас имеются все необходимые сертификаты и гарантия на
+												все проделанные работы.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="10">
+								<div
+									class="element wow fadeInDown"
+									style="visibility: visible; animation-name: fadeInDown"
+								>
+									<div class="row">
+										<div class="col-xs-2">
+											<div class="img-wrapper">
+												<img
+													src="{% static "/assets_project/img/imgLogo/icon6.png" %}"
+													alt=""
+												/>
+											</div>
+										</div>
+										<div class="col-xs-10">
+											<div class="title-h4">Акции и спеццены</div>
+											<div class="text gray f16">
+												Каждый месяц у нас проводятся акции и скидки на
+												определенные виды услуг, за которыми удобно следить в
+												разделе новости и социальных сетях
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="11">
+								<div
+									class="element wow fadeInDown"
+									style="visibility: visible; animation-name: fadeInDown"
+								>
+									<div class="row">
+										<div class="col-xs-2">
+											<div class="img-wrapper">
+												<img
+													src="{% static "/assets_project/img/imgLogo/icon7.png" %}"
+													alt=""
+												/>
+											</div>
+										</div>
+										<div class="col-xs-10">
+											<div class="title-h4">Профессиональное оборудование</div>
+											<div class="text gray f16">
+												Мы используем только профессиональное оборудование и
+												линейки материалов от ведущих мировых производителей
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="12">
+								<div
+									class="element wow fadeInDown"
+									style="visibility: visible; animation-name: fadeInDown"
+								>
+									<div class="row">
+										<div class="col-xs-2">
+											<div class="img-wrapper">
+												<img
+													src="{% static "/assets_project/img/imgLogo/icon8.png" %}"
+													alt=""
+												/>
+											</div>
+										</div>
+										<div class="col-xs-10">
+											<div class="title-h4">
+												Зона отдыха, журналы и бесплатный чай/кофе
+											</div>
+											<div class="text gray f16">
+												Вы всегда можете подождать окончание работ в уютной
+												комнате ожидания.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="clear: both; float: none"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		Профессиональное оборудование
+	</h3>
+	<div class="photo_professional_equipment">
+		<div class="row">
+			<div id="list-wrapper" class="list-wrapper">
+				<div data-key="1">
+					<div class="photo col-lg-3 col-xs-6">
+						<a
+							href="{% static "/assets_project/img/img-photo-gallery/29.jpeg" %}"
+							data-fancybox="images"
+						>
+							<img
+								src="{% static "/assets_project/img/img-photo-gallery/29.jpeg" %}"
+							/>
+						</a>
+					</div>
+				</div>
+				<div data-key="2">
+					<div class="photo col-lg-3 col-xs-6">
+						<a
+							href="{% static "/assets_project/img/img-photo-gallery/30.jpeg" %}"
+							data-fancybox="images"
+						>
+							<img
+								src="{% static "/assets_project/img/img-photo-gallery/30.jpeg" %}"
+							/>
+						</a>
+					</div>
+				</div>
+				<div data-key="3">
+					<div class="photo col-lg-3 col-xs-6">
+						<a
+							href="{% static "/assets_project/img/img-photo-gallery/31.jpeg" %}"
+							data-fancybox="images"
+						>
+							<img
+								src="{% static "/assets_project/img/img-photo-gallery/31.jpeg" %}"
+							/>
+						</a>
+					</div>
+				</div>
+				<div data-key="4">
+					<div class="photo col-lg-3 col-xs-6">
+						<a
+							href="{% static "/assets_project/img/img-photo-gallery/32.jpeg" %}"
+							data-fancybox="images"
+						>
+							<img
+								src="{% static "/assets_project/img/img-photo-gallery/32.jpeg" %}"
+							/>
+						</a>
+					</div>
+				</div>
+				<div data-key="5">
+					<div class="photo col-lg-3 col-xs-6">
+						<a
+							href="{% static "/assets_project/img/img-photo-gallery/33.jpeg" %}"
+							data-fancybox="images"
+						>
+							<img
+								src="{% static "/assets_project/img/img-photo-gallery/33.jpeg" %}"
+							/>
+						</a>
+					</div>
+				</div>
+				<div data-key="6">
+					<div class="photo col-lg-3 col-xs-6">
+						<a
+							href="{% static "/assets_project/img/img-photo-gallery/35.jpeg" %}"
+							data-fancybox="images"
+						>
+							<img
+								src="{% static "/assets_project/img/img-photo-gallery/35.jpeg" %}"
+							/>
+						</a>
+					</div>
+				</div>
+				<div data-key="7">
+					<div class="photo col-lg-3 col-xs-6">
+						<a
+							href="{% static "/assets_project/img/img-photo-gallery/36.jpeg" %}"
+							data-fancybox="images"
+						>
+							<img
+								src="{% static "/assets_project/img/img-photo-gallery/36.jpeg" %}"
+							/>
+						</a>
+					</div>
+				</div>
+				<div data-key="8">
+					<div class="photo col-lg-3 col-xs-6">
+						<a
+							href="{% static "/assets_project/img/img-photo-gallery/37.jpeg" %}"
+							data-fancybox="images"
+						>
+							<img
+								src="{% static "/assets_project/img/img-photo-gallery/37.jpeg" %}"
+							/>
+						</a>
+					</div>
+				</div>
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
 	</div>
+</div>
 {% endblock content %}
