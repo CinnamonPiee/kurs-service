@@ -1,0 +1,27 @@
+{% extends "main_page/base.html" %}
+{% load static %}
+
+
+{% block title %}
+<title>{{ title }}</title>
+{% endblock title %}
+
+
+{% block content %}
+	<ul class="breadcrumb">
+		<li><a href="/">Главная</a></li>
+		<li class="active">Ваш чек лист</li>
+	</ul>
+	<div class="section">
+		<div id="content-check-list">
+			<div class="centered">
+				<h3 class="pretty-header left-right-line-short-header">Ваш чек лист</h3>
+			</div>
+			<div class="empty-shopping-check-list">
+				<p>В данный момент вы не добавили еще ни одной услуги</p>
+				<p>Посетите наш прайс лист, например техническое облсуживание автомобиля <br><br> <a class="kursStyleButton"
+						href="/price-maintenance"> Техническое обслуживание</a></p>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
