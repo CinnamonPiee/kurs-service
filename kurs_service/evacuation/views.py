@@ -4,6 +4,6 @@ from django.shortcuts import render
 
 def evacuation(request):
     context = {
-        'title': 'Эвакуация | OOO &quot;КУРС&quot;',
+        'title': 'Эвакуация | OOO "КУРС"',
     }
     return render(request, "evacuation/evacuation.html", context=context)
