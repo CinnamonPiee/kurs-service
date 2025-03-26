@@ -4,6 +4,6 @@ from django.shortcuts import render
 
 def warranty(request):
     context = {
-        'title': 'Гарантия | OOO &quot;КУРС&quot;',
+        'title': 'Гарантия | OOO "КУРС"',
     }
     return render(request, "warranty/warranty.html", context=context)
