@@ -16,8 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
 
 from about.views import about
 from check_list.views import check_list
@@ -43,20 +41,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_page, name='main_page'),
     path('about/', about, name='about'),
-    path('check_list/', check_list, name='check_list'),
+    path('check-list/', check_list, name='check_list'),
     path('contacts/', contacts, name='contacts'),
     path('diagnostics/', diagnostics, name='diagnostics'),
     path('discounts/', discounts, name='discounts'),
     path('evacuation/', evacuation, name='evacuation'),
     path('insurance/', insurance, name='insurance'),
     path('news/', news, name='news'),
-    path('online_appointment/', online_appointment, name='online_appointment'),
-    path('photo_gallery/', photo_gallery, name='photo_gallery'),
-    path('price_maintenance/', price_maintenance, name='price_maintenance'),
-    path('price_shod_razval/', price_shod_razval, name='price_shod_razval'),
-    path('price_tire_fitting/', price_tire_fitting, name='price_tire_fitting'),
+    path('online-appointment/', online_appointment, name='online_appointment'),
+    path('photo-gallery', photo_gallery, name='photo_gallery'),
+    path('price-maintenance/', price_maintenance, name='price_maintenance'),
+    path('price-shod-razval/', price_shod_razval, name='price_shod_razval'),
+    path('price-tire-fitting/', price_tire_fitting, name='price_tire_fitting'),
     path('reviews/', reviews, name='reviews'),
-    path('site_login/', site_login, name='site_login'),
-    path('site_signup/', site_signup, name='site_signup'),
+    path('site/login/', site_login, name='site_login'),
+    path('site/signup/', site_signup, name='site_signup'),
     path('warranty/', warranty, name='warranty'),
-] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+]
