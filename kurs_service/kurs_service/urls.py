@@ -15,46 +15,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
-from about.views import about
-from check_list.views import check_list
-from contacts.views import contacts
-from diagnostics.views import diagnostics
-from discounts.views import discounts
-from evacuation.views import evacuation
-from insurance.views import insurance
-from main_page.views import main_page
-from news.views import news
-from online_appointment.views import online_appointment
-from photo_gallery.views import photo_gallery
-from price_maintenance.views import price_maintenance
-from price_shod_razval.views import price_shod_razval
-from price_tire_fitting.views import price_tire_fitting
-from reviews.views import reviews
-from site_login.views import site_login
-from site_signup.views import site_signup
-from warranty.views import warranty
+from django.urls import include, path
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main_page, name='main_page'),
-    path('about/', about, name='about'),
-    path('check-list/', check_list, name='check_list'),
-    path('contacts/', contacts, name='contacts'),
-    path('diagnostics/', diagnostics, name='diagnostics'),
-    path('discounts/', discounts, name='discounts'),
-    path('evacuation/', evacuation, name='evacuation'),
-    path('insurance/', insurance, name='insurance'),
-    path('news/', news, name='news'),
-    path('online-appointment/', online_appointment, name='online_appointment'),
-    path('photo-gallery', photo_gallery, name='photo_gallery'),
-    path('price-maintenance/', price_maintenance, name='price_maintenance'),
-    path('price-shod-razval/', price_shod_razval, name='price_shod_razval'),
-    path('price-tire-fitting/', price_tire_fitting, name='price_tire_fitting'),
-    path('reviews/', reviews, name='reviews'),
-    path('site/login/', site_login, name='site_login'),
-    path('site/signup/', site_signup, name='site_signup'),
-    path('warranty/', warranty, name='warranty'),
+    path('', include('main_page.urls', namespace='main_page')),
+	path('about/', include('about.urls', namespace='about')),
+	path('check-list/', include('check_list.urls', namespace='check_list')),
+	path('contacts/', include('contacts.urls', namespace='contacts')),
+	path('diagnostics/', include('diagnostics.urls', namespace='diagnostics')),
+	path('discounts/', include('discounts.urls', namespace='discounts')),
+	path('evacuation/', include('evacuation.urls', namespace='evacuation')),
+	path('insurance/', include('insurance.urls', namespace='insurance')),
+	path('news/', include('news.urls', namespace='news')),
+	path('online-appointment/', include('online_appointment.urls', namespace='online_appointment')),
+	path('photo-gallery', include('photo_gallery.urls', namespace='photo_gallery')),
+	path('price-maintenance/', include('price_maintenance.urls', namespace='price_maintenance')),
+	path('price-shod-razval/', include('price_shod_razval.urls', namespace='price_shod_razval')),
+	path('price-tire-fitting/', include('price_tire_fitting.urls', namespace='price_tire_fitting')),
+	path('reviews/', include('reviews.urls', namespace='reviews')),
+	path('site/login/', include('site_login.urls', namespace='site_login')),
+	path('site/signup/', include('site_signup.urls', namespace='site_signup')),
+    path('warranty/', include('warranty.urls', namespace='warranty')),
 ]
