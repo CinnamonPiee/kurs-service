@@ -1,0 +1,425 @@
+{% extends "main_page/base.html" %} 
+{% load static %} 
+
+
+{% block title %}
+<title>{{ title }}</title>
+{% endblock title %} 
+
+
+{% block content %}
+	<ul class="breadcrumb">
+		<li><a href="/">Главная</a></li>
+		<li class="active">О сервисе</li>
+	</ul>
+	<div class="about">
+		<h3 class="pretty-header left-right-line-short-header">
+			Давайте знакомиться
+		</h3>
+		<div class="about-company">
+			<div class="row">
+				<div class="col-lg-4 col-xs-12 centered">
+					<div>
+						<div class="interior-background">
+							<div class="cart-personnel">
+								<img
+									src="{% static "/assets_project/img/imgLogo/logo-kurs-new.png" %}"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8 col-xs-12">
+					<h3>ООО "КУРС" - прозрачный автосервис, у нас один курс.</h3>
+					<div id="list-wrapper" class="list-wrapper">
+						<div data-key="1">
+							<p>
+								Здравствуйте, меня зовут Бакин Евгений Олегович и я являюсь
+								генеральным директором компании ООО"КУРС". Наш автосервис
+								основывается на качестве обслуживания и прозрачности цен. Мы
+								стремимся к тому чтобы клиенты изначально понимали все до самых
+								мелочей предстоящего ремонта или обслуживания автомобиля. Широкий
+								профиль услуг таких как шиномонтаж, сход и развал колес
+								автомобиля, слесарный или капитальный ремонт и проведение
+								планового технического обслуживания транспортного средства. Для
+								достижения целей руководство уделяет особое внимание обновлению
+								оборудования мастерской и с постоянной переодичностью проводит
+								обучение сотрудников. На данном этапе оборудование и квалификация
+								сотрудников позволяет производить ремонт любой сложности, включая
+								ремонт бронированных автомобилей, у которых не только большая
+								масса но и дополнительно установленная защита всех элементов.<br /><span
+									>Мы будем рады знакомству с Вами!</span
+								>
+							</p>
+						</div>
+						<div style="clear: both; float: none"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h3 class="pretty-header left-right-line-short-header">Наши преимущества</h3>
+		<div class="advantages">
+			<hr />
+			<div class="row">
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<div class="col-lg-3 col-xs-6">
+							<div class="item-advantage">
+								<h2><span>4</span> подъемника</h2>
+								<h3><span>6</span> тонн максимально</h3>
+								<p>Мы поднимем даже бронированные автомобили</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="2">
+						<div class="col-lg-3 col-xs-6">
+							<div class="item-advantage">
+								<h2><span>6</span> автомобилей</h2>
+								<h3><span>6</span> сотрудников</h3>
+								<p>Готовы отремонтировать одновременно и качественно</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="3">
+						<div class="col-lg-3 col-xs-6">
+							<div class="item-advantage">
+								<h2><span>22</span> радиус</h2>
+								<h3><span>4+1</span> шиномонтаж</h3>
+								<p>Шиномонтаж запасного колеса в подарок</p>
+							</div>
+						</div>
+					</div>
+					<div data-key="4">
+						<div class="col-lg-3 col-xs-6">
+							<div class="item-advantage">
+								<h2><span>60-90</span> минут</h2>
+								<h3><span>1</span> автомобиль</h3>
+								<p>Качественное проведение ТО по всем пунктам</p>
+							</div>
+						</div>
+					</div>
+					<div style="clear: both; float: none"></div>
+				</div>
+			</div>
+			<hr />
+		</div>
+		<h3 class="pretty-header left-right-line-short-header">
+			Лучшие в своем деле
+		</h3>
+		<div class="best-service">
+			<div class="col-lg-9 col-xs-7">
+				<h1>Качество</h1>
+				<h2>Проведение работ по высшим стандартам</h2>
+				<h3>
+					Шиномантаж, сход-развал, техническое обслуживание, дигностика проводятся
+					на профессиональном оборудовании
+				</h3>
+			</div>
+			<div class="col-lg-3 col-xs-5">
+				<img
+					src="{% static "/assets_project/img/imgLogo/principles.png" %}"
+					alt=""
+				/>
+			</div>
+		</div>
+		<h3 class="pretty-header left-right-line-short-header">
+			Контакты ООО "КУРС"
+		</h3>
+		<div class="contacts-data">
+			<div class="row centered">
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<div class="col-lg-3 col-xs-6">
+							<p>
+								<li>
+									<a class="link-cal-number" href="mailto:kurs_service@mail.ru"
+										><img
+											src="{% static "/assets_project/img/imgLogo/email.png" %}"
+											alt="unnamed"
+										/><span
+											><br />
+											kurs_service@mail.ru</span
+										></a
+									>
+								</li>
+							</p>
+						</div>
+						<div class="col-lg-3 col-xs-6">
+							<p>
+								<li>
+									<a class="link-cal-number" href="tel:8 (800) 444-13-18"
+										><img
+											src="{% static "/assets_project/img/imgLogo/phone.png" %}"
+											alt="unnamed"
+										/><span
+											><br />
+											8 (800) 444-13-18</span
+										></a
+									>
+								</li>
+							</p>
+						</div>
+						<div class="col-lg-3 col-xs-6">
+							<p>
+								<img
+									src="{% static "/assets_project/img/imgLogo/adress.png" %}"
+									alt="unnamed"
+								/><br />
+								Москва ул. 1-я Мытищинская 16 с.1
+							</p>
+						</div>
+						<div class="col-lg-3 col-xs-6">
+							<p class="bottom-days">
+								<img
+									src="{% static "/assets_project/img/imgLogo/open-icon.png" %}"
+									alt="unnamed"
+								/><br />
+								Работаем без выходных и праздников
+							</p>
+						</div>
+					</div>
+					<div style="clear: both; float: none"></div>
+				</div>
+			</div>
+		</div>
+		<h3 class="pretty-header left-right-line-short-header">Точно и в срок</h3>
+		<div class="right-time">
+			<div class="col-lg-8 col-xs-6">
+				<h1>Точность</h1>
+				<h2>Время клиента очень важно</h2>
+				<h3>
+					Сотрудники ООО "КУРС" выполняют работы точно в поставленные сроки под
+					контролем администрации
+				</h3>
+			</div>
+			<div class="col-lg-4 col-xs-6">
+				<img
+					src="{% static "/assets_project/img/imgLogo/то_calendar.png" %}"
+					alt=""
+				/>
+			</div>
+		</div>
+		<h3 class="pretty-header left-right-line-short-header">
+			Как мы обучаем наш персонал?
+		</h3>
+		<div class="educations-personal centered">
+			<div class="row">
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<div class="col-lg-4 col-xs-6 educations-personal-block">
+							<p>
+								<a
+									href="{% static "/assets_project/img/imgLogo/training.png" %}"
+									data-fancybox
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/training.png" %}"
+									/>
+								</a>
+							</p>
+							<h4>Постоянное обучение</h4>
+						</div>
+					</div>
+					<div data-key="2">
+						<div class="col-lg-4 col-xs-6 educations-personal-block">
+							<p>
+								<a
+									href="{% static "/assets_project/img/imgLogo/regular-seminars.jpg" %}"
+									data-fancybox
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/regular-seminars.jpg" %}"
+									/>
+								</a>
+							</p>
+							<h4>Регулярные семинары и курсы</h4>
+						</div>
+					</div>
+					<div data-key="3">
+						<div class="col-lg-4 col-xs-6 educations-personal-block">
+							<p>
+								<a
+									href="{% static "/assets_project/img/imgLogo/educations-toyota.jpg" %}"
+									data-fancybox
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/educations-toyota.jpg" %}"
+									/>
+								</a>
+							</p>
+							<h4>Посещение лекций автомобильных производителей</h4>
+						</div>
+					</div>
+					<div data-key="4">
+						<div class="col-lg-4 col-xs-6 educations-personal-block">
+							<p>
+								<a
+									href="{% static "/assets_project/img/imgLogo/lexus-test-drive.jpg" %}"
+									data-fancybox
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/lexus-test-drive.jpg" %}"
+									/>
+								</a>
+							</p>
+							<h4>Участие в тест драйвах новых моделей</h4>
+						</div>
+					</div>
+					<div data-key="5">
+						<div class="col-lg-4 col-xs-6 educations-personal-block">
+							<p>
+								<a
+									href="{% static "/assets_project/img/imgLogo/education.jpg" %}"
+									data-fancybox
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/education.jpg" %}"
+									/>
+								</a>
+							</p>
+							<h4>Курсы повышения квалификации</h4>
+						</div>
+					</div>
+					<div data-key="6">
+						<div class="col-lg-4 col-xs-6 educations-personal-block">
+							<p>
+								<a
+									href="{% static "/assets_project/img/imgLogo/lexus-toyota-forum.jpg" %}"
+									data-fancybox
+								>
+									<img
+										src="{% static "/assets_project/img/imgLogo/lexus-toyota-forum.jpg" %}"
+									/>
+								</a>
+							</p>
+							<h4>Посещение форумов автовладельцев</h4>
+						</div>
+					</div>
+					<div style="clear: both; float: none"></div>
+				</div>
+			</div>
+		</div>
+		<!--    --><!--    <div class="personal-kurs">-->
+		<!--        <div class="row">-->
+		<!--            --><!--        </div>-->
+		<!--    </div>-->
+		<h3 class="pretty-header left-right-line-short-header">
+			Последний отзыв о нашей работе
+		</h3>
+		<div class="content-reviews-home">
+			<div id="list-wrapper" class="list-wrapper">
+				<div data-key="2">
+					<div class="item-html">
+						<div class="reviews-item">
+							<hr />
+							<div class="reviews-item hidden-xs">
+								<div class="row">
+									<div class="col-lg-2 centered">
+										<img
+											src="{% static "/assets_project/img/img-reviews/file603a985ff1445img20200211.jpg" %}"
+										/>
+										<p>Сергей</p>
+										<p><i class="fa fa-calendar"></i> 27.02.2021 в 21:57</p>
+									</div>
+									<div class="col-lg-8">
+										<p>Сергей :</p>
+										<p class="speech-bubble" style="padding: 15px">
+											Самый адекватный сервис не далеко от дома! Оказалось самое
+											выгодное предложение по цене и по времени записи. Записался
+											на субботу, все сделали за 3,5 - 4 часа. Цена
+											соответствовала заявленной. Вежливые, позитивные ребята.
+											Ценник не дерут, все объясняют. Плохо, что нет wi-fi, но
+											обещали исправиться... посмотрим. Думаю это не последнее
+											обращение в этот сервис.
+										</p>
+										<div class="">
+											<div>
+												<p style="text-align: right">
+													Ответ администрации ООО "КУРС" :
+												</p>
+												<p
+													class="speech-bubble-2"
+													style="padding: 15px; float: right"
+												>
+													Добрый день, Сергей. Благодарим вас за отзыв. Обещание
+													по WI-FI мы помним и уже в работе. Искренне рады, что вы
+													столь высоко оцениваете нашу работу.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 centered">
+										<p>
+											Администрация <br />
+											<span>ООО "КУРС"</span>
+										</p>
+										<img
+											class="centered"
+											src="{% static "/assets_project/img/imgLogo/sports-car-auto.png" %}"
+											alt=""
+										/>
+									</div>
+								</div>
+							</div>
+							<div class="item-html-mobile hidden-lg">
+								<div class="reviews-item-mobile">
+									<div class="row">
+										<div class="col-xs-4 centered">
+											<img
+												src="{% static "/assets_project/img/img-reviews/file603a985ff1445img20200211.jpg" %}"
+											/>
+											<p>Сергей</p>
+											<p class="date-reviews">
+												<i class="fa fa-calendar"></i> 27.02.2021 в 21:57
+											</p>
+										</div>
+										<div class="col-xs-8">
+											<p class="speech-bubble" style="padding: 15px">
+												Самый адекватный сервис не далеко от дома! Оказалось самое
+												выгодное предложение по цене и по времени записи.
+												Записался на субботу, все сделали за 3,5 - 4 часа. Цена
+												соответствовала заявленной. Вежливые, позитивные ребята.
+												Ценник не дерут, все объясняют. Плохо, что нет wi-fi, но
+												обещали исправиться... посмотрим. Думаю это не последнее
+												обращение в этот сервис.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-8">
+										<div>
+											<p>Ответ администрации ООО "КУРС" :</p>
+											<p class="speech-bubble-2" style="padding: 15px">
+												Добрый день, Сергей. Благодарим вас за отзыв. Обещание по
+												WI-FI мы помним и уже в работе. Искренне рады, что вы
+												столь высоко оцениваете нашу работу.
+											</p>
+										</div>
+									</div>
+									<div class="col-xs-4 centered">
+										<p>Администрация ООО "КУРС"</p>
+										<img
+											class="centered"
+											src="{% static "/assets_project/img/imgLogo/sports-car-auto-reviews.png" %}"
+											alt=""
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr />
+				</div>
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+		<div class="row centered">
+			<div class="content-reviews-home col-lg-12">
+				<br />
+				<a class="kursStyleButton" href="/reviews">Посмотреть все отзывы</a>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
