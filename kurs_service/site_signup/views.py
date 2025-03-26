@@ -4,6 +4,6 @@ from django.shortcuts import render
 
 def site_signup(request):
     context = {
-        'title': 'Регистрация | OOO &quot;КУРС&quot;',
+        'title': 'Регистрация | OOO "КУРС"',
     }
     return render(request, "site_signup/site_signup.html", context=context)
