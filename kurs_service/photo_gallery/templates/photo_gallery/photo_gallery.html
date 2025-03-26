@@ -1,0 +1,240 @@
+{% extends "main_page/base.html" %} 
+{% load static %} 
+
+
+{% block title %}
+<title>{{ title }}</title>
+{% endblock title %} 
+
+
+{% block content %}
+	<ul class="breadcrumb">
+		<li><a href="/">Главная</a></li>
+		<li class="active">Фотогалерея</li>
+	</ul>
+	<div class="photo-gallery-container">
+		<div class="header-contacts centered">
+			<h3 class="pretty-header left-right-line-short-header">
+				Фотогалерея ООО "КУРС"
+			</h3>
+		</div>
+		<div class="content-photo-gallery">
+			<div class="row">
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/24.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/24.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">Вид въездных ворот</p>
+						</div>
+					</div>
+					<div data-key="2">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/20.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/20.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">Вид въездных ворот</p>
+						</div>
+					</div>
+					<div data-key="3">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/25.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/25.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">Вид въездных ворот</p>
+						</div>
+					</div>
+					<div data-key="4">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/1.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/1.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">
+								Диагностика подвески автомобиля Lexus
+							</p>
+						</div>
+					</div>
+					<div data-key="5">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/2.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/2.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">Профессиональные мастера</p>
+						</div>
+					</div>
+					<div data-key="6">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/4.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/4.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">
+								Заправка кондиционера Toyota Corolla
+							</p>
+						</div>
+					</div>
+					<div data-key="7">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/19.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/19.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">
+								Заправка кондиционера Toyota Corolla
+							</p>
+						</div>
+					</div>
+					<div data-key="8">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/26.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/26.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">
+								Замена колодок тормозных toyota rav-4
+							</p>
+						</div>
+					</div>
+					<div data-key="9">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/28.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/28.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">
+								Замена колодок тормозных toyota rav-4
+							</p>
+						</div>
+					</div>
+					<div data-key="10">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/13.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/13.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">Замена жидкости в акпп</p>
+						</div>
+					</div>
+					<div data-key="11">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/16.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/16.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">Замена жидкости в акпп</p>
+						</div>
+					</div>
+					<div data-key="12">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/7.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/7.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">
+								Диагностика подвески автомобиля Lexus
+							</p>
+						</div>
+					</div>
+					<div data-key="16">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/10.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/10.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">
+								Диагностика подвески автомобиля Lexus
+							</p>
+						</div>
+					</div>
+					<div data-key="17">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/18.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/18.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">
+								Общий вид рабочей зоны расположения зала
+							</p>
+						</div>
+					</div>
+					<div data-key="18">
+						<div class="col-lg-3 col-xs-6">
+							<a
+								href="{% static "/assets_project/img/img-photo-gallery/27.jpeg" %}"
+								data-fancybox="images"
+							>
+								<img
+									src="{% static "/assets_project/img/img-photo-gallery/27.jpeg" %}"
+								/>
+							</a>
+							<p class="photo-gallery-text">Мелкий кузовной ремонт</p>
+						</div>
+					</div>
+					<div style="clear: both; float: none"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
