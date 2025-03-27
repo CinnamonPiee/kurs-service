@@ -9,7 +9,7 @@
 
 {% block content %}
 	<ul class="breadcrumb">
-		<li><a href="/">Главная</a></li>
+		<li><a href="{% url "main_page:main_page" %}">Главная</a></li>
 		<li class="active">Прайc развал и схождение</li>
 	</ul>
 
@@ -72,7 +72,7 @@
 								<div style="clear: both; float: none"></div>
 							</div>
 						</div>
-						<a href="/discounts"><h4 class="link-sale centered">Все АКЦИИ</h4></a>
+						<a href="{% url "discounts:discounts" %}"><h4 class="link-sale centered">Все АКЦИИ</h4></a>
 						<br />
 						<div class="menu-discount centered">
 							<h4>Новости</h4>

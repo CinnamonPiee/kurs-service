@@ -9,7 +9,7 @@
 
 {% block content %}
 	<ul class="breadcrumb">
-		<li><a href="/">Главная</a></li>
+		<li><a href="{% url "main_page:main_page" %}">Главная</a></li>
 		<li class="active">Регистрация</li>
 	</ul>
 	<div class="site-signup">
@@ -91,7 +91,7 @@
 						</div>
 						<div style="color: #999; margin: 1em 0">
 							Если вы зарегистрированы то выполните
-							<a href="/site/login">вход</a>.
+							<a href="{% url "site_login:site_login" %}">вход</a>.
 						</div>
 					</form>
 				</div>

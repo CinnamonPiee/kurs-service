@@ -9,7 +9,7 @@
 
 {% block content %}
 	<ul class="breadcrumb">
-		<li><a href="/">Главная</a></li>
+		<li><a href="{% url "main_page:main_page" %}">Главная</a></li>
 		<li class="active">Вход</li>
 	</ul>
 	<div class="site-login">
@@ -74,7 +74,7 @@
 							<a href="/site/request-password-reset?class=kurs-checkbox"
 								>сбросить пароль</a
 							>. Для нового пользователя вы можете
-							<a href="/site/signup">зарегистрироваться</a>.
+							<a href="{% url "site_signup:site_signup" %}">зарегистрироваться</a>.
 						</div>
 						<div class="form-group">
 							<button type="submit" class="kursStyleButton" name="login-button">

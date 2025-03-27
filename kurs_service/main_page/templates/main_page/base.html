@@ -94,7 +94,7 @@
 				/>
 				<p class="in-pop">Эвакуация</p></a
 			>
-			<a href="/contacts"
+			<a href="{% url "contacts:contacts" %}"
 				><img
 					src="{% static "/assets_project/img/imgLogo/unnamed.png" %}"
 					alt="unnamed"
@@ -156,7 +156,7 @@
 		</div>
 		<div class="bottom-fix3">
 			<div class="check-list-mobile hidden-lg hidden-md hidden-sm">
-				<a class="check-list-mobile" href="/check-list">
+				<a class="check-list-mobile" href="{% url "check_list:check_list" %}">
 					<img
 						src="{% static "/assets_project/img/imgLogo/check-list.png" %}"
 						alt=""
@@ -173,7 +173,7 @@
 				<div class="container">
 					<div class="header-top row">
 						<div class="hidden-xs col-sm-4 col-md-4 border-right">
-							<a href="/"
+							<a href="{% url "main_page:main_page" %}"
 								><img
 									src="{% static "/assets_project/img/imgLogo/logo-kurs-new.png" %}"
 									class="img-responsive"
@@ -182,7 +182,7 @@
 						<div
 							class="mobile col-xs-4 hidden-sm hidden-md hidden-lg border-right"
 						>
-							<a href="/"
+							<a href="{% url "main_page:main_page" %}"
 								><img
 									src="{% static "/assets_project/img/imgLogo/logo-kurs-mobile-3.png" %}"
 									class="img-responsive"
@@ -198,7 +198,7 @@
 						<div
 							class="qr-mobile col-xs-2 col-sm-2 col-md-2 border-right qrcode-menu"
 						>
-							<a href="/contacts"
+							<a href="{% url "contacts:contacts" %}"
 								><img
 									src="{% static "/assets_project/img/imgLogo/qr-code-v-card.png" %}"
 									class="img-responsive qrcode"
@@ -230,7 +230,7 @@
 							</div>
 						</div>
 						<div class="check-list hidden-xs col-sm-2 col-md-1">
-							<a class="check-list" href="/check-list">
+							<a class="check-list" href="{% url "check_list:check_list" %}">
 								<p>Чек лист - <span id="check-list-big">0</span></p>
 							</a>
 						</div>
@@ -238,10 +238,10 @@
 							<div class="col-sm-3 col-md-2 border-right">
 								<div class="reg-login">
 									<li class="hidden-xs">
-										<a href="/site/login"><i class="fa fa-sign-in"></i> Вход</a>
+										<a href="{% url "site_login:site_login" %}"><i class="fa fa-sign-in"></i> Вход</a>
 									</li>
 									<li class="hidden-xs">
-										<a href="/site/signup"
+										<a href="{% url "site_signup:site_signup" %}"
 											><i class="fa fa-user-plus"></i> Регистрация</a
 										>
 									</li>
@@ -273,7 +273,7 @@
 							</div>
 							<div id="sub-menu-kurs-collapse" class="collapse navbar-collapse">
 								<ul id="w0" class="navbar-nav navbar-left nav">
-									<li><a href="/online-appointment">Онлайн запись</a></li>
+									<li><a href="{% url "online_appointment:online_appointment" %}">Онлайн запись</a></li>
 									<li class="nav-line"></li>
 									<li class="dropdown">
 										<a class="dropdown-toggle" href="#" data-toggle="dropdown"
@@ -281,51 +281,51 @@
 										></a>
 										<ul id="w1" class="dropdown-menu">
 											<li>
-												<a href="/price-maintenance" tabindex="-1"
+												<a href="{% url "price_maintenance:price_maintenance" %}" tabindex="-1"
 													>Тех обслуживание</a
 												>
 											</li>
 											<li>
-												<a href="/price-tire-fitting" tabindex="-1"
+												<a href="{% url "price_tire_fitting:price_tire_fitting" %}" tabindex="-1"
 													>Шиномонтаж</a
 												>
 											</li>
 											<li>
-												<a href="/price-shod-razval" tabindex="-1"
+												<a href="{% url "price_shod_razval:price_shod_razval" %}" tabindex="-1"
 													>Развал и схождение</a
 												>
 											</li>
 										</ul>
 									</li>
 									<li class="nav-line"></li>
-									<li><a href="/diagnostics">Диагностика</a></li>
+									<li><a href="{% url "diagnostics:diagnostics" %}">Диагностика</a></li>
 									<li class="nav-line"></li>
-									<li><a href="/evacuation">Эвакуация</a></li>
+									<li><a href="{% url "evacuation:evacuation" %}">Эвакуация</a></li>
 									<li class="nav-line"></li>
-									<li><a href="/insurance">Страхование</a></li>
+									<li><a href="{% url "insurance:insurance" %}">Страхование</a></li>
 									<li class="nav-line"></li>
-									<li><a href="/warranty">Гарантия</a></li>
+									<li><a href="{% url "warranty:warranty" %}">Гарантия</a></li>
 									<li class="nav-line"></li>
-									<li><a href="/contacts">Контакты</a></li>
+									<li><a href="{% url "contacts:contacts" %}">Контакты</a></li>
 									<li class="nav-line"></li>
-									<li><a href="/about">О сервисе</a></li>
+									<li><a href="{% url "about:about" %}">О сервисе</a></li>
 									<li class="nav-line"></li>
-									<li><a href="/reviews">Отзывы</a></li>
+									<li><a href="{% url "reviews:reviews" %}">Отзывы</a></li>
 									<li class="nav-line"></li>
 									<li class="dropdown">
 										<a class="dropdown-toggle" href="#" data-toggle="dropdown"
 											>Меню <span class="caret"></span
 										></a>
 										<ul id="w2" class="dropdown-menu">
-											<li><a href="/discounts" tabindex="-1">Акции</a></li>
-											<li><a href="/news" tabindex="-1">Новости</a></li>
+											<li><a href="{% url "discounts:discounts" %}" tabindex="-1">Акции</a></li>
+											<li><a href="{% url "news:news" %}" tabindex="-1">Новости</a></li>
 											<li>
-												<a href="/photo-gallery" tabindex="-1">Фотогалерея</a>
+												<a href="{% url "photo_gallery:photo_gallery" %}" tabindex="-1">Фотогалерея</a>
 											</li>
 										</ul>
 									</li>
 									<li>
-										<a class="btn btn-link logout hidden-lg" href="/site/login"
+										<a class="btn btn-link logout hidden-lg" href="{% url "site_login:site_login" %}"
 											>Войти</a
 										>
 									</li>
