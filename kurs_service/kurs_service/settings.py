@@ -104,10 +104,10 @@ DATABASES = {
         'NAME': os.getenv("DB_NAME"),
         'USER': os.getenv("DB_USER"),
         'PASSWORD': os.getenv("DB_PASS"),
-        'HOST': os.getenv("DB_HOST"),  # Или IP сервера MySQL
-        'PORT': os.getenv("DB_PORT"),  # Стандартный порт MySQL
+        'HOST': os.getenv("DB_HOST"),
+        'PORT': os.getenv("DB_PORT"),
         'OPTIONS': {
-            'charset': 'utf8mb4',  # Поддержка эмодзи и полного Unicode
+            'charset': 'utf8mb4',
         },
     }
 }
