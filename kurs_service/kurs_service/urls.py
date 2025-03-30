@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from debug_toolbar.toolbar import debug_toolbar_urls
+
+from kurs_service.settings import DEBUG
 
 
 urlpatterns = [
@@ -39,3 +42,6 @@ urlpatterns = [
 	path('site/signup/', include('site_signup.urls', namespace='site_signup')),
     path('warranty/', include('warranty.urls', namespace='warranty')),
 ]
+
+if DEBUG:
+	urlpatterns += debug_toolbar_urls()
