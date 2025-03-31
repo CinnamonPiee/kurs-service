@@ -1,3 +1,7 @@
 from django.contrib import admin
+from contacts.models import DrivingDirection
 
-# Register your models here.
+
+@admin.register(DrivingDirection)
+class DrivingDirectionAdmin(admin.ModelAdmin):
+	pass
