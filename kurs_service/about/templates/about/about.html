@@ -14,7 +14,7 @@
 	</ul>
 	<div class="about">
 		<h3 class="pretty-header left-right-line-short-header">
-			Давайте знакомиться
+			{{ about_headers.description_company }}
 		</h3>
 		<div class="about-company">
 			<div class="row">
@@ -31,16 +31,14 @@
 					</div>
 				</div>
 				<div class="col-lg-8 col-xs-12">
-					<h3>{{ about_text.title }}</h3>
+					<h3>{{ description_company_text.title }}</h3>
 					<div id="list-wrapper" class="list-wrapper">
 						<div data-key="1">
-							<p>
-								Здравствуйте, меня зовут Бакин Евгений Олегович и я являюсь
-								генеральным директором компании ООО"КУРС". 
-								{{ about_text.description }}
+							<p> 
+								{{ description_company_text.description }}
 								<br/>
 								<span>
-									{{ about_text.short_description }}
+									{{ description_company_text.short_description }}
 								</span>
 							</p>
 						</div>
@@ -49,63 +47,37 @@
 				</div>
 			</div>
 		</div>
-		<h3 class="pretty-header left-right-line-short-header">Наши преимущества</h3>
+		<h3 class="pretty-header left-right-line-short-header">
+			{{ about_headers.advantages }}
+		</h3>
 		<div class="advantages">
 			<hr />
 			<div class="row">
 				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<div class="col-lg-3 col-xs-6">
-							<div class="item-advantage">
-								<h2><span>4</span> подъемника</h2>
-								<h3><span>6</span> тонн максимально</h3>
-								<p>Мы поднимем даже бронированные автомобили</p>
+					{% for item in advantages_text %}
+						<div data-key="{{ forloop.counter }}">
+							<div class="col-lg-3 col-xs-6">
+								<div class="item-advantage">
+									<h2><span>{{ item.num_big_text }}</span> {{ item.big_text }}</h2>
+									<h3><span>{{ item.num_small_text }}</span> {{ item.small_text }}</h3>
+									<p>{{ item.description }}</p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div data-key="2">
-						<div class="col-lg-3 col-xs-6">
-							<div class="item-advantage">
-								<h2><span>6</span> автомобилей</h2>
-								<h3><span>6</span> сотрудников</h3>
-								<p>Готовы отремонтировать одновременно и качественно</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="3">
-						<div class="col-lg-3 col-xs-6">
-							<div class="item-advantage">
-								<h2><span>22</span> радиус</h2>
-								<h3><span>4+1</span> шиномонтаж</h3>
-								<p>Шиномонтаж запасного колеса в подарок</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="4">
-						<div class="col-lg-3 col-xs-6">
-							<div class="item-advantage">
-								<h2><span>60-90</span> минут</h2>
-								<h3><span>1</span> автомобиль</h3>
-								<p>Качественное проведение ТО по всем пунктам</p>
-							</div>
-						</div>
-					</div>
+					{% endfor %}
 					<div style="clear: both; float: none"></div>
 				</div>
 			</div>
 			<hr />
 		</div>
 		<h3 class="pretty-header left-right-line-short-header">
-			Лучшие в своем деле
+			{{ about_headers.best_in_business }}
 		</h3>
 		<div class="best-service">
 			<div class="col-lg-9 col-xs-7">
-				<h1>Качество</h1>
-				<h2>Проведение работ по высшим стандартам</h2>
-				<h3>
-					Шиномантаж, сход-развал, техническое обслуживание, дигностика проводятся
-					на профессиональном оборудовании
-				</h3>
+				<h1>{{ best_in_business.title }}</h1>
+				<h2>{{ best_in_business.short_description }}</h2>
+				<h3>{{ best_in_business.description }}</h3>
 			</div>
 			<div class="col-lg-3 col-xs-5">
 				<img
@@ -115,74 +87,35 @@
 			</div>
 		</div>
 		<h3 class="pretty-header left-right-line-short-header">
-			Контакты ООО "КУРС"
+			{{ about_headers.contacts }}
 		</h3>
 		<div class="contacts-data">
 			<div class="row centered">
 				<div id="list-wrapper" class="list-wrapper">
 					<div data-key="1">
-						<div class="col-lg-3 col-xs-6">
-							<p>
-								<li>
-									<a class="link-cal-number" href="mailto:kurs_service@mail.ru"
-										><img
-											src="{% static "/assets_project/img/imgLogo/email.png" %}"
-											alt="unnamed"
-										/><span
-											><br />
-											kurs_service@mail.ru</span
-										></a
-									>
-								</li>
-							</p>
-						</div>
-						<div class="col-lg-3 col-xs-6">
-							<p>
-								<li>
-									<a class="link-cal-number" href="tel:8 (800) 444-13-18"
-										><img
-											src="{% static "/assets_project/img/imgLogo/phone.png" %}"
-											alt="unnamed"
-										/><span
-											><br />
-											8 (800) 444-13-18</span
-										></a
-									>
-								</li>
-							</p>
-						</div>
-						<div class="col-lg-3 col-xs-6">
-							<p>
-								<img
-									src="{% static "/assets_project/img/imgLogo/adress.png" %}"
-									alt="unnamed"
-								/><br />
-								Москва ул. 1-я Мытищинская 16 с.1
-							</p>
-						</div>
-						<div class="col-lg-3 col-xs-6">
-							<p class="bottom-days">
-								<img
-									src="{% static "/assets_project/img/imgLogo/open-icon.png" %}"
-									alt="unnamed"
-								/><br />
-								Работаем без выходных и праздников
-							</p>
-						</div>
+						{% for item in contacts %}
+							<div class="col-lg-3 col-xs-6">
+								<p>
+									<img
+										src="{{ item.img.url }}"
+										alt="unnamed"
+									/><span><br/>{{ item.description }}</span>
+								</p>
+							</div>
+						{% endfor %}
 					</div>
 					<div style="clear: both; float: none"></div>
 				</div>
 			</div>
 		</div>
-		<h3 class="pretty-header left-right-line-short-header">Точно и в срок</h3>
+		<h3 class="pretty-header left-right-line-short-header">
+			{{ about_headers.accurately_time }}
+		</h3>
 		<div class="right-time">
 			<div class="col-lg-8 col-xs-6">
-				<h1>Точность</h1>
-				<h2>Время клиента очень важно</h2>
-				<h3>
-					Сотрудники ООО "КУРС" выполняют работы точно в поставленные сроки под
-					контролем администрации
-				</h3>
+				<h1>{{ accurately_time.title }}</h1>
+				<h2>{{ accurately_time.short_description }}</h2>
+				<h3>{{ accurately_time.description }}</h3>
 			</div>
 			<div class="col-lg-4 col-xs-6">
 				<img
@@ -192,7 +125,7 @@
 			</div>
 		</div>
 		<h3 class="pretty-header left-right-line-short-header">
-			Как мы обучаем наш персонал?
+			{{ about_headers.training }}
 		</h3>
 		<div class="educations-personal centered">
 			<div class="row">
@@ -222,8 +155,9 @@
 		<!--        <div class="row">-->
 		<!--            --><!--        </div>-->
 		<!--    </div>-->
+		<!-- TODO доделать раздел с комментариями -->
 		<h3 class="pretty-header left-right-line-short-header">
-			Последний отзыв о нашей работе
+			{{ about_headers.last_review }}
 		</h3>
 		<div class="content-reviews-home">
 			<div id="list-wrapper" class="list-wrapper">
