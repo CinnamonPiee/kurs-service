@@ -10,9 +10,9 @@ class WarrantyObligations(models.Model):
     parking_conditions = models.TextField(blank=True, null=True, verbose_name="6. Условия стоянки транспорта на территории сервиса ООО 'КУРС' по истечении ремонтных работ.")
 
     def __str__(self):
-        return "Текст на странице Гарантия"
+        return "Текст на странице - Гарантия"
 
     class Meta:
         db_table: str = "warranty_obligations"
-        verbose_name: str = "гарантию"
-        verbose_name_plural: str = "Гарантии"
+        verbose_name: str = "текст"
+        verbose_name_plural: str = "Текст"

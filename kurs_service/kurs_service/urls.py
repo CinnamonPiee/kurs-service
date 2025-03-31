@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls.static import static
+from django.conf import settings
 from debug_toolbar.toolbar import debug_toolbar_urls
-
-from kurs_service.settings import DEBUG
 
 
 urlpatterns = [
@@ -43,5 +43,6 @@ urlpatterns = [
     path('warranty/', include('warranty.urls', namespace='warranty')),
 ]
 
-if DEBUG:
+if settings.DEBUG:
 	urlpatterns += debug_toolbar_urls()
+	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

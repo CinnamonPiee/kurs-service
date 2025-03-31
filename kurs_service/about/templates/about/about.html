@@ -31,26 +31,17 @@
 					</div>
 				</div>
 				<div class="col-lg-8 col-xs-12">
-					<h3>ООО "КУРС" - прозрачный автосервис, у нас один курс.</h3>
+					<h3>{{ about_text.title }}</h3>
 					<div id="list-wrapper" class="list-wrapper">
 						<div data-key="1">
 							<p>
 								Здравствуйте, меня зовут Бакин Евгений Олегович и я являюсь
-								генеральным директором компании ООО"КУРС". Наш автосервис
-								основывается на качестве обслуживания и прозрачности цен. Мы
-								стремимся к тому чтобы клиенты изначально понимали все до самых
-								мелочей предстоящего ремонта или обслуживания автомобиля. Широкий
-								профиль услуг таких как шиномонтаж, сход и развал колес
-								автомобиля, слесарный или капитальный ремонт и проведение
-								планового технического обслуживания транспортного средства. Для
-								достижения целей руководство уделяет особое внимание обновлению
-								оборудования мастерской и с постоянной переодичностью проводит
-								обучение сотрудников. На данном этапе оборудование и квалификация
-								сотрудников позволяет производить ремонт любой сложности, включая
-								ремонт бронированных автомобилей, у которых не только большая
-								масса но и дополнительно установленная защита всех элементов.<br /><span
-									>Мы будем рады знакомству с Вами!</span
-								>
+								генеральным директором компании ООО"КУРС". 
+								{{ about_text.description }}
+								<br/>
+								<span>
+									{{ about_text.short_description }}
+								</span>
 							</p>
 						</div>
 						<div style="clear: both; float: none"></div>
@@ -206,96 +197,23 @@
 		<div class="educations-personal centered">
 			<div class="row">
 				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<div class="col-lg-4 col-xs-6 educations-personal-block">
-							<p>
-								<a
-									href="{% static "/assets_project/img/imgLogo/training.png" %}"
-									data-fancybox
-								>
-									<img
-										src="{% static "/assets_project/img/imgLogo/training.png" %}"
-									/>
-								</a>
-							</p>
-							<h4>Постоянное обучение</h4>
+					{% for item in training_img %}
+						<div data-key="{{ forloop.counter }}">
+							<div class="col-lg-4 col-xs-6 educations-personal-block">
+								<p>
+									<a
+										href="{{ item.img.url }}"
+										data-fancybox
+									>
+										<img
+											src="{{ item.img.url }}"
+										/>
+									</a>
+								</p>
+								<h4>{{ item.description }}</h4>
+							</div>
 						</div>
-					</div>
-					<div data-key="2">
-						<div class="col-lg-4 col-xs-6 educations-personal-block">
-							<p>
-								<a
-									href="{% static "/assets_project/img/imgLogo/regular-seminars.jpg" %}"
-									data-fancybox
-								>
-									<img
-										src="{% static "/assets_project/img/imgLogo/regular-seminars.jpg" %}"
-									/>
-								</a>
-							</p>
-							<h4>Регулярные семинары и курсы</h4>
-						</div>
-					</div>
-					<div data-key="3">
-						<div class="col-lg-4 col-xs-6 educations-personal-block">
-							<p>
-								<a
-									href="{% static "/assets_project/img/imgLogo/educations-toyota.jpg" %}"
-									data-fancybox
-								>
-									<img
-										src="{% static "/assets_project/img/imgLogo/educations-toyota.jpg" %}"
-									/>
-								</a>
-							</p>
-							<h4>Посещение лекций автомобильных производителей</h4>
-						</div>
-					</div>
-					<div data-key="4">
-						<div class="col-lg-4 col-xs-6 educations-personal-block">
-							<p>
-								<a
-									href="{% static "/assets_project/img/imgLogo/lexus-test-drive.jpg" %}"
-									data-fancybox
-								>
-									<img
-										src="{% static "/assets_project/img/imgLogo/lexus-test-drive.jpg" %}"
-									/>
-								</a>
-							</p>
-							<h4>Участие в тест драйвах новых моделей</h4>
-						</div>
-					</div>
-					<div data-key="5">
-						<div class="col-lg-4 col-xs-6 educations-personal-block">
-							<p>
-								<a
-									href="{% static "/assets_project/img/imgLogo/education.jpg" %}"
-									data-fancybox
-								>
-									<img
-										src="{% static "/assets_project/img/imgLogo/education.jpg" %}"
-									/>
-								</a>
-							</p>
-							<h4>Курсы повышения квалификации</h4>
-						</div>
-					</div>
-					<div data-key="6">
-						<div class="col-lg-4 col-xs-6 educations-personal-block">
-							<p>
-								<a
-									href="{% static "/assets_project/img/imgLogo/lexus-toyota-forum.jpg" %}"
-									data-fancybox
-								>
-									<img
-										src="{% static "/assets_project/img/imgLogo/lexus-toyota-forum.jpg" %}"
-									/>
-								</a>
-							</p>
-							<h4>Посещение форумов автовладельцев</h4>
-						</div>
-					</div>
+					{% endfor %}
 					<div style="clear: both; float: none"></div>
 				</div>
 			</div>

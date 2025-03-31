@@ -1,3 +1,12 @@
 from django.contrib import admin
+from about.models import DescriptionCompany, Training
 
-# Register your models here.
+
+@admin.register(DescriptionCompany)
+class DescriptionCompanyAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(Training)
+class TrainingAdmin(admin.ModelAdmin):
+	pass
