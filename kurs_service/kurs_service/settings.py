@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'price_shod_razval',
     'price_tire_fitting',
     'reviews',
+	'rules_personal_data',
     'site_login',
     'site_signup',
     'warranty',

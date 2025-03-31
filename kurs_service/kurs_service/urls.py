@@ -38,6 +38,7 @@ urlpatterns = [
 	path('price-shod-razval/', include('price_shod_razval.urls', namespace='price_shod_razval')),
 	path('price-tire-fitting/', include('price_tire_fitting.urls', namespace='price_tire_fitting')),
 	path('reviews/', include('reviews.urls', namespace='reviews')),
+	path('rules-personal-data/', include('rules-personal-data.urls', namespace='rules_personal_data')),
 	path('site/login/', include('site_login.urls', namespace='site_login')),
 	path('site/signup/', include('site_signup.urls', namespace='site_signup')),
     path('warranty/', include('warranty.urls', namespace='warranty')),
