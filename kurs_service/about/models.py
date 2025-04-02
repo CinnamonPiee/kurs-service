@@ -2,6 +2,7 @@ from django.db import models
 
 
 class DescriptionCompany(models.Model):
+    img = models.ImageField(upload_to="kurs_logo", blank=True, null=True, verbose_name="Изображение")
     title = models.CharField(max_length=255, blank=True, null=True, verbose_name="Название")
     description = models.TextField(blank=True, null=True, verbose_name="Описание")
     short_description = models.CharField(max_length=255, blank=True, null=True, verbose_name="Короткое описание")
@@ -32,6 +33,7 @@ class Advantages(models.Model):
 
 
 class BestInBusiness(models.Model):
+    img = models.ImageField(upload_to="big_png_with_text", blank=True, null=True, verbose_name="Изображение")
     title = models.CharField(max_length=255, blank=True, null=True, verbose_name="Заголовок")
     short_description = models.CharField(max_length=255, blank=True, null=True, verbose_name="Кроткое описание")
     description = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание")
@@ -59,6 +61,7 @@ class Contacts(models.Model):
 
 
 class AccuratelyTime(models.Model):
+    img = models.ImageField(upload_to="big_png_with_text", blank=True, null=True, verbose_name="Изображение")
     title = models.CharField(max_length=255, blank=True, null=True, verbose_name="Заголовок")
     short_description = models.CharField(max_length=255, blank=True, null=True, verbose_name="Кроткое описание")
     description = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание")
