@@ -16,13 +16,16 @@
 		<div class="warranty">
 			<div class="warranty-title">
 				<h1>
-					Гарантия<br /><br />
-					до <span>180</span> дней
+					{{ warranty_180.title|safe }}
+					<br/>
+					{{ warranty_180.description|safe }}
 				</h1>
 			</div>
 		</div>
 		<div class="header-contacts centered">
-			<h3 class="pretty-header left-right-line-short-header">Гарантия</h3>
+			<h3 class="pretty-header left-right-line-short-header">
+				{{ warranty_headers.warranty }}
+			</h3>
 		</div>
 		<br />
 		<div id="list-wrapper" class="list-wrapper">
