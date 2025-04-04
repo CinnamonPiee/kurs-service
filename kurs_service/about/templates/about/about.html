@@ -9,7 +9,7 @@
 
 {% block content %}
 	<ul class="breadcrumb">
-		<li><a href="/">Главная</a></li>
+		<li><a href="{% url "main_page:main_page" %}">Главная</a></li>
 		<li class="active">О сервисе</li>
 	</ul>
 	<div class="about">
@@ -31,7 +31,9 @@
 					</div>
 				</div>
 				<div class="col-lg-8 col-xs-12">
-					<h3>{{ about_description_company.title }}</h3>
+					<h3>
+						{{ about_description_company.title }}
+					</h3>
 					<div id="list-wrapper" class="list-wrapper">
 						<div data-key="1">
 							<p> 
@@ -51,15 +53,15 @@
 			{{ about_titles.advantages }}
 		</h3>
 		<div class="advantages">
-			<hr />
+			<hr/>
 			<div class="row">
 				<div id="list-wrapper" class="list-wrapper">
 					{% for item in about_advantages %}
 						<div data-key="{{ forloop.counter }}">
 							<div class="col-lg-3 col-xs-6">
 								<div class="item-advantage">
-									<h2><span>{{ item.num_big_text }}</span> {{ item.big_text }}</h2>
-									<h3><span>{{ item.num_small_text }}</span> {{ item.small_text }}</h3>
+									<h2><span>{{ item.num_big_text }}</span>{{ item.big_text }}</h2>
+									<h3><span>{{ item.num_small_text }}</span>{{ item.small_text }}</h3>
 									<p>{{ item.description }}</p>
 								</div>
 							</div>
@@ -68,7 +70,7 @@
 					<div style="clear: both; float: none"></div>
 				</div>
 			</div>
-			<hr />
+			<hr/>
 		</div>
 		<h3 class="pretty-header left-right-line-short-header">
 			{{ about_titles.best_in_business }}
@@ -99,7 +101,8 @@
 									<img
 										src="{{ item.img.url }}"
 										alt="unnamed"
-									/><span><br/>{{ item.description }}</span>
+									/>
+									<span><br/>{{ item.description }}</span>
 								</p>
 							</div>
 						{% endfor %}
@@ -138,12 +141,14 @@
 										href="{{ item.img.url }}"
 										data-fancybox
 									>
-										<img
-											src="{{ item.img.url }}"
-										/>
+									<img
+										src="{{ item.img.url }}"
+									/>
 									</a>
 								</p>
-								<h4>{{ item.description }}</h4>
+								<h4>
+									{{ item.description }}
+								</h4>
 							</div>
 						</div>
 					{% endfor %}
