@@ -1,21 +1,21 @@
 from django.contrib import admin
 from rules_personal_data.models import (
-    PersonalDataHeaders,
-    PersonalDataText,
-    PersonalDataTitle,
+	RulesPersonalDataImages,
+	RulesPersonalDataObligations,
+	RulesPersonalDataTitles,
 )
 
 
-@admin.register(PersonalDataHeaders)
-class PersonalDataHeadersAdmin(admin.ModelAdmin):
+@admin.register(RulesPersonalDataImages)
+class RulesPersonalDataImagesAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(PersonalDataText)
-class PersonalDataTextAdmin(admin.ModelAdmin):
+@admin.register(RulesPersonalDataObligations)
+class RulesPersonalDataObligationsAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(PersonalDataTitle)
-class PersonalDataTitleAdmin(admin.ModelAdmin):
+@admin.register(RulesPersonalDataTitles)
+class RulesPersonalDataTitlesAdmin(admin.ModelAdmin):
 	pass

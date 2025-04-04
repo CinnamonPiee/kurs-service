@@ -1,25 +1,23 @@
 from django.shortcuts import render
 from about.models import (
-    DescriptionCompany,
-    Advantages,
-    BestInBusiness,
-    Contacts,
-    AccuratelyTime,
-	Training,
-    AboutHeaders,
+    AboutImages,
+    AboutDescriptionCompany,
+    AboutAdvantages,
+    AboutContacts,
+    AboutTrainingStaff,
+	AboutTitles,
 )
 
 
 def about(request):
     context = {
         'title': 'О сервисе | OOO "КУРС"',
-        'description_company_text': DescriptionCompany.objects.last(),
-        'advantages_text': Advantages.objects.all(),
-        'best_in_business': BestInBusiness.objects.last(),
-        'contacts': Contacts.objects.all(),
-        'accurately_time': AccuratelyTime.objects.last(),
-        'training_img': Training.objects.all(),
-        'about_headers': AboutHeaders.objects.last(),
-    
+        'about_images_best_in_business': AboutImages.objects.first(),
+        'about_images_in_time': AboutImages.objects.last(),
+        'about_description_company': AboutDescriptionCompany.objects.first(),
+        'about_advantages': AboutAdvantages.objects.all(),
+        'about_contacts': AboutContacts.objects.all(),
+        'about_training_staff': AboutTrainingStaff.objects.all(),
+        'about_titles': AboutTitles.objects.first(),
     }
     return render(request, "about/about.html", context=context)

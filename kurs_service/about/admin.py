@@ -1,45 +1,39 @@
 from django.contrib import admin
 from about.models import (
-	DescriptionCompany,
-    Advantages,
-    BestInBusiness,
-    Contacts,
-    AccuratelyTime,
-	Training,
-    AboutHeaders,
+	AboutImages,
+    AboutDescriptionCompany,
+    AboutAdvantages,
+    AboutContacts,
+    AboutTrainingStaff,
+	AboutTitles,
 )
 
 
-@admin.register(DescriptionCompany)
-class DescriptionCompanyAdmin(admin.ModelAdmin):
+@admin.register(AboutImages)
+class AboutImagesAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(Advantages)
-class AdvantagesAdmin(admin.ModelAdmin):
+@admin.register(AboutDescriptionCompany)
+class AboutDescriptionCompanyAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(BestInBusiness)
-class BestInBusinessAdmin(admin.ModelAdmin):
+@admin.register(AboutAdvantages)
+class AboutAdvantagesAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(Contacts)
-class ContactsAdmin(admin.ModelAdmin):
+@admin.register(AboutContacts)
+class AboutContactsAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(AccuratelyTime)
-class AccuratelyTimeAdmin(admin.ModelAdmin):
+@admin.register(AboutTrainingStaff)
+class AboutTrainingStaffAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(Training)
-class TrainingAdmin(admin.ModelAdmin):
-	pass
-
-
-@admin.register(AboutHeaders)
-class AboutHeadersAdmin(admin.ModelAdmin):
+@admin.register(AboutTitles)
+class AboutTitlesAdmin(admin.ModelAdmin):
 	pass

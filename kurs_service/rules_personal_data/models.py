@@ -1,42 +1,46 @@
 from django.db import models
+from django.utils.html import strip_tags
 
 
-class PersonalDataTitle(models.Model):
-    img = models.ImageField(upload_to="big_png_with_text", blank=True, null=True, verbose_name="Изображение")
-    title = models.CharField(max_length=255, blank=True, null=True, verbose_name="Заголовок")
+class RulesPersonalDataImages(models.Model):
+    img = models.ImageField(upload_to="page_images", blank=True, null=True, verbose_name="Изображение")
+    description = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание")
 
     def __str__(self):
-        return "Текст на странице - Правила обработки и хранения данных пользователя - правила обработки данных пользователя"
+        clean_text = strip_tags(self.description)
+        return clean_text[:50] if clean_text else "Без названия"
 
     class Meta:
-        db_table = "personal_data_title"
+        db_table = "rules_personal_data_images"
         verbose_name: str = "текст"
-        verbose_name_plural: str = "Правила обработки данных пользователя"
+        verbose_name_plural: str = "Правила обработки данных пользователей"
 
 
-class PersonalDataText(models.Model):
-    bold_head = models.TextField(blank=True, null=True, 
-    verbose_name="Жирный заголовок")
+class RulesPersonalDataObligations(models.Model):
+    title = models.CharField(max_length=255, blank=True, null=True, 
+    verbose_name="Заголовок")
     description = models.TextField(blank=True, null=True, 
-    verbose_name="Пункты")
+    verbose_name="Описание")
 
     def __str__(self):
-        return self.bold_head
+        clean_text = strip_tags(self.title)
+        return clean_text[:50] if clean_text else "Без названия"
 
     class Meta:
-        db_table = "personal_data_text"
+        db_table = "rules_personal_data_obligations"
         verbose_name: str = "текст"
-        verbose_name_plural: str = "Правила обработки"
+        verbose_name_plural: str = "Основной текст правил"
         
 
-class PersonalDataHeaders(models.Model):
-    rules = models.CharField(max_length=255, blank=True, null=True, verbose_name="Заголовок1")
+class RulesPersonalDataTitles(models.Model):
+    rules_title = models.CharField(max_length=255, blank=True, null=True, verbose_name="Текст заголовка")
     
 
     def __str__(self):
-        return "Текст"
+        clean_text = strip_tags(self.rules_title)
+        return clean_text[:50] if clean_text else "Без названия"
 
     class Meta:
-        db_table = "personal_data_headers"
+        db_table = "rules_personal_data_titles"
         verbose_name: str = "заголовок"
         verbose_name_plural: str = "Заголовки"

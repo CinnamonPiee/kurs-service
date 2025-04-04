@@ -1,9 +1,14 @@
 from django.contrib import admin
 from warranty.models import (
 	WarrantyObligations,
-	WarrantyHeaders,
-	Warranty180,
+	WarrantyTitles,
+	WarrantyImages,
 )
+
+
+@admin.register(WarrantyImages)
+class WarrantyImagesAdmin(admin.ModelAdmin):
+	pass
 
 
 @admin.register(WarrantyObligations)
@@ -11,11 +16,6 @@ class WarrantyObligationsAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(WarrantyHeaders)
-class WarrantyHeadersAdmin(admin.ModelAdmin):
-	pass
-
-
-@admin.register(Warranty180)
-class Warranty180Admin(admin.ModelAdmin):
+@admin.register(WarrantyTitles)
+class WarrantyTitlesAdmin(admin.ModelAdmin):
 	pass

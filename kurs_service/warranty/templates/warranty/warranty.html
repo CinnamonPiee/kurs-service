@@ -16,27 +16,25 @@
 		<div class="warranty">
 			<div class="warranty-title">
 				<h1>
-					{{ warranty_180.title|safe }}
-					<br/>
-					{{ warranty_180.description|safe }}
+					{{ warranty_images.description|safe }}
 				</h1>
 			</div>
 		</div>
 		<div class="header-contacts centered">
 			<h3 class="pretty-header left-right-line-short-header">
-				{{ warranty_headers.warranty }}
+				{{ warranty_titles.warranty_title }}
 			</h3>
 		</div>
 		<br />
 		<div id="list-wrapper" class="list-wrapper">
 			<div data-key="1">
 				<div class="warranty-obligations">
-					{{ warranty_text.general_provisions|safe }}
-					{{ warranty_text.warranty_period|safe }}
-					{{ warranty_text.execution_conditions|safe }}
-					{{ warranty_text.cancellation_conditions|safe }}
-					{{ warranty_text.list_types_work|safe }}
-					{{ warranty_text.parking_conditions|safe }}
+					{% for item in warranty_obligations %}
+						<p>
+							{{ item.title|safe }}
+							{{ item.description|safe }}
+						</p>
+					{% endfor %}
 				</div>
 			</div>
 			<div style="clear: both; float: none"></div>

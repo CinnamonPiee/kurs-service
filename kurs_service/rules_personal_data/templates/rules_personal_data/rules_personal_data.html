@@ -9,26 +9,26 @@
 
 {% block content %}
 <ul class="breadcrumb">
-	<li><a href="/">Главная</a></li>
+	<li><a href="{% url "main_page:main_page" %}">Главная</a></li>
 	<li class="active">Правила обработки данных</li>
 </ul>
 <div class="site-contact">
 	<div class="personal-data">
 		<div class="personal-data-title">
 			<h1>
-				{{ personal_title.title|safe }}
+				{{ rules_personal_data_images.description|safe }}
 			</h1>
 		</div>
 	</div>
 	<div class="header-contacts centered">
 		<h3 class="pretty-header left-right-line-short-header">
-			{{ personal_header.rules }}
+			{{ rules_personal_data_titles.rules_title }}
 		</h3>
 	</div>
 	<br />
 	<div class="personal-data-title-text">
-		{% for item in personal_text %}
-			{{ item.bold_head|safe }}
+		{% for item in rules_personal_data_obligations %}
+			{{ item.title|safe }}
 			{{ item.description|safe }}
 		{% endfor %}
 	</div>

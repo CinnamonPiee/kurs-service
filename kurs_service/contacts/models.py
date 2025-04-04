@@ -1,51 +1,61 @@
 from django.db import models
+from django.utils.html import strip_tags
 
 
-class SupportHelp(models.Model):
-	img = models.ImageField(upload_to="big_png_with_text", blank=True, null=True, verbose_name="Изображение")
-	title = models.CharField(max_length=255, blank=True, null=True, verbose_name="Заголовок")
-	mobile_number = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание")
+class ContactsImages(models.Model):
+	img = models.ImageField(upload_to="page_images", blank=True, null=True, verbose_name="Изображение")
+	description = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание")
+	mobile_number = models.CharField(max_length=255, blank=True, null=True, verbose_name="Номер телефона")
 
 	def __str__(self):
-		return "Текст на странице - Гарантии - наши операторы с точностью помогут вам!"
+		clean_text = strip_tags(self.description)
+		return clean_text[:50] if clean_text else "Без названия"
 
 	class Meta:
-		db_table = "support_help_title"
+		db_table = "contacts_images"
 		verbose_name: str = "текст"
 		verbose_name_plural: str = "Наши операторы с точностью помогут вам!"
 
 
-class WorkingTime(models.Model):
-	weekdays = models.TextField(blank=True, null=True, 
+class ContactsWorkingTime(models.Model):
+	weekday = models.TextField(blank=True, null=True, 
     verbose_name="День недели")
-	weekdays_hours = models.TextField(blank=True, null=True, 
+	weekday_hours = models.TextField(blank=True, null=True, 
     verbose_name="Время работы")
 
 	def __str__(self):
-		return self.weekdays
+		return self.weekday
 
 	class Meta:
-		db_table = "working_time"
+		db_table = "contacts_working_time"
 		verbose_name: str = "текст"
-		verbose_name_plural: str = "Наши контактные данные и режим работы"
+		verbose_name_plural: str = "Наш режим работы"
 
 	
-class ContactsData(models.Model):
-	img = models.ImageField(upload_to="qr_codes", blank=True, null=True, verbose_name="QR-код")
-	second_img = models.ImageField(upload_to="qr_codes", blank=True, null=True, verbose_name="Изображение")
-	text = models.CharField(max_length=255, blank=True, null=True, verbose_name="Текст")
-	second_text = models.CharField(max_length=255, blank=True, null=True, verbose_name="Второй текст")
+class ContactsCompanyData(models.Model):
+	img_qrcode = models.ImageField(upload_to="qr_codes", blank=True, null=True, verbose_name="QR-код")
+	img_qrcode_mobile = models.ImageField(upload_to="qr_codes", blank=True, null=True, verbose_name="Изображение")
+	qrcode_text = models.CharField(max_length=255, blank=True, null=True, verbose_name="Текст qr-кода")
+	img_email = models.ImageField(upload_to="mini_icons", blank=True, null=True, verbose_name="Изображение почты")
+	email_text = models.CharField(max_length=255, blank=True, null=True, verbose_name="Текст почты")
+	img_address = models.ImageField(upload_to="mini_icons", blank=True, null=True, verbose_name="Изображение адреса")
+	address_text = models.CharField(max_length=255, blank=True, null=True, verbose_name="Текст адреса")
+	imp_open = models.ImageField(upload_to="mini_icons", blank=True, null=True, verbose_name="Изображение открыто")
+	open_text = models.CharField(max_length=255, blank=True, null=True, verbose_name="Текст открыто")
+	imp_watsapp = models.ImageField(upload_to="mini_icons", blank=True, null=True, verbose_name="Изображение WatsApp")
+	watsapp_text = models.CharField(max_length=255, blank=True, null=True, verbose_name="Текст WatsApp")
+	mobile_number = models.CharField(max_length=255, blank=True, null=True, verbose_name="Текст мобильного номера")
 
 	def __str__(self):
-		return self.text
+		return "Наши контактные данные"
 
 	class Meta:
-		db_table = "contacts_data"
+		db_table = "contacts_company_data"
 		verbose_name: str = "текст"
-		verbose_name_plural: str = "Наши контактные данные и режим работы"
+		verbose_name_plural: str = "Наш контактные данные"
 
 	
-class ContactsAndDetails(models.Model):
+class ContactsCompanyDetails(models.Model):
 	mobile_number = models.CharField(max_length=255, blank=True, null=True, verbose_name="Номер телефона")
 	actual_address = models.CharField(max_length=255, blank=True, null=True, verbose_name="Фактический адрес")
 	legal_address = models.CharField(max_length=255, blank=True, null=True, verbose_name="Юридический адрес")
@@ -59,39 +69,50 @@ class ContactsAndDetails(models.Model):
 		return "Реквизиты"
 
 	class Meta:
-		db_table = "contacts_and_details"
+		db_table = "contacts_company_details"
 		verbose_name: str = "текст"
 		verbose_name_plural: str = "Контакты и реквизиты компании ООО 'КУРС'"
 
 
-class DirectionScheme(models.Model):
-	img_line_metro = models.ImageField(upload_to="directions_to_service", blank=True, null=True, verbose_name="Изображение линии метро")
-	img_train = models.ImageField(upload_to="directions_to_service", blank=True, null=True, verbose_name="Изображение поезда")
+class ContactsDirectionSchema(models.Model):
+	img_line_metro = models.ImageField(upload_to="directions_schema", blank=True, null=True, verbose_name="Изображение линии метро")
+	img_train = models.ImageField(upload_to="directions_schema", blank=True, null=True, verbose_name="Изображение поезда")
 	description_train = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание пути на метро")
-	img_foot = models.ImageField(upload_to="directions_to_service", blank=True, null=True, verbose_name="Изображение пешеходов")
+	img_foot = models.ImageField(upload_to="directions_schema", blank=True, null=True, verbose_name="Изображение пешеходов")
 	description_foot = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание пути пешком")
-	img_taxi = models.ImageField(upload_to="directions_to_service", blank=True, null=True, verbose_name="Изображение такси")
+	img_taxi = models.ImageField(upload_to="directions_schema", blank=True, null=True, verbose_name="Изображение такси")
 	description_taxi = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание пути на такси")
 
 	def __str__(self):
-		return "Схема"
+		return self.description_train
 
 	class Meta:
-		db_table = "direction_scheme"
+		db_table = "contacts_direction_schema"
 		verbose_name: str = "текст"
 		verbose_name_plural: str = "Схема прохода и проезда"
 
-
-class ContactsHeaders(models.Model):
-	contacts_and_working_hours = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание пути на такси")
-	contacts_and_details = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание пути на такси")
-	direction_scheme = models.CharField(max_length=255, blank=True, null=True, verbose_name="Описание пути на такси")
+	
+class ContactsMapSchema(models.Model):
+	img = models.ImageField(upload_to="directions_schema", blank=True, null=True, verbose_name="Изображение")
 
 	def __str__(self):
-		return "Текст"
+		return "Изображение карты прохода"
 
 	class Meta:
-		db_table = "contacts_headers"
+		db_table = "contacts_map_schema"
+		verbose_name: str = "изображение"
+		verbose_name_plural: str = "Карта прохода и проезда"
+
+
+class ContactsTitles(models.Model):
+	contacts_and_working_hours = models.CharField(max_length=255, blank=True, null=True, verbose_name="Наши контактные данные и режим работы")
+	contacts_and_details = models.CharField(max_length=255, blank=True, null=True, verbose_name="Контакты и реквизиты компании ООО 'КУРС'")
+	direction_schema = models.CharField(max_length=255, blank=True, null=True, verbose_name="Схема прохода и проезда")
+
+	def __str__(self):
+		return "Заголовки"
+
+	class Meta:
+		db_table = "contacts_titles"
 		verbose_name: str = "заголовок"
 		verbose_name_plural: str = "Заголовки"
-

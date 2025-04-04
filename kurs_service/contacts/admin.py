@@ -1,39 +1,45 @@
 from django.contrib import admin
 from contacts.models import (
-    SupportHelp,
-    WorkingTime,
-    ContactsData,
-    ContactsAndDetails,
-    DirectionScheme,
-    ContactsHeaders,
+    ContactsImages,
+    ContactsWorkingTime,
+    ContactsCompanyData,
+    ContactsCompanyDetails,
+    ContactsDirectionSchema,
+	ContactsMapSchema,
+    ContactsTitles,
 )
 
 
-@admin.register(SupportHelp)
-class SupportHelpAdmin(admin.ModelAdmin):
+@admin.register(ContactsImages)
+class ContactsImagesAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(WorkingTime)
-class WorkingTimeAdmin(admin.ModelAdmin):
+@admin.register(ContactsWorkingTime)
+class ContactsWorkingTimeAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(ContactsData)
-class ContactsDataAdmin(admin.ModelAdmin):
+@admin.register(ContactsCompanyData)
+class ContactsCompanyDataAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(ContactsAndDetails)
-class ContactsAndDetailsAdmin(admin.ModelAdmin):
+@admin.register(ContactsCompanyDetails)
+class ContactsCompanyDetailsAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(DirectionScheme)
-class DirectionSchemeAdmin(admin.ModelAdmin):
+@admin.register(ContactsDirectionSchema)
+class ContactsDirectionSchemaAdmin(admin.ModelAdmin):
 	pass
 
 
-@admin.register(ContactsHeaders)
-class ContactsHeadersAdmin(admin.ModelAdmin):
+@admin.register(ContactsMapSchema)
+class ContactsMapSchemaAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(ContactsTitles)
+class ContactsTitlesAdmin(admin.ModelAdmin):
 	pass

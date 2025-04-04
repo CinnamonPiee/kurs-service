@@ -14,7 +14,7 @@
 	</ul>
 	<div class="about">
 		<h3 class="pretty-header left-right-line-short-header">
-			{{ about_headers.description_company }}
+			{{ about_titles.description_company }}
 		</h3>
 		<div class="about-company">
 			<div class="row">
@@ -23,7 +23,7 @@
 						<div class="interior-background">
 							<div class="cart-personnel">
 								<img
-									src="{{ description_company_text.img.url }}"
+									src="{{ about_description_company.img.url }}"
 									alt=""
 								/>
 							</div>
@@ -31,14 +31,14 @@
 					</div>
 				</div>
 				<div class="col-lg-8 col-xs-12">
-					<h3>{{ description_company_text.title }}</h3>
+					<h3>{{ about_description_company.title }}</h3>
 					<div id="list-wrapper" class="list-wrapper">
 						<div data-key="1">
 							<p> 
-								{{ description_company_text.description }}
+								{{ about_description_company.description }}
 								<br/>
 								<span>
-									{{ description_company_text.short_description }}
+									{{ about_description_company.short_description }}
 								</span>
 							</p>
 						</div>
@@ -48,13 +48,13 @@
 			</div>
 		</div>
 		<h3 class="pretty-header left-right-line-short-header">
-			{{ about_headers.advantages }}
+			{{ about_titles.advantages }}
 		</h3>
 		<div class="advantages">
 			<hr />
 			<div class="row">
 				<div id="list-wrapper" class="list-wrapper">
-					{% for item in advantages_text %}
+					{% for item in about_advantages %}
 						<div data-key="{{ forloop.counter }}">
 							<div class="col-lg-3 col-xs-6">
 								<div class="item-advantage">
@@ -71,29 +71,29 @@
 			<hr />
 		</div>
 		<h3 class="pretty-header left-right-line-short-header">
-			{{ about_headers.best_in_business }}
+			{{ about_titles.best_in_business }}
 		</h3>
 		<div class="best-service">
 			<div class="col-lg-9 col-xs-7">
-				<h1>{{ best_in_business.title }}</h1>
-				<h2>{{ best_in_business.short_description }}</h2>
-				<h3>{{ best_in_business.description }}</h3>
+				<h1>{{ about_images_best_in_business.title }}</h1>
+				<h2>{{ about_images_best_in_business.first_description }}</h2>
+				<h3>{{ about_images_best_in_business.second_description }}</h3>
 			</div>
 			<div class="col-lg-3 col-xs-5">
 				<img
-					src="{{ best_in_business.img.url }}"
+					src="{{ about_images_best_in_business.img.url }}"
 					alt=""
 				/>
 			</div>
 		</div>
 		<h3 class="pretty-header left-right-line-short-header">
-			{{ about_headers.contacts }}
+			{{ about_titles.contacts }}
 		</h3>
 		<div class="contacts-data">
 			<div class="row centered">
 				<div id="list-wrapper" class="list-wrapper">
 					<div data-key="1">
-						{% for item in contacts %}
+						{% for item in about_contacts %}
 							<div class="col-lg-3 col-xs-6">
 								<p>
 									<img
@@ -109,28 +109,28 @@
 			</div>
 		</div>
 		<h3 class="pretty-header left-right-line-short-header">
-			{{ about_headers.accurately_time }}
+			{{ about_titles.accurately_time }}
 		</h3>
 		<div class="right-time">
 			<div class="col-lg-8 col-xs-6">
-				<h1>{{ accurately_time.title }}</h1>
-				<h2>{{ accurately_time.short_description }}</h2>
-				<h3>{{ accurately_time.description }}</h3>
+				<h1>{{ about_images_in_time.title }}</h1>
+				<h2>{{ about_images_in_time.first_description }}</h2>
+				<h3>{{ about_images_in_time.second_description }}</h3>
 			</div>
 			<div class="col-lg-4 col-xs-6">
 				<img
-					src="{{ accurately_time.img.url }}"
+					src="{{ about_images_in_time.img.url }}"
 					alt=""
 				/>
 			</div>
 		</div>
 		<h3 class="pretty-header left-right-line-short-header">
-			{{ about_headers.training }}
+			{{ about_titles.training }}
 		</h3>
 		<div class="educations-personal centered">
 			<div class="row">
 				<div id="list-wrapper" class="list-wrapper">
-					{% for item in training_img %}
+					{% for item in about_training_staff %}
 						<div data-key="{{ forloop.counter }}">
 							<div class="col-lg-4 col-xs-6 educations-personal-block">
 								<p>
@@ -157,7 +157,7 @@
 		<!--    </div>-->
 		<!-- TODO доделать раздел с комментариями -->
 		<h3 class="pretty-header left-right-line-short-header">
-			{{ about_headers.last_review }}
+			{{ about_titles.last_review }}
 		</h3>
 		<div class="content-reviews-home">
 			<div id="list-wrapper" class="list-wrapper">
