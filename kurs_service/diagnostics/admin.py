@@ -1,3 +1,15 @@
 from django.contrib import admin
+from diagnostics.models import (
+	DiagnosticsMainDirections,
+	DiagnosticsWikiText,
+)
 
-# Register your models here.
+
+@admin.register(DiagnosticsMainDirections)
+class DiagnosticsMainDirectionsAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(DiagnosticsWikiText)
+class DiagnosticsWikiTextAdmin(admin.ModelAdmin):
+	pass
