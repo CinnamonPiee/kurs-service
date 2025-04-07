@@ -16,123 +16,46 @@
 		<div class="news">
 			<div class="container-content">
 				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<div class="item-news-max">
-							<div class="item-header">
-								<img
-									class="logo"
-									src="{% static "/assets_project/img/img-news/news.jpg" %}"
-									alt=""
-								/>
-							</div>
-							<div class="item-news">
-								<div class="content-news">
-									<div class="row">
-										<div class="col-lg-4">
-											<img
-												class="img-item-sale"
-												src="{% static "/assets_project/img/img-news/covid.jpg" %}"
-												alt=""
-											/>
+					{% for item in news_content %}
+						<div data-key="{{ forloop.counter }}">
+							<div class="item-news-max">
+								<div class="item-header">
+									<img
+										class="logo"
+										src="{{ item.news_img.url }}"
+										alt=""
+									/>
+								</div>
+								<div class="item-news">
+									<div class="content-news">
+										<div class="row">
+											<div class="col-lg-4">
+												<img
+													class="img-item-sale"
+													src="{{ item.img.url }}"
+													alt=""
+												/>
+											</div>
+											<div class="col-lg-8">
+												<h3>{{ item.title }}</h3>
+												<p>
+													{{ item.description }}
+												</p>
+											</div>
 										</div>
-										<div class="col-lg-8">
-											<h3>Вакцинация персонала от COVID-19</h3>
-											<p>
-												Важная информация! Сотрудники ООО "КУРС" для безопасности
-												своего и вашего здоровья, прошли процесс вакцинации!
+									</div>
+									<div class="row">
+										<div class="footer-news">
+											<p style="text-align: right">
+												{{ item.posted }}
 											</p>
 										</div>
 									</div>
 								</div>
-								<div class="row">
-									<div class="footer-news">
-										<p style="text-align: right">Размещенно: 20.01.2021 в 9:00</p>
-									</div>
-								</div>
 							</div>
+							<br />
 						</div>
-						<br />
-					</div>
-					<div data-key="2">
-						<div class="item-news-max">
-							<div class="item-header">
-								<img
-									class="logo"
-									src="{% static "/assets_project/img/img-news/news.jpg" %}"
-									alt=""
-								/>
-							</div>
-							<div class="item-news">
-								<div class="content-news">
-									<div class="row">
-										<div class="col-lg-4">
-											<img
-												class="img-item-sale"
-												src="{% static "/assets_project/img/img-news/rewiews.jpg" %}"
-												alt=""
-											/>
-										</div>
-										<div class="col-lg-8">
-											<h3>Обновление на сайте</h3>
-											<p>
-												Важная информация! ООО "КУРС" обновил версию сайта для
-												вашего удобства, добавлен раздел отзывов о нас и
-												соответственно специальные предложения связанные с этим!
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="footer-news">
-										<p style="text-align: right">
-											Размещенно: 24.01.2021 в 09:04
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<br />
-					</div>
-					<div data-key="3">
-						<div class="item-news-max">
-							<div class="item-header">
-								<img
-									class="logo"
-									src="{% static "/assets_project/img/img-news/news.jpg" %}"
-									alt=""
-								/>
-							</div>
-							<div class="item-news">
-								<div class="content-news">
-									<div class="row">
-										<div class="col-lg-4">
-											<img
-												class="img-item-sale"
-												src="{% static "/assets_project/img/img-news/shinomontazh.jpg" %}"
-												alt=""
-											/>
-										</div>
-										<div class="col-lg-8">
-											<h3>Новое оборудование</h3>
-											<p>
-												Важная иформация! ООО "КУРС" обновил шиномонтажное
-												оборудование для качественного проведения работ в сфере
-												шиномонтажа. Новое оборудование позволяет проводить
-												качественную балансировку колес, проверку дисков и
-												шиномонтаж с 12 по 22 радиус включительно.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="footer-news">
-										<p style="text-align: right">Размещенно: 06.02.2021 в 9:01</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<br />
-					</div>
+					{% endfor %}
 					<div style="clear: both; float: none"></div>
 				</div>
 			</div>
