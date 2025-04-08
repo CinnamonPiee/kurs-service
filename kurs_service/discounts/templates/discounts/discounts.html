@@ -15,247 +15,54 @@
 	<div class="site-contact">
 		<div class="header-contacts centered">
 			<h3 class="pretty-header left-right-line-short-header">
-				Акции от ООО "КУРС"
+				{{ discounts_titles.discount }}
 			</h3>
 		</div>
 		<div>
 			<div class="item-special-price">
 				<div class="row">
 					<div id="list-wrapper" class="list-wrapper">
-						<div data-key="1">
-							<div class="col-lg-4">
-								<div class="discounts">
-									<div class="container-content">
-										<div class="item-discounts">
-											<div class="item-header">
-												<img
-													class="logo"
-													src="{% static "/assets_project/img/img-logo-discounts/toyota-lexus.jpg" %}"
-													alt=""
-												/>
-											</div>
-											<div class="item-content">
-												<img
-													class="img-item-sale-max img-responsive"
-													src="{% static "/assets_project/img/img-discounts/last-znakomstvo.jpg" %}"
-													alt=""
-												/>
-												<h4 class="centered">Первый визит скидка 5%</h4>
-												<p>
-													ООО "КУРС" предоставляет 5% скидку владельцам TOYOTA и
-													LEXUS на все виды работ включая капитальный ремонт ДВС и
-													КПП.
-												</p>
-											</div>
-											<div class="item-footer centered">
-												<button
-													class="kursStyleButton add-to-sale"
-													data-sale="1"
-													data-title="Первый визит скидка 5%"
-												>
-													ПОЛУЧИТЬ ВЫГОДУ
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div data-key="2">
-							<div class="col-lg-4">
-								<div class="discounts">
-									<div class="container-content">
-										<div class="item-discounts">
-											<div class="item-header">
-												<img
-													class="logo"
-													src="{% static "/assets_project/img/img-logo-discounts/toyota-lexus.jpg" %}"
-													alt=""
-												/>
-											</div>
-											<div class="item-content">
-												<img
-													class="img-item-sale-max img-responsive"
-													src="{% static "/assets_project/img/img-discounts/lexus-and-toyota.jpg" %}"
-													alt=""
-												/>
-												<h4 class="centered">Выгодная диагностика</h4>
-												<p>
-													Выгодная диагностика предоставляется на автомобили
-													TOYOTA и LEXUS при проведении ТО! Ваша скидка 5%!
-												</p>
-											</div>
-											<div class="item-footer centered">
-												<button
-													class="kursStyleButton add-to-sale"
-													data-sale="2"
-													data-title="Выгодная диагностика"
-												>
-													ПОЛУЧИТЬ ВЫГОДУ
-												</button>
+						{% for item in discounts_content %}
+							<div data-key="{{ forloop.counter }}">
+								<div class="col-lg-4">
+									<div class="discounts">
+										<div class="container-content">
+											<div class="item-discounts">
+												<div class="item-header">
+													<img
+														class="logo"
+														src="{{ item.img_logo.url }}"
+														alt=""
+													/>
+												</div>
+												<div class="item-content">
+													<img
+														class="img-item-sale-max img-responsive"
+														src="{{ item.img.url }}"
+														alt=""
+													/>
+													<h4 class="centered">
+														{{ item.title }}
+													</h4>
+													<p>
+														{{ item.description }}
+													</p>
+												</div>
+												<div class="item-footer centered">
+													<button
+														class="kursStyleButton add-to-sale"
+														data-sale="1"
+														data-title="Первый визит скидка 5%"
+													>
+														{{ item.button_text }}
+													</button>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div data-key="3">
-							<div class="col-lg-4">
-								<div class="discounts">
-									<div class="container-content">
-										<div class="item-discounts">
-											<div class="item-header">
-												<img
-													class="logo"
-													src="{% static "/assets_project/img/img-logo-discounts/toyota-lexus.jpg" %}"
-													alt=""
-												/>
-											</div>
-											<div class="item-content">
-												<img
-													class="img-item-sale-max img-responsive"
-													src="{% static "/assets_project/img/img-discounts/podveska.jpg" %}"
-													alt=""
-												/>
-												<h4 class="centered">Выгодная диагностика подвески</h4>
-												<p>
-													Выгодная диагностика подвески предоставляется на
-													автомобили TOYOTA и LEXUS при заказе онлайн услуги
-													"Сход-развал"! Ваша скидка 5%!
-												</p>
-											</div>
-											<div class="item-footer centered">
-												<button
-													class="kursStyleButton add-to-sale"
-													data-sale="3"
-													data-title="Выгодная диагностика подвески"
-												>
-													ПОЛУЧИТЬ ВЫГОДУ
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div data-key="5">
-							<div class="col-lg-4">
-								<div class="discounts">
-									<div class="container-content">
-										<div class="item-discounts">
-											<div class="item-header">
-												<img
-													class="logo"
-													src="{% static "/assets_project/img/img-logo-discounts/toyota-lexus.jpg" %}"
-													alt=""
-												/>
-											</div>
-											<div class="item-content">
-												<img
-													class="img-item-sale-max img-responsive"
-													src="{% static "/assets_project/img/img-discounts/toyota.jpeg" %}"
-													alt=""
-												/>
-												<h4 class="centered">
-													Пора делать сход-развал?<br />
-													У нас есть скидка для Вас!
-												</h4>
-												<p>
-													В случае того, если, Вы запишитесь на сход-развал обоих
-													осей, ООО "КУРС" предоставит вам скидку 5%!!!
-												</p>
-											</div>
-											<div class="item-footer centered">
-												<button
-													class="kursStyleButton add-to-sale"
-													data-sale="5"
-													data-title="Пора делать сход-развал?<br> У нас есть скидка для Вас!"
-												>
-													ПОЛУЧИТЬ ВЫГОДУ
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div data-key="6">
-							<div class="col-lg-4">
-								<div class="discounts">
-									<div class="container-content">
-										<div class="item-discounts">
-											<div class="item-header">
-												<img
-													class="logo"
-													src="{% static "/assets_project/img/img-logo-discounts/percent.png" %}"
-													alt=""
-												/>
-											</div>
-											<div class="item-content">
-												<img
-													class="img-item-sale-max img-responsive"
-													src="{% static "/assets_project/img/img-discounts/rewiews.jpg" %}"
-													alt=""
-												/>
-												<h4 class="centered">Оставьте отзыв о нас</h4>
-												<p>
-													Оставив на нашем сайте отзыв вы автоматически получите
-													промокод на следующее посещение. Ваша выгода составит
-													5%!
-												</p>
-											</div>
-											<div class="item-footer centered">
-												<button
-													class="kursStyleButton add-to-sale"
-													data-sale="6"
-													data-title="Оставьте отзыв о нас"
-												>
-													ПОЛУЧИТЬ ВЫГОДУ
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div data-key="7">
-							<div class="col-lg-4">
-								<div class="discounts">
-									<div class="container-content">
-										<div class="item-discounts">
-											<div class="item-header">
-												<img
-													class="logo"
-													src="{% static "/assets_project/img/img-logo-discounts/percent.png" %}"
-													alt=""
-												/>
-											</div>
-											<div class="item-content">
-												<img
-													class="img-item-sale-max img-responsive"
-													src="{% static "/assets_project/img/img-discounts/shinomontaz-sale.jpg" %}"
-													alt=""
-												/>
-												<h4 class="centered">Пятое колесо в подарок</h4>
-												<p>
-													Пятое колесо в подарок при условии заказа онлайн услуги
-													монтажа, балансировки и замены вентелей 4 колес
-												</p>
-											</div>
-											<div class="item-footer centered">
-												<button
-													class="kursStyleButton add-to-sale"
-													data-sale="7"
-													data-title="Пятое колесо в подарок"
-												>
-													ПОЛУЧИТЬ ВЫГОДУ
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						{% endfor %}
 						<div style="clear: both; float: none"></div>
 					</div>
 				</div>
