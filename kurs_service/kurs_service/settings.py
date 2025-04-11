@@ -22,7 +22,6 @@ pymysql.install_as_MySQLdb()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -45,26 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	
-    'about',
-    'check_list',
-    'contacts',
-    'diagnostics',
-    'discounts',
-    'evacuation',
-    'insurance',
     'main_page',
-    'news',
-    'online_appointment',
-    'photo_gallery',
-    'price_maintenance',
-    'price_shod_razval',
-    'price_tire_fitting',
-    'reviews',
-	'rules_personal_data',
-    'site_login',
-    'site_signup',
-    'warranty',
-	'common',
 	
     'debug_toolbar',
 ]
@@ -165,9 +145,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
 INTERNAL_IPS = [
-    # ...
     "127.0.0.1",
-    # ...
 ]
 
 # Default primary key field type
