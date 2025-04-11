@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'site_login',
     'site_signup',
     'warranty',
+	'common',
 	
     'debug_toolbar',
 ]

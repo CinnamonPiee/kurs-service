@@ -13,8 +13,12 @@
 		<li class="active">Вход</li>
 	</ul>
 	<div class="site-login">
-		<h3 class="pretty-header left-right-line-short-header">Вход</h3>
-		<h3>Пожалуйста, заполните следующие поля для входа:</h3>
+		<h3 class="pretty-header left-right-line-short-header">
+			{{ site_login_titles.enter_forms }}
+		</h3>
+		<h3>
+			{{ site_login_text.title }}
+		</h3>
 		<div class="login-form-kurs">
 			<div class="row">
 				<div class="col-lg-5">
@@ -25,9 +29,9 @@
 							value="yxIJ6Wh1JuRIGx59bbFpmHs51sCq7v7PhjE0OrO3cOm5X1OoKhFglz5vKTMp9g_ROQ2xk-HYrqTvR1d-hO9Fsw=="
 						/>
 						<div class="form-group field-loginform-email required">
-							<label class="control-label" for="loginform-email"
-								>Адрес электронной почты</label
-							>
+							<label class="control-label" for="loginform-email">
+								{{ site_login_text.mail }}
+							</label>
 							<input
 								type="text"
 								id="loginform-email"
@@ -39,7 +43,9 @@
 							<p class="help-block help-block-error"></p>
 						</div>
 						<div class="form-group field-loginform-password required">
-							<label class="control-label" for="loginform-password">Пароль</label>
+							<label class="control-label" for="loginform-password">
+								{{ site_login_text.password }}
+							</label>
 							<input
 								type="password"
 								id="loginform-password"
@@ -78,7 +84,7 @@
 						</div>
 						<div class="form-group">
 							<button type="submit" class="kursStyleButton" name="login-button">
-								Войти
+								{{ site_login_text.button }}
 							</button>
 						</div>
 					</form>

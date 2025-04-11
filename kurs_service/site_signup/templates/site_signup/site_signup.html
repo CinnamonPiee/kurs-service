@@ -13,8 +13,12 @@
 		<li class="active">Регистрация</li>
 	</ul>
 	<div class="site-signup">
-		<h3 class="pretty-header left-right-line-short-header">Регистрация</h3>
-		<h3>Пожалуйста, заполните следующие поля, чтобы зарегистрироваться:</h3>
+		<h3 class="pretty-header left-right-line-short-header">
+			{{ site_signup_title.registration }}
+		</h3>
+		<h3>
+			{{ site_signup_text.title }}:
+		</h3>
 		<div style="display: none">
 			<p>Исправьте следующие ошибки:</p>
 			<ul></ul>
@@ -29,9 +33,9 @@
 							value="zYK6bf8Pr4i2iBj5j9Qy42YVFtdj2fT5TVy4tx5Smfe_z-AsvWvp-8D8L7fLk1SqJCFxhCjvpJIkKtvzKQqsrQ=="
 						/>
 						<div class="form-group field-signupform-username required">
-							<label class="control-label" for="signupform-username"
-								>Ваше имя</label
-							>
+							<label class="control-label" for="signupform-username">
+								{{ site_signup_text.name }}
+							</label>
 							<input
 								type="text"
 								id="signupform-username"
@@ -43,9 +47,9 @@
 							<div class="help-block"></div>
 						</div>
 						<div class="form-group field-signupform-email required">
-							<label class="control-label" for="signupform-email"
-								>Адрес электронной почты</label
-							>
+							<label class="control-label" for="signupform-email">
+								{{ site_signup_text.mail }}
+							</label>
 							<input
 								type="text"
 								id="signupform-email"
@@ -57,9 +61,9 @@
 							<div class="help-block"></div>
 						</div>
 						<div class="form-group field-signupform-password required">
-							<label class="control-label" for="signupform-password"
-								>Пароль</label
-							>
+							<label class="control-label" for="signupform-password">
+								{{ site_signup_text.password}}
+							</label>
 							<input
 								type="password"
 								id="signupform-password"
@@ -71,9 +75,9 @@
 							<div class="help-block"></div>
 						</div>
 						<div class="form-group field-signupform-retypepassword required">
-							<label class="control-label" for="signupform-retypepassword"
-								>Повторите пароль</label
-							>
+							<label class="control-label" for="signupform-retypepassword">
+								{{ site_signup_text.password_repeat }}
+							</label>
 							<input
 								type="password"
 								id="signupform-retypepassword"
@@ -86,7 +90,7 @@
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary" name="signup-button">
-								Зарегистрироваться
+								{{ site_signup_text.button }}
 							</button>
 						</div>
 						<div style="color: #999; margin: 1em 0">
