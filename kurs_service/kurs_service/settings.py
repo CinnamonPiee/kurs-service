@@ -45,27 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	
-    'about',
-    'check_list',
-    'contacts',
-    'diagnostics',
-    'discounts',
-    'evacuation',
-    'insurance',
-    'main_page',
-    'news',
-    'online_appointment',
-    'photo_gallery',
-    'price_maintenance',
-    'price_shod_razval',
-    'price_tire_fitting',
-    'reviews',
-	'rules_personal_data',
-    'site_login',
-    'site_signup',
-    'warranty',
-	'common',
-	
     'debug_toolbar',
 ]
 
