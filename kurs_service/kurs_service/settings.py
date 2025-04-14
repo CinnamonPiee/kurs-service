@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	
-    'base_page',
-	'main_page',
+    'base_page.apps.BasePageConfig',
+	'main_page.apps.MainPageConfig',
+	'photo_gallery.apps.PhotoGalleryConfig',
+	'warranty.apps.WarrantyConfig', 
 	
     'debug_toolbar',
 ]
