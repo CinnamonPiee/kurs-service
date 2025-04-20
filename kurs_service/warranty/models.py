@@ -21,7 +21,8 @@ class WarrantyObligations(models.Model):
 	description = models.TextField(null=True, blank=True, verbose_name="Описание")
 
 	def __str__(self):
-		return self.title
+		clean_text = strip_tags(self.title)
+		return clean_text[:50] if clean_text else "Без названия"
 	
 	class Meta:
 		db_table = "warranty_obligations"
