@@ -152,7 +152,7 @@ label {
 }
 
 .check-list {
-    background: url(/frontend/web/assets_project/img/imgLogo/check-list.png) no-repeat center;
+    background: url(../img/imgLogo/check-list.png) no-repeat center;
     height: 75px;
     width: auto;
     padding: 63px 0 0 0;
@@ -981,7 +981,7 @@ p.in-pop {
 /*bottom fix style end*/
 /*style footer*/
 #footer .footer-img {
-    background: url(/frontend/web/assets_project/img/imgLogo/man_bottom.png) no-repeat center;
+    background: url(../img/imgLogo/man_bottom.png) no-repeat center;
     height: 225px;
     border-bottom: 1px solid #ed1c24;
 }
@@ -1217,7 +1217,7 @@ a.kursStyleButton {
 /*kurs style button end*/
 /*online-appointment*/
 .online-appointment {
-    background: url(/frontend/web/assets_project/img/imgLogo/internet.jpg) no-repeat center;
+    background: url(../img/imgLogo/internet.jpg) no-repeat center;
     height: 300px;
 }
 
@@ -1236,7 +1236,7 @@ a.kursStyleButton {
 /*online-appointment end*/
 /*insuranse*/
 .insuranse-title {
-    background: url(/frontend/web/assets_project/img/imgLogo/strahovka-kurs.jpg) no-repeat center;
+    background: url(../img/imgLogo/strahovka-kurs.jpg) no-repeat center;
     height: 300px;
 }
 
@@ -1249,7 +1249,7 @@ a.kursStyleButton {
 /*insuranse end*/
 /*evacuation*/
 .evacuation-title {
-    background: url(/frontend/web/assets_project/img/imgLogo/vacuation-rurs.jpg) no-repeat center;
+    background: url(../img/imgLogo/vacuation-rurs.jpg) no-repeat center;
 }
 
 .evacuation-title h1 {
@@ -1261,7 +1261,7 @@ a.kursStyleButton {
 /*evacuation end*/
 /*header-contacts*/
 .header-contacts-title {
-    background: url(/frontend/web/assets_project/img/imgLogo/operator.jpg) no-repeat center;
+    background: url(../img/imgLogo/operator.jpg) no-repeat center;
 }
 
 .header-contacts-title h1 {
@@ -1274,7 +1274,7 @@ a.kursStyleButton {
 /*header-contacts end*/
 /*warranty*/
 .warranty-title {
-    background: url(/frontend/web/assets_project/img/imgLogo/waranty-kurs.jpg) no-repeat center;
+    background: url(../img/imgLogo/waranty-kurs.jpg) no-repeat center;
 }
 
 .warranty-title h1 {
@@ -1289,8 +1289,8 @@ a.kursStyleButton {
 
 /*warranty end*/
 /*personal-data*/
-.personal-data-title {
-    background: url(/frontend/web/assets_project/img/imgLogo/folder_lock.jpg) no-repeat center;
+.personal-data-title {    
+    background: url(../img/imgLogo/folder_lock.jpg) no-repeat center;
 }
 
 .personal-data-title h1 {
@@ -1791,7 +1791,7 @@ a.kursStyleButton {
 }
 
 .advantages-section {
-    background: url(/frontend/web/assets_project/img/imgLogo/Toyota-Camry.jpg) no-repeat;
+    background: url(../img/imgLogo/Toyota-Camry.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
@@ -1804,7 +1804,7 @@ a.kursStyleButton {
     top: 0;
     right: 0;
     bottom: 0;
-    background: url(/frontend/web/assets_project/img/imgLogo/pattern.png) rgba(41, 49, 53, .8);
+    background: url(../img/imgLogo/pattern.png) rgba(41, 49, 53, .8);
     content: '';
 }
 
@@ -2229,7 +2229,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-0 > span {
-    background: url(/frontend/web/assets_project/img/img-car-body/sedan.png);
+    background: url(../img/img-car-body/sedan.png);
     display: inline-block;
     width: 144px;
     height: 108px;
@@ -2239,7 +2239,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-0 > input[type=radio]:checked + span {
-    background: url(/frontend/web/assets_project/img/img-car-body/sedan.png);
+    background: url(../img/img-car-body/sedan.png);
     border: 1px solid darkred;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
@@ -2249,7 +2249,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-1 > span {
-    background: url(/frontend/web/assets_project/img/img-car-body/hatchback.png);
+    background: url(../img/img-car-body/hatchback.png);
     display: inline-block;
     width: 144px;
     height: 108px;
@@ -2259,7 +2259,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-1 > input[type=radio]:checked + span {
-    background: url(/frontend/web/assets_project/img/img-car-body/hatchback.png);
+    background: url(../img/img-car-body/hatchback.png);
     border: 1px solid darkred;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
@@ -2269,7 +2269,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-2 > span {
-    background: url(/frontend/web/assets_project/img/img-car-body/coupe.png);
+    background: url(../img/img-car-body/coupe.png);
     display: inline-block;
     width: 144px;
     height: 108px;
@@ -2279,7 +2279,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-2 > input[type=radio]:checked + span {
-    background: url(/frontend/web/assets_project/img/img-car-body/coupe.png);
+    background: url(../img/img-car-body/coupe.png);
     border: 1px solid darkred;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
@@ -2289,7 +2289,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-3 > span {
-    background: url(/frontend/web/assets_project/img/img-car-body/wagon.png);
+    background: url(../img/img-car-body/wagon.png);
     display: inline-block;
     width: 144px;
     height: 108px;
@@ -2299,7 +2299,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-3 > input[type=radio]:checked + span {
-    background: url(/frontend/web/assets_project/img/img-car-body/wagon.png);
+    background: url(../img/img-car-body/wagon.png);
     border: 1px solid darkred;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
@@ -2309,7 +2309,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-4 > span {
-    background: url(/frontend/web/assets_project/img/img-car-body/minivan.png);
+    background: url(../img/img-car-body/minivan.png);
     display: inline-block;
     width: 144px;
     height: 108px;
@@ -2319,7 +2319,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-4 > input[type=radio]:checked + span {
-    background: url(/frontend/web/assets_project/img/img-car-body/minivan.png);
+    background: url(../img/img-car-body/minivan.png);
     border: 1px solid darkred;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
@@ -2329,7 +2329,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-5 > span {
-    background: url(/frontend/web/assets_project/img/img-car-body/allroad.png);
+    background: url(../img/img-car-body/allroad.png);
     display: inline-block;
     width: 144px;
     height: 108px;
@@ -2339,7 +2339,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-5 > input[type=radio]:checked + span {
-    background: url(/frontend/web/assets_project/img/img-car-body/allroad.png);
+    background: url(../img/img-car-body/allroad.png);
     border: 1px solid darkred;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
@@ -2349,7 +2349,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-6 > span {
-    background: url(/frontend/web/assets_project/img/img-car-body/pickup.png);
+    background: url(../img/img-car-body/pickup.png);
     display: inline-block;
     width: 144px;
     height: 108px;
@@ -2359,7 +2359,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-6 > input[type=radio]:checked + span {
-    background: url(/frontend/web/assets_project/img/img-car-body/pickup.png);
+    background: url(../img/img-car-body/pickup.png);
     border: 1px solid darkred;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
@@ -2369,7 +2369,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-7 > span {
-    background: url(/frontend/web/assets_project/img/img-car-body/crossover.png);
+    background: url(../img/img-car-body/crossover.png);
     display: inline-block;
     width: 144px;
     height: 108px;
@@ -2379,7 +2379,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-7 > input[type=radio]:checked + span {
-    background: url(/frontend/web/assets_project/img/img-car-body/crossover.png);
+    background: url(../img/img-car-body/crossover.png);
     border: 1px solid darkred;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
@@ -2973,16 +2973,16 @@ input[type="checkbox"]:focus {
     }
 
     .warranty-title {
-        background: url(/frontend/web/assets_project/img/imgLogo/waranty-kurs-mobile.jpg) no-repeat center;
+        background: url(../img/imgLogo/waranty-kurs-mobile.jpg) no-repeat center;
     }
 
     .insuranse-title {
-        background: url(/frontend/web/assets_project/img/imgLogo/strahovka-kurs-mobile.jpg) no-repeat center;
+        background: url(../img/imgLogo/strahovka-kurs-mobile.jpg) no-repeat center;
         height: inherit;
     }
 
     .header-contacts-title {
-        background: url(/frontend/web/assets_project/img/imgLogo/operator-mobile.jpg) no-repeat center;
+        background: url(../img/imgLogo/operator-mobile.jpg) no-repeat center;
         height: inherit;
     }
 
@@ -3015,7 +3015,7 @@ input[type="checkbox"]:focus {
     }
 
     .personal-data-title {
-        background: url(/frontend/web/assets_project/img/imgLogo/folder_lock-mobile.jpg) no-repeat center;
+        background: url(../img/imgLogo/folder_lock-mobile.jpg) no-repeat center;
         height: inherit;
     }
 
@@ -3024,12 +3024,12 @@ input[type="checkbox"]:focus {
     }
 
     .online-appointment {
-        background: url(/frontend/web/assets_project/img/imgLogo/internet-mobile.jpg) no-repeat center;
+        background: url(../img/imgLogo/internet-mobile.jpg) no-repeat center;
         height: inherit;
     }
 
     .evacuation-title {
-        background: url(/frontend/web/assets_project/img/imgLogo/vacuation-rurs-mobile.jpg) no-repeat center;
+        background: url(../img/imgLogo/vacuation-rurs-mobile.jpg) no-repeat center;
         height: inherit;
     }
 
@@ -3147,7 +3147,7 @@ input[type="checkbox"]:focus {
     }
 
     #footer .footer-img {
-        background: url(/frontend/web/assets_project/img/imgLogo/man_bottom_mobile.png) no-repeat center;
+        background: url(../img/imgLogo/man_bottom_mobile.png) no-repeat center;
         height: 88px;
         border-bottom: 1px solid #ed1c24;
     }
@@ -3160,7 +3160,7 @@ input[type="checkbox"]:focus {
         display: initial;
         height: 48px;
         width: 75px;
-        background: url(/frontend/web/assets_project/img/imgLogo/kurs-mobile.png) no-repeat center;
+        background: url(../img/imgLogo/kurs-mobile.png) no-repeat center;
     }
 
     #sub-menu-kurs .container > .navbar-header {
@@ -3710,7 +3710,7 @@ input[type="checkbox"]:focus {
     }
 
     .warranty-title {
-        background: url(/frontend/web/assets_project/img/imgLogo/waranty-kurs-mobile.jpg) no-repeat center;
+        background: url(../img/imgLogo/waranty-kurs-mobile.jpg) no-repeat center;
     }
 
     .warranty-title h1 {
@@ -3724,11 +3724,11 @@ input[type="checkbox"]:focus {
     }
 
     .online-appointment {
-        background: url(/frontend/web/assets_project/img/imgLogo/internet-mobile.jpg) no-repeat center;
+        background: url(../img/imgLogo/internet-mobile.jpg) no-repeat center;
     }
 
     #footer .footer-img {
-        background: url(/frontend/web/assets_project/img/imgLogo/man_bottom_mobile.png) no-repeat center;
+        background: url(../img/imgLogo/man_bottom_mobile.png) no-repeat center;
         height: 88px;
         border-bottom: 1px solid red;
     }
@@ -3750,7 +3750,7 @@ input[type="checkbox"]:focus {
         display: initial;
         height: 48px;
         width: 75px;
-        background: url(/frontend/web/assets_project/img/imgLogo/kurs-mobile.png) no-repeat center;
+        background: url(../img/imgLogo/kurs-mobile.png) no-repeat center;
     }
 
     #sub-menu-kurs .container > .navbar-header {
