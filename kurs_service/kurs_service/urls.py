@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('main_page.urls', namespace='main_page')),
 	path('photo-gallery', include('photo_gallery.urls', namespace='photo_gallery')),
 	path('warranty', include('warranty.urls', namespace='warranty')),
+	path('contacts', include('contacts.urls', namespace='contacts')),
 ]
 
 if settings.DEBUG:

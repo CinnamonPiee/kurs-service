@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 	'main_page.apps.MainPageConfig',
 	'photo_gallery.apps.PhotoGalleryConfig',
 	'warranty.apps.WarrantyConfig', 
+	'contacts.apps.ContactsConfig',
 	
     'debug_toolbar',
 ]
