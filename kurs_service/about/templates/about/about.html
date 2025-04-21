@@ -1,0 +1,300 @@
+{% extends "base_page/base_page.html" %}
+{% load static %} 
+
+
+{% block title %} 
+{{ title }} 
+{% endblock title %} 
+
+
+{% block content %}
+<ul class="breadcrumb">
+	<li><a href="/">Главная</a></li>
+	<li class="active">О сервисе</li>
+</ul>
+<div class="about">
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ about_titles.lets_acquainted }}
+	</h3>
+	<div class="about-company">
+		<div class="row">
+			<div class="col-lg-4 col-xs-12 centered">
+				<div>
+					<div class="interior-background">
+						<div class="cart-personnel">
+							<img
+								src="{{ about_lets_acquainted.img.url }}"
+								alt=""
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8 col-xs-12">
+				<h3>{{ about_lets_acquainted.title }}</h3>
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<p>
+							{{ about_lets_acquainted.description|safe }}
+						</p>
+					</div>
+					<div style="clear: both; float: none"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ about_titles.our_advantages }}
+	</h3>
+	<div class="advantages">
+		<hr />
+		<div class="row">
+			<div id="list-wrapper" class="list-wrapper">
+				{% for item in about_our_advantages %}
+					<div data-key="{{ forloop.counter }}">
+						<div class="col-lg-3 col-xs-6">
+							<div class="item-advantage">
+								{{ item.advantages_item|safe }}
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+		<hr />
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ about_titles.best_in_business }}
+	</h3>
+	<div class="best-service">
+		<div class="col-lg-9 col-xs-7">
+			<h1>{{ about_best_business.first_title }}</h1>
+			<h2>{{ about_best_business.second_title }}</h2>
+			<h3>{{ about_best_business.third_title }}</h3>
+		</div>
+		<div class="col-lg-3 col-xs-5">
+			<img
+				src="{{ about_best_business.img.url }}"
+				alt=""
+			/>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ about_titles.contacts }}
+	</h3>
+	<div class="contacts-data">
+		<div class="row centered">
+			<div id="list-wrapper" class="list-wrapper">
+				<div data-key="1">
+					<div class="col-lg-3 col-xs-6">
+						<p>
+							<li>
+								<a class="link-cal-number" href="mailto:kurs_service@mail.ru"
+									><img
+										src="{{ about_contacts_email.img.url }}"
+										alt="unnamed"
+									/>
+									<span>
+										<br />
+										{{ about_contacts_email.title }}
+									</span>
+								</a>
+							</li>
+						</p>
+					</div>
+					<div class="col-lg-3 col-xs-6">
+						<p>
+							<li>
+								<a class="link-cal-number" href="tel:8 (800) 444-13-18"
+									><img
+										src="{{ about_contacts_number.img.url }}"
+										alt="unnamed"
+									/>
+									<span>
+										<br />
+										{{ about_contacts_number.title }}
+									</span>
+								</a>
+							</li>
+						</p>
+					</div>
+					{% for item in about_contacts %}
+						<div class="col-lg-3 col-xs-6">
+							<p>
+								<img
+									src="{{ item.img.url }}"
+									alt="unnamed"
+								/>
+								<br />
+								{{ item.title }}
+							</p>
+						</div>
+					{% endfor %}
+				</div>
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ about_titles.accurately_in_time }}
+	</h3>
+	<div class="right-time">
+		<div class="col-lg-8 col-xs-6">
+			<h1>{{ about_accurately_in_time.first_title }}</h1>
+			<h2>{{ about_accurately_in_time.second_title }}</h2>
+			<h3>{{ about_accurately_in_time.third_title }}</h3>
+		</div>
+		<div class="col-lg-4 col-xs-6">
+			<img
+				src="{{ about_accurately_in_time.img.url }}"
+				alt=""
+			/>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ about_titles.how_we_training_staff }}
+	</h3>
+	<div class="educations-personal centered">
+		<div class="row">
+			<div id="list-wrapper" class="list-wrapper">
+				{% for item in about_how_we_training_staff %}
+					<div data-key="{{ forloop.counter }}">
+						<div class="col-lg-4 col-xs-6 educations-personal-block">
+							<p>
+								<a
+									href="{{ item.img.url }}"
+									data-fancybox
+								>
+									<img
+										src="{{ item.img.url }}"
+									/>
+								</a>
+							</p>
+							<h4>{{ item.title }}</h4>
+						</div>
+					</div>
+				{% endfor %}
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ about_titles.last_review }}
+	</h3>
+	<div class="content-reviews-home">
+		<div id="list-wrapper" class="list-wrapper">
+			<div data-key="2">
+				<div class="item-html">
+					<div class="reviews-item">
+						<hr />
+						<div class="reviews-item hidden-xs">
+							<div class="row">
+								<div class="col-lg-2 centered">
+									<img
+										src="/frontend/web/assets_project/img/img-reviews/file603a985ff1445img20200211.jpg"
+									/>
+									<p>Сергей</p>
+									<p><i class="fa fa-calendar"></i> 27.02.2021 в 21:57</p>
+								</div>
+								<div class="col-lg-8">
+									<p>Сергей :</p>
+									<p class="speech-bubble" style="padding: 15px">
+										Самый адекватный сервис не далеко от дома! Оказалось самое
+										выгодное предложение по цене и по времени записи. Записался
+										на субботу, все сделали за 3,5 - 4 часа. Цена
+										соответствовала заявленной. Вежливые, позитивные ребята.
+										Ценник не дерут, все объясняют. Плохо, что нет wi-fi, но
+										обещали исправиться... посмотрим. Думаю это не последнее
+										обращение в этот сервис.
+									</p>
+									<div class="">
+										<div>
+											<p style="text-align: right">
+												Ответ администрации ООО "КУРС" :
+											</p>
+											<p
+												class="speech-bubble-2"
+												style="padding: 15px; float: right"
+											>
+												Добрый день, Сергей. Благодарим вас за отзыв. Обещание
+												по WI-FI мы помним и уже в работе. Искренне рады, что вы
+												столь высоко оцениваете нашу работу.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-2 centered">
+									<p>
+										Администрация <br />
+										<span>ООО "КУРС"</span>
+									</p>
+									<img
+										class="centered"
+										src="/frontend/web/assets_project/img/imgLogo/sports-car-auto.png"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="item-html-mobile hidden-lg">
+							<div class="reviews-item-mobile">
+								<div class="row">
+									<div class="col-xs-4 centered">
+										<img
+											src="/frontend/web/assets_project/img/img-reviews/file603a985ff1445img20200211.jpg"
+										/>
+										<p>Сергей</p>
+										<p class="date-reviews">
+											<i class="fa fa-calendar"></i> 27.02.2021 в 21:57
+										</p>
+									</div>
+									<div class="col-xs-8">
+										<p class="speech-bubble" style="padding: 15px">
+											Самый адекватный сервис не далеко от дома! Оказалось самое
+											выгодное предложение по цене и по времени записи.
+											Записался на субботу, все сделали за 3,5 - 4 часа. Цена
+											соответствовала заявленной. Вежливые, позитивные ребята.
+											Ценник не дерут, все объясняют. Плохо, что нет wi-fi, но
+											обещали исправиться... посмотрим. Думаю это не последнее
+											обращение в этот сервис.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-8">
+									<div>
+										<p>Ответ администрации ООО "КУРС" :</p>
+										<p class="speech-bubble-2" style="padding: 15px">
+											Добрый день, Сергей. Благодарим вас за отзыв. Обещание по
+											WI-FI мы помним и уже в работе. Искренне рады, что вы
+											столь высоко оцениваете нашу работу.
+										</p>
+									</div>
+								</div>
+								<div class="col-xs-4 centered">
+									<p>Администрация ООО "КУРС"</p>
+									<img
+										class="centered"
+										src="/frontend/web/assets_project/img/imgLogo/sports-car-auto-reviews.png"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr />
+			</div>
+			<div style="clear: both; float: none"></div>
+		</div>
+	</div>
+	<div class="row centered">
+		<div class="content-reviews-home col-lg-12">
+			<br />
+			<a class="kursStyleButton" href="/reviews">Посмотреть все отзывы</a>
+		</div>
+	</div>
+</div>
+{% endblock content %}
