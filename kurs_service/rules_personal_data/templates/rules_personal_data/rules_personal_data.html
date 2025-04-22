@@ -1,0 +1,39 @@
+{% extends "base_page/base_page.html" %} 
+{% load static %} 
+
+
+{% block title %} 
+{{ title }} 
+{% endblock title %} 
+
+
+{% block content %}
+<ul class="breadcrumb">
+	<li><a href="/">Главная</a></li>
+	<li class="active">Правила обработки данных</li>
+</ul>
+<div class="site-contact">
+	<div class="personal-data">
+		<div class="personal-data-title">
+			<h1>
+				{{ rules_personal_data_slider_images.text|safe }}
+			</h1>
+		</div>
+	</div>
+	<div class="header-contacts centered">
+		<h3 class="pretty-header left-right-line-short-header">
+			{{ rules_personal_data_titles.rules_personal_data }}
+		</h3>
+	</div>
+	<br />
+	<div class="personal-data-title-text">
+		<p>
+			{{ rules_personal_data_main_obligation.main_description }}
+		</p>
+		{% for item in rules_personal_data_obligations %}
+			{{ item.title|safe }}
+			<p>{{ item.description|safe }}</p>
+		{% endfor %}
+	</div>
+</div>
+{% endblock content %}
