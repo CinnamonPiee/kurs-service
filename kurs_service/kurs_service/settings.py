@@ -50,6 +50,8 @@ INSTALLED_APPS = [
 	'photo_gallery.apps.PhotoGalleryConfig',
 	'warranty.apps.WarrantyConfig', 
 	'contacts.apps.ContactsConfig',
+	'rules_personal_data.apps.RulesPersonalDataConfig',
+	'about.apps.AboutConfig',
 	
     'debug_toolbar',
 ]

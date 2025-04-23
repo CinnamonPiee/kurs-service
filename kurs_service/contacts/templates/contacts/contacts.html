@@ -1,0 +1,187 @@
+{% extends "base_page/base_page.html" %} 
+{% load static %} 
+
+
+{% block title %} 
+{{title }} 
+{% endblock title %} 
+
+
+{% block content %}
+<ul class="breadcrumb">
+	<li><a href="/">Главная</a></li>
+	<li class="active">Контакты</li>
+</ul>
+
+<div class="site-contact">
+	<div class="header-contacts">
+		<div 
+			class="header-contacts-title">
+			<h1>
+				{{ contacts_slider_images.text|safe }}
+				<span
+					style="color: darkred">
+					{{ contacts_slider_images.number }}
+				</span>
+			</h1>
+		</div>
+	</div>
+</div>
+<h3 class="pretty-header left-right-line-short-header">
+	{{ contacts_titles.contact_data_and_working_time }}
+</h3>
+<div class="contacts-data">
+	<div class="row">
+		<div class="col-lg-3 col-xs-6 contacts-block">
+			<div class="col-lg-2 col-xs-3">
+				{% for item in contacts_weekday_working_time %}
+					<p class="weekdays">{{ item.weekday }}</p>
+				{% endfor %}
+				{% for item in contacts_weekday_working_time_all_day_off %}
+					<p class="output">{{ item.weekday }}</p>
+				{% endfor %}
+			</div>
+			<div class="col-lg-10 col-xs-9">
+				{% for item in contacts_weekday_working_time_all %}
+					<p class="weekdays-hors">{{ item.time }}</p>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="col-lg-2 col-xs-6 qr-code contacts-block">
+			<img
+				class="qr-code-v-card"
+				src="{{ contacts_data_contacts_qr_codes.img.url }}"
+				alt=""/><br/>
+			<img
+				class="camera-qr-code"
+				src="{{ contacts_data_contacts_qr_codes.second_img.url }}"
+				alt=""/><br/>
+			<p>
+				{{ contacts_data_contacts_qr_codes.text }}
+			</p>
+		</div>
+		<div class="col-lg-4 col-xs-6 contacts-block">
+			<p>
+				<li>
+					<a class="link-cal-number" href="mailto:kurs_service@mail.ru">
+						<img
+							src="{{ contacts_data_contacts_mail.img.url }}"
+							alt="unnamed"
+						/>
+						<span>
+							{{ contacts_data_contacts_mail.text }}
+						</span>
+					</a>
+				</li>
+			</p>
+			<p>
+				<img
+					src="{{ contacts_data_contacts_address.img.url }}"
+					alt="unnamed"
+				/>
+				{{ contacts_data_contacts_address.text }}
+			</p>
+			<p class="bottom-days">
+				<img
+					src="{{ contacts_data_contacts.img.url }}"
+					alt="unnamed"
+				/>
+				{{ contacts_data_contacts.text }}
+			</p>
+			<p>
+				<li>
+					<a class="link-cal-number" href="whatsapp://send?phone=+79104484506">
+						<img
+							src="{{ contacts_data_contacts_wa.img.url }}"
+							alt="unnamed"
+						/>
+						<span>
+							{{ contacts_data_contacts_wa.text }}
+						</span>
+					</a>
+				</li>
+			</p>
+		</div>
+		<div class="col-lg-3 col-xs-6 contacts-block">
+			<div class="phone-service-all">
+				<p>
+					<li>
+						<a class="link-call-number" href="tel:+79104484506">
+							<span>
+								<i class="fa fa-mobile" aria-hidden="true"></i>
+								{{ contacts_data_contacts_mobile_number.text|safe }}
+							</span>
+						</a>
+					</li>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<h3 class="pretty-header left-right-line-short-header">
+	{{ contacts_titles.contacts_and_details }}
+</h3>
+<div class="row">
+	<div class="col-lg-8 data-kurs-doc">
+		{% for item in contacts_details_and_contacts %}
+			<p>{{ item.title }} {{ item.description }}</p>
+		{% endfor %}
+	</div>
+</div>
+<h3 class="pretty-header left-right-line-short-header">
+	{{ contacts_titles.way_scheme }}
+</h3>
+<div class="contacts-driving-directions">
+	<div class="row">
+		<div class="col-lg-8">
+			<div id="list-wrapper" class="list-wrapper">
+				{% for item in contacts_scheme_and_details %}
+					<div data-key="{{ forloop.counter }}">
+						<div class="transport col-lg-6 col-xs-6" style="margin-top: 10px">
+							<img
+								class="line-metro"
+								src="{{ item.line_metro_img.url }}"
+								alt=""
+							/>
+							<p>
+								<img
+									src="{{ item.img_train.url }}"
+									alt=""
+								/>
+								- {{ item.text_train }}
+							</p>
+							<p>
+								<img
+									src="{{ item.img_foot.url }}"
+									alt=""
+								/>
+								- {{ item.text_foot }}
+							</p>
+							<p>
+								<img
+									src="{{ item.img_taxi.url }}"
+									alt=""
+								/>
+								- {{ item.text_taxi }}
+							</p>
+						</div>
+					</div>
+				{% endfor %}
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<p>
+				<a
+					href="{{ contacts_scheme_image.img.url }}"
+					data-fancybox
+				>
+					<img
+						src="{{ contacts_scheme_image.img_max.url }}"
+					/>
+				</a>
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock content %}

@@ -31,7 +31,7 @@ class WarrantyObligations(models.Model):
 
 
 class WarrantyTitles(models.Model):
-	warranty = models.CharField(max_length=255, blank=True, null=True, verbose_name="Текст заголовка")
+	warranty = models.CharField(max_length=255, blank=True, null=True, verbose_name="Гарантия")
 
 	def __str__(self):
 		clean_text = strip_tags(self.warranty)

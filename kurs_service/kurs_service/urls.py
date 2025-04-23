@@ -27,6 +27,8 @@ urlpatterns = [
 	path('photo-gallery', include('photo_gallery.urls', namespace='photo_gallery')),
 	path('warranty', include('warranty.urls', namespace='warranty')),
 	path('contacts', include('contacts.urls', namespace='contacts')),
+	path('rules-personal-data', include('rules_personal_data.urls', namespace='rules_personal_data')),
+	path('about', include('about.urls', namespace='about')),
 ]
 
 if settings.DEBUG:
