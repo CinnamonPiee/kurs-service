@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import SiteVisitor
 
-# Register your models here.
+
+@admin.register(SiteVisitor)
+class SiteVisitorAdmin(admin.ModelAdmin):
+	pass

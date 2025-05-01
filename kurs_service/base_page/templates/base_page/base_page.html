@@ -199,12 +199,21 @@
 						<div class="site-login-button">
 							<div class="col-sm-3 col-md-2 border-right">
 								<div class="reg-login">
-									<li class="hidden-xs">
-										<a href="/site/login"><i class="fa fa-sign-in"></i> Вход</a>
-									</li>
-									<li class="hidden-xs">
-										<a href="/site/signup"><i class="fa fa-user-plus"></i> Регистрация</a>
-									</li>
+									{% if request.session.visitor_email %}
+										<li class="hidden-xs">
+											<span><i class="fa fa-user"></i> {{ request.session.visitor_email }}</span>
+										</li>
+										<li class="hidden-xs">
+											<a href="{% url 'site_login:site_logout' %}"><i class="fa fa-sign-out"></i> Выйти</a>
+										</li>
+									{% else %}
+										<li class="hidden-xs">
+											<a href="{% url 'site_login:site_login' %}"><i class="fa fa-sign-in"></i> Вход</a>
+										</li>
+										<li class="hidden-xs">
+											<a href="/site/signup"><i class="fa fa-user-plus"></i> Регистрация</a>
+										</li>
+									{% endif %}
 								</div>
 							</div>
 						</div>
