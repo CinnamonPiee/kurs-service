@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from debug_toolbar.toolbar import debug_toolbar_urls
 
+from site_login import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +30,9 @@ urlpatterns = [
 	path('contacts', include('contacts.urls', namespace='contacts')),
 	path('rules-personal-data', include('rules_personal_data.urls', namespace='rules_personal_data')),
 	path('about', include('about.urls', namespace='about')),
+	path('site/login', include('site_login.urls', namespace='site_login')),
+	
+	path("logout/", views.site_logout, name="site_logout"),
 ]
 
 if settings.DEBUG:

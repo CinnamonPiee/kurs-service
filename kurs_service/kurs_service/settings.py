@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 	'contacts.apps.ContactsConfig',
 	'rules_personal_data.apps.RulesPersonalDataConfig',
 	'about.apps.AboutConfig',
+	'site_login.apps.SiteLoginConfig',
 	
     'debug_toolbar',
 ]
@@ -88,6 +89,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'kurs_service.wsgi.application'
 
+SESSION_COOKIE_AGE = 3600
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
