@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import SiteLoginTitles
 
-# Register your models here.
+
+@admin.register(SiteLoginTitles)
+class SiteLoginTitlesAdmin(admin.ModelAdmin):
+	pass

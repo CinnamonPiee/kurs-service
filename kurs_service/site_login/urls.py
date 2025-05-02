@@ -7,4 +7,5 @@ app_name = "site_login"
 
 urlpatterns = [
     path('', views.site_login, name='site_login'),
+	path("logout/", views.site_logout, name="site_logout"),
 ]
