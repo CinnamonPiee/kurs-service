@@ -23,7 +23,7 @@ class SiteVisitor(models.Model):
         return check_password(raw_password, self.password)
 
     def __str__(self):
-        return f"{self.first_name + " " + self.last_name}" if self.first_name else self.email
+        return self.first_name if self.first_name else self.email
 
     class Meta:
         db_table = "base_page_site_visitor"
