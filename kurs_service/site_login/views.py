@@ -10,7 +10,8 @@ def site_login(request):
 		if form.is_valid():
 			visitor = form.cleaned_data["visitor"]
 			request.session["visitor_email"] = visitor.email
-			messages.success(request, f"Добро пожаловать, {visitor.email}!")
+			request.session["visitor_name"] = visitor.first_name
+			messages.success(request, f"Добро пожаловать, {visitor.first_name}!")
 			return redirect("main_page:main_page")
 		else:
 			messages.error(request, "Ошибка авторизации. Проверьте введенные данные.")
@@ -19,7 +20,7 @@ def site_login(request):
 
 	context = {
         "form": form,
-		"title": "Авторизация",
+		"title": 'Авторизация | OOO "КУРС"',
         "site_login_titles": SiteLoginTitles.objects.first(),
     }
 
@@ -27,6 +28,6 @@ def site_login(request):
 
 
 def site_logout(request):
-    if "visitor_email" in request.session:
-        del request.session["visitor_email"]
+    if "visitor_name" in request.session:
+        del request.session["visitor_name"]
     return redirect("main_page:main_page")
