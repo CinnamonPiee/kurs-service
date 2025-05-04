@@ -1,0 +1,119 @@
+{% extends "base_page/base_page.html" %} 
+{% load static %} 
+
+
+{% block title %} 
+{{ title }} 
+{% endblock title %} 
+
+
+{% block content %}
+<ul class="breadcrumb">
+	<li><a href="/">Главная</a></li>
+	<li class="active">Отзывы</li>
+</ul>
+<div class="reviews-container">
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ reviews_titles.visitor_reviews }}
+	</h3>
+	<div class="content-reviews">
+		<div id="list-wrapper" class="list-wrapper">
+			{% for item in reviews %}
+				<div data-key="{{ forloop.counter }}">
+					<div class="item-html">
+						<div class="reviews-item">
+							<hr/>
+							<div class="reviews-item hidden-xs">
+								<div class="row">
+									<div class="col-lg-2 centered">
+										<img
+											src="{% static '/assets_project/img/img-reviews/noavatar_man.png' %}"/>
+										<p>{{ item.user.first_name }}</p>
+										<p><i class="fa fa-calendar"></i> {{ item.created_at|date:"d.m.Y в H:i" }}</p>
+									</div>
+									<div class="col-lg-8">
+										<p>{{ item.user.first_name }} :</p>
+										<p class="speech-bubble" style="padding: 15px">
+											{{ item.content }}
+										</p>
+											<div>
+												<p style="text-align: right">
+													Ответ администрации ООО "КУРС" :
+												</p>
+												<p
+													class="speech-bubble-2"
+													style="padding: 15px; float: right">
+													{{ item.response.content }}
+												</p>
+											</div>
+									</div>
+									<div class="col-lg-2 centered">
+										<p>
+											Администрация <br />
+											<span>ООО "КУРС"</span>
+										</p>
+										<img
+											class="centered"
+											src="{% static 'assets_project/img/imgLogo/sports-car-auto.png' %}"
+											alt=""
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr />
+				</div>
+			{% endfor %}
+			<div style="clear: both; float: none"></div>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ reviews_titles.leave_a_review_or_request }}
+	</h3>
+	{% if request.session.visitor_name %}
+		<div class="reviews-form-container">
+			<div class="row centered">
+				<h3 class="form-title-reviews">
+					{{ request.session.visitor_name }}
+					, заполните необходимые поля для того чтобы отправить отзыв.
+				</h3>
+			</div>
+			<form
+				id="w0"
+				class="reviews-form"
+				action="{% url 'reviews:reviews' %}"
+				method="post"
+				enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit" id="reviews" class="kursStyleButton">
+					Оставить отзыв
+				</button>
+			</form>
+		</div>
+	{% else %}
+		<div class="form-reviews">
+			<div class="row centered">
+				<br/>
+				<p>
+					ВНИМАНИЕ!!! Чтобы оставить коментарий пройдите процесс регистрации и
+					авторизации на сайте.
+				</p>
+			</div>
+			<div class="row centered">
+				<div class="col-lg-4"></div>
+				<div class="col-lg-4">
+					<br />
+					<a 
+						class="kursStyleButton" 
+						href="{% url 'site_login:site_login' %}">
+						Вход / Регистрация
+					</a>
+				</div>
+				<div class="col-lg-4"></div>
+			</div>
+		</div>
+	{% endif %}
+</div>
+{% endblock content %}
