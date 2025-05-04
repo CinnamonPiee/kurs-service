@@ -1,0 +1,251 @@
+{% extends "base_page/base_page.html" %} 
+{% load static %} 
+
+
+{% block title %}
+{{title }} 
+{% endblock title %} 
+
+
+{% block content %}
+<ul class="breadcrumb">
+	<li><a href="/">Главная</a></li>
+	<li class="active">Страхование</li>
+</ul>
+<div class="insuranse-container">
+	<div class="insuranse">
+		<div class="insuranse-title hidden-xs hidden-md">
+			<h1>{{ insurance_slider_images.text|safe }}</h1>
+		</div>
+	</div>
+	<div class="form-insurance">
+		<h3 class="pretty-header left-right-line-short-header">
+			{{ insurance_titles.form }}
+		</h3>
+		<div class="form-insurance">
+			<form
+				id="w0"
+				class="order-insurance-form"
+				action="{% url 'insurance:add_insurance' %}"
+				method="post">
+				{% csrf_token %}
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="form-group field-order-insurance-form-surname required">
+							<label class="control-label" for="id_surname"> 
+								Фамилия 
+							</label>
+							{{ form.surname }} 
+							{% if form.surname.errors %}
+								<div class="help-block text-danger">
+									{{ form.surname.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group field-order-insurance-form-username required">
+							<label class="control-label" for="id_name">
+								Имя
+							</label>
+							{{ form.name }} 
+							{% if form.name.errors %}
+								<div class="help-block text-danger">
+									{{ form.name.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group field-order-insurance-form-patronymic required">
+							<label class="control-label" for="id_patronymic">
+								Отчество
+							</label>
+							{{ form.patronymic }} 
+							{% if form.patronymic.errors %}
+								<div class="help-block text-danger">
+									{{ form.patronymic.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-2">
+						<div class="form-group field-order-insurance-form-age required">
+							<label class="control-label" for="id_birth_date">
+								Дата рождения
+							</label>
+							{{ form.birth_date }} 
+							{% if form.birth_date.errors %}
+								<div class="help-block text-danger">
+									{{ form.birth_date.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-lg-2">
+						<div class="form-group field-order-insurance-form-driving_experience required">
+							<label class="control-label" for="id_driving_experience">
+								Стаж вождения
+							</label>
+							{{ form.driving_experience }} 
+							{% if form.driving_experience.errors %}
+								<div class="help-block text-danger">
+									{{ form.driving_experience.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group field-order-insurance-form-vin required">
+							<label class="control-label" for="id_vin"> 
+								VIN 
+							</label>
+							{{ form.vin }} 
+							{% if form.vin.errors %}
+								<div class="help-block text-danger">
+									{{ form.vin.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-lg-2">
+						<div class="form-group field-order-insurance-form-car_make required">
+							<label class="control-label" for="id_car_make">
+								Марка автомобиля
+							</label>
+							{{ form.car_make }} 
+							{% if form.car_make.errors %}
+								<div class="help-block text-danger">
+									{{ form.car_make.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-lg-2">
+						<div class="form-group field-order-insurance-form-car_model required">
+							<label class="control-label" for="id_car_model">
+								Модель автомобиля
+							</label>
+							{{ form.car_model }} 
+							{% if form.car_model.errors %}
+								<div class="help-block text-danger">
+									{{ form.car_model.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="form-group field-order-insurance-form-engine_power required">
+							<label class="control-label" for="id_engine_power">
+								Мощность двигателя
+							</label>
+							{{ form.engine_power }} 
+							{% if form.engine_power.errors %}
+								<div class="help-block text-danger">
+									{{ form.engine_power.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="form-group field-order-insurance-form-call_number required">
+							<label class="control-label" for="id_phone_number">
+								Номер телефона
+							</label>
+							{{ form.phone_number }} 
+							{% if form.phone_number.errors %}
+								<div class="help-block text-danger">
+									{{ form.phone_number.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="form-group field-order-insurance-form-email required">
+							<label class="control-label" for="id_email">
+								Адрес электронной почты
+							</label>
+							{{ form.email }} 
+							{% if form.email.errors %}
+								<div class="help-block text-danger">
+									{{ form.email.errors.0 }}
+								</div>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="form-group field-datetimepicker required">
+							<label class="control-label" for="datetimepicker">
+								Выберите дату и время
+							</label>
+							{{ form.date_time }}
+							{% if form.date_time.errors %}
+								<div class="help-block text-danger">
+									{{ form.email.errors.0 }}
+								</div>
+							{% endif %}
+							<div class="help-block"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-lg-offset-9">
+						<button type="submit" class="kursStyleButton">
+							Жду звонка
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="benefits-insurance">
+		<h3 class="pretty-header left-right-line-short-header">
+			{{ insurance_titles.benefits_of_insuring_with_us }}
+		</h3>
+		<div class="row centered">
+			<div id="list-wrapper" class="list-wrapper">
+				{% for item in insurance_benefits_of_insuring_with_us %}
+				<div data-key="{{ forloop.counter }}">
+					<div class="col-lg-3">
+						<img src="{{ item.img.url }}" alt="" />
+						<h4>{{ item.title|safe }}</h4>
+						<p>{{ item.description|safe }}</p>
+					</div>
+				</div>
+				{% endfor %}
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+	</div>
+	<div class="faq">
+		<h3 class="pretty-header left-right-line-short-header">
+			{{ insurance_titles.frequently_asked_questions }}
+		</h3>
+		<div class="wrapper-faq">
+			<div id="list-wrapper" class="list-wrapper">
+				{% for item in insurance_frequently_asked_questions %}
+				<div data-key="{{ forloop.counter }}">
+					<div class="item-faq">
+						<div
+							data-toggle-id="answer-{{ forloop.counter }}"
+							class="question arrow">
+							<h4 class="title-question">
+								{{ item.question|safe }}
+							</h4>
+						</div>
+						<div id="answer-{{ forloop.counter }}" class="answer" hidden>
+							<p>{{ item.answer|safe }}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				<div style="clear: both; float: none"></div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
