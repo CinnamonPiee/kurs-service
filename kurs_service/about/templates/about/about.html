@@ -192,21 +192,15 @@
 							<div class="row">
 								<div class="col-lg-2 centered">
 									<img
-										src="/frontend/web/assets_project/img/img-reviews/file603a985ff1445img20200211.jpg"
+										src="{% static '/assets_project/img/img-reviews/noavatar_man.png' %}"
 									/>
-									<p>Сергей</p>
-									<p><i class="fa fa-calendar"></i> 27.02.2021 в 21:57</p>
+									<p>{{ last_review.user.first_name }}</p>
+									<p><i class="fa fa-calendar"></i> {{ last_review.created_at|date:"d.m.Y в H:i" }}</p>
 								</div>
 								<div class="col-lg-8">
-									<p>Сергей :</p>
+									<p>{{ last_review.user.first_name }} :</p>
 									<p class="speech-bubble" style="padding: 15px">
-										Самый адекватный сервис не далеко от дома! Оказалось самое
-										выгодное предложение по цене и по времени записи. Записался
-										на субботу, все сделали за 3,5 - 4 часа. Цена
-										соответствовала заявленной. Вежливые, позитивные ребята.
-										Ценник не дерут, все объясняют. Плохо, что нет wi-fi, но
-										обещали исправиться... посмотрим. Думаю это не последнее
-										обращение в этот сервис.
+										{{ last_review.content }}
 									</p>
 									<div class="">
 										<div>
@@ -217,9 +211,7 @@
 												class="speech-bubble-2"
 												style="padding: 15px; float: right"
 											>
-												Добрый день, Сергей. Благодарим вас за отзыв. Обещание
-												по WI-FI мы помним и уже в работе. Искренне рады, что вы
-												столь высоко оцениваете нашу работу.
+											{{ last_review.response.content }}
 											</p>
 										</div>
 									</div>
@@ -231,53 +223,7 @@
 									</p>
 									<img
 										class="centered"
-										src="/frontend/web/assets_project/img/imgLogo/sports-car-auto.png"
-										alt=""
-									/>
-								</div>
-							</div>
-						</div>
-						<div class="item-html-mobile hidden-lg">
-							<div class="reviews-item-mobile">
-								<div class="row">
-									<div class="col-xs-4 centered">
-										<img
-											src="/frontend/web/assets_project/img/img-reviews/file603a985ff1445img20200211.jpg"
-										/>
-										<p>Сергей</p>
-										<p class="date-reviews">
-											<i class="fa fa-calendar"></i> 27.02.2021 в 21:57
-										</p>
-									</div>
-									<div class="col-xs-8">
-										<p class="speech-bubble" style="padding: 15px">
-											Самый адекватный сервис не далеко от дома! Оказалось самое
-											выгодное предложение по цене и по времени записи.
-											Записался на субботу, все сделали за 3,5 - 4 часа. Цена
-											соответствовала заявленной. Вежливые, позитивные ребята.
-											Ценник не дерут, все объясняют. Плохо, что нет wi-fi, но
-											обещали исправиться... посмотрим. Думаю это не последнее
-											обращение в этот сервис.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-8">
-									<div>
-										<p>Ответ администрации ООО "КУРС" :</p>
-										<p class="speech-bubble-2" style="padding: 15px">
-											Добрый день, Сергей. Благодарим вас за отзыв. Обещание по
-											WI-FI мы помним и уже в работе. Искренне рады, что вы
-											столь высоко оцениваете нашу работу.
-										</p>
-									</div>
-								</div>
-								<div class="col-xs-4 centered">
-									<p>Администрация ООО "КУРС"</p>
-									<img
-										class="centered"
-										src="/frontend/web/assets_project/img/imgLogo/sports-car-auto-reviews.png"
+										src="{% static 'assets_project/img/imgLogo/sports-car-auto.png' %}"
 										alt=""
 									/>
 								</div>
@@ -292,7 +238,7 @@
 	</div>
 	<div class="row centered">
 		<div class="content-reviews-home col-lg-12">
-			<br />
+			<br/>
 			<a class="kursStyleButton" href="/reviews">Посмотреть все отзывы</a>
 		</div>
 	</div>

@@ -8,6 +8,7 @@ from about.models import (
 	AboutOurAdvantages,
 	AboutTitles,
 )
+from reviews.models import ReviewsReview
 
 
 def about(request):
@@ -22,5 +23,6 @@ def about(request):
 		'about_lets_acquainted': AboutLetsAcquainted.objects.first(),
 		'about_our_advantages': AboutOurAdvantages.objects.all(),
 		'about_titles': AboutTitles.objects.first(),
+		'last_review': ReviewsReview.objects.filter(has_response=True).order_by("-created_at").first(),
 	}
 	return render(request, "about/about.html", context=context)

@@ -90,9 +90,6 @@ class AboutHowWeTrainingStaff(models.Model):
 		verbose_name_plural = "Как мы обучаем наш персонал?"
 
 
-# TODO Доделать модель отзыва после создания моделей отзывов
-
-
 class AboutTitles(models.Model):
 	lets_acquainted = models.CharField(max_length=255, blank=True, null=True, verbose_name="Давайте знакомиться")
 	our_advantages = models.CharField(max_length=255, blank=True, null=True, verbose_name="Наши преимущества")
