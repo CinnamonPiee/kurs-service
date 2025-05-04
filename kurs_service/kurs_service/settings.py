@@ -53,6 +53,11 @@ INSTALLED_APPS = [
 	'rules_personal_data.apps.RulesPersonalDataConfig',
 	'about.apps.AboutConfig',
 	'site_login.apps.SiteLoginConfig',
+	'site_signup.apps.SiteSignupConfig',
+	'reviews.apps.ReviewsConfig',
+	'discounts.apps.DiscountsConfig',
+	'news.apps.NewsConfig',
+	'insurance.apps.InsuranceConfig',
 	
     'debug_toolbar',
 ]
@@ -134,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 

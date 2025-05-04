@@ -25,12 +25,17 @@ from site_login import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_page.urls', namespace='main_page')),
-	path('photo-gallery', include('photo_gallery.urls', namespace='photo_gallery')),
-	path('warranty', include('warranty.urls', namespace='warranty')),
-	path('contacts', include('contacts.urls', namespace='contacts')),
-	path('rules-personal-data', include('rules_personal_data.urls', namespace='rules_personal_data')),
-	path('about', include('about.urls', namespace='about')),
+	path('photo-gallery/', include('photo_gallery.urls', namespace='photo_gallery')),
+	path('warranty/', include('warranty.urls', namespace='warranty')),
+	path('contacts/', include('contacts.urls', namespace='contacts')),
+	path('rules-personal-data/', include('rules_personal_data.urls', namespace='rules_personal_data')),
+	path('about/', include('about.urls', namespace='about')),
 	path('site/login', include('site_login.urls', namespace='site_login')),
+	path('site/signup', include('site_signup.urls', namespace='site_signup')),
+	path('reviews/', include('reviews.urls', namespace='reviews')),
+	path('discounts/', include('discounts.urls', namespace='discounts')),
+	path('news/', include('news.urls', namespace='news')),
+	path('insurance/', include('insurance.urls', namespace='insurance')),
 	
 	path("logout/", views.site_logout, name="site_logout"),
 ]
