@@ -19,8 +19,15 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from django.conf import settings
 from debug_toolbar.toolbar import debug_toolbar_urls
-
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticViewSitemap
 from site_login import views
+from . import views
+
+
+sitemaps = {
+    'static': StaticViewSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,6 +45,10 @@ urlpatterns = [
 	path('insurance/', include('insurance.urls', namespace='insurance')),
 	
 	path("logout/", views.site_logout, name="site_logout"),
+
+	path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+	path('robots.txt', views.robots_txt, name='robots_txt'),
+
 ]
 
 if settings.DEBUG:
