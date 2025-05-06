@@ -3,6 +3,7 @@ from django.contrib.auth.hashers import make_password, check_password
 
 
 class SiteVisitor(models.Model):
+    img = models.ImageField(default="img-reviews/noavatar_man.png", null=True, blank=True, verbose_name="Изображение")
     first_name = models.CharField(max_length=50, verbose_name="Имя")
     last_name = models.CharField(max_length=50, verbose_name="Фамилия", blank=True, null=True)
     email = models.EmailField(unique=True, verbose_name="Электронная почта")
@@ -29,3 +30,21 @@ class SiteVisitor(models.Model):
         db_table = "base_page_site_visitor"
         verbose_name = "Посетитель сайта"
         verbose_name_plural = "Посетители сайта"
+
+
+class BasePageFooter(models.Model):
+    img_logo = models.ImageField(upload_to="img-logo", blank=True, null=True, verbose_name="Логотип")
+    text = models.TextField(blank=True, null=True, verbose_name="Текст")
+    pay_icon_cash = models.ImageField(upload_to="img-pay-method", blank=True, null=True, verbose_name="Иконка наличных")
+    pay_icon_mastercard = models.ImageField(upload_to="img-pay-method", blank=True, null=True, verbose_name="Иконка Mastercard")
+    pay_icon_visa = models.ImageField(upload_to="img-pay-method", blank=True, null=True, verbose_name="Иконка Visa")
+    pay_icon_sber = models.ImageField(upload_to="img-pay-method", blank=True, null=True, verbose_name="Иконка Сбер")
+    pay_icon_halva = models.ImageField(upload_to="img-pay-method", blank=True, null=True, verbose_name="Иконка Халва")
+
+    def __str__(self):
+        return "Футер"
+
+    class Meta:
+        db_table = "base_page_footer"
+        verbose_name = "Футер"
+        verbose_name_plural = "Футер"

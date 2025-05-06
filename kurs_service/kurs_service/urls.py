@@ -21,8 +21,8 @@ from django.conf import settings
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import StaticViewSitemap
-from site_login import views
-from . import views
+from .views import robots_txt
+from site_login.views import site_logout
 
 
 sitemaps = {
@@ -44,10 +44,10 @@ urlpatterns = [
 	path('news/', include('news.urls', namespace='news')),
 	path('insurance/', include('insurance.urls', namespace='insurance')),
 	
-	path("logout/", views.site_logout, name="site_logout"),
+	path("logout/", site_logout, name="site_logout"),
 
 	path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-	path('robots.txt', views.robots_txt, name='robots_txt'),
+	path('robots.txt', robots_txt, name='robots_txt'),
 
 ]
 

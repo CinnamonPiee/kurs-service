@@ -83,14 +83,14 @@
 				data-evacuation="1"
 				data-title="Запись на эвакуацию"
 				><img
-					src="{% static "/assets_project/img/imgLogo/evacuator-dav.jpg" %}"
+					src="{% static "/img/evacuator-dav.jpg" %}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Эвакуация</p></a
 			>
 			<a href="/contacts"
 				><img
-					src="{% static "/assets_project/img/imgLogo/unnamed.png" %}"
+					src="{% static "/img-social/unnamed.png" %}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Контакты</p></a
@@ -100,7 +100,7 @@
 				href="mailto:kurs_service@mail.ru"
 				title="Отправьте нам Емаил"
 				><img
-					src="{% static "/assets_project/img/imgLogo/email.png" %}"
+					src="{% static "/img-social/email.png" %}"
 					alt="unnamed"
 			/></a>
 			<a
@@ -109,7 +109,7 @@
 				data-services="9"
 				data-title="Обратный звонок"
 				><img
-					src="{% static "/assets_project/img/imgLogo/phone.png" %}"
+					src="{% static "/img/phone.png" %}"
 					alt="unnamed"
 			/></a>
 		</div>
@@ -120,7 +120,7 @@
 				data-services="2"
 				data-title="Запись на техническое обслуживание"
 				><img
-					src="{% static "/assets_project/img/imgLogo/remont.jpg" %}"
+					src="{% static "/img/remont.jpg" %}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Запись на Тех. Обсл.</p></a
@@ -131,7 +131,7 @@
 				data-services="3"
 				data-title="Запись на диагностику"
 				><img
-					src="{% static "/assets_project/img/imgLogo/Diagnostika_avto.png" %}"
+					src="{% static "/img/Diagnostika_avto.png" %}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Диагностика</p></a
@@ -142,7 +142,7 @@
 				data-services="4"
 				data-title="Запись на шиномантаж"
 				><img
-					src="{% static "/assets_project/img/imgLogo/proxy500-1.jpg" %}"
+					src="{% static "/img/proxy500-1.jpg" %}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Шинсервис</p></a
@@ -155,14 +155,14 @@
 						<div class="hidden-xs col-sm-4 col-md-4 border-right">
 							<a href="/">
 								<img 
-									src="{% static "/assets_project/img/imgLogo/logo-kurs-new.png" %}" 
+									src="{% static "/img-logo/logo-kurs-new.png" %}" 
 									class="img-responsive">
 								</a>
 						</div>
 						<div class="qr-mobile col-xs-2 col-sm-2 col-md-2 border-right qrcode-menu">
 							<a href="/contacts">
 								<img 
-									src="{% static "/assets_project/img/imgLogo/qr-code-v-card.png" %}" 
+									src="{% static "/img-qr-codes/qr-code-v-card.png" %}" 
 									class="img-responsive qrcode" 
 									style="float: right;" 
 									title="Контакты">
@@ -310,7 +310,7 @@
 					<div class="row">
 						<div class="col-lg-1 col-xs-2">
 							<img
-								src="{% static "/assets_project/img/imgLogo/danger-hd.png" %}"
+								src="{% static "/img/danger-hd.png" %}"
 								alt=""
 							/>
 						</div>
@@ -415,7 +415,7 @@
 					</div>
 					<div class="col-lg-4 hidden-xs">
 						<img
-							src="{% static "/assets_project/img/imgLogo/logo-kurs-new.png" %}"
+							src="{% static "/img-logo/logo-kurs-new.png" %}"
 							alt="logo-kurs"
 						/>
 					</div>
@@ -434,28 +434,28 @@
 							class="link-cal-number"
 							href="https://www.instagram.com/kursvash/"
 							><img
-								src="{% static "/assets_project/img/imgLogo/instagram-logo.png" %}"
+								src="{% static "/img-social/instagram-logo.png" %}"
 								alt="unnamed" /><span></span
 						></a>
 						<a
 							class="link-cal-number"
 							href="https://www.facebook.com/profile.php?id=100061237433195"
 							><img
-								src="{% static "/assets_project/img/imgLogo/facebook.png" %}"
+								src="{% static "/img-social/facebook.png" %}"
 								alt="unnamed" /><span></span
 						></a>
 						<a 
 							class="link-cal-number" 
 							href="https://vk.com/id629804648"
 							><img
-								src="{% static "/assets_project/img/imgLogo/vk.png" %}"
+								src="{% static "/img-social/vk.png" %}"
 								alt="unnamed" /><span></span
 						></a>
 						<a 
 							class="link-cal-number" 
 							href="whatsapp://send?phone=+79104484506"
 							><img
-								src="{% static "/assets_project/img/imgLogo/WhatsAppPNG.png" %}"
+								src="{% static "/img-social/WhatsAppPNG.png" %}"
 								alt="unnamed" /><span></span
 						></a>
 					</div>
@@ -463,42 +463,39 @@
 						<div class="row">
 							<div class="col-lg-2 col-xs-5">
 								<img
-									src="{% static "/assets_project/img/imgLogo/bottom-logo.png" %}"
+									src="{{ base_page_footer.img_logo.url }}"
 									alt=""
 								/>
 							</div>
 							<div class="col-lg-7 hidden-xs hidden-sm">
 								<p>
-									© 2020г. https://kurs-service.ru - прозрачный автосервис у нас
-									один курс. All Rights Reserved.<br />
-									Сайт не является публичной офертой и носит информационный
-									характер.
+									{{ base_page_footer.text|safe }}
 								</p>
 							</div>
 							<div class="col-lg-3 col-xs-7">
 								<img
 									class="pay_icon"
-									src="{% static "/assets_project/img/imgLogo/pay_icon__cash.png" %}"
+									src="{{ base_page_footer.pay_icon_cash.url }}"
 									alt=""
 								/>
 								<img
 									class="pay_icon"
-									src="{% static "/assets_project/img/imgLogo/pay_icon__mastercard.png" %}"
+									src="{{ base_page_footer.pay_icon_mastercard.url }}"
 									alt=""
 								/>
 								<img
 									class="pay_icon"
-									src="{% static "/assets_project/img/imgLogo/pay_icon__visa.png" %}"
+									src="{{ base_page_footer.pay_icon_visa.url }}"
 									alt=""
 								/>
 								<img
 									class="pay_icon"
-									src="{% static "/assets_project/img/imgLogo/pay_icon__sberbank.png" %}"
+									src="{{ base_page_footer.pay_icon_sber.url }}"
 									alt=""
 								/>
 								<img
 									class="pay_icon"
-									src="{% static "/assets_project/img/imgLogo/pay_icon__halva.png" %}"
+									src="{{ base_page_footer.pay_icon_halva.url }}"
 									alt=""
 								/>
 							</div>
