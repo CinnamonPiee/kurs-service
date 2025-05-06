@@ -27,7 +27,7 @@
 								<div class="row">
 									<div class="col-lg-2 centered">
 										<img
-											src="{% static '/assets_project/img/img-reviews/noavatar_man.png' %}"/>
+											src="{{ item.user.img.url }}"/>
 										<p>{{ item.user.first_name }}</p>
 										<p><i class="fa fa-calendar"></i> {{ item.created_at|date:"d.m.Y в H:i" }}</p>
 									</div>
@@ -54,7 +54,7 @@
 										</p>
 										<img
 											class="centered"
-											src="{% static 'assets_project/img/imgLogo/sports-car-auto.png' %}"
+											src="{{ item.response.img.url }}"
 											alt=""
 										/>
 									</div>

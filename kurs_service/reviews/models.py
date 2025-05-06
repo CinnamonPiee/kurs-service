@@ -32,6 +32,7 @@ class ReviewsReview(models.Model):
 
 
 class ReviewsResponse(models.Model):
+    img = models.ImageField(default="img-logo/sport-car-auto", blank=True, null=True, verbose_name="Изображение")
     content = models.TextField(verbose_name="Ответ на отзыв")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
 
