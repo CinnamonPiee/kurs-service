@@ -192,7 +192,7 @@
 							<div class="row">
 								<div class="col-lg-2 centered">
 									<img
-										src="{% static '/assets_project/img/img-reviews/noavatar_man.png' %}"
+										src="{{ last_review.user.img.url }}"
 									/>
 									<p>{{ last_review.user.first_name }}</p>
 									<p><i class="fa fa-calendar"></i> {{ last_review.created_at|date:"d.m.Y в H:i" }}</p>
@@ -223,7 +223,7 @@
 									</p>
 									<img
 										class="centered"
-										src="{% static 'assets_project/img/imgLogo/sports-car-auto.png' %}"
+										src="{{ last_review.response.img.url }}"
 										alt=""
 									/>
 								</div>
