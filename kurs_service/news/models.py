@@ -3,6 +3,7 @@ from django.utils.html import strip_tags
 
 
 class News(models.Model):
+	little_img = models.ImageField(upload_to="img-news", null=True, blank=True, verbose_name="Маленькое изображение")
 	img = models.ImageField(upload_to="img-news", null=True, blank=True, verbose_name="Изображение")
 	title = models.CharField(max_length=255, null=True, blank=True, verbose_name="Заголовок")
 	description = models.TextField(null=True, blank=True, verbose_name="Описание")
