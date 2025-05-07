@@ -83,14 +83,14 @@
 				data-evacuation="1"
 				data-title="Запись на эвакуацию"
 				><img
-					src="{% static "/img/evacuator-dav.jpg" %}"
+					src="{{ base_page_side_menu.img_evacuation.url }}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Эвакуация</p></a
 			>
 			<a href="/contacts"
 				><img
-					src="{% static "/img-social/unnamed.png" %}"
+					src="{{ base_page_side_menu.img_contacts.url }}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Контакты</p></a
@@ -100,7 +100,7 @@
 				href="mailto:kurs_service@mail.ru"
 				title="Отправьте нам Емаил"
 				><img
-					src="{% static "/img-social/email.png" %}"
+					src="{{ base_page_side_menu.img_email.url }}"
 					alt="unnamed"
 			/></a>
 			<a
@@ -109,7 +109,7 @@
 				data-services="9"
 				data-title="Обратный звонок"
 				><img
-					src="{% static "/img/phone.png" %}"
+					src="{{ base_page_side_menu.img_phone.url }}"
 					alt="unnamed"
 			/></a>
 		</div>
@@ -120,7 +120,7 @@
 				data-services="2"
 				data-title="Запись на техническое обслуживание"
 				><img
-					src="{% static "/img/remont.jpg" %}"
+					src="{{ base_page_side_menu.img_remont.url }}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Запись на Тех. Обсл.</p></a
@@ -131,7 +131,7 @@
 				data-services="3"
 				data-title="Запись на диагностику"
 				><img
-					src="{% static "/img/Diagnostika_avto.png" %}"
+					src="{{ base_page_side_menu.img_diagnostics.url }}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Диагностика</p></a
@@ -142,7 +142,7 @@
 				data-services="4"
 				data-title="Запись на шиномантаж"
 				><img
-					src="{% static "/img/proxy500-1.jpg" %}"
+					src="{{ base_page_side_menu.img_shin_service.url }}"
 					alt="unnamed"
 				/>
 				<p class="in-pop">Шинсервис</p></a
@@ -155,14 +155,14 @@
 						<div class="hidden-xs col-sm-4 col-md-4 border-right">
 							<a href="/">
 								<img 
-									src="{% static "/img-logo/logo-kurs-new.png" %}" 
+									src="{{ base_page_header.img_logo.url }}" 
 									class="img-responsive">
 								</a>
 						</div>
 						<div class="qr-mobile col-xs-2 col-sm-2 col-md-2 border-right qrcode-menu">
 							<a href="/contacts">
 								<img 
-									src="{% static "/img-qr-codes/qr-code-v-card.png" %}" 
+									src="{{ base_page_header.img_qr_code.url }}" 
 									class="img-responsive qrcode" 
 									style="float: right;" 
 									title="Контакты">
@@ -175,18 +175,18 @@
 									class="hidden-md" 
 									href="tel:8 (910) 448-45-06" 
 									title="Позвонить нам">
-									8 (910) 448-45-06
+									{{ base_page_header.phone|safe }}
 								</a>
 								<div class="town" style="text-align: left;">
 									<i class="fa fa-map-marker" style="color: #ed1c24"></i>
 									<span>
-										Москва, 1-я Мытищинская 16 с.1
+										{{ base_page_header.town_address|safe }}
 									</span>
 								</div>
 								<div class="worktime">
 									<p>
 										<i class="fa fa-clock-o" style="color: #ed1c24"></i> 
-										Работаем: Пн-Пт с 9:00 - 20:00,<br>Сб с 9:00 - 17:00, Вс выходной
+										{{ base_page_header.worktime|safe }}
 									</p>
 								</div>
 							</div>
@@ -292,11 +292,6 @@
 												<a href="/photo-gallery" tabindex="-1">Фотогалерея</a>
 											</li>
 										</ul>
-									</li>
-									<li>
-										<a class="btn btn-link logout hidden-lg" href="/site/login"
-											>Войти</a
-										>
 									</li>
 								</ul>
 							</div>
@@ -415,7 +410,7 @@
 					</div>
 					<div class="col-lg-4 hidden-xs">
 						<img
-							src="{% static "/img-logo/logo-kurs-new.png" %}"
+							src="{{ base_page_footer_image.img.url }}"
 							alt="logo-kurs"
 						/>
 					</div>
@@ -430,34 +425,15 @@
 				</div>
 				<div class="social-network">
 					<div class="row centered">
-						<a
-							class="link-cal-number"
-							href="https://www.instagram.com/kursvash/"
-							><img
-								src="{% static "/img-social/instagram-logo.png" %}"
-								alt="unnamed" /><span></span
-						></a>
-						<a
-							class="link-cal-number"
-							href="https://www.facebook.com/profile.php?id=100061237433195"
-							><img
-								src="{% static "/img-social/facebook.png" %}"
-								alt="unnamed" /><span></span
-						></a>
-						<a 
-							class="link-cal-number" 
-							href="https://vk.com/id629804648"
-							><img
-								src="{% static "/img-social/vk.png" %}"
-								alt="unnamed" /><span></span
-						></a>
-						<a 
-							class="link-cal-number" 
-							href="whatsapp://send?phone=+79104484506"
-							><img
-								src="{% static "/img-social/WhatsAppPNG.png" %}"
-								alt="unnamed" /><span></span
-						></a>
+						{% for item in base_page_social_images %}
+							<a
+								class="link-cal-number"
+								href="{{ item.link }}"
+								><img
+									src="{{ item.img.url}}"
+									alt="unnamed" /><span></span
+							></a>
+						{% endfor %}
 					</div>
 					<div id="bottom-text">
 						<div class="row">

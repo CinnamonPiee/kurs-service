@@ -32,6 +32,65 @@ class SiteVisitor(models.Model):
         verbose_name_plural = "Посетители сайта"
 
 
+class BasePageSideMenu(models.Model):
+    img_evacuation = models.ImageField(upload_to="img", blank=True, null=True, verbose_name="Эвакуация")
+    img_contacts = models.ImageField(upload_to="img-social", blank=True, null=True, verbose_name="Контакты")
+    img_email = models.ImageField(upload_to="img-social", blank=True, null=True, verbose_name="Почта")
+    img_phone = models.ImageField(upload_to="img", blank=True, null=True, verbose_name="Телефон")
+    img_remont = models.ImageField(upload_to="img", blank=True, null=True, verbose_name="Ремонт")
+    img_diagnostics = models.ImageField(upload_to="img", blank=True, null=True, verbose_name="Диагностика")
+    img_shin_service = models.ImageField(upload_to="img", blank=True, null=True, verbose_name="Шиномонтаж")
+
+    def __str__(self):
+        return "Боковое меню"
+    
+    class Meta:
+        db_table = "base_page_side_menu"
+        verbose_name = "Боковое меню"
+        verbose_name_plural = "Боковое меню"
+
+
+class BasePageHeader(models.Model):
+    img_logo = models.ImageField(upload_to="img-logo", blank=True, null=True, verbose_name="Логотип")
+    img_qr_code = models.ImageField(upload_to="img-qr-codes", blank=True, null=True, verbose_name="QR-код")
+    phone = models.CharField(max_length=255, blank=True, null=True, verbose_name="Телефон")
+    town_address = models.CharField(max_length=255, blank=True, null=True, verbose_name="Адрес")
+    worktime = models.CharField(max_length=255, blank=True, null=True, verbose_name="Время работы")
+
+    def __str__(self):
+        return "Хедер"
+
+    class Meta:
+        db_table = "base_page_header"
+        verbose_name = "Хедер"
+        verbose_name_plural = "Хедер"
+
+
+class BasePageFooterImage(models.Model):
+    img = models.ImageField(upload_to="img-logo", blank=True, null=True, verbose_name="Изображение")
+
+    def __str__(self):
+        return "Изображение логотипа в футере"
+
+    class Meta:
+        db_table = "base_page_footer_image"
+        verbose_name = "Изображение в футере"
+        verbose_name_plural = "Изображения в футере"
+
+
+class BasePageSocialImages(models.Model):
+    img = models.ImageField(upload_to="img-social", blank=True, null=True, verbose_name="Изображение")
+    link = models.URLField(blank=True, null=True, verbose_name="Ссылка")
+
+    def __str__(self):
+        return "Социальные сети"
+
+    class Meta:
+        db_table = "base_page_social_images"
+        verbose_name = "Социальные сети"
+        verbose_name_plural = "Социальные сети"
+
+
 class BasePageFooter(models.Model):
     img_logo = models.ImageField(upload_to="img-logo", blank=True, null=True, verbose_name="Логотип")
     text = models.TextField(blank=True, null=True, verbose_name="Текст")
