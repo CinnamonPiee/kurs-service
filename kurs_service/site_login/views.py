@@ -11,10 +11,7 @@ def site_login(request):
 			visitor = form.cleaned_data["visitor"]
 			request.session["visitor_email"] = visitor.email
 			request.session["visitor_name"] = visitor.first_name
-			messages.success(request, f"Добро пожаловать, {visitor.first_name}!")
 			return redirect("main_page:main_page")
-		else:
-			messages.error(request, "Ошибка авторизации. Проверьте введенные данные.")
 	else:
 		form = SiteVisitorLoginForm()
 

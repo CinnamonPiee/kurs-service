@@ -13,10 +13,7 @@ def site_signup(request):
             visitor.save()
             request.session["visitor_email"] = visitor.email
             request.session["visitor_name"] = visitor.first_name
-            messages.success(request, f"Регистрация прошла успешно! Добро пожаловать, {visitor.email}!")
             return redirect("main_page:main_page")
-        else:
-            messages.error(request, "Ошибка регистрации. Проверьте введенные данные.")
     else:
         form = SiteVisitorSignupForm()
 

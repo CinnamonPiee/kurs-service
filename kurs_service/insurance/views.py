@@ -27,7 +27,7 @@ def add_insurance(request):
         form = InsuranceFormModelForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Ваша заявка успешно отправлена!")
+            messages.success(request, "Ваша заявка успешно отправлена! Ожидайте звонка.")
             return redirect("insurance:insurance")
         else:
             messages.error(request, "Ошибка отправки формы. Проверьте введенные данные.")
