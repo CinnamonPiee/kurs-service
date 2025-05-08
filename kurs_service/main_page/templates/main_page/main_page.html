@@ -11,97 +11,30 @@
 <div class="site-index">
 	<div class="slider-kurs">
 		<div class="box hidden-xs" id="slider-kurs">
-			<div class="side side1">
-				<a href="/"
-					><img
-						src="{% static "/img-slide/toyota-lexus-slide-2.jpg" %}"
-						alt=""
-				/></a>
-			</div>
-			<div class="side side2">
-				<a href="online-appointment/index"
-					><img
-						src="{% static "/img-slide/armored-car-slide.jpg" %}"
-						alt=""
-				/></a>
-			</div>
-			<div class="side side3">
-				<a href="online-appointment/index"
-					><img
-						src="{% static "/img-slide/online-slide.jpg" %}"
-						alt=""
-				/></a>
-			</div>
-			<div class="side side4">
-				<a href="evacuation/index"
-					><img
-						src="{% static "/img-slide/elevator-slide.jpg" %}"
-						alt=""
-				/></a>
-			</div>
-			<div class="side side5">
-				<a href="insurance/index"
-					><img
-						src="{% static "/img-slide/strahovka-slide.jpg" %}"
-						alt=""
-				/></a>
-			</div>
-			<div class="side side6">
-				<a href="insurance/index"
-					><img
-						src="{% static "/img-slide/tire-fitting-slide.jpg" %}"
-						alt=""
-				/></a>
-			</div>
-			<div class="side side7">
-				<a href="insurance/index"
-					><img
-						src="{% static "/img-slide/razval-slide.jpg" %}"
-						alt=""
-				/></a>
-			</div>
+			{% for item in main_page_slider_images %}
+				<div class="side side{{ forloop.counter }}">
+					<a href="{% url item.link %}"
+						><img
+							src="{{ item.image.url }}"
+							alt=""
+					/></a>
+				</div>
+			{% endfor %}
 		</div>
 	</div>
 	<div class="advantages">
 		<hr />
 		<div class="row">
 			<div id="list-wrapper" class="list-wrapper">
-				<div data-key="1">
-					<div class="col-lg-3 col-xs-6">
-						<div class="item-advantage">
-							<h2><span>4</span> подъемника</h2>
-							<h3><span>6</span> тонн максимально</h3>
-							<p>Мы поднимем даже бронированные автомобили</p>
+				{% for item in about_our_advantages %}
+					<div data-key="{{ forloop.counter }}">
+						<div class="col-lg-3 col-xs-6">
+							<div class="item-advantage">
+								{{ item.advantages_item|safe }}
+							</div>
 						</div>
 					</div>
-				</div>
-				<div data-key="2">
-					<div class="col-lg-3 col-xs-6">
-						<div class="item-advantage">
-							<h2><span>6</span> автомобилей</h2>
-							<h3><span>6</span> сотрудников</h3>
-							<p>Готовы отремонтировать одновременно и качественно</p>
-						</div>
-					</div>
-				</div>
-				<div data-key="3">
-					<div class="col-lg-3 col-xs-6">
-						<div class="item-advantage">
-							<h2><span>22</span> радиус</h2>
-							<h3><span>4+1</span> шиномонтаж</h3>
-							<p>Шиномонтаж запасного колеса в подарок</p>
-						</div>
-					</div>
-				</div>
-				<div data-key="4">
-					<div class="col-lg-3 col-xs-6">
-						<div class="item-advantage">
-							<h2><span>60-90</span> минут</h2>
-							<h3><span>1</span> автомобиль</h3>
-							<p>Качественное проведение ТО по всем пунктам</p>
-						</div>
-					</div>
-				</div>
+				{% endfor %}
 				<div style="clear: both; float: none"></div>
 			</div>
 		</div>
@@ -262,164 +195,35 @@
 		</div>
 	</div>
 	<h3 class="pretty-header left-right-line-short-header">
-		Направление в деятельности
+		{{ main_page_titles.direction_of_activity }}
 	</h3>
 	<div class="direction-kurs">
 		<div class="row">
 			<div id="list-wrapper" class="list-wrapper">
-				<div data-key="1">
-					<div class="col-lg-3 col-xs-6 centered">
-						<div class="item-direction-activity">
-							<img
-								src="{% static "/img-direction-activity/diagnostics.png" %}"
-								alt="diagnostics.png"
-							/>
-							<h4>Диагностика</h4>
-							<p class="body-text">
-								Мы выполняем диагностику всех систем автомобиля согласно марки и
-								модели. Профессиональное оборудование позволяет выявить любую
-								неисправность и устранить ее, в отличии от оборудования
-								стандартного, общего типа.
-							</p>
-							<p class="footer">от 800 ₽</p>
+				{% for item in main_page_direction_of_activity %}
+					<div data-key="{{ forloop.counter }}">
+						<div class="col-lg-3 col-xs-6 centered">
+							<div class="item-direction-activity">
+								<img
+									src="{{ item.img.url }}"
+									alt="diagnostics.png"
+								/>
+								<h4>{{ item.title }}</h4>
+								<p class="body-text">
+									{{ item.description|safe }}
+								</p>
+								<p class="footer">{{ item.price }}</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div data-key="2">
-					<div class="col-lg-3 col-xs-6 centered">
-						<div class="item-direction-activity">
-							<img
-								src="{% static "/img-direction-activity/oil-filter.jpg" %}"
-								alt="oil-filter.jpg"
-							/>
-							<h4>Техническое обслуживание</h4>
-							<p class="body-text">
-								Проводим комплекс мероприятий, направленных на контроль
-								технического состояния авто, предотвращение возникновения
-								неполадок или своевременное их устранение. Периодическое
-								техническое обслуживание – гарантия надежной работы вашего
-								автомобиля.
-							</p>
-							<p class="footer">от 4500 ₽</p>
-						</div>
-					</div>
-				</div>
-				<div data-key="3">
-					<div class="col-lg-3 col-xs-6 centered">
-						<div class="item-direction-activity">
-							<img
-								src="{% static "/img-direction-activity/key.jpg" %}"
-								alt="key.jpg"
-							/>
-							<h4>Слесарный ремонт</h4>
-							<p class="body-text">
-								Предоставляем качественный слесарный ремонт, предусматривающий
-								восстановление деталей автомобиля. Наиболее часто в ходе работ
-								ремонтируются элементы подвески, двигателя, выхлопной и
-								топливной системы, и трансмиссии.
-							</p>
-							<p class="footer">н/ч 1500 ₽</p>
-						</div>
-					</div>
-				</div>
-				<div data-key="4">
-					<div class="col-lg-3 col-xs-6 centered">
-						<div class="item-direction-activity">
-							<img
-								src="{% static "/img-direction-activity/battery.png" %}"
-								alt="battery.png"
-							/>
-							<h4>Электрика</h4>
-							<p class="body-text">
-								Диагностика электроцепей автомобиля, выявление неисправностей,
-								проверка контактных групп, замер вольтажа и ампеража тока
-								выдаваемого генератором. Согласование выполняемых работ с
-								клиентом. Ремонт.
-							</p>
-							<p class="footer">н/ч 1500 ₽</p>
-						</div>
-					</div>
-				</div>
-				<div data-key="5">
-					<div class="col-lg-3 col-xs-6 centered">
-						<div class="item-direction-activity">
-							<img
-								src="{% static "/img-direction-activity/tire.jpeg" %}"
-								alt="tire.jpeg"
-							/>
-							<h4>Шиномантаж</h4>
-							<p class="body-text">
-								Согласование выполняемых работ с клиентом. Снятие колес и
-								произведение демонтажа шин с диска, очистка диска от продуктов
-								прошлого монтажа, замена вентиля или проверка на целостность
-								датчиков давления шин. Монтаж шин, балансировка. Установка на
-								автомобиль.
-							</p>
-							<p class="footer">от 2000 ₽</p>
-						</div>
-					</div>
-				</div>
-				<div data-key="6">
-					<div class="col-lg-3 col-xs-6 centered">
-						<div class="item-direction-activity">
-							<img
-								src="{% static "/img-direction-activity/descent-collapse.png" %}"
-								alt="descent-collapse.png"
-							/>
-							<h4>Сход-развал</h4>
-							<p class="body-text">
-								Диагностика узлов подвески. Согласование выполняемых работ с
-								клиентом. Произведение замеров углов схождения, развала колес по
-								всем осям автомобиля, а также кастера(угол наклона стойки)
-								передней оси. Настройка согласно марки и модели автомобиля.
-							</p>
-							<p class="footer">от 2500 ₽</p>
-						</div>
-					</div>
-				</div>
-				<div data-key="7">
-					<div class="col-lg-3 col-xs-6 centered">
-						<div class="item-direction-activity">
-							<img
-								src="{% static "/img-direction-activity/dvs.png" %}"
-								alt="dvs.png"
-							/>
-							<h4>Капитальный ремонт ДВС</h4>
-							<p class="body-text">
-								Диагностика по всем пунктам. Снятие ДВС и дефектовка при
-								клиенте, это очень важно чтобы вы понимали весь объем
-								предстоящего ремонта. Согласование с клиентом ремонта по каждому
-								пункту, включая запасные части и работу. Ремонт. Гарантийные
-								обязательства.
-							</p>
-							<p class="footer">н/ч 2000 ₽</p>
-						</div>
-					</div>
-				</div>
-				<div data-key="8">
-					<div class="col-lg-3 col-xs-6 centered">
-						<div class="item-direction-activity">
-							<img
-								src="{% static "/img-direction-activity/akpp.png" %}"
-								alt="akpp.png"
-							/>
-							<h4>Ремонт КПП, АКПП, CVT</h4>
-							<p class="body-text">
-								Диагностика по всем пунктам. Снятие узла и отправка к
-								официальным представителям изготовителя на дефектовку и
-								последующий ремонт. Согласование с клиентом ремонта по каждому
-								пункту, включая запасные части и работу. Ремонт. Гарантийные
-								обязательства.
-							</p>
-							<p class="footer">от 40000 ₽</p>
-						</div>
-					</div>
-				</div>
+				{% endfor %}
 				<div style="clear: both; float: none"></div>
 			</div>
 		</div>
 	</div>
-	<h3 class="pretty-header left-right-line-short-header">Всегда в наличии</h3>
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ main_page_titles.always_in_stock }}
+	</h3>
 	<div class="consumables">
 		<div class="row">
 			<div class="col-lg-12">
@@ -490,7 +294,7 @@
 		</div>
 	</div>
 	<h3 class="pretty-header left-right-line-short-header">
-		Cиловое дополнительное оборудование
+		{{ main_page_titles.additional_power_equipment }}
 	</h3>
 	<div class="preview-power hidden-xs hidden-sm">
 		<div class="row">
@@ -520,38 +324,37 @@
 	<div class="power-accessories-block">
 		<div class="row">
 			<div id="list-wrapper" class="list-wrapper">
-				<div data-key="1">
-					<div class="col-lg-3 col-xs-6">
-						<div class="power-accessories centered">
-							<div class="power-accessories-header">
-								<h4>Усиленные бамперы</h4>
-							</div>
-							<div class="power-accessories-body">
-								<a
-									href="{% static "/img/bumper-reinforced.png" %}"
-									data-fancybox="images"
-								>
-									<img
-										src="{% static "/img/bumper-reinforced.png" %}"
-									/>
-								</a>
-								<p>
-									Эргономичность и дизайн, компактность, прочность, соответствие
-									действующему законодательству<br />
-								</p>
-							</div>
-							<div class="power-accessories-footer">
-								<button
-									class="kursStyleButton add-to-order-power"
-									data-title="Усиленные бамперы"
-									data-power="1"
-								>
-									Узнать стоимость
-								</button>
+				{% for item in  %}
+					<div data-key="{{ forloop.counter }}">
+						<div class="col-lg-3 col-xs-6">
+							<div class="power-accessories centered">
+								<div class="power-accessories-header">
+									<h4>Усиленные бамперы</h4>
+								</div>
+								<div class="power-accessories-body">
+									<a
+										href="{% static "/img/bumper-reinforced.png" %}"
+										data-fancybox="images">
+										<img src="{% static "/img/bumper-reinforced.png" %}"/>
+									</a>
+									<p>
+										Эргономичность и дизайн, компактность, прочность, соответствие
+										действующему законодательству<br />
+									</p>
+								</div>
+								<div class="power-accessories-footer">
+									<button
+										class="kursStyleButton add-to-order-power"
+										data-title="Усиленные бамперы"
+										data-power="{{ forloop.counter }}">
+										Узнать стоимость
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				{% endfor %}
+				
 				<div data-key="2">
 					<div class="col-lg-3 col-xs-6">
 						<div class="power-accessories centered">
@@ -782,7 +585,9 @@
 		</div>
 	</div>
 
-	<h3 class="pretty-header left-right-line-short-header">Наши преимущества</h3>
+	<h3 class="pretty-header left-right-line-short-header">
+		{{ main_page_titles.our_advantages }}
+	</h3>
 	<div class="about-company-info">
 		<div class="embed-responsive embed-responsive-16by9 video">
 			<video
@@ -828,7 +633,7 @@
 		</div>
 	</div>
 	<h3 class="pretty-header left-right-line-short-header">
-		Часто задаваемые вопросы
+		{{ main_page_titles.frequently_asked_questions }}
 	</h3>
 	<div class="direction-kurs">
 		<div class="faq">
@@ -930,7 +735,7 @@
 		</div>
 	</div>
 	<h3 class="pretty-header left-right-line-short-header">
-		Всё то, чтобы считаться лучшими
+		{{ main_page_titles.everything_to_be_considered_the_best }}
 	</h3>
 	<div class="advantages-section" id="advantages">
 		<div class="range-services-kurs">
@@ -1151,7 +956,7 @@
 		</div>
 	</div>
 	<h3 class="pretty-header left-right-line-short-header">
-		Профессиональное оборудование
+		{{ main_page_titles.professional_equipment }}]]
 	</h3>
 	<div class="photo_professional_equipment">
 		<div class="row">
