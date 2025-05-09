@@ -232,63 +232,26 @@
 				</h3>
 			</div>
 			<div id="list-wrapper" class="list-wrapper">
-				<div data-key="1">
-					<div class="col-lg-4">
-						<div class="item-oil-details">
-							<div class="col-lg-8 col-xs-8">
-								<h4>Бочковые масла</h4>
-								<p>
-									Масло MOBIL для любых типов двигателей, трансмиссий. С разной
-									вязкостью, температурным режимом, бензиновые и дизельные ДВС.
-								</p>
-							</div>
-							<div class="col-lg-4 col-xs-4">
-								<img
-									src="{% static "/img/mobil-original.png" %}"
-									alt=""
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div data-key="2">
-					<div class="col-lg-4">
-						<div class="item-oil-details">
-							<div class="col-lg-8 col-xs-8">
-								<h4>Фасованные масла</h4>
-								<p>
-									Оригинальные моторные, трансмиссионные масла от проверенных
-									поставщиков. Сертифицированная продукция со 100% гарантией.
-								</p>
-							</div>
-							<div class="col-lg-4 col-xs-4">
-								<img
-									src="{% static "/img/toyota-oil.png" %}"
-									alt=""
-								/>
+				{% for item in main_page_always_in_stock %}
+					<div data-key="{{ forloop.counter }}">
+						<div class="col-lg-4">
+							<div class="item-oil-details">
+								<div class="col-lg-8 col-xs-8">
+									<h4>{{ item.title }}</h4>
+									<p>
+										{{ item.description|safe }}
+									</p>
+								</div>
+								<div class="col-lg-4 col-xs-4">
+									<img
+										src="{{ item.img.url }}"
+										alt=""
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div data-key="3">
-					<div class="col-lg-4">
-						<div class="item-oil-details">
-							<div class="col-lg-8 col-xs-8">
-								<h4>Оригинальные детали и аналоги</h4>
-								<p>
-									Мы на прямую сотрудничаем с проверенными поставщиками.
-									Сертифицированная продукция со 100% гарантией.
-								</p>
-							</div>
-							<div class="col-lg-4 col-xs-4">
-								<img
-									src="{% static "/img/content_bu.jpg" %}"
-									alt=""
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
+				{% endfor %}
 				<div style="clear: both; float: none"></div>
 			</div>
 		</div>
@@ -301,22 +264,18 @@
 			<div class="col-lg-3">
 				<img
 					class="left"
-					src="{% static "/img/land-cruser-power.jpg" %}"
+					src="{{ main_page_additional_power_equipment_amz.left_img.url }}"
 				/>
 			</div>
 			<div class="col-lg-6">
 				<p>
-					ООО "КУРС" совместно с компанией АМЗ предоставляет возможность
-					приобретения и установки оборудования для участия в соревнованиях по
-					трофи-рейду в категориях ТР-1, ТР-2, ТР-3, а так же для экспедиций,
-					путешествий, патрулирования лесов, - иными словами - для тяжелой
-					ежедневной эксплуатации в условиях российского бездорожья.
+					{{ main_page_additional_power_equipment_amz.text|safe }}
 				</p>
 			</div>
 			<div class="col-lg-3">
 				<img
 					class="right"
-					src="{% static "/img/land-cruser-power-2.jpg" %}"
+					src="{{ main_page_additional_power_equipment_amz.right_img.url }}"
 				/>
 			</div>
 		</div>
@@ -324,22 +283,21 @@
 	<div class="power-accessories-block">
 		<div class="row">
 			<div id="list-wrapper" class="list-wrapper">
-				{% for item in  %}
+				{% for item in main_page_additional_power_equipment %}
 					<div data-key="{{ forloop.counter }}">
 						<div class="col-lg-3 col-xs-6">
 							<div class="power-accessories centered">
 								<div class="power-accessories-header">
-									<h4>Усиленные бамперы</h4>
+									<h4>{{ item.title }}</h4>
 								</div>
 								<div class="power-accessories-body">
 									<a
-										href="{% static "/img/bumper-reinforced.png" %}"
+										href="{{ item.img.url }}"
 										data-fancybox="images">
-										<img src="{% static "/img/bumper-reinforced.png" %}"/>
+										<img src="{{ item.img.url }}"/>
 									</a>
 									<p>
-										Эргономичность и дизайн, компактность, прочность, соответствие
-										действующему законодательству<br />
+										{{ item.description|safe }}	
 									</p>
 								</div>
 								<div class="power-accessories-footer">
@@ -354,232 +312,6 @@
 						</div>
 					</div>
 				{% endfor %}
-				
-				<div data-key="2">
-					<div class="col-lg-3 col-xs-6">
-						<div class="power-accessories centered">
-							<div class="power-accessories-header">
-								<h4>Усиленные пороги</h4>
-							</div>
-							<div class="power-accessories-body">
-								<a
-									href="{% static "/img/rapids.png" %}"
-									data-fancybox="images"
-								>
-									<img
-										src="{% static "/img/rapids.png" %}"
-									/>
-								</a>
-								<p>
-									Силовые пороги выполняют важную функцию защиты кузова
-									автомобиля от повреждений с боков и грязи.<br />
-								</p>
-							</div>
-							<div class="power-accessories-footer">
-								<button
-									class="kursStyleButton add-to-order-power"
-									data-title="Усиленные пороги"
-									data-power="2"
-								>
-									Узнать стоимость
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div data-key="3">
-					<div class="col-lg-3 col-xs-6">
-						<div class="power-accessories centered">
-							<div class="power-accessories-header">
-								<h4>Лебедки</h4>
-							</div>
-							<div class="power-accessories-body">
-								<a
-									href="{% static "/img/winch.png" %}"
-									data-fancybox="images"
-								>
-									<img
-										src="{% static "/img/winch.png" %}"
-									/>
-								</a>
-								<p>
-									Лебедки электрические с тяговым усилием 4310 и 5443
-									килограмм.<br />
-								</p>
-							</div>
-							<div class="power-accessories-footer">
-								<button
-									class="kursStyleButton add-to-order-power"
-									data-title="Лебедки"
-									data-power="3"
-								>
-									Узнать стоимость
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div data-key="4">
-					<div class="col-lg-3 col-xs-6">
-						<div class="power-accessories centered">
-							<div class="power-accessories-header">
-								<h4>Экспедиционная корзина</h4>
-							</div>
-							<div class="power-accessories-body">
-								<a
-									href="{% static "/img/expedition-basket.png" %}"
-									data-fancybox="images"
-								>
-									<img
-										src="{% static "/img/expedition-basket.png" %}"
-									/>
-								</a>
-								<p>
-									Отличается не только большим размером, но и усиленной
-									конструкцией, выполненной в виде корзины.<br />
-								</p>
-							</div>
-							<div class="power-accessories-footer">
-								<button
-									class="kursStyleButton add-to-order-power"
-									data-title="Экспедиционная корзина"
-									data-power="4"
-								>
-									Узнать стоимость
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div data-key="5">
-					<div class="col-lg-3 col-xs-6">
-						<div class="power-accessories centered">
-							<div class="power-accessories-header">
-								<h4>Усиленные защиты кузова и ДВС</h4>
-							</div>
-							<div class="power-accessories-body">
-								<a
-									href="{% static "/img/power-crankcase-protection.png" %}"
-									data-fancybox="images"
-								>
-									<img
-										src="{% static "/img/power-crankcase-protection.png" %}"
-									/>
-								</a>
-								<p>
-									Предотвращает механические повреждения агрегатов автомобиля,
-									вызываемых дефектами дороги и воздействием посторонних
-									предметов.<br />
-								</p>
-							</div>
-							<div class="power-accessories-footer">
-								<button
-									class="kursStyleButton add-to-order-power"
-									data-title="Усиленные защиты кузова и ДВС"
-									data-power="5"
-								>
-									Узнать стоимость
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div data-key="6">
-					<div class="col-lg-3 col-xs-6">
-						<div class="power-accessories centered">
-							<div class="power-accessories-header">
-								<h4>Шноркель</h4>
-							</div>
-							<div class="power-accessories-body">
-								<a
-									href="{% static "/img/snorkel.png" %}"
-									data-fancybox="images"
-								>
-									<img
-										src="{% static "/img/snorkel.png" %}"
-									/>
-								</a>
-								<p>
-									Впускная труба автомобильного двигателя, выведенная на уровень
-									крыши автомобиля или выше.<br />
-								</p>
-							</div>
-							<div class="power-accessories-footer">
-								<button
-									class="kursStyleButton add-to-order-power"
-									data-title="Шноркель"
-									data-power="6"
-								>
-									Узнать стоимость
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div data-key="7">
-					<div class="col-lg-3 col-xs-6">
-						<div class="power-accessories centered">
-							<div class="power-accessories-header">
-								<h4>Увеличенные или доп. бензобаки</h4>
-							</div>
-							<div class="power-accessories-body">
-								<a
-									href="{% static "/img/additional-gas-tank.png" %}"
-									data-fancybox="images"
-								>
-									<img
-										src="{% static "/img/additional-gas-tank.png" %}"
-									/>
-								</a>
-								<p>
-									Повышение автономности наших машин через увеличение возимого
-									запаса топлива.<br />
-								</p>
-							</div>
-							<div class="power-accessories-footer">
-								<button
-									class="kursStyleButton add-to-order-power"
-									data-title="Увеличенные или доп. бензобаки"
-									data-power="7"
-								>
-									Узнать стоимость
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div data-key="8">
-					<div class="col-lg-3 col-xs-6">
-						<div class="power-accessories centered">
-							<div class="power-accessories-header">
-								<h4>Дополнительное оборудование</h4>
-							</div>
-							<div class="power-accessories-body">
-								<a
-									href="{% static "/img/powe_accessories.png" %}"
-									data-fancybox="images"
-								>
-									<img
-										src="{% static "/img/powe_accessories.png" %}"
-									/>
-								</a>
-								<p>
-									Фаркопы, площадки для лебедки, устройство подъема за колесо,
-									крюки, грузинские якоря<br />
-								</p>
-							</div>
-							<div class="power-accessories-footer">
-								<button
-									class="kursStyleButton add-to-order-power"
-									data-title="Дополнительное оборудование"
-									data-power="8"
-								>
-									Узнать стоимость
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div style="clear: both; float: none"></div>
 			</div>
 		</div>
@@ -592,7 +324,7 @@
 		<div class="embed-responsive embed-responsive-16by9 video">
 			<video
 				class="overlay"
-				src="{% static "/video/diagnostics.mp4" %}"
+				src="{{ main_page_our_advantages.video.url }}"
 				type="video/mp4"
 				autoplay=""
 				loop=""
@@ -606,23 +338,7 @@
 					<div id="list-wrapper" class="list-wrapper">
 						<div data-key="1">
 							<p>
-								Здравствуйте, меня зовут Бакин Евгений Олегович и я являюсь
-								генеральным директором компании ООО"КУРС". Наш автосервис
-								основывается на качестве обслуживания и прозрачности цен. Мы
-								стремимся к тому чтобы клиенты изначально понимали все до самых
-								мелочей предстоящего ремонта или обслуживания автомобиля.
-								Широкий профиль услуг таких как шиномонтаж, сход и развал колес
-								автомобиля, слесарный или капитальный ремонт и проведение
-								планового технического обслуживания транспортного средства. Для
-								достижения целей руководство уделяет особое внимание обновлению
-								оборудования мастерской и с постоянной переодичностью проводит
-								обучение сотрудников. На данном этапе оборудование и
-								квалификация сотрудников позволяет производить ремонт любой
-								сложности, включая ремонт бронированных автомобилей, у которых
-								не только большая масса но и дополнительно установленная защита
-								всех элементов.<br /><span
-									>Мы будем рады знакомству с Вами!</span
-								>
+								{{ main_page_our_advantages.text|safe }}
 							</p>
 						</div>
 						<div style="clear: both; float: none"></div>
@@ -639,96 +355,22 @@
 		<div class="faq">
 			<div class="wrapper-faq">
 				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<div class="item-faq">
-							<div data-toggle-id="answer-1" class="question arrow">
-								<h4 class="title-question">Какие формы оплаты у ООО "КУРС"?</h4>
-							</div>
-							<div id="answer-1" class="answer" hidden>
-								<p>
-									Произвести расчет за проделанные работы можно наличными,
-									безналичным (банковской картой, переводом).
-								</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="2">
-						<div class="item-faq">
-							<div data-toggle-id="answer-2" class="question arrow">
-								<h4 class="title-question">Какие виды работ вы производите?</h4>
-							</div>
-							<div id="answer-2" class="answer" hidden>
-								<p>
-									ООО "КУРС" производит огромный спектр оказания услуг:
-									шиномонтаж, сход-развал колес, диагностика всех систем,
-									техническое обслуживание, слесарный ремонт, капитальный ремонт
-									ДВС и КПП всех видов и т.д.
-								</p>
+					{% for item in main_page_frequently_asked_questions %}
+						<div data-key="{{ forloop.counter }}">
+							<div class="item-faq">
+								<div data-toggle-id="answer-{{ forloop.counter }}" class="question arrow">
+									<h4 class="title-question">
+										{{ item.question|safe }}
+									</h4>
+								</div>
+								<div id="answer-{{ forloop.counter }}" class="answer" hidden>
+									<p>
+										{{ item.answer|safe }}
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div data-key="3">
-						<div class="item-faq">
-							<div data-toggle-id="answer-3" class="question arrow">
-								<h4 class="title-question">
-									Могу ли я оставить автомобиль для проведения диагностических
-									работ?
-								</h4>
-							</div>
-							<div id="answer-3" class="answer" hidden>
-								<p>
-									Да!, Специалисты ООО "КУРС" проведут весь спектр
-									диагностических работы, Администратор составит смету
-									необходимого ремонта и согласует с Вами, сроки и стоимость
-									обслуживания. После этого на автомобиле проводятся все
-									согласованные с Вами работы. Так же Вы получаете скидку на
-									обслуживание 10% в случае ремонта автомобиля в этот же день.
-								</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="4">
-						<div class="item-faq">
-							<div data-toggle-id="answer-4" class="question arrow">
-								<h4 class="title-question">
-									У меня сломался автомобиль и я не знаю что делать. Вы
-									поможете?
-								</h4>
-							</div>
-							<div id="answer-4" class="answer" hidden>
-								<p>
-									Мы отправим вам эвакуатор в любое удобное для Вас время.
-									Специалисты ООО "КУРС" произведут диагностику всех систем и
-									согласуют с Вами все работы которые нужно произвести с
-									автомобилем. В случае капитального ремонта любого из узлов,
-									эвакуация для вас за наш счет!
-								</p>
-							</div>
-						</div>
-					</div>
-					<div data-key="5">
-						<div class="item-faq">
-							<div data-toggle-id="answer-5" class="question arrow">
-								<h4 class="title-question">
-									Я покупаю автомобиль, можно произвести диагностику у вас перед
-									покупкой?
-								</h4>
-							</div>
-							<div id="answer-5" class="answer" hidden>
-								<p>
-									Мы проводим диагностику автомобиля более чем по 40 пунктам.
-									Диагностика включает в себя — полный осмотр ходовой части,
-									рулевой, тормозной, ДВС, МКПП, проверку и состояния всех
-									технических жидкостей и фильтров, замер компрессионного
-									давления бензинового и дизельного двс, сканируется электронная
-									система автомобиля на наличие неисправностей, а также
-									корректную работу датчиков и сенсоров. На стенде регулировки
-									углов установки колес, мы проверяем наличие смещение ходовой
-									части, а так же проводим анализ возможных неисправностей.
-								</p>
-							</div>
-						</div>
-					</div>
+					{% endfor %}
 					<div style="clear: both; float: none"></div>
 				</div>
 			</div>
@@ -743,103 +385,33 @@
 				<div class="col-md-6">
 					<div class="advantages">
 						<div id="list-wrapper" class="list-wrapper">
-							<div data-key="5">
-								<div
-									class="element wow fadeInDown"
-									style="visibility: visible; animation-name: fadeInDown"
-								>
-									<div class="row">
-										<div class="col-xs-2">
-											<div class="img-wrapper">
-												<img
-													src="{% static "/img-icons/icon1.png" %}"
-													alt=""
-												/>
+							{% for item in main_page_everything_to_be_considered_the_best_first_four %}
+								<div data-key="{{ forloop.counter }}">
+									<div
+										class="element wow fadeInDown"
+										style="visibility: visible; animation-name: fadeInDown"
+									>
+										<div class="row">
+											<div class="col-xs-2">
+												<div class="img-wrapper">
+													<img
+														src="{{ item.img.url }}"
+														alt=""
+													/>
+												</div>
 											</div>
-										</div>
-										<div class="col-xs-10">
-											<div class="title-h4">Полный спектр услуг</div>
-											<div class="text gray f16">
-												От диагностики до капитального ремонта. Кроме того, у
-												нас можно заказать запчасти для автомобилей.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="6">
-								<div
-									class="element wow fadeInDown"
-									style="visibility: visible; animation-name: fadeInDown"
-								>
-									<div class="row">
-										<div class="col-xs-2">
-											<div class="img-wrapper">
-												<img
-													src="{% static "/img-icons/icon2.png" %}"
-													alt=""
-												/>
-											</div>
-										</div>
-										<div class="col-xs-10">
-											<div class="title-h4">Демократичные цены</div>
-											<div class="text gray f16">
-												Мы стараемся дать лучшие цены. Так как рассчитываем на
-												постоянное сотрудничество.
+											<div class="col-xs-10">
+												<div class="title-h4">
+													{{ item.title }}
+												</div>
+												<div class="text gray f16">
+													{{ item.description|safe }}
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div data-key="7">
-								<div
-									class="element wow fadeInDown"
-									style="visibility: visible; animation-name: fadeInDown"
-								>
-									<div class="row">
-										<div class="col-xs-2">
-											<div class="img-wrapper">
-												<img
-													src="{% static "/img-icons/icon3.png" %}"
-													alt=""
-												/>
-											</div>
-										</div>
-										<div class="col-xs-10">
-											<div class="title-h4">Высокая квалификация мастеров</div>
-											<div class="text gray f16">
-												Специалисты нашего сервиса – профессионалы с опытом
-												работы более от10 лет в сфере ремонта авто
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="8">
-								<div
-									class="element wow fadeInDown"
-									style="visibility: visible; animation-name: fadeInDown"
-								>
-									<div class="row">
-										<div class="col-xs-2">
-											<div class="img-wrapper">
-												<img
-													src="{% static "/img-icons/icon4.png" %}"
-													alt=""
-												/>
-											</div>
-										</div>
-										<div class="col-xs-10">
-											<div class="title-h4">Ваш автомобиль в сохранности</div>
-											<div class="text gray f16">
-												На время выполнения работ и ожидания запчастей для
-												ремонта, ваш автомобиль будет находится на закрытой и
-												охраняемой территории
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							{% endfor %}
 							<div style="clear: both; float: none"></div>
 						</div>
 					</div>
@@ -847,107 +419,33 @@
 				<div class="col-md-6">
 					<div class="advantages">
 						<div id="list-wrapper" class="list-wrapper">
-							<div data-key="9">
-								<div
-									class="element wow fadeInDown"
-									style="visibility: visible; animation-name: fadeInDown"
-								>
-									<div class="row">
-										<div class="col-xs-2">
-											<div class="img-wrapper">
-												<img
-													src="{% static "/img-icons/icon5.png" %}"
-													alt=""
-												/>
+							{% for item in main_page_everything_to_be_considered_the_best_last_four %}
+								<div data-key="{{ forloop.counter }}">
+									<div
+										class="element wow fadeInDown"
+										style="visibility: visible; animation-name: fadeInDown"
+									>
+										<div class="row">
+											<div class="col-xs-2">
+												<div class="img-wrapper">
+													<img
+														src="{{ item.img.url }}"
+														alt=""
+													/>
+												</div>
 											</div>
-										</div>
-										<div class="col-xs-10">
-											<div class="title-h4">
-												Статус сертифицированного техцентра
-											</div>
-											<div class="text gray f16">
-												У нас имеются все необходимые сертификаты и гарантия на
-												все проделанные работы.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="10">
-								<div
-									class="element wow fadeInDown"
-									style="visibility: visible; animation-name: fadeInDown"
-								>
-									<div class="row">
-										<div class="col-xs-2">
-											<div class="img-wrapper">
-												<img
-													src="{% static "/img-icons/icon6.png" %}"
-													alt=""
-												/>
-											</div>
-										</div>
-										<div class="col-xs-10">
-											<div class="title-h4">Акции и спеццены</div>
-											<div class="text gray f16">
-												Каждый месяц у нас проводятся акции и скидки на
-												определенные виды услуг, за которыми удобно следить в
-												разделе новости и социальных сетях
+											<div class="col-xs-10">
+												<div class="title-h4">
+													{{ item.title }}
+												</div>
+												<div class="text gray f16">
+													{{ item.description|safe }}
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div data-key="11">
-								<div
-									class="element wow fadeInDown"
-									style="visibility: visible; animation-name: fadeInDown"
-								>
-									<div class="row">
-										<div class="col-xs-2">
-											<div class="img-wrapper">
-												<img
-													src="{% static "/img-icons/icon7.png" %}"
-													alt=""
-												/>
-											</div>
-										</div>
-										<div class="col-xs-10">
-											<div class="title-h4">Профессиональное оборудование</div>
-											<div class="text gray f16">
-												Мы используем только профессиональное оборудование и
-												линейки материалов от ведущих мировых производителей
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="12">
-								<div
-									class="element wow fadeInDown"
-									style="visibility: visible; animation-name: fadeInDown"
-								>
-									<div class="row">
-										<div class="col-xs-2">
-											<div class="img-wrapper">
-												<img
-													src="{% static "/img-icons/icon8.png" %}"
-													alt=""
-												/>
-											</div>
-										</div>
-										<div class="col-xs-10">
-											<div class="title-h4">
-												Зона отдыха, журналы и бесплатный чай/кофе
-											</div>
-											<div class="text gray f16">
-												Вы всегда можете подождать окончание работ в уютной
-												комнате ожидания.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							{% endfor %}
 							<div style="clear: both; float: none"></div>
 						</div>
 					</div>
@@ -961,102 +459,20 @@
 	<div class="photo_professional_equipment">
 		<div class="row">
 			<div id="list-wrapper" class="list-wrapper">
-				<div data-key="1">
-					<div class="photo col-lg-3 col-xs-6">
-						<a
-							href="{% static "img-photo-gallery/29.jpeg" %}"
-							data-fancybox="images"
-						>
-							<img
-								src="{% static "img-photo-gallery/29.jpeg" %}"
-							/>
-						</a>
+				{% for item in main_page_professional_equipment %}
+					<div data-key="{{ forloop.counter }}">
+						<div class="photo col-lg-3 col-xs-6">
+							<a
+								href="{{ item.img.url }}"
+								data-fancybox="images"
+							>
+								<img
+									src="{{ item.img.url }}"
+								/>
+							</a>
+						</div>
 					</div>
-				</div>
-				<div data-key="2">
-					<div class="photo col-lg-3 col-xs-6">
-						<a
-							href="{% static "img-photo-gallery/30.jpeg" %}"
-							data-fancybox="images"
-						>
-							<img
-								src="{% static "img-photo-gallery/30.jpeg" %}"
-							/>
-						</a>
-					</div>
-				</div>
-				<div data-key="3">
-					<div class="photo col-lg-3 col-xs-6">
-						<a
-							href="{% static "img-photo-gallery/31.jpeg" %}"
-							data-fancybox="images"
-						>
-							<img
-								src="{% static "img-photo-gallery/31.jpeg" %}"
-							/>
-						</a>
-					</div>
-				</div>
-				<div data-key="4">
-					<div class="photo col-lg-3 col-xs-6">
-						<a
-							href="{% static "img-photo-gallery/32.jpeg" %}"
-							data-fancybox="images"
-						>
-							<img
-								src="{% static "img-photo-gallery/32.jpeg" %}"
-							/>
-						</a>
-					</div>
-				</div>
-				<div data-key="5">
-					<div class="photo col-lg-3 col-xs-6">
-						<a
-							href="{% static "img-photo-gallery/33.jpeg" %}"
-							data-fancybox="images"
-						>
-							<img
-								src="{% static "img-photo-gallery/33.jpeg" %}"
-							/>
-						</a>
-					</div>
-				</div>
-				<div data-key="6">
-					<div class="photo col-lg-3 col-xs-6">
-						<a
-							href="{% static "img-photo-gallery/35.jpeg" %}"
-							data-fancybox="images"
-						>
-							<img
-								src="{% static "img-photo-gallery/35.jpeg" %}"
-							/>
-						</a>
-					</div>
-				</div>
-				<div data-key="7">
-					<div class="photo col-lg-3 col-xs-6">
-						<a
-							href="{% static "img-photo-gallery/36.jpeg" %}"
-							data-fancybox="images"
-						>
-							<img
-								src="{% static "img-photo-gallery/36.jpeg" %}"
-							/>
-						</a>
-					</div>
-				</div>
-				<div data-key="8">
-					<div class="photo col-lg-3 col-xs-6">
-						<a
-							href="{% static "img-photo-gallery/37.jpeg" %}"
-							data-fancybox="images"
-						>
-							<img
-								src="{% static "img-photo-gallery/37.jpeg" %}"
-							/>
-						</a>
-					</div>
-				</div>
+				{% endfor %}
 				<div style="clear: both; float: none"></div>
 			</div>
 		</div>
