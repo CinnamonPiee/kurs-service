@@ -1,0 +1,419 @@
+{% extends "base_page/base_page.html" %} 
+{% load static %} 
+
+
+{% block title %}
+{{title }} 
+{% endblock title %} 
+
+
+{% block content %}
+<ul class="breadcrumb">
+	<li><a href="/">Главная</a></li>
+	<li class="active">Эвакуация автомобиля</li>
+</ul>
+
+<div class="site-evacuation">
+	<div class="evacuation">
+		<div class="evacuation-title hidden-xs hidden-sm">
+			<h1>Эвакуация автомобиля<br /><br />сразу в ремонт!</h1>
+		</div>
+	</div>
+	<h3 class="pretty-header left-right-line-short-header hidden-xs">
+		Заполните форму и специалист точно рассчитает стоимость эвакуации
+	</h3>
+	<div class="form-evacuator">
+		<form
+			id="order-evacuation-form"
+			action="/evacuation/add-evacuation"
+			method="post"
+		>
+			<div class="row">
+				<div class="col-lg-6">
+					<div
+						class="form-group field-order-evacuation-form-name_user required"
+					>
+						<label class="control-label" for="order-evacuation-form-name_user"
+							>Ваше имя</label
+						>
+						<input
+							type="text"
+							id="order-evacuation-form-name_user"
+							class="form-control"
+							name="order-evacuation-form[name_user]"
+							aria-required="true"
+						/>
+
+						<div class="help-block"></div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div
+						class="form-group field-order-evacuation-form-call_number required"
+					>
+						<label class="control-label" for="order-evacuation-form-call_number"
+							>Номер телефона</label
+						>
+						<input
+							type="text"
+							id="order-evacuation-form-call_number"
+							class="form-control"
+							name="order-evacuation-form[call_number]"
+							aria-required="true"
+							data-plugin-inputmask="inputmask_8b2a4bfb"
+						/>
+
+						<div class="help-block"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="form-group field-order-evacuation-form-email required">
+						<label class="control-label" for="order-evacuation-form-email"
+							>Адрес электронной почты</label
+						>
+						<input
+							type="text"
+							id="order-evacuation-form-email"
+							class="form-control"
+							name="order-evacuation-form[email]"
+							aria-required="true"
+							data-plugin-inputmask="inputmask_b02ee1d6"
+						/>
+
+						<div class="help-block"></div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="form-group field-datetimepicker-51 required">
+						<label class="control-label" for="datetimepicker-51"
+							>Выберите дату и время</label
+						>
+						<div id="datetimepicker-51-datetime" class="input-group date">
+							<input
+								type="text"
+								id="datetimepicker-51"
+								class="form-control"
+								name="order-evacuation-form[data_time_order]"
+								convertFormat
+								aria-required="true"
+								data-datetimepicker-source="datetimepicker-51-datetime"
+								data-datetimepicker-type="3"
+								data-krajee-datetimepicker="datetimepicker_1b94f0f5"
+							/><span
+								class="input-group-addon kv-datetime-remove"
+								title="Очистить поле"
+								><i class="glyphicon glyphicon-remove kv-dp-icon"></i></span
+							><span
+								class="input-group-addon kv-datetime-picker"
+								title="Выбрать дату &amp; время"
+								><i class="glyphicon glyphicon-calendar kv-dp-icon"></i
+							></span>
+						</div>
+
+						<div class="help-block"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row car-select centered">
+				<div class="form-group field-order-evacuation-form-car_body required">
+					<label class="control-label">Выберите кузов автомобиля</label>
+					<input
+						type="hidden"
+						name="order-evacuation-form[car_body]"
+						value=""
+					/>
+					<div
+						id="order-evacuation-form-car_body"
+						role="radiogroup"
+						aria-required="true"
+					>
+						<div class="col-lg-3 col-xs-6" id="autotype">
+							<label class="car-0"
+								><input
+									type="radio"
+									name="order-evacuation-form[car_body]"
+									value="Седан"
+									tabindex="3"
+								/><span></span>
+								<p>Седан</p></label
+							>
+						</div>
+						<div class="col-lg-3 col-xs-6" id="autotype">
+							<label class="car-1"
+								><input
+									type="radio"
+									name="order-evacuation-form[car_body]"
+									value="Хетчбек"
+									tabindex="3"
+								/><span></span>
+								<p>Хетчбек</p></label
+							>
+						</div>
+						<div class="col-lg-3 col-xs-6" id="autotype">
+							<label class="car-2"
+								><input
+									type="radio"
+									name="order-evacuation-form[car_body]"
+									value="Купе"
+									tabindex="3"
+								/><span></span>
+								<p>Купе</p></label
+							>
+						</div>
+						<div class="col-lg-3 col-xs-6" id="autotype">
+							<label class="car-3"
+								><input
+									type="radio"
+									name="order-evacuation-form[car_body]"
+									value="Универсал"
+									tabindex="3"
+								/><span></span>
+								<p>Универсал</p></label
+							>
+						</div>
+						<div class="col-lg-3 col-xs-6" id="autotype">
+							<label class="car-4"
+								><input
+									type="radio"
+									name="order-evacuation-form[car_body]"
+									value="Минивен"
+									tabindex="3"
+								/><span></span>
+								<p>Минивен</p></label
+							>
+						</div>
+						<div class="col-lg-3 col-xs-6" id="autotype">
+							<label class="car-5"
+								><input
+									type="radio"
+									name="order-evacuation-form[car_body]"
+									value="Внедорожник"
+									tabindex="3"
+								/><span></span>
+								<p>Внедорожник</p></label
+							>
+						</div>
+						<div class="col-lg-3 col-xs-6" id="autotype">
+							<label class="car-6"
+								><input
+									type="radio"
+									name="order-evacuation-form[car_body]"
+									value="Пикап"
+									tabindex="3"
+								/><span></span>
+								<p>Пикап</p></label
+							>
+						</div>
+						<div class="col-lg-3 col-xs-6" id="autotype">
+							<label class="car-7"
+								><input
+									type="radio"
+									name="order-evacuation-form[car_body]"
+									value="Кроссовер "
+									tabindex="3"
+								/><span></span>
+								<p>Кроссовер</p></label
+							>
+						</div>
+					</div>
+
+					<div class="help-block"></div>
+				</div>
+			</div>
+			<br />
+
+			<div class="form-group field-order-evacuation-form-comment_user">
+				<label class="control-label" for="order-evacuation-form-comment_user"
+					>Ваш коментарий</label
+				>
+				<input
+					type="text"
+					id="order-evacuation-form-comment_user"
+					class="form-control"
+					name="order-evacuation-form[comment_user]"
+				/>
+
+				<div class="help-block"></div>
+			</div>
+			<div class="form-group field-order-evacuation-form-service_id">
+				<input
+					type="hidden"
+					id="order-evacuation-form-service_id"
+					class="form-control"
+					name="order-evacuation-form[service_id]"
+					value="1"
+				/>
+
+				<div class="help-block"></div>
+			</div>
+			<div class="form-group field-order-evacuation-form-title_service">
+				<input
+					type="hidden"
+					id="order-evacuation-form-title_service"
+					class="form-control"
+					name="order-evacuation-form[title_service]"
+					value="Запись на эвакуацию"
+				/>
+
+				<div class="help-block"></div>
+			</div>
+			<button type="submit" class="kursStyleButton" 0="orderEvacuationForm">
+				Жду звонка
+			</button>
+		</form>
+	</div>
+	<br />
+	<br />
+	<div class="evacuation-tetx-blocks">
+		<div class="row">
+			<h3 class="pretty-header left-right-line-short-header">
+				Ознакомтесь с дополнительной информацией
+			</h3>
+		</div>
+		<div id="list-wrapper" class="list-wrapper">
+			<div data-key="1">
+				<h4>Бесплатная эвакуация:</h4>
+				<p>
+					Бесплатная эвакуация автомобиля. &quot;В чем подвох?&quot; - спросите
+					Вы. Никакого обмана, мы действительно заботимся о своих клиентах и
+					готовы бесплатно эвакуировать автомобиль на территорию ООО
+					&quot;КУРС&quot;.
+				</p>
+				<p>
+					Ситуация в которой оказывается человек, когда его автомобилю требуется
+					эвакуация и без того напряженная и неприятная. Услуга бесплатной
+					эвакуации от ООО &quot;КУРС&quot; хотя бы немного поможет клиенту
+					справится с возникшей проблемой, мы не оставим Вас один на один с
+					неисправным автомобилем.
+				</p>
+				<p>
+					Поддержка в таких случаях просто необходима не только с технической
+					стороны но и с моральной. Большинство людей навсегда после этого
+					становятся друзьями техцентра и постоянными клиентами.
+				</p>
+				<p>
+					Конечно, мы не альтруисты, поэтому надеемся что Вы оставите свой
+					автомобиль в нашем сервисе для ремонта, это и есть единственное
+					условие. В свою очередь мы гарантируем идеальное качество исполнения
+					ремонтных работ, а так же умеренные цены, которые значительно ниже чем
+					у &quot;официалов&quot;.
+				</p>
+			</div>
+			<div style="clear: both; float: none"></div>
+		</div>
+		<br />
+		<h4>Цены на эвакуацию в случае отказа от ремонта:</h4>
+		<br />
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">№</th>
+					<th scope="col">Категория автомобиля</th>
+					<th scope="col">Весовая категория(кг)</th>
+					<th scope="col">Цена на эвакуацию (руб)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<tr>
+							<th scope="row">1</th>
+							<td>Легковое авто</td>
+							<td>1500 - 2000</td>
+							<td>2000</td>
+						</tr>
+					</div>
+					<div data-key="2">
+						<tr>
+							<th scope="row">2</th>
+							<td>Внедорожник</td>
+							<td>2000 - 3000</td>
+							<td>2500</td>
+						</tr>
+					</div>
+					<div data-key="3">
+						<tr>
+							<th scope="row">3</th>
+							<td>Микроавтобус</td>
+							<td>2000 - 3000</td>
+							<td>2500</td>
+						</tr>
+					</div>
+					<div data-key="4">
+						<tr>
+							<th scope="row">4</th>
+							<td>Бронированный авто</td>
+							<td>3000 - 5000</td>
+							<td>3500</td>
+						</tr>
+					</div>
+					<div data-key="5">
+						<tr>
+							<th scope="row">5</th>
+							<td>Бронированный авто(MAX)</td>
+							<td>5000 и выше</td>
+							<td>4500</td>
+						</tr>
+					</div>
+					<div style="clear: both; float: none"></div>
+				</div>
+				<tr>
+					<th scope="row">6</th>
+					<td colspan="3">
+						Цена на эвакуацию указана исключительно в пределах Москва-МКАД
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">7</th>
+					<td colspan="3">
+						Цена на эвакуацию за пределы Москва-МКАД +50 руб.км
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<h4>Цены на дополнительные услуги эвакуации:</h4>
+		<br />
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">№</th>
+					<th scope="col">Категория дополнительной услуги</th>
+					<th scope="col">Цена дополнительной услуги</th>
+				</tr>
+			</thead>
+			<tbody>
+				<div id="list-wrapper" class="list-wrapper">
+					<div data-key="1">
+						<tr>
+							<th scope="row">1</th>
+							<td>Простой эвакуатора по просьбе клиента</td>
+							<td>600 руб.час</td>
+						</tr>
+					</div>
+					<div data-key="2">
+						<tr>
+							<th scope="row">2</th>
+							<td>Эвакуация автомобиля с заблокированными колесами</td>
+							<td>500 руб.</td>
+						</tr>
+					</div>
+					<div data-key="3">
+						<tr>
+							<th scope="row">3</th>
+							<td>
+								Буксировка автомобиля из кювета, автомобиля в перевернутом
+								состоянии, на боку
+							</td>
+							<td>от 1500 руб.</td>
+						</tr>
+					</div>
+					<div style="clear: both; float: none"></div>
+				</div>
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endblock content %}

@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 	'discounts.apps.DiscountsConfig',
 	'news.apps.NewsConfig',
 	'insurance.apps.InsuranceConfig',
+	'evacuation.apps.EvacuationConfig',
 	
     'debug_toolbar',
 ]

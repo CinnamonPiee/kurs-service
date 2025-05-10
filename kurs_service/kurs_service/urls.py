@@ -43,6 +43,7 @@ urlpatterns = [
 	path('discounts/', include('discounts.urls', namespace='discounts')),
 	path('news/', include('news.urls', namespace='news')),
 	path('insurance/', include('insurance.urls', namespace='insurance')),
+	path('evacuation/', include('evacuation.urls', namespace='evacuation')),
 	
 	path("logout/", site_logout, name="site_logout"),
 
