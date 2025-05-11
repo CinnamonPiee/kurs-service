@@ -16,250 +16,117 @@
 <div class="site-evacuation">
 	<div class="evacuation">
 		<div class="evacuation-title hidden-xs hidden-sm">
-			<h1>Эвакуация автомобиля<br /><br />сразу в ремонт!</h1>
+			<h1>
+				{{ evacuation_slider_images.text|safe }}
+			</h1>
 		</div>
 	</div>
 	<h3 class="pretty-header left-right-line-short-header hidden-xs">
-		Заполните форму и специалист точно рассчитает стоимость эвакуации
+		{{ evacuation_titles.fill_out_the_form }}
 	</h3>
 	<div class="form-evacuator">
+		{% if messages %}
+			<div class="messages">
+				{% for message in messages %}
+				<div class="alert alert-{{ message.tags }}">{{ message }}</div>
+				{% endfor %}
+			</div>
+		{% endif %}
 		<form
 			id="order-evacuation-form"
-			action="/evacuation/add-evacuation"
+			action="{% url 'evacuation:evacuation' %}"
 			method="post"
+			enctype="multipart/form-data"
 		>
+			{% csrf_token %}
 			<div class="row">
 				<div class="col-lg-6">
-					<div
-						class="form-group field-order-evacuation-form-name_user required"
-					>
-						<label class="control-label" for="order-evacuation-form-name_user"
-							>Ваше имя</label
-						>
-						<input
-							type="text"
-							id="order-evacuation-form-name_user"
-							class="form-control"
-							name="order-evacuation-form[name_user]"
-							aria-required="true"
-						/>
-
-						<div class="help-block"></div>
+					<div class="form-group field-order-evacuation-form-name_user required">
+						<label class="control-label" for="id_name_user">
+							Ваше имя
+						</label>
+						{{ form.name_user }} 
+						{% if form.name_user.errors %}
+							<div class="help-block text-danger">
+								{{ form.name_user.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div
-						class="form-group field-order-evacuation-form-call_number required"
-					>
-						<label class="control-label" for="order-evacuation-form-call_number"
-							>Номер телефона</label
-						>
-						<input
-							type="text"
-							id="order-evacuation-form-call_number"
-							class="form-control"
-							name="order-evacuation-form[call_number]"
-							aria-required="true"
-							data-plugin-inputmask="inputmask_8b2a4bfb"
-						/>
-
-						<div class="help-block"></div>
+					<div class="form-group field-order-evacuation-form-call_number required">
+						<label class="control-label" for="id_call_number">
+							Номер телефона
+						</label>
+						{{ form.call_number }} 
+						{% if form.call_number.errors %}
+							<div class="help-block text-danger">
+								{{ form.call_number.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="form-group field-order-evacuation-form-email required">
-						<label class="control-label" for="order-evacuation-form-email"
-							>Адрес электронной почты</label
-						>
-						<input
-							type="text"
-							id="order-evacuation-form-email"
-							class="form-control"
-							name="order-evacuation-form[email]"
-							aria-required="true"
-							data-plugin-inputmask="inputmask_b02ee1d6"
-						/>
-
-						<div class="help-block"></div>
+						<label class="control-label" for="id_email">
+							Адрес электронной почты
+						</label>
+						{{ form.email }}
+						{% if form.email.errors %}
+							<div class="help-block text-danger">
+								{{ form.email.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="form-group field-datetimepicker-51 required">
-						<label class="control-label" for="datetimepicker-51"
-							>Выберите дату и время</label
-						>
-						<div id="datetimepicker-51-datetime" class="input-group date">
-							<input
-								type="text"
-								id="datetimepicker-51"
-								class="form-control"
-								name="order-evacuation-form[data_time_order]"
-								convertFormat
-								aria-required="true"
-								data-datetimepicker-source="datetimepicker-51-datetime"
-								data-datetimepicker-type="3"
-								data-krajee-datetimepicker="datetimepicker_1b94f0f5"
-							/><span
-								class="input-group-addon kv-datetime-remove"
-								title="Очистить поле"
-								><i class="glyphicon glyphicon-remove kv-dp-icon"></i></span
-							><span
-								class="input-group-addon kv-datetime-picker"
-								title="Выбрать дату &amp; время"
-								><i class="glyphicon glyphicon-calendar kv-dp-icon"></i
-							></span>
-						</div>
-
-						<div class="help-block"></div>
+						<label class="control-label" for="id_data_time_order">
+							Выберите дату и время
+						</label>
+						{{ form.data_time_order }}
+						{% if form.data_time_order.errors %}
+							<div class="help-block text-danger">
+								{{ form.data_time_order.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</div>
 			<div class="row car-select centered">
 				<div class="form-group field-order-evacuation-form-car_body required">
-					<label class="control-label">Выберите кузов автомобиля</label>
-					<input
-						type="hidden"
-						name="order-evacuation-form[car_body]"
-						value=""
-					/>
-					<div
-						id="order-evacuation-form-car_body"
-						role="radiogroup"
-						aria-required="true"
-					>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-0"
-								><input
-									type="radio"
-									name="order-evacuation-form[car_body]"
-									value="Седан"
-									tabindex="3"
-								/><span></span>
-								<p>Седан</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-1"
-								><input
-									type="radio"
-									name="order-evacuation-form[car_body]"
-									value="Хетчбек"
-									tabindex="3"
-								/><span></span>
-								<p>Хетчбек</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-2"
-								><input
-									type="radio"
-									name="order-evacuation-form[car_body]"
-									value="Купе"
-									tabindex="3"
-								/><span></span>
-								<p>Купе</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-3"
-								><input
-									type="radio"
-									name="order-evacuation-form[car_body]"
-									value="Универсал"
-									tabindex="3"
-								/><span></span>
-								<p>Универсал</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-4"
-								><input
-									type="radio"
-									name="order-evacuation-form[car_body]"
-									value="Минивен"
-									tabindex="3"
-								/><span></span>
-								<p>Минивен</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-5"
-								><input
-									type="radio"
-									name="order-evacuation-form[car_body]"
-									value="Внедорожник"
-									tabindex="3"
-								/><span></span>
-								<p>Внедорожник</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-6"
-								><input
-									type="radio"
-									name="order-evacuation-form[car_body]"
-									value="Пикап"
-									tabindex="3"
-								/><span></span>
-								<p>Пикап</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-7"
-								><input
-									type="radio"
-									name="order-evacuation-form[car_body]"
-									value="Кроссовер "
-									tabindex="3"
-								/><span></span>
-								<p>Кроссовер</p></label
-							>
-						</div>
-					</div>
-
+					<label class="control-label">
+						Выберите кузов автомобиля
+					</label>
+					<div id="order-evacuation-form-car_body" role="radiogroup" aria-required="true">
+            {% for item in evacuation_car_type %}
+              <div class="col-lg-3 col-xs-6 car-{{ forloop.counter0 }}">
+                <label class="car-{{ forloop.counter0 }}">
+                  <input type="radio" name="car_body" value="{{ item.name }}" required />
+                  <span></span>
+                  <p>{{ item.name }}</p>
+                </label>
+              </div>
+            {% endfor %}
+          </div>
 					<div class="help-block"></div>
 				</div>
 			</div>
-			<br />
-
+			<br/>
 			<div class="form-group field-order-evacuation-form-comment_user">
-				<label class="control-label" for="order-evacuation-form-comment_user"
-					>Ваш коментарий</label
-				>
-				<input
-					type="text"
-					id="order-evacuation-form-comment_user"
-					class="form-control"
-					name="order-evacuation-form[comment_user]"
-				/>
-
-				<div class="help-block"></div>
+				<label class="control-label" for="id_comment_user">
+					Ваш комментарий
+				</label>
+				{{ form.comment_user }} 
+				{% if form.comment_user.errors %}
+					<div class="help-block text-danger">
+						{{ form.comment_user.errors.0 }}
+					</div>
+				{% endif %}
 			</div>
-			<div class="form-group field-order-evacuation-form-service_id">
-				<input
-					type="hidden"
-					id="order-evacuation-form-service_id"
-					class="form-control"
-					name="order-evacuation-form[service_id]"
-					value="1"
-				/>
-
-				<div class="help-block"></div>
-			</div>
-			<div class="form-group field-order-evacuation-form-title_service">
-				<input
-					type="hidden"
-					id="order-evacuation-form-title_service"
-					class="form-control"
-					name="order-evacuation-form[title_service]"
-					value="Запись на эвакуацию"
-				/>
-
-				<div class="help-block"></div>
-			</div>
-			<button type="submit" class="kursStyleButton" 0="orderEvacuationForm">
+			<button type="submit" class="kursStyleButton">
 				Жду звонка
 			</button>
 		</form>
@@ -269,37 +136,15 @@
 	<div class="evacuation-tetx-blocks">
 		<div class="row">
 			<h3 class="pretty-header left-right-line-short-header">
-				Ознакомтесь с дополнительной информацией
+				{{ evacuation_titles.read_more_information }}
 			</h3>
 		</div>
 		<div id="list-wrapper" class="list-wrapper">
 			<div data-key="1">
-				<h4>Бесплатная эвакуация:</h4>
-				<p>
-					Бесплатная эвакуация автомобиля. &quot;В чем подвох?&quot; - спросите
-					Вы. Никакого обмана, мы действительно заботимся о своих клиентах и
-					готовы бесплатно эвакуировать автомобиль на территорию ООО
-					&quot;КУРС&quot;.
-				</p>
-				<p>
-					Ситуация в которой оказывается человек, когда его автомобилю требуется
-					эвакуация и без того напряженная и неприятная. Услуга бесплатной
-					эвакуации от ООО &quot;КУРС&quot; хотя бы немного поможет клиенту
-					справится с возникшей проблемой, мы не оставим Вас один на один с
-					неисправным автомобилем.
-				</p>
-				<p>
-					Поддержка в таких случаях просто необходима не только с технической
-					стороны но и с моральной. Большинство людей навсегда после этого
-					становятся друзьями техцентра и постоянными клиентами.
-				</p>
-				<p>
-					Конечно, мы не альтруисты, поэтому надеемся что Вы оставите свой
-					автомобиль в нашем сервисе для ремонта, это и есть единственное
-					условие. В свою очередь мы гарантируем идеальное качество исполнения
-					ремонтных работ, а так же умеренные цены, которые значительно ниже чем
-					у &quot;официалов&quot;.
-				</p>
+				<h4>
+					{{ evacuation_free.title }}
+				</h4>
+				{{ evacuation_free.text|safe }}
 			</div>
 			<div style="clear: both; float: none"></div>
 		</div>
@@ -309,66 +154,36 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th scope="col">№</th>
-					<th scope="col">Категория автомобиля</th>
-					<th scope="col">Весовая категория(кг)</th>
-					<th scope="col">Цена на эвакуацию (руб)</th>
+					<th scope="col">{{ evacuation_prices_in_case_of_refusal_to_repair_thead.number }}</th>
+					<th scope="col">{{ evacuation_prices_in_case_of_refusal_to_repair_thead.vehicle_category }}</th>
+					<th scope="col">{{ evacuation_prices_in_case_of_refusal_to_repair_thead.weight_category }}</th>
+					<th scope="col">{{ evacuation_prices_in_case_of_refusal_to_repair_thead.price_for_evacuation }}</th>
 				</tr>
 			</thead>
 			<tbody>
 				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<tr>
-							<th scope="row">1</th>
-							<td>Легковое авто</td>
-							<td>1500 - 2000</td>
-							<td>2000</td>
-						</tr>
-					</div>
-					<div data-key="2">
-						<tr>
-							<th scope="row">2</th>
-							<td>Внедорожник</td>
-							<td>2000 - 3000</td>
-							<td>2500</td>
-						</tr>
-					</div>
-					<div data-key="3">
-						<tr>
-							<th scope="row">3</th>
-							<td>Микроавтобус</td>
-							<td>2000 - 3000</td>
-							<td>2500</td>
-						</tr>
-					</div>
-					<div data-key="4">
-						<tr>
-							<th scope="row">4</th>
-							<td>Бронированный авто</td>
-							<td>3000 - 5000</td>
-							<td>3500</td>
-						</tr>
-					</div>
-					<div data-key="5">
-						<tr>
-							<th scope="row">5</th>
-							<td>Бронированный авто(MAX)</td>
-							<td>5000 и выше</td>
-							<td>4500</td>
-						</tr>
-					</div>
+					{% for item in evacuation_prices_in_case_of_refusal_to_repair_tbody %}
+						<div data-key="{{ forloop.counter }}">
+							<tr>
+								<th scope="row">{{ forloop.counter }}</th>
+								<td>{{ item.vehicle_category }}</td>
+								<td>{{ item.weight_category }}</td>
+								<td>{{ item.price_for_evacuation }}</td>
+							</tr>
+						</div>
+					{% endfor %}
 					<div style="clear: both; float: none"></div>
 				</div>
 				<tr>
 					<th scope="row">6</th>
 					<td colspan="3">
-						Цена на эвакуацию указана исключительно в пределах Москва-МКАД
+						{{ evacuation_prices_in_case_of_refusal_to_repair_tbody_last_two_first.vehicle_category }}
 					</td>
 				</tr>
 				<tr>
 					<th scope="row">7</th>
 					<td colspan="3">
-						Цена на эвакуацию за пределы Москва-МКАД +50 руб.км
+						{{ evacuation_prices_in_case_of_refusal_to_repair_tbody_last_two_second.vehicle_category }}
 					</td>
 				</tr>
 			</tbody>
@@ -379,37 +194,22 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th scope="col">№</th>
-					<th scope="col">Категория дополнительной услуги</th>
-					<th scope="col">Цена дополнительной услуги</th>
+					<th scope="col">{{ evacuation_prices_for_additional_evacuation_services_thead.number }}</th>
+					<th scope="col">{{ evacuation_prices_for_additional_evacuation_services_thead.additional_service_category }}</th>
+					<th scope="col">{{ evacuation_prices_for_additional_evacuation_services_thead.additional_service_price }}</th>
 				</tr>
 			</thead>
 			<tbody>
 				<div id="list-wrapper" class="list-wrapper">
-					<div data-key="1">
-						<tr>
-							<th scope="row">1</th>
-							<td>Простой эвакуатора по просьбе клиента</td>
-							<td>600 руб.час</td>
-						</tr>
-					</div>
-					<div data-key="2">
-						<tr>
-							<th scope="row">2</th>
-							<td>Эвакуация автомобиля с заблокированными колесами</td>
-							<td>500 руб.</td>
-						</tr>
-					</div>
-					<div data-key="3">
-						<tr>
-							<th scope="row">3</th>
-							<td>
-								Буксировка автомобиля из кювета, автомобиля в перевернутом
-								состоянии, на боку
-							</td>
-							<td>от 1500 руб.</td>
-						</tr>
-					</div>
+					{% for item in evacuation_prices_for_additional_evacuation_services_tbody %}
+						<div data-key="{{ forloop.counter }}">
+							<tr>
+								<th scope="row">{{ forloop.counter }}</th>
+								<td>{{ item.additional_service_category }}</td>
+								<td>{{ item.additional_service_price }}</td>
+							</tr>
+						</div>
+					{% endfor %}
 					<div style="clear: both; float: none"></div>
 				</div>
 			</tbody>

@@ -1249,7 +1249,7 @@ a.kursStyleButton {
 /*insuranse end*/
 /*evacuation*/
 .evacuation-title {
-    background: url("/media/img/vacuation-rurs.jpg") no-repeat center;
+    background: url("/media/img-slider/vacuation-rurs.jpg") no-repeat center;
 }
 
 .evacuation-title h1 {
@@ -2339,7 +2339,7 @@ input[type="checkbox"]:focus {
 }
 
 .car-5 > input[type=radio]:checked + span {
-    background: ("/media/urlimg-car-body/allroad.png");
+    background: ("/media/img-car-body/allroad.png");
     border: 1px solid darkred;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }

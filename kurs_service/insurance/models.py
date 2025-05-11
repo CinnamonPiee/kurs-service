@@ -37,7 +37,7 @@ class InsuranceForm(models.Model):
 	class Meta:
 		db_table = "insurance_form"
 		verbose_name = "Форма страхования"
-		verbose_name_plural = "Формы страхования"
+		verbose_name_plural = "Заявки на страхование"
 
 
 class InsuranceBenefitsOfInsuringWithUs(models.Model):
