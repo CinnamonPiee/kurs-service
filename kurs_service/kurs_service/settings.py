@@ -60,6 +60,7 @@ INSTALLED_APPS = [
 	'insurance.apps.InsuranceConfig',
 	'evacuation.apps.EvacuationConfig',
 	'diagnostics.apps.DiagnosticsConfig',
+	'online_appointment.apps.OnlineAppointmentConfig',
 	
     'debug_toolbar',
 ]

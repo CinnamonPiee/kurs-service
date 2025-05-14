@@ -45,6 +45,7 @@ urlpatterns = [
 	path('insurance/', include('insurance.urls', namespace='insurance')),
 	path('evacuation/', include('evacuation.urls', namespace='evacuation')),
 	path('diagnostics/', include('diagnostics.urls', namespace='diagnostics')),
+	path('online-appointment/', include('online_appointment.urls', namespace='online_appointment')),
 	
 	path("logout/", site_logout, name="site_logout"),
 
