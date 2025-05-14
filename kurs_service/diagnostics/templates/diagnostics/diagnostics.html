@@ -1,0 +1,168 @@
+{% extends "base_page/base_page.html" %} 
+{% load static %} 
+
+
+{% block title %}
+{{title }} 
+{% endblock title %} 
+
+
+{% block content %}
+<ul class="breadcrumb">
+	<li><a href="/">Главная</a></li>
+	<li class="active">Диагностика</li>
+</ul>
+<div class="site-contact">
+	<div>
+		<div id="list-wrapper" class="list-wrapper">
+			<div data-key="1">
+				<div class="item-diagnostics">
+					<div class="row">
+						<h3 class="pretty-header left-right-line-short-header">
+							{{ diagnostics_titles.computer_diagnostics_of_cars}}
+						</h3>
+						<div class="col-lg-5">
+							<img
+								class="img-responsive"
+								src="{{ diagnostics_computer_of_cars.img.url }}"
+								alt=""
+							/>
+						</div>
+						<div class="col-lg-7">
+							<h3>&nbsp;Основные проблемы:</h3>
+							<p>{{ diagnostics_computer_of_cars.first }}</p>
+							<p>{{ diagnostics_computer_of_cars.second }}</p>
+							<p>{{ diagnostics_computer_of_cars.third }}</p>
+							<p>
+								{{ diagnostics_computer_of_cars.fourth|safe }}
+								<img
+									src="{{ diagnostics_computer_of_cars.img_icon.url }}"
+									alt=""
+								/>
+							</p>
+							<p>
+								{{ diagnostics_computer_of_cars.fifth }}
+							</p>
+							<br/>
+							<a
+								class="kursStyleButton add-to-order-service"
+								href="/order-service/add-modal"
+								data-services="6"
+								data-title="Запись на диагностику ДВС"
+								>Запись на диагностику</a
+							>
+						</div>
+					</div>
+					<hr />
+				</div>
+			</div>
+			<div data-key="2">
+				<div class="item-diagnostics">
+					<div class="row">
+						<h3 class="pretty-header left-right-line-short-header">
+							{{ diagnostics_titles.suspension_diagnostics }} 
+						</h3>
+						<div class="col-lg-5">
+							<img
+								class="img-responsive"
+								src="{{ diagnostics_suspension.img.url }}"
+								alt=""
+							/>
+						</div>
+						<div class="col-lg-7">
+							<h3>&nbsp;Основные проблемы:</h3>
+							<p>{{ diagnostics_suspension.first }}</p>
+							<p>{{ diagnostics_suspension.second }}</p>
+							<p>{{ diagnostics_suspension.third }}</p>
+							<p>{{ diagnostics_suspension.fourth }}</p>
+							<p>
+								{{ diagnostics_suspension.fifth|safe }}
+								<img
+									src="{{ diagnostics_suspension.img_icon.url }}"
+									alt=""
+								/>
+							</p>
+							<br />
+							<a
+								class="kursStyleButton add-to-order-service"
+								href="/order-service/add-modal"
+								data-services="7"
+								data-title="Запись на диагностику подвески"
+								>Запись на диагностику</a
+							>
+						</div>
+					</div>
+					<hr />
+				</div>
+			</div>
+			<div data-key="3">
+				<div class="item-diagnostics">
+					<div class="row">
+						<h3 class="pretty-header left-right-line-short-header">
+							{{ diagnostics_titles.gearbox_diagnostics }}
+						</h3>
+						<div class="col-lg-5">
+							<img
+								class="img-responsive"
+								src="{{ diagnostics_gearbox.img.url }}"
+								alt=""
+							/>
+						</div>
+						<div class="col-lg-7">
+							<h3>&nbsp;Основные проблемы:</h3>
+							<p>{{ diagnostics_gearbox.first }}</p>
+							<p>{{ diagnostics_gearbox.second }}</p>
+							<p>{{ diagnostics_gearbox.third }}</p>
+							<p>{{ diagnostics_gearbox.fourth }}</p>
+							<p>
+								{{ diagnostics_gearbox.fifth|safe }}
+								<img
+									src="{{ diagnostics_gearbox.img_icon.url }}"
+									alt=""
+								/>
+							</p>
+							<br/>
+							<a
+								class="kursStyleButton add-to-order-service"
+								href="/order-service/add-modal"
+								data-services="8"
+								data-title="Запись на диагностику КПП"
+								>Запись на диагностику</a
+							>
+						</div>
+					</div>
+					<hr/>
+				</div>
+			</div>
+			<div style="clear: both; float: none"></div>
+		</div>
+	</div>
+	<div id="list-wrapper" class="list-wrapper">
+		<div data-key="1">
+			<h3 class="pretty-header left-right-line-short-header">
+				{{ diagnostics_titles.computer_diagnostics_goals }}
+			</h3>
+			<div class="diagnostics-blocks-text">
+				{{ diagnostics_computer_goals.text|safe }}
+			</div>
+		</div>
+		<div data-key="2">
+			<h3 class="pretty-header left-right-line-short-header">
+				{{ diagnostics_titles.stages_of_diagnostics }}
+			</h3>
+			<div class="diagnostics-blocks-text">
+				{{ diagnostics_stager.text|safe }}
+			</div>
+		</div>
+		<div data-key="3">
+			<h3 class="pretty-header left-right-line-short-header">
+				{{ diagnostics_titles.when_to_get_diagnosed }}
+			</h3>
+			<div class="diagnostics-blocks-text">
+				{{ diagnostics_when_to_get.text|safe }}
+			</div>
+		</div>
+		<div style="clear: both; float: none"></div>
+	</div>
+</div>
+{% endblock content %}
