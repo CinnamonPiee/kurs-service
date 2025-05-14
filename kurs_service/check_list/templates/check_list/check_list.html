@@ -1,0 +1,694 @@
+{% extends "base_page/base_page.html" %} 
+{% load static %} 
+
+
+{% block title %} 
+{{ title }} 
+{% endblock title %} 
+
+
+{% block content %}
+<ul class="breadcrumb">
+	<li><a href="/">Главная</a></li>
+	<li class="active">Ваш чек лист</li>
+</ul>
+<div class="section">
+	<div id="content-check-list">
+		<div class="centered">
+			<h3 class="pretty-header left-right-line-short-header">Ваш чек лист</h3>
+		</div>
+		<!-- Если чек лист пустой -->
+		<div class="empty-shopping-check-list">
+			<p>В данный момент вы не добавили еще ни одной услуги</p>
+			<p>
+				Посетите наш прайс лист, например техническое облсуживание автомобиля
+				<br /><br />
+				<a class="kursStyleButton" href="/price-maintenance">
+					Техническое обслуживание
+				</a>
+			</p>
+		</div>
+		<!-- Если чек не лист пустой -->
+		<div class="desktop hidden-xs">
+			<div class="table-responsive">
+				<table class="table table-check-list">
+					<thead class="kurs-table">
+						<tr>
+							<th>Фото</th>
+							<th>Наименование услуги</th>
+							<th>Количество</th>
+							<th>Удалить</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<img
+									class="imgModalBlock"
+									src="/frontend/web/assets_project/img/img-price-all/dvs-gus.png"
+									alt=""
+								/>
+							</td>
+							<td class="cart-content"><p>Бензиновый ДВС (замена масла)</p></td>
+							<td>
+								<div class="cart_quantity_button">
+									<a
+										class="cart_quantity_up"
+										href="/check-list/increment?id=10000"
+										data-services="10000"
+									>
+										+
+									</a>
+									<input
+										class="cart_quantity_input qty"
+										type="text"
+										name="quantity"
+										value="1"
+										autocomplete="off"
+										size="1"
+										disabled
+									/>
+									<a
+										class="cart_quantity_down"
+										href="/check-list/decrement?id=10000"
+										data-services="10000"
+									>
+										-
+									</a>
+								</div>
+							</td>
+							<td>
+								<span
+									data-services="10000"
+									class="glyphicon glyphicon-remove text-danger del-item"
+									aria-hidden="true"
+								></span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img
+									class="imgModalBlock"
+									src="/frontend/web/assets_project/img/img-price-all/dvs-diezel.png"
+									alt=""
+								/>
+							</td>
+							<td class="cart-content"><p>Дизельный ДВС (замена масла)</p></td>
+							<td>
+								<div class="cart_quantity_button">
+									<a
+										class="cart_quantity_up"
+										href="/check-list/increment?id=10001"
+										data-services="10001"
+									>
+										+
+									</a>
+									<input
+										class="cart_quantity_input qty"
+										type="text"
+										name="quantity"
+										value="1"
+										autocomplete="off"
+										size="1"
+										disabled
+									/>
+									<a
+										class="cart_quantity_down"
+										href="/check-list/decrement?id=10001"
+										data-services="10001"
+									>
+										-
+									</a>
+								</div>
+							</td>
+							<td>
+								<span
+									data-services="10001"
+									class="glyphicon glyphicon-remove text-danger del-item"
+									aria-hidden="true"
+								></span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img
+									class="imgModalBlock"
+									src="/frontend/web/assets_project/img/img-price-all/mkpp.png"
+									alt=""
+								/>
+							</td>
+							<td class="cart-content">
+								<p>Механическая КПП (замена масла)</p>
+							</td>
+							<td>
+								<div class="cart_quantity_button">
+									<a
+										class="cart_quantity_up"
+										href="/check-list/increment?id=10002"
+										data-services="10002"
+									>
+										+
+									</a>
+									<input
+										class="cart_quantity_input qty"
+										type="text"
+										name="quantity"
+										value="1"
+										autocomplete="off"
+										size="1"
+										disabled
+									/>
+									<a
+										class="cart_quantity_down"
+										href="/check-list/decrement?id=10002"
+										data-services="10002"
+									>
+										-
+									</a>
+								</div>
+							</td>
+							<td>
+								<span
+									data-services="10002"
+									class="glyphicon glyphicon-remove text-danger del-item"
+									aria-hidden="true"
+								></span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img
+									class="imgModalBlock"
+									src="/frontend/web/assets_project/img/img-price-all/cvt.png"
+									alt=""
+								/>
+							</td>
+							<td class="cart-content">
+								<p>Вариатор CVT (полная замена масла)</p>
+							</td>
+							<td>
+								<div class="cart_quantity_button">
+									<a
+										class="cart_quantity_up"
+										href="/check-list/increment?id=10005"
+										data-services="10005"
+									>
+										+
+									</a>
+									<input
+										class="cart_quantity_input qty"
+										type="text"
+										name="quantity"
+										value="1"
+										autocomplete="off"
+										size="1"
+										disabled
+									/>
+									<a
+										class="cart_quantity_down"
+										href="/check-list/decrement?id=10005"
+										data-services="10005"
+									>
+										-
+									</a>
+								</div>
+							</td>
+							<td>
+								<span
+									data-services="10005"
+									class="glyphicon glyphicon-remove text-danger del-item"
+									aria-hidden="true"
+								></span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">Количество выбранных услуг:</td>
+							<td>4<span> шт.</span></td>
+						</tr>
+						<tr>
+							<td colspan="5">
+								Стоимость рассчитывается после заказа (на основании введенных
+								вами данных).
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="mobile hidden-lg">
+			<div class="table">
+				<table class="table table-check-list">
+					<thead>
+						<tr>
+							<th class="centered">Ваш выбор</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="row">
+									<div class="col-xs-10">
+										<p>Бензиновый ДВС</p>
+									</div>
+									<div class="col-xs-2">
+										<span
+											data-services="10000"
+											class="glyphicon glyphicon-remove text-danger del-item"
+											aria-hidden="true"
+										>
+										</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<img
+											class="imgModalBlock"
+											src="/frontend/web/assets_project/img/img-price-all/dvs-gus.png"
+											alt=""
+										/>
+									</div>
+									<div class="col-xs-6">
+										<div class="cart_quantity_button">
+											<p>Выбирите кол-во:</p>
+											<a
+												class="cart_quantity_up"
+												href="/check-list/increment?id=10000"
+												data-services="10000"
+											>
+												+
+											</a>
+											<input
+												class="cart_quantity_input qty"
+												type="text"
+												id="qty-10000"
+												name="quantity"
+												value="1"
+												autocomplete="off"
+												size="1"
+												disabled
+											/>
+											<a
+												class="cart_quantity_down"
+												href="/check-list/decrement?id=10000"
+												data-services="10000"
+											>
+												-
+											</a>
+										</div>
+									</div>
+								</div>
+								<hr />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="row">
+									<div class="col-xs-10">
+										<p>Дизельный ДВС</p>
+									</div>
+									<div class="col-xs-2">
+										<span
+											data-services="10001"
+											class="glyphicon glyphicon-remove text-danger del-item"
+											aria-hidden="true"
+										>
+										</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<img
+											class="imgModalBlock"
+											src="/frontend/web/assets_project/img/img-price-all/dvs-diezel.png"
+											alt=""
+										/>
+									</div>
+									<div class="col-xs-6">
+										<div class="cart_quantity_button">
+											<p>Выбирите кол-во:</p>
+											<a
+												class="cart_quantity_up"
+												href="/check-list/increment?id=10001"
+												data-services="10001"
+											>
+												+
+											</a>
+											<input
+												class="cart_quantity_input qty"
+												type="text"
+												id="qty-10001"
+												name="quantity"
+												value="1"
+												autocomplete="off"
+												size="1"
+												disabled
+											/>
+											<a
+												class="cart_quantity_down"
+												href="/check-list/decrement?id=10001"
+												data-services="10001"
+											>
+												-
+											</a>
+										</div>
+									</div>
+								</div>
+								<hr />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="row">
+									<div class="col-xs-10">
+										<p>Механическая КПП</p>
+									</div>
+									<div class="col-xs-2">
+										<span
+											data-services="10002"
+											class="glyphicon glyphicon-remove text-danger del-item"
+											aria-hidden="true"
+										>
+										</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<img
+											class="imgModalBlock"
+											src="/frontend/web/assets_project/img/img-price-all/mkpp.png"
+											alt=""
+										/>
+									</div>
+									<div class="col-xs-6">
+										<div class="cart_quantity_button">
+											<p>Выбирите кол-во:</p>
+											<a
+												class="cart_quantity_up"
+												href="/check-list/increment?id=10002"
+												data-services="10002"
+											>
+												+
+											</a>
+											<input
+												class="cart_quantity_input qty"
+												type="text"
+												id="qty-10002"
+												name="quantity"
+												value="1"
+												autocomplete="off"
+												size="1"
+												disabled
+											/>
+											<a
+												class="cart_quantity_down"
+												href="/check-list/decrement?id=10002"
+												data-services="10002"
+											>
+												-
+											</a>
+										</div>
+									</div>
+								</div>
+								<hr />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="row">
+									<div class="col-xs-10">
+										<p>Вариатор CVT</p>
+									</div>
+									<div class="col-xs-2">
+										<span
+											data-services="10005"
+											class="glyphicon glyphicon-remove text-danger del-item"
+											aria-hidden="true"
+										>
+										</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<img
+											class="imgModalBlock"
+											src="/frontend/web/assets_project/img/img-price-all/cvt.png"
+											alt=""
+										/>
+									</div>
+									<div class="col-xs-6">
+										<div class="cart_quantity_button">
+											<p>Выбирите кол-во:</p>
+											<a
+												class="cart_quantity_up"
+												href="/check-list/increment?id=10005"
+												data-services="10005"
+											>
+												+
+											</a>
+											<input
+												class="cart_quantity_input qty"
+												type="text"
+												id="qty-10005"
+												name="quantity"
+												value="1"
+												autocomplete="off"
+												size="1"
+												disabled
+											/>
+											<a
+												class="cart_quantity_down"
+												href="/check-list/decrement?id=10005"
+												data-services="10005"
+											>
+												-
+											</a>
+										</div>
+									</div>
+								</div>
+								<hr />
+							</td>
+						</tr>
+						<tr>
+							<!--                    <td>Количество выбранных услуг: --><!--</td>-->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="form-check-list-order">
+			<div class="centered">
+				<h3 class="pretty-header left-right-line-short-header">
+					Оформление записи на сервис
+				</h3>
+			</div>
+			<div class="check-list-form-style">
+				<form id="form-order-check-list" action="/check-list" method="post">
+					<input
+						type="hidden"
+						name="_csrf-frontend"
+						value="KrQDZkGJ3kyewCHpTwtJ1NQ_Q_gad5FgW2cGubtc7-dD5HJQI-6fKPa3e9EAfiCy4gckqEg_pU1tNmTjzQmVhQ=="
+					/>
+
+					<div class="row">
+						<div class="col-lg-4">
+							<div
+								class="form-group field-form-order-check-list-name_user required"
+							>
+								<label
+									class="control-label"
+									for="form-order-check-list-name_user"
+									>Ваше имя</label
+								>
+								<input
+									type="text"
+									id="form-order-check-list-name_user"
+									class="form-control"
+									name="form-order-check-list[name_user]"
+									aria-required="true"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div
+								class="form-group field-form-order-check-list-call_number required"
+							>
+								<label
+									class="control-label"
+									for="form-order-check-list-call_number"
+									>Номер телефона</label
+								>
+								<input
+									type="text"
+									id="form-order-check-list-call_number"
+									class="form-control"
+									name="form-order-check-list[call_number]"
+									aria-required="true"
+									data-plugin-inputmask="inputmask_8b2a4bfb"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div
+								class="form-group field-form-order-check-list-email required"
+							>
+								<label class="control-label" for="form-order-check-list-email"
+									>Адрес электронной почты</label
+								>
+								<input
+									type="text"
+									id="form-order-check-list-email"
+									class="form-control"
+									name="form-order-check-list[email]"
+									aria-required="true"
+									data-plugin-inputmask="inputmask_b02ee1d6"
+								/>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4">
+							<div
+								class="form-group field-form-order-check-list-car_mark required"
+							>
+								<label
+									class="control-label"
+									for="form-order-check-list-car_mark"
+									>Марка автомобиля</label
+								>
+								<select
+									id="form-order-check-list-car_mark"
+									class="form-control"
+									name="form-order-check-list[car_mark]"
+									aria-required="true"
+								>
+									<option value="">Выберите...</option>
+									<option value="10">Lexus</option>
+									<option value="11">Scion</option>
+									<option value="12">Toyota</option>
+								</select>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group field-form-order-check-list-car_model">
+								<label
+									class="control-label"
+									for="form-order-check-list-car_model"
+									>Модель автомобиля</label
+								>
+								<select
+									id="form-order-check-list-car_model"
+									class="form-control"
+									name="form-order-check-list[car_model]"
+									disabled
+								>
+									<option value="">Выберите...</option>
+								</select>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div
+								class="form-group field-form-order-check-list-car_modification"
+							>
+								<label
+									class="control-label"
+									for="form-order-check-list-car_modification"
+									>Модификация (поколение)</label
+								>
+								<select
+									id="form-order-check-list-car_modification"
+									class="form-control"
+									name="form-order-check-list[car_modification]"
+									disabled
+								>
+									<option value="">Выберите...</option>
+								</select>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group field-datetimepicker-1">
+								<label class="control-label" for="datetimepicker-1"
+									>Выберите дату и время</label
+								>
+								<div id="datetimepicker-1-datetime" class="input-group date">
+									<input
+										type="text"
+										id="datetimepicker-1"
+										class="form-control"
+										name="form-order-check-list[created_at]"
+										convertFormat
+										data-datetimepicker-source="datetimepicker-1-datetime"
+										data-datetimepicker-type="3"
+										data-krajee-datetimepicker="datetimepicker_1b94f0f5"
+									/><span
+										class="input-group-addon kv-datetime-remove"
+										title="Очистить поле"
+										><i class="glyphicon glyphicon-remove kv-dp-icon"></i></span
+									><span
+										class="input-group-addon kv-datetime-picker"
+										title="Выбрать дату &amp; время"
+										><i class="glyphicon glyphicon-calendar kv-dp-icon"></i
+									></span>
+								</div>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group field-form-order-check-list-comment_user">
+								<label
+									class="control-label"
+									for="form-order-check-list-comment_user"
+									>Коментарий пользователя</label
+								>
+								<textarea
+									id="form-order-check-list-comment_user"
+									class="form-control"
+									name="form-order-check-list[comment_user]"
+								></textarea>
+
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="form-group field-form-order-check-list-quantity">
+							<input
+								type="hidden"
+								id="form-order-check-list-quantity"
+								class="form-control"
+								name="form-order-check-list[quantity]"
+								value="4"
+							/>
+
+							<div class="help-block"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3 col-lg-offset-9">
+							<button
+								type="submit"
+								class="kursStyleButton"
+								0="orderServicesModalForm"
+							>
+								Жду звонка
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	{% endblock content %}
+</div>
