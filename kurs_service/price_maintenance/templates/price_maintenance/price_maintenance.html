@@ -1,0 +1,661 @@
+{% extends "base_page/base_page.html" %} 
+{% load static %} 
+
+
+{% block title %}
+{{ title }} 
+{% endblock title %} 
+
+
+{% block content %}
+<ul class="breadcrumb">
+	<li><a href="/">Главная</a></li>
+	<li class="active">Прайc на техническое обслуживание</li>
+</ul>
+
+<div id="price-kurs">
+	<div class="row">
+		<div class="col-lg-3 hidden-xs">
+			<div id="menu-price-kurs">
+				<div class="list">
+					<h5>Услуги</h5>
+					<ul class="sub-menu">
+						<li>
+							<a href="/price-maintenance/zamena-masla">
+								Замена масла
+								<span class="plus"><i class="fa fa-plus"></i></span>
+							</a>
+							<ul class="catalog category-menu">
+								<li>
+									<a href="/price-maintenance/dvigatel"> Двигатель </a>
+								</li>
+								<li>
+									<a href="/price-maintenance/korobka-peredach">
+										Коробка передач
+									</a>
+								</li>
+								<li>
+									<a href="/price-maintenance/reduktor">
+										Редуктор и раздаточная коробка
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/price-maintenance/zamena-svechey">
+								Замена свечей
+								<span class="plus"><i class="fa fa-plus"></i></span>
+							</a>
+							<ul class="catalog category-menu">
+								<li>
+									<a href="/price-maintenance/ryadnyj-dvs">
+										Рядные двигателя
+									</a>
+								</li>
+								<li>
+									<a href="/price-maintenance/v-obraznyj-dvs">
+										V - образные двигателя
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/price-maintenance/zamena-filtrov">
+								Замена фильтров
+								<span class="plus"><i class="fa fa-plus"></i></span>
+							</a>
+							<ul class="catalog category-menu">
+								<li>
+									<a href="/price-maintenance/toplivnyy"> Топливные фильтра </a>
+								</li>
+								<li>
+									<a href="/price-maintenance/vozdushnyy">
+										Воздушные фильтра
+									</a>
+								</li>
+								<li>
+									<a href="/price-maintenance/maslyanyj"> Масляные фильтра </a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/price-maintenance/tormoznaya-sistema">
+								Тормозная система
+								<span class="plus"><i class="fa fa-plus"></i></span>
+							</a>
+							<ul class="catalog category-menu">
+								<li>
+									<a href="/price-maintenance/kolodki"> Колодки </a>
+								</li>
+								<li>
+									<a href="/price-maintenance/diski-tormoznye">
+										Диски тормозные
+									</a>
+								</li>
+								<li>
+									<a href="/price-maintenance/barabany-tormoznye">
+										Барабаны тормозные
+									</a>
+								</li>
+								<li>
+									<a href="/price-maintenance/support"> Суппорт </a>
+								</li>
+								<li>
+									<a href="/price-maintenance/cilindr"> Цилиндр </a>
+								</li>
+								<li>
+									<a href="/price-maintenance/tros-ruchnogo-tormoza">
+										Трос ручного тормоза
+									</a>
+								</li>
+								<li>
+									<a href="/price-maintenance/tormoznaya-zhidkost">
+										Тормозная жидкость
+									</a>
+								</li>
+								<li>
+									<a
+										href="/price-maintenance/ochistka-supportov-tormoznoy-sistemy"
+									>
+										Очистка суппортов тормозной системы
+									</a>
+								</li>
+								<li>
+									<a
+										href="/price-maintenance/smazka-napravlyayuschih-supportov"
+									>
+										Смазка направляющих суппортов
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/price-maintenance/sistema-ohlazhdeniya-otopleniya">
+								Система охлаждения
+								<span class="plus"><i class="fa fa-plus"></i></span>
+							</a>
+							<ul class="catalog category-menu">
+								<li>
+									<a href="/price-maintenance/zamena-antifriza">
+										Замена антифриза
+									</a>
+								</li>
+								<li>
+									<a
+										href="/price-maintenance/zamena-radiatora-ohlazhdeniya-dvs"
+									>
+										Замена радиатора охлаждения двс
+									</a>
+								</li>
+								<li>
+									<a href="/price-maintenance/zamena-vodyanogo-nasosa">
+										Замена водяного насоса
+									</a>
+								</li>
+								<li>
+									<a
+										href="/price-maintenance/promyvka-radiatora-sistemy-ohlazheniya-dvs-i-radiatora-kondicionera-ot-naruzhnyh-zagryazneniy"
+									>
+										Промывка радиатора системы охлажения двс и радиатора
+										кондиционера от наружных загрязнений
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<br />
+					<div class="menu-discount centered">
+						<h4>Акции по теме</h4>
+					</div>
+					<div class="container-content">
+						<div id="list-wrapper" class="list-wrapper">
+							<div data-key="2">
+								<div class="item-stock-news-sale-menu">
+									<div class="item-header">
+										<img
+											class="logo"
+											src="/frontend/web/assets_project/img/img-logo-discounts/toyota-lexus.jpg"
+											alt=""
+										/>
+									</div>
+									<div class="item-content">
+										<img
+											class="img-item-sale"
+											src="/frontend/web/assets_project/img/img-discounts/lexus-and-toyota.jpg"
+											alt=""
+										/>
+										<h4 class="centered">Выгодная диагностика</h4>
+										<p>
+											Выгодная диагностика предоставляется на автомобили TOYOTA
+											и LEXUS при проведении ТО! Ваша скидка 5%!
+										</p>
+									</div>
+									<div class="item-footer centered">
+										<button
+											class="kursStyleButton add-to-sale"
+											data-sale="2"
+											data-title="Выгодная диагностика"
+										>
+											ПОЛУЧИТЬ ВЫГОДУ
+										</button>
+									</div>
+								</div>
+								<br />
+							</div>
+							<div style="clear: both; float: none"></div>
+						</div>
+					</div>
+					<a href="/discounts/index"
+						><h4 class="link-sale centered">Все АКЦИИ</h4></a
+					>
+					<br />
+					<div class="menu-discount centered">
+						<h4>Новости</h4>
+						<p>Доступен новый полезный раздел для вас</p>
+						<a class="kursStyleButton" href="/news/index">ПРОЧЕСТЬ НОВОСТИ</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="menu-price-kurs-mobile">
+			<div class="menu-mobile-price hidden-lg hidden-md">
+				<a class="bottom-fix-catalog" href="#">
+					<p class="rotatable">
+						<i class="fa fa-bars" aria-hidden="true"></i>
+					</p>
+				</a>
+				<div id="menu-price-kurs-mobile">
+					<div class="list">
+						<h5>Услуги</h5>
+						<ul class="sub-menu">
+							<li>
+								<a href="/price-maintenance/zamena-masla">
+									Замена масла
+									<span class="plus"><i class="fa fa-plus"></i></span>
+								</a>
+								<ul class="catalog category-menu">
+									<li>
+										<a href="/price-maintenance/dvigatel"> Двигатель </a>
+									</li>
+									<li>
+										<a href="/price-maintenance/korobka-peredach">
+											Коробка передач
+										</a>
+									</li>
+									<li>
+										<a href="/price-maintenance/reduktor">
+											Редуктор и раздаточная коробка
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/price-maintenance/zamena-svechey">
+									Замена свечей
+									<span class="plus"><i class="fa fa-plus"></i></span>
+								</a>
+								<ul class="catalog category-menu">
+									<li>
+										<a href="/price-maintenance/ryadnyj-dvs">
+											Рядные двигателя
+										</a>
+									</li>
+									<li>
+										<a href="/price-maintenance/v-obraznyj-dvs">
+											V - образные двигателя
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/price-maintenance/zamena-filtrov">
+									Замена фильтров
+									<span class="plus"><i class="fa fa-plus"></i></span>
+								</a>
+								<ul class="catalog category-menu">
+									<li>
+										<a href="/price-maintenance/toplivnyy">
+											Топливные фильтра
+										</a>
+									</li>
+									<li>
+										<a href="/price-maintenance/vozdushnyy">
+											Воздушные фильтра
+										</a>
+									</li>
+									<li>
+										<a href="/price-maintenance/maslyanyj">
+											Масляные фильтра
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/price-maintenance/tormoznaya-sistema">
+									Тормозная система
+									<span class="plus"><i class="fa fa-plus"></i></span>
+								</a>
+								<ul class="catalog category-menu">
+									<li>
+										<a href="/price-maintenance/kolodki"> Колодки </a>
+									</li>
+									<li>
+										<a href="/price-maintenance/diski-tormoznye">
+											Диски тормозные
+										</a>
+									</li>
+									<li>
+										<a href="/price-maintenance/barabany-tormoznye">
+											Барабаны тормозные
+										</a>
+									</li>
+									<li>
+										<a href="/price-maintenance/support"> Суппорт </a>
+									</li>
+									<li>
+										<a href="/price-maintenance/cilindr"> Цилиндр </a>
+									</li>
+									<li>
+										<a href="/price-maintenance/tros-ruchnogo-tormoza">
+											Трос ручного тормоза
+										</a>
+									</li>
+									<li>
+										<a href="/price-maintenance/tormoznaya-zhidkost">
+											Тормозная жидкость
+										</a>
+									</li>
+									<li>
+										<a
+											href="/price-maintenance/ochistka-supportov-tormoznoy-sistemy"
+										>
+											Очистка суппортов тормозной системы
+										</a>
+									</li>
+									<li>
+										<a
+											href="/price-maintenance/smazka-napravlyayuschih-supportov"
+										>
+											Смазка направляющих суппортов
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/price-maintenance/sistema-ohlazhdeniya-otopleniya">
+									Система охлаждения
+									<span class="plus"><i class="fa fa-plus"></i></span>
+								</a>
+								<ul class="catalog category-menu">
+									<li>
+										<a href="/price-maintenance/zamena-antifriza">
+											Замена антифриза
+										</a>
+									</li>
+									<li>
+										<a
+											href="/price-maintenance/zamena-radiatora-ohlazhdeniya-dvs"
+										>
+											Замена радиатора охлаждения двс
+										</a>
+									</li>
+									<li>
+										<a href="/price-maintenance/zamena-vodyanogo-nasosa">
+											Замена водяного насоса
+										</a>
+									</li>
+									<li>
+										<a
+											href="/price-maintenance/promyvka-radiatora-sistemy-ohlazheniya-dvs-i-radiatora-kondicionera-ot-naruzhnyh-zagryazneniy"
+										>
+											Промывка радиатора системы охлажения двс и радиатора
+											кондиционера от наружных загрязнений
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-9 col-xs-12">
+			<div id="content-price-kurs">
+				<div class="list">
+					<h5 class="centered">Прайс технического обслуживания | OOO "КУРС"</h5>
+					<div class="row centered">
+						<div id="list-wrapper" class="list-wrapper">
+							<div data-key="10000">
+								<div class="col-lg-4">
+									<div class="item-price-all">
+										<div class="title">
+											<h4>Бензиновый ДВС</h4>
+											<p class="sub-title-price">(замена масла)</p>
+										</div>
+										<div class="content">
+											<img
+												class="img-price-all"
+												src="/frontend/web/assets_project/img/img-price-all/dvs-gus.png"
+												alt=""
+											/>
+											<p style="text-align: justify">
+												<span>Рекомендации:</span> при замене масла в ДВС не
+												забудьте приобрести шайбу сливной пробки и масляный
+												фильтр. Через 150-200 км проверьте герметичность
+												системы.
+											</p>
+										</div>
+										<div class="footer">
+											<a
+												class="kursStyleButton add-to-price"
+												href="/order-price-maintenance/add-modal"
+												data-price="10000"
+												data-title="Бензиновый ДВС (замена масла)"
+												>Оформить</a
+											>
+											<a
+												class="kursStyleButton add-to-check-list"
+												href="/check-list/add"
+												data-services="10000"
+												>+ в чек лист</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="10001">
+								<div class="col-lg-4">
+									<div class="item-price-all">
+										<div class="title">
+											<h4>Дизельный ДВС</h4>
+											<p class="sub-title-price">(замена масла)</p>
+										</div>
+										<div class="content">
+											<img
+												class="img-price-all"
+												src="/frontend/web/assets_project/img/img-price-all/dvs-diezel.png"
+												alt=""
+											/>
+											<p style="text-align: justify">
+												<span>Рекомендации:</span> при замене масла в ДВС не
+												забудьте приобрести шайбу сливной пробки и масляный
+												фильтр. Через 150-200 км проверьте герметичность
+												системы.
+											</p>
+										</div>
+										<div class="footer">
+											<a
+												class="kursStyleButton add-to-price"
+												href="/order-price-maintenance/add-modal"
+												data-price="10001"
+												data-title="Дизельный ДВС (замена масла)"
+												>Оформить</a
+											>
+											<a
+												class="kursStyleButton add-to-check-list"
+												href="/check-list/add"
+												data-services="10001"
+												>+ в чек лист</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="10002">
+								<div class="col-lg-4">
+									<div class="item-price-all">
+										<div class="title">
+											<h4>Механическая КПП</h4>
+											<p class="sub-title-price">(замена масла)</p>
+										</div>
+										<div class="content">
+											<img
+												class="img-price-all"
+												src="/frontend/web/assets_project/img/img-price-all/mkpp.png"
+												alt=""
+											/>
+											<p style="text-align: justify">
+												<span>Рекомендации:</span> при замене масла в
+												механической КПП не забудьте приобрести шайбу сливной
+												пробки. Через 150-200 км проверьте герметичность
+												системы.
+											</p>
+										</div>
+										<div class="footer">
+											<a
+												class="kursStyleButton add-to-price"
+												href="/order-price-maintenance/add-modal"
+												data-price="10002"
+												data-title="Механическая КПП (замена масла)"
+												>Оформить</a
+											>
+											<a
+												class="kursStyleButton add-to-check-list"
+												href="/check-list/add"
+												data-services="10002"
+												>+ в чек лист</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="10003">
+								<div class="col-lg-4">
+									<div class="item-price-all">
+										<div class="title">
+											<h4>Автоматическая КПП</h4>
+											<p class="sub-title-price">(полная замена масла)</p>
+										</div>
+										<div class="content">
+											<img
+												class="img-price-all"
+												src="/frontend/web/assets_project/img/img-price-all/akpp.png"
+												alt=""
+											/>
+											<p style="text-align: justify">
+												<span>Рекомендации:</span> при полной замене масла в
+												АКПП необходимо приобрести фильтр, прокладку поддона,
+												шайбу сливной пробки. Через 150-200 км проверьте
+												герметичность системы.
+											</p>
+										</div>
+										<div class="footer">
+											<a
+												class="kursStyleButton add-to-price"
+												href="/order-price-maintenance/add-modal"
+												data-price="10003"
+												data-title="Автоматическая КПП (полная замена масла)"
+												>Оформить</a
+											>
+											<a
+												class="kursStyleButton add-to-check-list"
+												href="/check-list/add"
+												data-services="10003"
+												>+ в чек лист</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="10004">
+								<div class="col-lg-4">
+									<div class="item-price-all">
+										<div class="title">
+											<h4>Автоматическая КПП</h4>
+											<p class="sub-title-price">(частичная замена масла)</p>
+										</div>
+										<div class="content">
+											<img
+												class="img-price-all"
+												src="/frontend/web/assets_project/img/img-price-all/akpp.png"
+												alt=""
+											/>
+											<p style="text-align: justify">
+												<span>Рекомендации:</span> при частичной замене масла в
+												АКПП необходимо приобрести фильтр, шайбу сливной пробки.
+												Через 150-200 км проверьте герметичность системы.
+											</p>
+										</div>
+										<div class="footer">
+											<a
+												class="kursStyleButton add-to-price"
+												href="/order-price-maintenance/add-modal"
+												data-price="10004"
+												data-title="Автоматическая КПП (частичная замена масла)"
+												>Оформить</a
+											>
+											<a
+												class="kursStyleButton add-to-check-list"
+												href="/check-list/add"
+												data-services="10004"
+												>+ в чек лист</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-key="10005">
+								<div class="col-lg-4">
+									<div class="item-price-all">
+										<div class="title">
+											<h4>Вариатор CVT</h4>
+											<p class="sub-title-price">(полная замена масла)</p>
+										</div>
+										<div class="content">
+											<img
+												class="img-price-all"
+												src="/frontend/web/assets_project/img/img-price-all/cvt.png"
+												alt=""
+											/>
+											<p style="text-align: justify">
+												<span>Рекомендации:</span> при полной замене масла в CVT
+												не забудьте приобрести фильтра, прокладку поддона, шайбу
+												сливной пробки. Через 150-200 км проверьте герметичность
+												системы.
+											</p>
+										</div>
+										<div class="footer">
+											<a
+												class="kursStyleButton add-to-price"
+												href="/order-price-maintenance/add-modal"
+												data-price="10005"
+												data-title="Вариатор CVT (полная замена масла)"
+												>Оформить</a
+											>
+											<a
+												class="kursStyleButton add-to-check-list"
+												href="/check-list/add"
+												data-services="10005"
+												>+ в чек лист</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="clear: both; float: none"></div>
+							<ul class="pagination">
+								<li class="container-li first disabled"><span>Первая</span></li>
+								<li class="container-li prev disabled">
+									<span><i class="fa fa-arrow-left"></i></span>
+								</li>
+								<li class="container-li active">
+									<a
+										class="my-pagination"
+										href="/price-maintenance"
+										data-page="0"
+										>1</a
+									>
+								</li>
+								<li class="container-li">
+									<a
+										class="my-pagination"
+										href="/price-maintenance/page/2"
+										data-page="1"
+										>2</a
+									>
+								</li>
+								<li class="container-li next">
+									<a
+										class="my-pagination"
+										href="/price-maintenance/page/2"
+										data-page="1"
+										><i class="fa fa-arrow-right"></i
+									></a>
+								</li>
+								<li class="container-li last">
+									<a
+										class="my-pagination"
+										href="/price-maintenance/page/8"
+										data-page="7"
+										>Последняя</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
