@@ -32,6 +32,66 @@ class SiteVisitor(models.Model):
         verbose_name_plural = "Посетители сайта"
 
 
+class CarBody(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True, verbose_name='Тип автомобиля')
+    img = models.ImageField(upload_to="img-car-body", null=True, blank=True, verbose_name="Изображение")
+    car_id = models.IntegerField(null=True, blank=True, verbose_name="ID автомобиля")
+
+    def __str__(self):
+        return self.name if self.name else "Без названия"
+
+    class Meta:
+        db_table = "car_body"
+        verbose_name = "Тип кузова автомобиля"
+        verbose_name_plural = "Типы кузовов автомобилей"
+
+
+class CarMark(models.Model):
+    name = models.CharField(max_length=255, verbose_name="Марка автомобиля")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = "car_mark"
+        verbose_name = "Марка автомобиля"
+        verbose_name_plural = "Марки автомобилей"
+
+
+class CarModel(models.Model):
+    mark = models.ForeignKey('CarMark', on_delete=models.CASCADE, verbose_name="Марка автомобиля", related_name="models")
+    name = models.CharField(max_length=255, verbose_name="Модель автомобиля")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = "car_model"
+        verbose_name = "Модель автомобиля"
+        verbose_name_plural = "Модели автомобилей"
+
+
+class CarModification(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True, verbose_name="Название модификации")
+    mark = models.ForeignKey('CarMark', on_delete=models.CASCADE, verbose_name="Марка автомобиля",
+        related_name="modifications")
+    model = models.ForeignKey('CarModel', on_delete=models.CASCADE, verbose_name="Модель автомобиля",
+        related_name="modifications")
+    body = models.ForeignKey('CarBody', on_delete=models.CASCADE, verbose_name="Тип кузова",
+        related_name="modifications")
+    generation_name = models.CharField(max_length=255, verbose_name="Поколение")
+    fuel = models.CharField(max_length=255, verbose_name="Тип топлива")
+    tKppType = models.CharField(max_length=255, verbose_name="Тип КПП")
+
+    def __str__(self):
+        return f"{self.name} ({self.generation_name})" if self.name else f"{self.generation_name}"
+
+    class Meta:
+        db_table = "car_modification"
+        verbose_name = "Модификация автомобиля"
+        verbose_name_plural = "Модификации автомобилей"
+
+
 class BasePageSideMenu(models.Model):
     img_evacuation = models.ImageField(upload_to="img", blank=True, null=True, verbose_name="Эвакуация")
     img_contacts = models.ImageField(upload_to="img-social", blank=True, null=True, verbose_name="Контакты")
