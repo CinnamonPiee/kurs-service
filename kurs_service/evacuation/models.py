@@ -34,19 +34,6 @@ class EvacuationForm(models.Model):
         verbose_name_plural = "Заявки на эвакуацию"
 
 
-class EvacuationCarType(models.Model):
-    name = models.CharField(max_length=255, null=True, blank=True, verbose_name='Тип автомобиля')
-    image = models.ImageField(upload_to='img-car-body', blank=True, null=True, verbose_name='Изображение автомобиля')
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        db_table = 'evacuation_car_types'
-        verbose_name = 'Тип автомобиля'
-        verbose_name_plural = 'Типы автомобилей'
-
-
 class EvacuationFree(models.Model):
 	title = models.CharField(max_length=255, verbose_name='Заголовок')
 	text = models.TextField(null=True, blank=True, verbose_name='Текст')

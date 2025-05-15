@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import (
 	EvacuationSliderImages,
 	EvacuationForm,
-	EvacuationCarType,
 	EvacuationFree,
 	EvacuationPricesInCaseOfRefusalToRepairThead,
 	EvacuationPricesInCaseOfRefusalToRepairTbody,
@@ -19,11 +18,6 @@ class EvacuationSliderImagesAdmin(admin.ModelAdmin):
 
 @admin.register(EvacuationForm)
 class EvacuationFormAdmin(admin.ModelAdmin):
-	pass
-
-
-@admin.register(EvacuationCarType)
-class EvacuationCarTypeAdmin(admin.ModelAdmin):
 	pass
 
 

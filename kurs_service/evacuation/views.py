@@ -3,7 +3,6 @@ from django.contrib import messages
 from .forms import EvacuationFormModelForm
 from .models import (
     EvacuationSliderImages,
-    EvacuationCarType,
     EvacuationFree,
     EvacuationPricesInCaseOfRefusalToRepairThead,
     EvacuationPricesInCaseOfRefusalToRepairTbody,
@@ -11,6 +10,7 @@ from .models import (
     EvacuationPricesForAdditionalEvacuationServicesTbody,
     EvacuationTitles,
 )
+from base_page.models import CarBody
 
 
 def evacuation(request):
@@ -28,7 +28,7 @@ def evacuation(request):
     context = {
         'form': form,
         'evacuation_slider_images': EvacuationSliderImages.objects.first(),
-        'evacuation_car_type': EvacuationCarType.objects.all(),
+        'evacuation_car_type': CarBody.objects.all(),
         'evacuation_free': EvacuationFree.objects.first(),
         'evacuation_prices_in_case_of_refusal_to_repair_thead': EvacuationPricesInCaseOfRefusalToRepairThead.objects.first(),
         'evacuation_prices_in_case_of_refusal_to_repair_tbody': EvacuationPricesInCaseOfRefusalToRepairTbody.objects.all()[:5],
