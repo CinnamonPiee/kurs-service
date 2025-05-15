@@ -61,6 +61,10 @@ INSTALLED_APPS = [
 	'evacuation.apps.EvacuationConfig',
 	'diagnostics.apps.DiagnosticsConfig',
 	'online_appointment.apps.OnlineAppointmentConfig',
+	'price_maintenance.apps.PriceMaintenanceConfig',
+	'price_shod_razval.apps.PriceShodRazvalConfig',
+	'price_tire_fitting.apps.PriceTireFittingConfig',
+	'check_list.apps.CheckListConfig',
 	
     'debug_toolbar',
 ]

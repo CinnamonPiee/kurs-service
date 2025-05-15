@@ -46,6 +46,10 @@ urlpatterns = [
 	path('evacuation/', include('evacuation.urls', namespace='evacuation')),
 	path('diagnostics/', include('diagnostics.urls', namespace='diagnostics')),
 	path('online-appointment/', include('online_appointment.urls', namespace='online_appointment')),
+	path('price-maintenance/', include('price_maintenance.urls', namespace='price_maintenance')),
+	path('price-shod-razval/', include('price_shod_razval.urls', namespace='price_shod_razval')),
+	path('price-tire-fitting/', include('price_tire_fitting.urls', namespace='price_tire_fitting')),
+	path('check-list/', include('check_list.urls', namespace='check_list')),
 	
 	path("logout/", site_logout, name="site_logout"),
 
