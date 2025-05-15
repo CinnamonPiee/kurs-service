@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def price_shod_razval(request):
+	context = {}
+
+	return render(request, 'price_shod_razval/price_shod_razval.html', context)
