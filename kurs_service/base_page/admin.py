@@ -1,6 +1,11 @@
 from django.contrib import admin
 from .models import (
 	SiteVisitor,
+	CarBody,
+	CarMark,
+	CarModel,
+	CarModification,
+	CarService,
 	BasePageSideMenu,
 	BasePageFooterImage,
 	BasePageFooter,
@@ -11,6 +16,31 @@ from .models import (
 
 @admin.register(SiteVisitor)
 class SiteVisitorAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(CarBody)
+class CarBodyAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(CarMark)
+class CarMarkAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(CarModel)
+class CarModelAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(CarModification)
+class CarModificationAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(CarService)
+class CarServiceAdmin(admin.ModelAdmin):
 	pass
 
 

@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def check_list(request):
+	context = {}
+
+	return render(request, 'check_list/check_list.html', context)

@@ -77,8 +77,7 @@ class CarModification(models.Model):
         related_name="modifications")
     model = models.ForeignKey('CarModel', on_delete=models.CASCADE, verbose_name="Модель автомобиля",
         related_name="modifications")
-    body = models.ForeignKey('CarBody', on_delete=models.CASCADE, verbose_name="Тип кузова",
-        related_name="modifications")
+    body = models.CharField(max_length=255, verbose_name="Тип кузова")
     generation_name = models.CharField(max_length=255, verbose_name="Поколение")
     fuel = models.CharField(max_length=255, verbose_name="Тип топлива")
     tKppType = models.CharField(max_length=255, verbose_name="Тип КПП")
@@ -90,6 +89,19 @@ class CarModification(models.Model):
         db_table = "car_modification"
         verbose_name = "Модификация автомобиля"
         verbose_name_plural = "Модификации автомобилей"
+
+
+class CarService(models.Model):
+    title = models.CharField(max_length=255, null=True, blank=True)
+    services_id = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return self.title if self.title else "Без названия"
+
+    class Meta:
+        db_table = 'car_services'
+        verbose_name = "Услуга"
+        verbose_name_plural = "Услуги"
 
 
 class BasePageSideMenu(models.Model):
