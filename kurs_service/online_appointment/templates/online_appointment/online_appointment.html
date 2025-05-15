@@ -2,8 +2,8 @@
 {% load static %} 
 
 
-{% block title %}
-{{title }} 
+{% block title %} 
+{{ title }} 
 {% endblock title %} 
 
 
@@ -20,356 +20,169 @@
 				на все виды услуг OOO "КУРС"
 			</h1>
 		</div>
-		<div class="online-appointment-title hidden-lg">
-			<h1>
-				Онлайн запись<br /><br />
-				на все виды услуг
-			</h1>
-		</div>
 	</div>
 	<h3 class="pretty-header left-right-line-short-header">
 		Заполните форму и мы свяжемся с вами
 	</h3>
 	<div class="online-appointment-form">
-		<form
-			id="w0"
-			class="online-appointment-form"
-			action="/online-appointment/add-services"
-			method="post"
-		>
-			<input
-				type="hidden"
-				name="_csrf-frontend"
-				value="XKclvoTwz8WdIEzMeWmc9htFGHwHIjmJKPEA642phXMln0eOs56DsvgXNKoPLLG_I31CC3UWQe0arjGN2-L1JA=="
-			/>
-
+		<form method="post" id="online-appointment-form">
+			{% csrf_token %}
 			<div class="row">
 				<div class="col-lg-6">
-					<div
-						class="form-group field-online-appointment-form-name_user required"
-					>
-						<label class="control-label" for="online-appointment-form-name_user"
-							>Ваше имя</label
-						>
-						<input
-							type="text"
-							id="online-appointment-form-name_user"
-							class="form-control"
-							name="online-appointment-form[name_user]"
-							aria-required="true"
-						/>
-
-						<div class="help-block"></div>
+					<div class="form-group">
+						<label for="{{ form.name_user.id_for_label }}">
+							Ваше имя
+						</label>
+						{{ form.name_user }} 
+						{% if form.name_user.errors %}
+							<div class="help-block text-danger">
+								{{ form.name_user.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="col-lg-3">
-					<div
-						class="form-group field-online-appointment-form-call_number required"
-					>
-						<label
-							class="control-label"
-							for="online-appointment-form-call_number"
-							>Номер телефона</label
-						>
-						<input
-							type="text"
-							id="online-appointment-form-call_number"
-							class="form-control"
-							name="online-appointment-form[call_number]"
-							aria-required="true"
-							data-plugin-inputmask="inputmask_8b2a4bfb"
-						/>
-
-						<div class="help-block"></div>
+					<div class="form-group">
+						<label for="{{ form.call_number.id_for_label }}">
+							Номер телефона
+						</label>
+						{{ form.call_number }} 
+						{% if form.call_number.errors %}
+							<div class="help-block text-danger">
+								{{ form.call_number.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="col-lg-3">
-					<div class="form-group field-online-appointment-form-email required">
-						<label class="control-label" for="online-appointment-form-email"
-							>Адрес электронной почты</label
-						>
-						<input
-							type="text"
-							id="online-appointment-form-email"
-							class="form-control"
-							name="online-appointment-form[email]"
-							aria-required="true"
-							data-plugin-inputmask="inputmask_b02ee1d6"
-						/>
-
-						<div class="help-block"></div>
+					<div class="form-group">
+						<label for="{{ form.email.id_for_label }}">
+							Адрес электронной почты
+						</label>
+						{{ form.email }} 
+						{% if form.email.errors %}
+							<div class="help-block text-danger">
+								{{ form.email.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-lg-3">
-					<div
-						class="form-group field-online-appointment-form-title_services required"
-					>
-						<label
-							class="control-label"
-							for="online-appointment-form-title_services"
-							>Название услуги</label
-						>
-						<select
-							id="online-appointment-form-title_services"
-							class="form-control"
-							name="online-appointment-form[title_services]"
-							aria-required="true"
-						>
-							<option value="">Выберите...</option>
-							<option value="Диагностика двигателя">
-								Диагностика двигателя
-							</option>
-							<option value="Диагностика МКПП">Диагностика МКПП</option>
-							<option value="Диагностика АКПП">Диагностика АКПП</option>
-							<option value="Диагностика CVT(вариатор)">
-								Диагностика CVT(вариатор)
-							</option>
-							<option value="Диагностика подвески">Диагностика подвески</option>
-							<option value="Техническое обслуживание">
-								Техническое обслуживание
-							</option>
-							<option value="Слесарный ремонт">Слесарный ремонт</option>
-							<option value="Шиномантаж">Шиномантаж</option>
-							<option value="Сход-развал">Сход-развал</option>
-							<option value="Капитальный ремонт МКПП">
-								Капитальный ремонт МКПП
-							</option>
-							<option value="Капитальный ремонт АКПП">
-								Капитальный ремонт АКПП
-							</option>
-							<option value="Капитальный ремонт CVT(вариатор)">
-								Капитальный ремонт CVT(вариатор)
-							</option>
-							<option value="Капитальный ремонт двигателя">
-								Капитальный ремонт двигателя
-							</option>
-						</select>
-
-						<div class="help-block"></div>
+					<div class="form-group">
+						<label for="{{ form.title_services.id_for_label }}">
+							Название услуги
+						</label>
+						{{ form.title_services }} 
+						{% if form.title_services.errors %}
+							<div class="help-block text-danger">
+								{{ form.title_services.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="col-lg-3">
-					<div
-						class="form-group field-online-appointment-form-car_mark required"
-					>
-						<label class="control-label" for="online-appointment-form-car_mark"
-							>Марка автомобиля</label
-						>
+					<div class="form-group">
+						<label for="form-order-check-list-car_mark">
+							Марка автомобиля
+						</label>
 						<select
-							id="online-appointment-form-car_mark"
+							name="car_mark"
+							id="form-order-check-list-car_mark"
 							class="form-control"
-							name="online-appointment-form[car_mark]"
-							aria-required="true"
+							required
 						>
-							<option value="">Выберите...</option>
-							<option value="10">Lexus</option>
-							<option value="11">Scion</option>
-							<option value="12">Toyota</option>
+							<option value="">Выберите марку</option>
+							{% for mark in form.fields.car_mark.queryset %}
+									<option value="{{ mark.id }}">{{ mark.name }}</option>
+							{% endfor %}
 						</select>
-
-						<div class="help-block"></div>
+						{% if form.car_mark.errors %}
+							<div class="help-block text-danger">
+								{{ form.car_mark.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="col-lg-3">
-					<div class="form-group field-online-appointment-form-car_model">
-						<label class="control-label" for="online-appointment-form-car_model"
-							>Модель автомобиля</label
-						>
+					<div class="form-group">
+						<label for="form-order-check-list-car_model">Модель автомобиля</label>
 						<select
-							id="online-appointment-form-car_model"
+							name="car_model"
+							id="form-order-check-list-car_model"
 							class="form-control"
-							name="online-appointment-form[car_model]"
 							disabled
+							style="background: #eee"
 						>
-							<option value="">Выберите...</option>
+							<option value="">Сначала выберите марку</option>
 						</select>
-
-						<div class="help-block"></div>
 					</div>
 				</div>
 				<div class="col-lg-3">
-					<div
-						class="form-group field-online-appointment-form-car_modification"
-					>
-						<label
-							class="control-label"
-							for="online-appointment-form-car_modification"
-							>Модификация (поколение)</label
-						>
-						<select
-							id="online-appointment-form-car_modification"
+    			<div class="form-group">
+        		<label for="form-order-check-list-car_modification">Модификация (поколение)</label>
+        		<select
+							name="car_modification"
+							id="form-order-check-list-car_modification"
 							class="form-control"
-							name="online-appointment-form[car_modification]"
 							disabled
+							style="background: #eee;"
 						>
-							<option value="">Выберите...</option>
+							<option value="">Сначала выберите модель</option>
 						</select>
-
-						<div class="help-block"></div>
 					</div>
 				</div>
 			</div>
 			<div class="row car-select centered">
-				<div class="form-group field-online-appointment-form-car_body">
-					<label class="control-label">Кузов автомобиля</label>
-					<input
-						type="hidden"
-						name="online-appointment-form[car_body]"
-						value=""
-					/>
-					<div id="online-appointment-form-car_body" role="radiogroup">
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-0"
-								><input
+				<div class="form-group">
+					<label for="id_car_body"> Кузов автомобиля </label>
+					<div
+						id="order-appointment-form-car_body"
+						role="radiogroup"
+						aria-required="true"
+					>
+						{% for item in evacuation_car_type %}
+						<div class="col-lg-3 col-xs-6 car-{{ forloop.counter0 }}">
+							<label class="car-{{ forloop.counter0 }}">
+								<input
 									type="radio"
-									name="online-appointment-form[car_body]"
-									value="Седан"
-									tabindex="3"
-								/><span></span>
-								<p>Седан</p></label
-							>
+									name="car_body"
+									value="{{ item.name }}"
+									required
+								/>
+								<span></span>
+								<p>{{ item.name }}</p>
+							</label>
 						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-1"
-								><input
-									type="radio"
-									name="online-appointment-form[car_body]"
-									value="Хетчбек"
-									tabindex="3"
-								/><span></span>
-								<p>Хетчбек</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-2"
-								><input
-									type="radio"
-									name="online-appointment-form[car_body]"
-									value="Купе"
-									tabindex="3"
-								/><span></span>
-								<p>Купе</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-3"
-								><input
-									type="radio"
-									name="online-appointment-form[car_body]"
-									value="Универсал"
-									tabindex="3"
-								/><span></span>
-								<p>Универсал</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-4"
-								><input
-									type="radio"
-									name="online-appointment-form[car_body]"
-									value="Минивен"
-									tabindex="3"
-								/><span></span>
-								<p>Минивен</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-5"
-								><input
-									type="radio"
-									name="online-appointment-form[car_body]"
-									value="Внедорожник"
-									tabindex="3"
-								/><span></span>
-								<p>Внедорожник</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-6"
-								><input
-									type="radio"
-									name="online-appointment-form[car_body]"
-									value="Пикап"
-									tabindex="3"
-								/><span></span>
-								<p>Пикап</p></label
-							>
-						</div>
-						<div class="col-lg-3 col-xs-6" id="autotype">
-							<label class="car-7"
-								><input
-									type="radio"
-									name="online-appointment-form[car_body]"
-									value="Кроссовер "
-									tabindex="3"
-								/><span></span>
-								<p>Кроссовер</p></label
-							>
-						</div>
+						{% endfor %}
 					</div>
-
-					<div class="help-block"></div>
 				</div>
 			</div>
 			<br />
 			<div class="row">
 				<div class="col-lg-4">
-					<div class="form-group field-datetimepicker- required">
-						<label class="control-label" for="datetimepicker-"
-							>Дата и время заказа</label
-						>
-						<div id="datetimepicker--datetime" class="input-group date">
-							<input
-								type="text"
-								id="datetimepicker-"
-								class="form-control"
-								name="online-appointment-form[date_time_order]"
-								convertFormat
-								aria-required="true"
-								data-datetimepicker-source="datetimepicker--datetime"
-								data-datetimepicker-type="3"
-								data-krajee-datetimepicker="datetimepicker_0c609064"
-							/><span
-								class="input-group-addon kv-datetime-remove"
-								title="Очистить поле"
-								><i class="glyphicon glyphicon-remove kv-dp-icon"></i></span
-							><span
-								class="input-group-addon kv-datetime-picker"
-								title="Выбрать дату &amp; время"
-								><i class="glyphicon glyphicon-calendar kv-dp-icon"></i
-							></span>
+					<div class="form-group">
+						<label for="{{ form.date_time_order.id_for_label }}">
+							Дата и время заказа
+						</label>
+						{{ form.date_time_order }} {% if form.date_time_order.errors %}
+						<div class="help-block text-danger">
+							{{ form.date_time_order.errors.0 }}
 						</div>
-
-						<div class="help-block"></div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="col-lg-5">
-					<div class="form-group field-online-appointment-form-comment_user">
-						<label
-							class="control-label"
-							for="online-appointment-form-comment_user"
-							>Коментарий</label
-						>
-						<textarea
-							id="online-appointment-form-comment_user"
-							class="form-control"
-							name="online-appointment-form[comment_user]"
-						></textarea>
-
-						<div class="help-block"></div>
+					<div class="form-group">
+						<label for="{{ form.comment_user.id_for_label }}">
+							Комментарий
+						</label>
+						{{ form.comment_user }}
 					</div>
 				</div>
 				<div class="col-lg-3">
-					<button
-						type="submit"
-						class="kursStyleButton"
-						0="orderServicesModalForm"
-					>
-						Жду звонка
-					</button>
+					<button type="submit" class="kursStyleButton">Жду звонка</button>
 				</div>
 			</div>
 		</form>

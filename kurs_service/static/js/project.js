@@ -225,11 +225,12 @@ $(document).ready(function () {
     $('#form-order-check-list-car_mark').on('change', function () {
         const targetValue = $(this).val();
         loadAjax({
-            url: '/auto-select/get-car-model',
+            url: '/online_appointment/ajax/get-car-models/',
             type: 'POST',
             data: { id: targetValue },
             success: function (data) {
-                $('#form-order-check-list-car_model').html(data).removeAttr('disabled');
+                $('#form-order-check-list-car_model').html(data).removeAttr('disabled').css('background', '');
+                $('#form-order-check-list-car_modification').html('<option value="">Сначала выберите модель</option>').attr('disabled', 'disabled').css('background', '#eee');
             },
         });
     });
@@ -237,7 +238,7 @@ $(document).ready(function () {
     $('#form-order-check-list-car_model').on('change', function () {
         const targetValue = $(this).val();
         loadAjax({
-            url: '/auto-select/get-car-modifications',
+            url: '/online_appointment/ajax/get-car-modifications/',
             type: 'POST',
             data: { id: targetValue },
             success: function (data) {
