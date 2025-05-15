@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def price_tire_fitting(request):
+	context = {}
+
+	return render(request, 'price_tire_fitting/price_tire_fitting.html', context)
