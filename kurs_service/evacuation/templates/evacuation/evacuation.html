@@ -34,10 +34,8 @@
 		{% endif %}
 		<form
 			id="order-evacuation-form"
-			action="{% url 'evacuation:evacuation' %}"
 			method="post"
-			enctype="multipart/form-data"
-		>
+			enctype="multipart/form-data">
 			{% csrf_token %}
 			<div class="row">
 				<div class="col-lg-6">

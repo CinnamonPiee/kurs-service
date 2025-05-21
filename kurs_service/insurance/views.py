@@ -10,7 +10,16 @@ from .models import (
 
 
 def insurance(request):
-    form = InsuranceFormModelForm()
+    if request.method == "POST":
+        form = InsuranceFormModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Ваша заявка успешно отправлена! Ожидайте звонка.")
+            return redirect("insurance:insurance")
+        else:
+            messages.error(request, "Ошибка отправки формы. Проверьте введенные данные.")
+    else:
+        form = InsuranceFormModelForm()
     context = {
         "form": form,
         "title": "Страхование | OOO 'КУРС'",
@@ -20,15 +29,3 @@ def insurance(request):
         "insurance_frequently_asked_questions": InsuranceFrequentlyAskedQuestions.objects.all(),
     }
     return render(request, "insurance/insurance.html", context=context)
-
-
-def add_insurance(request):
-    if request.method == "POST":
-        form = InsuranceFormModelForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Ваша заявка успешно отправлена! Ожидайте звонка.")
-            return redirect("insurance:insurance")
-        else:
-            messages.error(request, "Ошибка отправки формы. Проверьте введенные данные.")
-    return redirect("insurance:insurance")

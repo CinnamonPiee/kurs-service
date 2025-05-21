@@ -145,42 +145,6 @@ setupModalHandler('.add-to-price-tire-fitting', '/order-price-tire-fitting/add-m
 setupModalHandler('.add-to-price-shod-razval', '/order-price-shod-razval/add-modal', 'addToOrderPriceShodRazval');
 setupModalHandler('.add-to-order-power', '/order-power-equipment/add-modal', 'addToOrderPower');
 
-// Универсальный обработчик для отправки форм
-function setupFormHandler(formSelector, url) {
-    $(document).on('submit', formSelector, function (e) {
-        e.preventDefault();
-        loadAjax({
-            url,
-            type: 'POST',
-            data: $(this).serializeArray(),
-            dataType: 'json',
-            success: function (data) {
-                funcSuccessNoty(data);
-                if (data.code !== 400) {
-                    setTimeout(() => location.reload(), 4500);
-                }
-            },
-            error: function (xhr, status, error) {
-                console.error('Ошибка:', error);
-            },
-        });
-    });
-}
-
-// Настройка обработчиков для различных форм
-setupFormHandler('#form-services-modal', '/order-service/add-services');
-setupFormHandler('#order-call-back-form', '/order-call-back/add-order-call-back');
-setupFormHandler('#order-call-back-short-form', '/order-call-back/add-order-call-back-short');
-setupFormHandler('.online-appointment-form', '/online-appointment/add-services');
-setupFormHandler('.order-insurance-form', '/insurance/add-insurance');
-setupFormHandler('#order-evacuation-form', '/evacuation/add-evacuation');
-setupFormHandler('#form-sale-discounts', '/order-discount/add-sale-discounts');
-setupFormHandler('#form-special-price', '/order-special-price/add-order-special-price');
-setupFormHandler('#order-price-maintenance-form', '/order-price-maintenance/add-order');
-setupFormHandler('#order-price-tire-fitting-form', '/order-price-tire-fitting/add-order');
-setupFormHandler('#order-price-shod-razval-form', '/order-price-shod-razval/add-order');
-setupFormHandler('#form-order-check-list', '/order-check-list/add-order');
-
 // Обработчики для работы с корзиной
 $(document).on('click', '.cart_quantity_up', function (e) {
     e.preventDefault();
