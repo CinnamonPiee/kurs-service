@@ -13,17 +13,18 @@
 		<div class="box hidden-xs" id="slider-kurs">
 			{% for item in main_page_slider_images %}
 				<div class="side side{{ forloop.counter }}">
-					<a href="{% url item.link %}"
-						><img
+					<a href="{% url item.link %}">
+						<img
 							src="{{ item.image.url }}"
 							alt=""
-					/></a>
+						/>
+					</a>
 				</div>
 			{% endfor %}
 		</div>
 	</div>
 	<div class="advantages">
-		<hr />
+		<hr/>
 		<div class="row">
 			<div id="list-wrapper" class="list-wrapper">
 				{% for item in about_our_advantages %}
@@ -38,7 +39,7 @@
 				<div style="clear: both; float: none"></div>
 			</div>
 		</div>
-		<hr />
+		<hr/>
 	</div>
 	<div class="sale-news-stock hidden-xs">
 		<div class="row">
@@ -48,7 +49,7 @@
 						<div class="title">
 							<h3 class="centered">АКЦИИ</h3>
 						</div>
-						<br />
+						<br/>
 						<div class="container-content">
 							<div id="list-wrapper" class="list-wrapper">
 								<div data-key="1">
@@ -76,22 +77,21 @@
 											<button
 												class="kursStyleButton add-to-sale"
 												data-sale="1"
-												data-title="Первый визит скидка 5%"
-											>
+												data-title="Первый визит скидка 5%">
 												ПОЛУЧИТЬ ВЫГОДУ
 											</button>
 										</div>
 									</div>
-									<br />
+									<br/>
 								</div>
 								<div style="clear: both; float: none"></div>
 							</div>
 						</div>
 					</div>
 					<div class="title">
-						<a href="discounts/index"
-							><h4 class="link-sale centered">Все АКЦИИ</h4></a
-						>
+						<a href="discounts/index">
+							<h4 class="link-sale centered">Все АКЦИИ</h4>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -101,7 +101,7 @@
 						<div class="title">
 							<h3 class="centered">АКЦИИ</h3>
 						</div>
-						<br />
+						<br/>
 						<div class="container-content">
 							<div id="list-wrapper" class="list-wrapper">
 								<div data-key="7">
@@ -126,22 +126,21 @@
 											<button
 												class="kursStyleButton add-to-sale"
 												data-sale="7"
-												data-title="Пятое колесо в подарок"
-											>
+												data-title="Пятое колесо в подарок">
 												ПОЛУЧИТЬ ВЫГОДУ
 											</button>
 										</div>
 									</div>
-									<br />
+									<br/>
 								</div>
 								<div style="clear: both; float: none"></div>
 							</div>
 						</div>
 					</div>
 					<div class="title">
-						<a href="discounts/index"
-							><h4 class="link-sale centered">Все АКЦИИ</h4></a
-						>
+						<a href="discounts/index">
+							<h4 class="link-sale centered">Все АКЦИИ</h4>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -149,7 +148,7 @@
 				<div class="title">
 					<h3 class="centered">НОВОСТИ</h3>
 				</div>
-				<br />
+				<br/>
 				<div class="news">
 					<div class="container-content">
 						<div id="list-wrapper" class="list-wrapper">
@@ -175,21 +174,21 @@
 										</p>
 									</div>
 									<div class="item-footer link-news centered">
-										<a class="kursStyleButton" href="news/index"
-											>ПРОЧЕСТЬ НОВОСТИ</a
-										>
+										<a class="kursStyleButton" href="news/index">
+											ПРОЧЕСТЬ НОВОСТИ
+										</a>
 									</div>
 								</div>
-								<br />
+								<br/>
 							</div>
 							<div style="clear: both; float: none"></div>
 						</div>
 					</div>
 				</div>
 				<div class="title">
-					<a href="news/index"
-						><h4 class="link-sale centered">Все новости</h4></a
-					>
+					<a href="news/index">
+						<h4 class="link-sale centered">Все новости</h4>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -294,7 +293,9 @@
 									<a
 										href="{{ item.img.url }}"
 										data-fancybox="images">
-										<img src="{{ item.img.url }}"/>
+										<img 
+											src="{{ item.img.url }}"
+										/>
 									</a>
 									<p>
 										{{ item.description|safe }}	
@@ -316,7 +317,6 @@
 			</div>
 		</div>
 	</div>
-
 	<h3 class="pretty-header left-right-line-short-header">
 		{{ main_page_titles.our_advantages }}
 	</h3>
@@ -330,8 +330,8 @@
 				loop=""
 				preload="auto"
 				muted=""
-				id="video"
-			></video>
+				id="video">
+			</video>
 			<div class="row">
 				<div class="col-lg-1 hidden-xs hidden-md"></div>
 				<div class="col-lg-10">

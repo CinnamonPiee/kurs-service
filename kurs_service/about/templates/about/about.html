@@ -47,7 +47,7 @@
 		{{ about_titles.our_advantages }}
 	</h3>
 	<div class="advantages">
-		<hr />
+		<hr/>
 		<div class="row">
 			<div id="list-wrapper" class="list-wrapper">
 				{% for item in about_our_advantages %}
@@ -62,7 +62,7 @@
 				<div style="clear: both; float: none"></div>
 			</div>
 		</div>
-		<hr />
+		<hr/>
 	</div>
 	<h3 class="pretty-header left-right-line-short-header">
 		{{ about_titles.best_in_business }}
@@ -96,7 +96,7 @@
 										alt="unnamed"
 									/>
 									<span>
-										<br />
+										<br/>
 										{{ about_contacts_email.title }}
 									</span>
 								</a>
@@ -106,13 +106,13 @@
 					<div class="col-lg-3 col-xs-6">
 						<p>
 							<li>
-								<a class="link-cal-number" href="tel:8 (800) 444-13-18"
-									><img
+								<a class="link-cal-number" href="tel:8 (800) 444-13-18">
+									<img
 										src="{{ about_contacts_number.img.url }}"
 										alt="unnamed"
 									/>
 									<span>
-										<br />
+										<br/>
 										{{ about_contacts_number.title }}
 									</span>
 								</a>
@@ -126,7 +126,7 @@
 									src="{{ item.img.url }}"
 									alt="unnamed"
 								/>
-								<br />
+								<br/>
 								{{ item.title }}
 							</p>
 						</div>
@@ -187,7 +187,7 @@
 			<div data-key="2">
 				<div class="item-html">
 					<div class="reviews-item">
-						<hr />
+						<hr/>
 						<div class="reviews-item hidden-xs">
 							<div class="row">
 								<div class="col-lg-2 centered">
@@ -195,7 +195,9 @@
 										src="{{ last_review.user.img.url }}"
 									/>
 									<p>{{ last_review.user.first_name }}</p>
-									<p><i class="fa fa-calendar"></i> {{ last_review.created_at|date:"d.m.Y в H:i" }}</p>
+									<p>
+										<i class="fa fa-calendar"></i> {{ last_review.created_at|date:"d.m.Y в H:i" }}
+									</p>
 								</div>
 								<div class="col-lg-8">
 									<p>{{ last_review.user.first_name }} :</p>
