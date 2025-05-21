@@ -1,4 +1,5 @@
 // Инициализация псевдоэлементов
+console.log('JS loaded');
 (function (a) {
     'use string';
     a.pseudoElements = {length: 0};
@@ -77,7 +78,7 @@ function getCountCheckList() {
 }
 
 // Инициализация количества элементов в корзине
-getCountChecList();
+getCountCheckList();
 
 // Функция для отображения уведомлений
 function funcSuccessNoty(data) {
@@ -225,8 +226,8 @@ $(document).ready(function () {
     $('#form-order-check-list-car_mark').on('change', function () {
         const targetValue = $(this).val();
         loadAjax({
-            url: '/online_appointment/ajax/get-car-models/',
-            type: 'POST',
+            url: '/online-appointment/get-car-models/',
+            type: 'GET',
             data: { id: targetValue },
             success: function (data) {
                 $('#form-order-check-list-car_model').html(data).removeAttr('disabled').css('background', '');
@@ -238,11 +239,11 @@ $(document).ready(function () {
     $('#form-order-check-list-car_model').on('change', function () {
         const targetValue = $(this).val();
         loadAjax({
-            url: '/online_appointment/ajax/get-car-modifications/',
-            type: 'POST',
+            url: '/online-appointment/get-car-modifications/',
+            type: 'GET',
             data: { id: targetValue },
             success: function (data) {
-                $('#form-order-check-list-car_modification').html(data).removeAttr('disabled');
+                $('#form-order-check-list-car_modification').html(data).removeAttr('disabled').css('background', '');
             },
         });
     });

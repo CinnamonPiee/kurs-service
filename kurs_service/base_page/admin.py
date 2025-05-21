@@ -11,6 +11,7 @@ from .models import (
 	BasePageFooter,
 	BasePageSocialImages,
 	BasePageHeader,
+	BasePageNotification,
 )
 
 
@@ -66,4 +67,9 @@ class BasePageSocialImagesAdmin(admin.ModelAdmin):
 
 @admin.register(BasePageFooter)
 class BasePageFooterAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(BasePageNotification)
+class BasePageNotificationAdmin(admin.ModelAdmin):
 	pass

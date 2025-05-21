@@ -6,7 +6,7 @@ from base_page.models import (
 	CarModel, 
 	CarModification,
 )
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 
 
 def online_appointment(request):
@@ -29,7 +29,8 @@ def online_appointment(request):
 
 
 def get_car_models(request):
-    mark_id = request.POST.get('id')
+    mark_id = request.GET.get('id')
+    print('DEBUG mark_id:', mark_id)
     options = '<option value="">Выберите модель</option>'
     if mark_id:
         models = CarModel.objects.filter(mark_id=mark_id)
@@ -37,9 +38,12 @@ def get_car_models(request):
             options += f'<option value="{model.id}">{model.name}</option>'
     return HttpResponse(options)
 
+
 def get_car_modifications(request):
-    model_id = request.POST.get('id')
-    modifications = CarModification.objects.filter(model_id=model_id).values('id', 'generation_name')
-    for mod in modifications:
-        options += f'<option value="{mod.id}">{mod.generation_name}</option>'
-    return JsonResponse(options, safe=False)
+    model_id = request.GET.get('id')
+    options = '<option value="">Выберите модификацию</option>'
+    if model_id:
+        modifications = CarModification.objects.filter(model_id=model_id)
+        for mod in modifications:
+            options += f'<option value="{mod.id}">{mod.generation_name}</option>'
+    return HttpResponse(options)

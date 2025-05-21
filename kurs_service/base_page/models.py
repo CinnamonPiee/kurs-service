@@ -138,6 +138,20 @@ class BasePageHeader(models.Model):
         verbose_name_plural = "Хедер"
 
 
+class BasePageNotification(models.Model):
+    img = models.ImageField(upload_to="img", blank=True, null=True, verbose_name="Изображение")
+    notification_text = models.TextField(blank=True, null=True, verbose_name="Текст уведомления")
+    action_text = models.TextField(blank=True, null=True, verbose_name="Текст действия")
+
+    def __str__(self):
+        return "Уведомление"
+    
+    class Meta:
+        db_table = "base_page_notification"
+        verbose_name = "Уведомление"
+        verbose_name_plural = "Уведомления"
+
+
 class BasePageFooterImage(models.Model):
     img = models.ImageField(upload_to="img-logo", blank=True, null=True, verbose_name="Изображение")
 

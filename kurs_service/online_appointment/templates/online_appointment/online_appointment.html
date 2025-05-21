@@ -87,17 +87,7 @@
 						<label for="form-order-check-list-car_mark">
 							Марка автомобиля
 						</label>
-						<select
-							name="car_mark"
-							id="form-order-check-list-car_mark"
-							class="form-control"
-							required
-						>
-							<option value="">Выберите марку</option>
-							{% for mark in form.fields.car_mark.queryset %}
-									<option value="{{ mark.id }}">{{ mark.name }}</option>
-							{% endfor %}
-						</select>
+						{{ form.car_mark }} 
 						{% if form.car_mark.errors %}
 							<div class="help-block text-danger">
 								{{ form.car_mark.errors.0 }}
@@ -107,39 +97,40 @@
 				</div>
 				<div class="col-lg-3">
 					<div class="form-group">
-						<label for="form-order-check-list-car_model">Модель автомобиля</label>
-						<select
-							name="car_model"
-							id="form-order-check-list-car_model"
-							class="form-control"
-							disabled
-							style="background: #eee">
-							<option value="">Сначала выберите марку</option>
-						</select>
+						<label for="form-order-check-list-car_model">
+							Модель автомобиля
+						</label>
+						{{ form.car_model }} 
+						{% if form.car_model.errors %}
+							<div class="help-block text-danger">
+								{{ form.car_model.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="col-lg-3">
-    			<div class="form-group">
-        		<label for="form-order-check-list-car_modification">Модификация (поколение)</label>
-        		<select
-							name="car_modification"
-							id="form-order-check-list-car_modification"
-							class="form-control"
-							disabled
-							style="background: #eee;">
-							<option value="">Сначала выберите модель</option>
-						</select>
+					<div class="form-group">
+						<label for="form-order-check-list-car_modification">
+							Модификация (поколение)
+						</label>
+						{{ form.car_modification }} 
+						{% if form.car_modification.errors %}
+							<div class="help-block text-danger">
+								{{ form.car_modification.errors.0 }}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</div>
 			<div class="row car-select centered">
 				<div class="form-group">
-					<label for="id_car_body"> Кузов автомобиля </label>
+					<label for="id_car_body">
+						Кузов автомобиля
+					</label>
 					<div
 						id="order-appointment-form-car_body"
 						role="radiogroup"
-						aria-required="true"
-					>
+						aria-required="true">
 						{% for item in evacuation_car_type %}
 						<div class="col-lg-3 col-xs-6 car-{{ forloop.counter0 }}">
 							<label class="car-{{ forloop.counter0 }}">
@@ -162,12 +153,13 @@
 				<div class="col-lg-4">
 					<div class="form-group">
 						<label for="{{ form.date_time_order.id_for_label }}">
-							Дата и время заказа
+							Дата и время
 						</label>
-						{{ form.date_time_order }} {% if form.date_time_order.errors %}
-						<div class="help-block text-danger">
-							{{ form.date_time_order.errors.0 }}
-						</div>
+						{{ form.date_time_order }} 
+						{% if form.date_time_order.errors %}
+							<div class="help-block text-danger">
+								{{ form.date_time_order.errors.0 }}
+							</div>
 						{% endif %}
 					</div>
 				</div>

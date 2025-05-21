@@ -317,15 +317,14 @@
 					<div class="row">
 						<div class="col-lg-1 col-xs-2">
 							<img
-								src="{% static "/img/danger-hd.png" %}"
+								src="{{ base_page_notification.img.url }}"
 								alt=""
 							/>
 						</div>
 						<div class="col-lg-11 col-xs-10">
 							<div class="notification_text">
 								<p>
-									Наши операторы сейчас не работают. <br/>
-									Но
+									{{ base_page_notification.notification_text|safe }}
 									<a
 										class="add-to-call-back"
 										href="#"
@@ -334,7 +333,7 @@
 									>
 										оставив заявку
 									</a>
-									сейчас — получите скидку 20% на работы
+									{{ base_page_notification.action_text|safe }}
 								</p>
 							</div>
 						</div>

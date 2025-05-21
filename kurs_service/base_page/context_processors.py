@@ -4,6 +4,7 @@ from .models import (
     BasePageFooterImage,
     BasePageHeader,
     BasePageSideMenu,
+    BasePageNotification,
 )
 
 
@@ -14,4 +15,5 @@ def base_page(request):
         "base_page_footer_image": BasePageFooterImage.objects.first(),
         "base_page_social_images": BasePageSocialImages.objects.all(),
         "base_page_footer": BasePageFooter.objects.first(),
+        "base_page_notification": BasePageNotification.objects.first(),
     }
