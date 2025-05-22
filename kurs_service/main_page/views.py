@@ -12,6 +12,7 @@ from .models import (
 	MainPageProfessionalEquipment
 )
 from about.models import AboutOurAdvantages
+from discounts.models import DiscountsDiscount
 
 
 def main_page(request):
@@ -19,6 +20,7 @@ def main_page(request):
         'title': 'Главная страница | OOO "КУРС"',
         'main_page_slider_images': MainPageSliderImages.objects.all(),
         'about_our_advantages': AboutOurAdvantages.objects.all(),
+        'discounts_discount': DiscountsDiscount.objects.all()[:3],
         'main_page_direction_of_activity': MainPageDirectionOfActivity.objects.all(),
         'main_page_titles': MainPageTitles.objects.first(),
         'main_page_always_in_stock': MainPageAlwaysInStock.objects.all(),

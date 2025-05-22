@@ -43,154 +43,59 @@
 	</div>
 	<div class="sale-news-stock hidden-xs">
 		<div class="row">
-			<div class="col-lg-4 col-xs-4">
-				<div class="stock">
-					<div class="container-content">
-						<div class="title">
-							<h3 class="centered">АКЦИИ</h3>
-						</div>
-						<br/>
+			{% for item in discounts_discount %}
+				<div class="col-lg-4 col-xs-4">
+					<div class="stock">
 						<div class="container-content">
-							<div id="list-wrapper" class="list-wrapper">
-								<div data-key="1">
-									<div class="item-stock-news-sale">
-										<div class="item-header">
-											<img
-												class="logo"
-												src="{% static "/img-discounts/toyota-lexus.jpg" %}"
-												alt=""
-											/>
+							<div class="title">
+								<h3 class="centered">АКЦИИ</h3>
+							</div>
+							<br/>
+							<div class="container-content">
+								<div id="list-wrapper" class="list-wrapper">
+									<div data-key="{{ forloop.counter }}">
+										<div class="item-stock-news-sale">
+											<div class="item-header">
+												<img
+													class="logo"
+													src="{{ item.little_img.url }}"
+													alt=""
+												/>
+											</div>
+											<div class="item-content">
+												<img
+													class="img-item-sale"
+													src="{{ item.large_img.url }}"
+													alt=""
+												/>
+												<h4 class="centered">{{ item.title }}</h4>
+												<p>
+													{{ item.description|safe }}
+												</p>
+											</div>
+											<div class="item-footer centered">
+												<button
+													class="kursStyleButton add-to-sale"
+													data-sale="1"
+													data-title="{{ item.title }}">
+													ПОЛУЧИТЬ ВЫГОДУ
+												</button>
+											</div>
 										</div>
-										<div class="item-content">
-											<img
-												class="img-item-sale"
-												src="{% static "/img-discounts/last-znakomstvo.jpg" %}"
-												alt=""
-											/>
-											<h4 class="centered">Первый визит скидка 5%</h4>
-											<p>
-												ООО "КУРС" предоставляет 5% скидку владельцам TOYOTA и
-												LEXUS на...
-											</p>
-										</div>
-										<div class="item-footer centered">
-											<button
-												class="kursStyleButton add-to-sale"
-												data-sale="1"
-												data-title="Первый визит скидка 5%">
-												ПОЛУЧИТЬ ВЫГОДУ
-											</button>
-										</div>
+										<br/>
 									</div>
-									<br/>
+									<div style="clear: both; float: none"></div>
 								</div>
-								<div style="clear: both; float: none"></div>
 							</div>
 						</div>
-					</div>
-					<div class="title">
-						<a href="discounts/index">
-							<h4 class="link-sale centered">Все АКЦИИ</h4>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-xs-4">
-				<div class="stock">
-					<div class="container-content">
 						<div class="title">
-							<h3 class="centered">АКЦИИ</h3>
-						</div>
-						<br/>
-						<div class="container-content">
-							<div id="list-wrapper" class="list-wrapper">
-								<div data-key="7">
-									<div class="item-stock-news-sale">
-										<div class="item-header">
-											<img
-												class="logo"
-												src="{% static "/img-discounts/percent.png" %}"
-												alt=""
-											/>
-										</div>
-										<div class="item-content">
-											<img
-												class="img-item-sale"
-												src="{% static "/img-discounts/shinomontaz-sale.jpg" %}"
-												alt=""
-											/>
-											<h4 class="centered">Пятое колесо в подарок</h4>
-											<p>Пятое колесо в подарок при условии...</p>
-										</div>
-										<div class="item-footer centered">
-											<button
-												class="kursStyleButton add-to-sale"
-												data-sale="7"
-												data-title="Пятое колесо в подарок">
-												ПОЛУЧИТЬ ВЫГОДУ
-											</button>
-										</div>
-									</div>
-									<br/>
-								</div>
-								<div style="clear: both; float: none"></div>
-							</div>
-						</div>
-					</div>
-					<div class="title">
-						<a href="discounts/index">
-							<h4 class="link-sale centered">Все АКЦИИ</h4>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-xs-4">
-				<div class="title">
-					<h3 class="centered">НОВОСТИ</h3>
-				</div>
-				<br/>
-				<div class="news">
-					<div class="container-content">
-						<div id="list-wrapper" class="list-wrapper">
-							<div data-key="1">
-								<div class="item-stock-news-sale">
-									<div class="item-header">
-										<img
-											class="logo"
-											src="{% static "/img-news/news.jpg" %}"
-											alt=""
-										/>
-									</div>
-									<div class="item-content">
-										<img
-											class="img-item-sale"
-											src="{% static "/img-news/covid.jpg" %}"
-											alt=""
-										/>
-										<h4 class="centered">Вакцинация персонала от COVID-19</h4>
-										<p>
-											Важная информация! Сотрудники ООО "КУРС" для безопасности
-											своего и вашего здоровья...
-										</p>
-									</div>
-									<div class="item-footer link-news centered">
-										<a class="kursStyleButton" href="news/index">
-											ПРОЧЕСТЬ НОВОСТИ
-										</a>
-									</div>
-								</div>
-								<br/>
-							</div>
-							<div style="clear: both; float: none"></div>
+							<a href="discounts/index">
+								<h4 class="link-sale centered">Все АКЦИИ</h4>
+							</a>
 						</div>
 					</div>
 				</div>
-				<div class="title">
-					<a href="news/index">
-						<h4 class="link-sale centered">Все новости</h4>
-					</a>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 	<h3 class="pretty-header left-right-line-short-header">
