@@ -2,7 +2,7 @@ from django.db import models
 
 
 class PriceMaintenanceCategory(models.Model):
-    translate_title = models.CharField(max_length=255, null=True, blank=True, verbose_name='Переведенное название')
+    slug = models.SlugField(max_length=255, unique=True, null=True, blank=True, verbose_name='Slug')
     title = models.CharField(max_length=255, null=True, blank=True, verbose_name='Название')
     img = models.CharField(max_length=255, null=True, blank=True, verbose_name='Изображение')
     parent_id = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, db_column='parent_id', related_name='children', verbose_name='Родительская категория')
