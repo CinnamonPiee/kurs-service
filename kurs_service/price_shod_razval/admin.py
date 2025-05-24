@@ -1,3 +1,15 @@
 from django.contrib import admin
+from .models import (
+	PriceShodRazvalCategory,
+	PriceShodRazvalPrice,
+)
 
-# Register your models here.
+
+@admin.register(PriceShodRazvalCategory)
+class PriceShodRazvalCategoryAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(PriceShodRazvalPrice)
+class PriceShodRazvalPriceAdmin(admin.ModelAdmin):
+	pass
