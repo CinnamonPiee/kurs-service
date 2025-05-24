@@ -479,6 +479,7 @@
 			</div>
 			<div class="check-list-form-style">
 				<form id="form-order-check-list" action="/check-list" method="post">
+					{% csrf_token %}
 					<input
 						type="hidden"
 						name="_csrf-frontend"
