@@ -10,7 +10,14 @@
 {% block content %}
 <ul class="breadcrumb">
 	<li><a href="/">Главная</a></li>
-	<li class="active">Прайc шиномонтажных услуг</li>
+	{% if category %}
+		<li>
+			<a href="{% url 'price_maintenance:price_maintenance' %}">Прайc шиномонтажных услуг</a>
+		</li>
+		<li class="active">{{ category.title }}</li>
+	{% else %}
+		<li class="active">Прайc шиномонтажных услуг</li>
+	{% endif %}
 </ul>
 
 <div id="price-kurs">
@@ -20,21 +27,15 @@
 				<div class="list">
 					<h5>Услуги</h5>
 					<ul class="sub-menu">
-						<li>
-							<a href="/price-tire-fitting/sezonnyy-kompleks"
-								>Сезонный комплекс</a
-							>
-						</li>
-						<li><a href="/price-tire-fitting/montazh-shin">Монтаж шин</a></li>
-						<li>
-							<a href="/price-tire-fitting/demontazh-shin">Демонтаж шин</a>
-						</li>
-						<li>
-							<a href="/price-tire-fitting/zamena-ventilya">Замена вентиля</a>
-						</li>
-						<li><a href="/price-tire-fitting/balansirovka">Балансировка</a></li>
+						{% for item in price_tire_fitting_categories %}
+							<li>
+								<a href="{% url 'price_tire_fitting:price_tire_fitting_category' item.slug %}">
+									{{ item.title }} 
+								</a>
+							</li>
+						{% endfor %}
 					</ul>
-					<br />
+					<br/>
 					<div class="menu-discount centered">
 						<h4>Акции по теме</h4>
 					</div>
@@ -45,77 +46,39 @@
 									<div class="item-header">
 										<img
 											class="logo"
-											src="/frontend/web/assets_project/img/img-logo-discounts/percent.png"
+											src="{{ discounts_discount.little_img.url }}"
 											alt=""
 										/>
 									</div>
 									<div class="item-content">
 										<img
 											class="img-item-sale"
-											src="/frontend/web/assets_project/img/img-discounts/shinomontaz-sale.jpg"
+											src="{{ discounts_discount.large_img.url }}"
 											alt=""
 										/>
-										<h4 class="centered">Пятое колесо в подарок</h4>
+										<h4 class="centered">{{ discounts_discount.title }}</h4>
 										<p>
-											Пятое колесо в подарок при условии заказа онлайн услуги
-											монтажа, балансировки и замены вентелей 4 колес
+											{{ discounts_discount.description }}
 										</p>
 									</div>
 									<div class="item-footer centered">
 										<button
 											class="kursStyleButton add-to-sale"
 											data-sale="7"
-											data-title="Пятое колесо в подарок"
-										>
+											data-title="{{ discounts_discount.title }}<">
 											ПОЛУЧИТЬ ВЫГОДУ
 										</button>
 									</div>
 								</div>
-								<br />
+								<br/>
 							</div>
 							<div style="clear: both; float: none"></div>
 						</div>
 					</div>
-					<a href="/discounts/index"
-						><h4 class="link-sale centered">Все АКЦИИ</h4></a
-					>
-					<br />
-					<div class="menu-discount centered">
-						<h4>Новости</h4>
-						<p>Доступен новый полезный раздел для вас</p>
-						<a class="kursStyleButton" href="/news/index">ПРОЧЕСТЬ НОВОСТИ</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="menu-price-kurs-mobile">
-			<div class="menu-mobile-price hidden-lg hidden-md">
-				<a class="bottom-fix-catalog" href="#">
-					<p class="rotatable">
-						<i class="fa fa-bars" aria-hidden="true"></i>
-					</p>
-				</a>
-				<div id="menu-price-kurs-mobile">
-					<div class="list">
-						<h5>Услуги</h5>
-						<ul class="sub-menu">
-							<li>
-								<a href="/price-tire-fitting/sezonnyy-kompleks"
-									>Сезонный комплекс</a
-								>
-							</li>
-							<li><a href="/price-tire-fitting/montazh-shin">Монтаж шин</a></li>
-							<li>
-								<a href="/price-tire-fitting/demontazh-shin">Демонтаж шин</a>
-							</li>
-							<li>
-								<a href="/price-tire-fitting/zamena-ventilya">Замена вентиля</a>
-							</li>
-							<li>
-								<a href="/price-tire-fitting/balansirovka">Балансировка</a>
-							</li>
-						</ul>
-					</div>
+					<a href="/discounts/index">
+						<h4 class="link-sale centered">Все АКЦИИ</h4>
+					</a>
+					<br/>
 				</div>
 			</div>
 		</div>
@@ -125,405 +88,90 @@
 					<h5 class="centered">Прайс шиномонтаж | OOO "КУРС"</h5>
 					<div class="row centered">
 						<div id="list-wrapper" class="list-wrapper">
-							<div data-key="350000">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
+							{% for item in page_obj %}
+								<div data-key="{{ item.id }}">
+									<div class="col-lg-4">
+										<div class="item-price-all">
+											<div class="title">
+												<h4>{{ item.title }}</h4>
+												<p class="sub-title-price">{{ item.sub_title }}</p>
+											</div>
+											<div class="content">
 												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
+													class="img-price-all"
+													src="{{ item.img.url }}"
 													alt=""
 												/>
+												<p style="text-align: justify">
+													<span>Рекомендации:</span> {{ item.description }}
+												</p>
 											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 1360₽</p>
+											<div class="footer">
 												<a
-													class="kursStyleButton add-to-price-tire-fitting"
+													class="kursStyleButton add-to-price"
 													href="/order-price-maintenance/add-modal"
-													data-price="350000"
-													data-title="Комплекс R-13"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-13</h4>
-												<p>4+1 колесо</p>
+													data-price="{{ item.id }}"
+													data-title="{{ item.title }} {{ item.sub_title }}">
+													Оформить
+												</a>
 												<a
 													class="kursStyleButton add-to-check-list"
 													href="/check-list/add"
-													data-services="350000"
-													>+ в чек лист</a
-												>
+													data-services="{{ item.id }}">
+													+ в чек лист
+												</a>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div data-key="350001">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
-												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
-													alt=""
-												/>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 1480₽</p>
-												<a
-													class="kursStyleButton add-to-price-tire-fitting"
-													href="/order-price-maintenance/add-modal"
-													data-price="350001"
-													data-title="Комплекс R-14"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-14</h4>
-												<p>4+1 колесо</p>
-												<a
-													class="kursStyleButton add-to-check-list"
-													href="/check-list/add"
-													data-services="350001"
-													>+ в чек лист</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="350002">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
-												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
-													alt=""
-												/>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 1640₽</p>
-												<a
-													class="kursStyleButton add-to-price-tire-fitting"
-													href="/order-price-maintenance/add-modal"
-													data-price="350002"
-													data-title="Комплекс R-15"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-15</h4>
-												<p>4+1 колесо</p>
-												<a
-													class="kursStyleButton add-to-check-list"
-													href="/check-list/add"
-													data-services="350002"
-													>+ в чек лист</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="350003">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
-												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
-													alt=""
-												/>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 1800₽</p>
-												<a
-													class="kursStyleButton add-to-price-tire-fitting"
-													href="/order-price-maintenance/add-modal"
-													data-price="350003"
-													data-title="Комплекс R-16"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-16</h4>
-												<p>4+1 колесо</p>
-												<a
-													class="kursStyleButton add-to-check-list"
-													href="/check-list/add"
-													data-services="350003"
-													>+ в чек лист</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="350004">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
-												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
-													alt=""
-												/>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 2120₽</p>
-												<a
-													class="kursStyleButton add-to-price-tire-fitting"
-													href="/order-price-maintenance/add-modal"
-													data-price="350004"
-													data-title="Комплекс R-17"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-17</h4>
-												<p>4+1 колесо</p>
-												<a
-													class="kursStyleButton add-to-check-list"
-													href="/check-list/add"
-													data-services="350004"
-													>+ в чек лист</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="350005">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
-												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
-													alt=""
-												/>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 2600₽</p>
-												<a
-													class="kursStyleButton add-to-price-tire-fitting"
-													href="/order-price-maintenance/add-modal"
-													data-price="350005"
-													data-title="Комплекс R-18"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-18</h4>
-												<p>4+1 колесо</p>
-												<a
-													class="kursStyleButton add-to-check-list"
-													href="/check-list/add"
-													data-services="350005"
-													>+ в чек лист</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="350006">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
-												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
-													alt=""
-												/>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 2900₽</p>
-												<a
-													class="kursStyleButton add-to-price-tire-fitting"
-													href="/order-price-maintenance/add-modal"
-													data-price="350006"
-													data-title="Комплекс R-19"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-19</h4>
-												<p>4+1 колесо</p>
-												<a
-													class="kursStyleButton add-to-check-list"
-													href="/check-list/add"
-													data-services="350006"
-													>+ в чек лист</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="350007">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
-												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
-													alt=""
-												/>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 2900₽</p>
-												<a
-													class="kursStyleButton add-to-price-tire-fitting"
-													href="/order-price-maintenance/add-modal"
-													data-price="350007"
-													data-title="Комплекс R-20"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-20</h4>
-												<p>4+1 колесо</p>
-												<a
-													class="kursStyleButton add-to-check-list"
-													href="/check-list/add"
-													data-services="350007"
-													>+ в чек лист</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="350008">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
-												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
-													alt=""
-												/>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 3180₽</p>
-												<a
-													class="kursStyleButton add-to-price-tire-fitting"
-													href="/order-price-maintenance/add-modal"
-													data-price="350008"
-													data-title="Комплекс R-21"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-21</h4>
-												<p>4+1 колесо</p>
-												<a
-													class="kursStyleButton add-to-check-list"
-													href="/check-list/add"
-													data-services="350008"
-													>+ в чек лист</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div data-key="350009">
-								<div class="col-lg-6">
-									<div class="item-price-tyres">
-										<div class="row">
-											<div class="col-sm-4 col-xs-3">
-												<img
-													class="img-price-tyres"
-													src="/frontend/web/assets_project/img/img-price-all/tyres-montazh.png"
-													alt=""
-												/>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="title">Комплекс</h4>
-												<p>Цена: 3180₽</p>
-												<a
-													class="kursStyleButton add-to-price-tire-fitting"
-													href="/order-price-maintenance/add-modal"
-													data-price="350009"
-													data-title="Комплекс R-22"
-													>Оформить</a
-												>
-											</div>
-											<div class="col-sm-4 col-xs-4">
-												<h4 class="sub-title-price">R-22</h4>
-												<p>4+1 колесо</p>
-												<a
-													class="kursStyleButton add-to-check-list"
-													href="/check-list/add"
-													data-services="350009"
-													>+ в чек лист</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							{% endfor %}
 							<div style="clear: both; float: none"></div>
-							<ul class="pagination">
-								<li class="container-li first disabled"><span>Первая</span></li>
-								<li class="container-li prev disabled">
-									<span><i class="fa fa-arrow-left"></i></span>
-								</li>
-								<li class="container-li active">
-									<a
-										class="my-pagination"
-										href="/price-tire-fitting"
-										data-page="0"
-										>1</a
-									>
-								</li>
-								<li class="container-li">
-									<a
-										class="my-pagination"
-										href="/price-tire-fitting/page/2"
-										data-page="1"
-										>2</a
-									>
-								</li>
-								<li class="container-li next">
-									<a
-										class="my-pagination"
-										href="/price-tire-fitting/page/2"
-										data-page="1"
-										><i class="fa fa-arrow-right"></i
-									></a>
-								</li>
-								<li class="container-li last">
-									<a
-										class="my-pagination"
-										href="/price-tire-fitting/page/5"
-										data-page="4"
-										>Последняя</a
-									>
-								</li>
-							</ul>
+							{% if show_pagination %}
+								<ul class="pagination">
+									{% if page_obj.has_previous %}
+										<li class="container-li first">
+											<a class="my-pagination" href="?page=1">Первая</a>
+										</li>
+										<li class="container-li prev">
+											<a 
+												class="my-pagination" 
+												href="?page={{ page_obj.previous_page_number }}">
+												<i class="fa fa-arrow-left"></i>
+											</a>
+										</li>
+									{% else %}
+										<li class="container-li first disabled"><span>Первая</span></li>
+										<li class="container-li prev disabled"><span><i class="fa fa-arrow-left"></i></span></li>
+									{% endif %}
+
+									{% for num in page_obj.paginator.page_range %}
+										{% if page_obj.number == num %}
+											<li class="container-li active">
+												<span>{{ num }}</span>
+											</li>
+										{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+											<li class="container-li">
+												<a class="my-pagination" href="?page={{ num }}">{{ num }}</a>
+											</li>
+										{% endif %}
+									{% endfor %}
+
+									{% if page_obj.has_next %}
+										<li class="container-li next">
+											<a 
+												class="my-pagination" 
+												href="?page={{ page_obj.next_page_number }}">
+												<i class="fa fa-arrow-right"></i></a>
+										</li>
+										<li class="container-li last">
+											<a class="my-pagination" href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
+										</li>
+									{% else %}
+										<li class="container-li next disabled"><span><i class="fa fa-arrow-right"></i></span></li>
+										<li class="container-li last disabled"><span>Последняя</span></li>
+									{% endif %}
+								</ul>
+							{% endif %}
 						</div>
 					</div>
 				</div>

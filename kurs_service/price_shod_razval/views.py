@@ -30,4 +30,4 @@ def price_shod_razval(request, category_slug=None):
 		'discounts_discount': DiscountsDiscount.objects.first(),
 	}
 
-	return render(request, 'price_maintenance/price_maintenance.html', context)
+	return render(request, 'price_shod_razval/price_shod_razval.html', context)

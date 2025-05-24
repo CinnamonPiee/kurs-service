@@ -28,7 +28,9 @@
 					<ul class="sub-menu">
 						{% for item in price_shod_razval_categories %}
 							<li>
-								<a href="/price-shod-razval/perednyaya-os-avto">Передняя ось</a>
+								<a href="{% url 'price_shod_razval:price_shod_razval_category' item.slug %}">
+									{{ item.title }} 
+								</a>
 							</li>
 						{% endfor %}
 					</ul>
