@@ -4,7 +4,7 @@ from django.contrib import messages
 from .forms import CheckListOrderForm
 
 
-def check_list_view(request):
+def check_list(request):
     if request.method == "POST":
         form = CheckListOrderForm(request.POST)
         if form.is_valid():
@@ -24,4 +24,4 @@ def check_list_view(request):
 
 def check_list_count(request):
     count = 0
-    return JsonResponse({'count': count})
+    return JsonResponse({"count": count})

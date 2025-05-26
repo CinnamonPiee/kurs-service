@@ -17,10 +17,10 @@ def price_tire_fitting(request, category_slug=None):
 		category = None
 		price_list = PriceTireFittingPrice.objects.all()
 
-	paginator = Paginator(price_list, 6)
+	paginator = Paginator(price_list, 10)
 	page_number = request.GET.get('page')
 	page_obj = paginator.get_page(page_number)
-	show_pagination = paginator.count > 6
+	show_pagination = paginator.count > 10
 
 	context = {
 		'page_obj': page_obj,
