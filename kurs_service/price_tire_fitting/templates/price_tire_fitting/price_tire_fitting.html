@@ -11,12 +11,14 @@
 <ul class="breadcrumb">
 	<li><a href="/">Главная</a></li>
 	{% if category %}
-		<li>
-			<a href="{% url 'price_maintenance:price_maintenance' %}">Прайc шиномонтажных услуг</a>
-		</li>
-		<li class="active">{{ category.title }}</li>
+	<li>
+		<a href="{% url 'price_maintenance:price_maintenance' %}">
+			Прайc шиномонтажных услуг
+		</a>
+	</li>
+	<li class="active">{{ category.title }}</li>
 	{% else %}
-		<li class="active">Прайc шиномонтажных услуг</li>
+	<li class="active">Прайc шиномонтажных услуг</li>
 	{% endif %}
 </ul>
 <div id="price-kurs">
@@ -27,11 +29,11 @@
 					<h5>Услуги</h5>
 					<ul class="sub-menu">
 						{% for item in price_tire_fitting_categories %}
-							<li>
-								<a href="{% url 'price_tire_fitting:price_tire_fitting_category' item.slug %}">
-									{{ item.title }} 
-								</a>
-							</li>
+						<li>
+							<a href="{% url 'price_tire_fitting:price_tire_fitting_category' item.slug %}">
+								{{ item.title }}
+							</a>
+						</li>
 						{% endfor %}
 					</ul>
 					<br/>
@@ -56,15 +58,14 @@
 											alt=""
 										/>
 										<h4 class="centered">{{ discounts_discount.title }}</h4>
-										<p>
-											{{ discounts_discount.description }}
-										</p>
+										<p>{{ discounts_discount.description }}</p>
 									</div>
 									<div class="item-footer centered">
 										<button
 											class="kursStyleButton add-to-sale"
 											data-sale="7"
-											data-title="{{ discounts_discount.title }}<">
+											data-title="{{ discounts_discount.title }}<"
+										>
 											ПОЛУЧИТЬ ВЫГОДУ
 										</button>
 									</div>
@@ -88,31 +89,31 @@
 					<div class="row centered">
 						<div id="list-wrapper" class="list-wrapper">
 							{% for item in page_obj %}
-								<div data-key="{{ item.id }}">
-									<div class="col-lg-4">
-										<div class="item-price-all">
-											<div class="title">
-												<h4>{{ item.title }}</h4>
-												<p class="sub-title-price">{{ item.sub_title }}</p>
-											</div>
-											<div class="content">
+							<div data-key="{{ item.id }}">
+								<div class="col-lg-6">
+									<div class="item-price-tyres">
+										<div class="row">
+											<div class="col-sm-4 col-xs-3">
 												<img
-													class="img-price-all"
+													class="img-price-tyres"
 													src="{{ item.img.url }}"
 													alt=""
 												/>
-												<p style="text-align: justify">
-													<span>Рекомендации:</span> {{ item.description }}
-												</p>
 											</div>
-											<div class="footer">
+											<div class="col-sm-4 col-xs-4">
+												<h4 class="title">{{ item.title }}</h4>
+												<p>Цена: {{ item.price }}₽</p>
 												<a
-													class="kursStyleButton add-to-price"
+													class="kursStyleButton add-to-price-tire-fitting"
 													href="/order-price-maintenance/add-modal"
 													data-price="{{ item.id }}"
 													data-title="{{ item.title }} {{ item.sub_title }}">
 													Оформить
 												</a>
+											</div>
+											<div class="col-sm-4 col-xs-4">
+												<h4 class="sub-title-price">{{ item.sub_title }}</h4>
+												<p>{{ item.description }}</p>
 												<a
 													class="kursStyleButton add-to-check-list"
 													href="/check-list/add"
@@ -123,6 +124,7 @@
 										</div>
 									</div>
 								</div>
+							</div>
 							{% endfor %}
 							<div style="clear: both; float: none"></div>
 							{% if show_pagination %}
@@ -132,18 +134,19 @@
 											<a class="my-pagination" href="?page=1">Первая</a>
 										</li>
 										<li class="container-li prev">
-											<a 
-												class="my-pagination" 
+											<a
+												class="my-pagination"
 												href="?page={{ page_obj.previous_page_number }}">
 												<i class="fa fa-arrow-left"></i>
 											</a>
 										</li>
 									{% else %}
 										<li class="container-li first disabled"><span>Первая</span></li>
-										<li class="container-li prev disabled"><span><i class="fa fa-arrow-left"></i></span></li>
-									{% endif %}
-
-									{% for num in page_obj.paginator.page_range %}
+										<li class="container-li prev disabled">
+											<span><i class="fa fa-arrow-left"></i></span>
+										</li>
+									{% endif %} 
+									{% for num in page_obj.paginator.page_range %} 
 										{% if page_obj.number == num %}
 											<li class="container-li active">
 												<span>{{ num }}</span>
@@ -152,22 +155,30 @@
 											<li class="container-li">
 												<a class="my-pagination" href="?page={{ num }}">{{ num }}</a>
 											</li>
-										{% endif %}
-									{% endfor %}
-
+										{% endif %} 
+									{% endfor %} 
 									{% if page_obj.has_next %}
 										<li class="container-li next">
-											<a 
-												class="my-pagination" 
+											<a
+												class="my-pagination"
 												href="?page={{ page_obj.next_page_number }}">
-												<i class="fa fa-arrow-right"></i></a>
+												<i class="fa fa-arrow-right"></i>
+											</a>
 										</li>
 										<li class="container-li last">
-											<a class="my-pagination" href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
+											<a
+												class="my-pagination"
+												href="?page={{ page_obj.paginator.num_pages }}">
+												Последняя
+											</a>
 										</li>
 									{% else %}
-										<li class="container-li next disabled"><span><i class="fa fa-arrow-right"></i></span></li>
-										<li class="container-li last disabled"><span>Последняя</span></li>
+										<li class="container-li next disabled">
+											<span><i class="fa fa-arrow-right"></i></span>
+										</li>
+										<li class="container-li last disabled">
+											<span>Последняя</span>
+										</li>
 									{% endif %}
 								</ul>
 							{% endif %}
