@@ -1,6 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import JsonResponse
-from django.contrib import messages
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 from .forms import CheckListOrderForm
@@ -12,12 +11,12 @@ from .utils import (
     get_cart_items,
     get_cart_count,
 )
-from .models import CheckListOrder, CheckListOrderItem
+from .models import CheckListOrder
 
 
+# Получить корзину пользователя (гость/авторизованный)
 def get_user_cart_items(request):
     if request.user.is_authenticated:
-        # Получить корзину пользователя из БД (например, неоформленный заказ)
         order = (
             CheckListOrder.objects.filter(email=request.user.email, quantity__gt=0)
             .order_by("-created_at")
@@ -28,7 +27,7 @@ def get_user_cart_items(request):
                 {
                     "service_id": item.service_id,
                     "service_name": item.service_name,
-                    "img_url": "",  # при необходимости добавить поле
+                    "img_url": "",
                     "quantity": item.quantity,
                 }
                 for item in order.items.all()
@@ -42,6 +41,7 @@ def get_user_cart_items(request):
         return items, count
 
 
+# Главная страница чек-листа
 def check_list(request):
     form = CheckListOrderForm()
     check_list_items, check_list_count = get_user_cart_items(request)
@@ -56,8 +56,8 @@ def check_list(request):
     )
 
 
+# AJAX: содержимое корзины
 def check_list_index(request):
-    # AJAX-загрузка содержимого корзины
     check_list_items, check_list_count = get_user_cart_items(request)
     return render(
         request,
@@ -70,6 +70,7 @@ def check_list_index(request):
     )
 
 
+# AJAX: добавить в корзину
 @require_POST
 @csrf_exempt
 def add_to_check_list(request):
@@ -82,6 +83,7 @@ def add_to_check_list(request):
     return JsonResponse({"code": 200, "html": "Услуга добавлена"})
 
 
+# AJAX: увеличить количество
 @require_POST
 @csrf_exempt
 def increment_check_list(request):
@@ -92,6 +94,7 @@ def increment_check_list(request):
     return JsonResponse({"code": 200, "html": "Количество увеличено"})
 
 
+# AJAX: уменьшить количество
 @require_POST
 @csrf_exempt
 def decrement_check_list(request):
@@ -102,6 +105,7 @@ def decrement_check_list(request):
     return JsonResponse({"code": 200, "html": "Количество уменьшено"})
 
 
+# AJAX: удалить позицию
 @require_POST
 @csrf_exempt
 def remove_check_list_item(request):
@@ -112,6 +116,7 @@ def remove_check_list_item(request):
     return JsonResponse({"code": 200, "html": "Услуга удалена"})
 
 
+# AJAX: количество позиций в корзине
 def check_list_count(request):
     _, count = get_user_cart_items(request)
     return JsonResponse({"count": count})
