@@ -14,7 +14,6 @@ from .utils import (
 from .models import CheckListOrder
 
 
-# Получить корзину пользователя (гость/авторизованный)
 def get_user_cart_items(request):
     if request.user.is_authenticated:
         order = (
@@ -41,7 +40,6 @@ def get_user_cart_items(request):
         return items, count
 
 
-# Главная страница чек-листа
 def check_list(request):
     form = CheckListOrderForm()
     check_list_items, check_list_count = get_user_cart_items(request)
@@ -56,7 +54,6 @@ def check_list(request):
     )
 
 
-# AJAX: содержимое корзины
 def check_list_index(request):
     check_list_items, check_list_count = get_user_cart_items(request)
     return render(
@@ -70,7 +67,6 @@ def check_list_index(request):
     )
 
 
-# AJAX: добавить в корзину
 @require_POST
 @csrf_exempt
 def add_to_check_list(request):
@@ -83,7 +79,6 @@ def add_to_check_list(request):
     return JsonResponse({"code": 200, "html": "Услуга добавлена"})
 
 
-# AJAX: увеличить количество
 @require_POST
 @csrf_exempt
 def increment_check_list(request):
@@ -94,7 +89,6 @@ def increment_check_list(request):
     return JsonResponse({"code": 200, "html": "Количество увеличено"})
 
 
-# AJAX: уменьшить количество
 @require_POST
 @csrf_exempt
 def decrement_check_list(request):
@@ -105,7 +99,6 @@ def decrement_check_list(request):
     return JsonResponse({"code": 200, "html": "Количество уменьшено"})
 
 
-# AJAX: удалить позицию
 @require_POST
 @csrf_exempt
 def remove_check_list_item(request):
@@ -116,7 +109,6 @@ def remove_check_list_item(request):
     return JsonResponse({"code": 200, "html": "Услуга удалена"})
 
 
-# AJAX: количество позиций в корзине
 def check_list_count(request):
     _, count = get_user_cart_items(request)
     return JsonResponse({"count": count})
