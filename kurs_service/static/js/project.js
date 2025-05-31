@@ -143,9 +143,63 @@ const loadAjax = function (setting) {
 	return $.ajax(setting)
 }
 
-// Функция для загрузки содержимого корзины
-const loadCart = function (container) {
-	$(container).load('/check-list/index')
+// Функция инициализации обработчиков формы
+function initializeFormHandlers() {
+	$('#form-order-check-list-car_mark')
+		.off('change')
+		.on('change', function () {
+			const targetValue = $(this).val()
+			loadAjax({
+				url: '/online-appointment/get-car-models/',
+				type: 'GET',
+				data: { id: targetValue },
+				success: function (data) {
+					$('#form-order-check-list-car_model')
+						.html(data)
+						.removeAttr('disabled')
+						.css('background', '')
+					$('#form-order-check-list-car_modification')
+						.html('<option value="">Сначала выберите модель</option>')
+						.attr('disabled', 'disabled')
+						.css('background', '#eee')
+				},
+			})
+		})
+
+	$('#form-order-check-list-car_model')
+		.off('change')
+		.on('change', function () {
+			const targetValue = $(this).val()
+			loadAjax({
+				url: '/online-appointment/get-car-modifications/',
+				type: 'GET',
+				data: { id: targetValue },
+				success: function (data) {
+					$('#form-order-check-list-car_modification')
+						.html(data)
+						.removeAttr('disabled')
+						.css('background', '')
+				},
+			})
+		})
+}
+
+// Вызов при загрузке страницы
+$(document).ready(function () {
+	initializeFormHandlers()
+})
+
+function loadCart(selector) {
+	$.ajax({
+		url: '/check-list/',
+		type: 'GET',
+		success: function (response) {
+			const $content = $(response).find('#content-check-list')
+			$(selector).html($content.html())
+
+			initializeFormHandlers()
+		},
+	})
 }
 
 // Функция для обновления количества элементов в корзине
@@ -256,42 +310,53 @@ setupModalHandler(
 	'addToOrderPower'
 )
 
-// Обработчики для работы с корзиной
+// Увеличение количества
 $(document).on('click', '.cart_quantity_up', function (e) {
 	e.preventDefault()
 	const id = $(this).data('services')
 	loadAjax({
-		url: '/check-list/increment',
+		url: '/check-list/increment_check_list/',
 		type: 'POST',
-		data: { id },
-		success: function () {
-			loadCart('#content-check-list')
+		data: { id: id },
+		success: function (response) {
+			if (response.code === 200) {
+				loadCart('#content-check-list')
+				getCountCheckList()
+			}
 		},
 	})
 })
 
+// Уменьшение количества
 $(document).on('click', '.cart_quantity_down', function (e) {
 	e.preventDefault()
 	const id = $(this).data('services')
 	loadAjax({
-		url: '/check-list/decrement',
+		url: '/check-list/decrement_check_list/',
 		type: 'POST',
-		data: { id },
-		success: function () {
-			loadCart('#content-check-list')
+		data: { id: id },
+		success: function (response) {
+			if (response.code === 200) {
+				loadCart('#content-check-list')
+				getCountCheckList()
+			}
 		},
 	})
 })
 
-$(document).on('click', '.del-item', function () {
+// Удаление
+$(document).on('click', '.del-item', function (e) {
+	e.preventDefault()
 	const id = $(this).data('services')
 	loadAjax({
-		url: '/check-list/del-item',
+		url: '/check-list/remove_check_list_item/',
 		type: 'POST',
-		data: { id },
-		success: function () {
-			loadCart('#content-check-list')
-			getCountCheckList()
+		data: { id: id },
+		success: function (response) {
+			if (response.code === 200) {
+				loadCart('#content-check-list')
+				getCountCheckList()
+			}
 		},
 	})
 })
