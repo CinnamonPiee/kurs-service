@@ -174,5 +174,4 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-
-static_all
+fixtures/
