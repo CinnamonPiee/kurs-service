@@ -9,8 +9,8 @@ class CheckListOrder(models.Model):
     car_model = models.CharField(max_length=255, verbose_name="Модель автомобиля")
     car_modification = models.CharField(max_length=255, verbose_name="Модификация", blank=True, null=True)
     created_at = models.DateTimeField(verbose_name="Дата и время", auto_now_add=True)
+    date_time_order = models.DateTimeField(verbose_name="Дата и время заказа")
     comment_user = models.TextField(verbose_name="Комментарий пользователя", blank=True, null=True)
-    quantity = models.PositiveIntegerField(verbose_name="Количество услуг", default=0)
 
     def __str__(self):
         return f"{self.name} ({self.created_at})"
