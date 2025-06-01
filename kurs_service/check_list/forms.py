@@ -72,6 +72,13 @@ class CheckListOrderForm(forms.ModelForm):
             "car_mark",
             "car_model",
             "car_modification",
+            "date_time_order",
             "comment_user",
-            "quantity",
         ]
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'aria-required': 'true'}),
+            'number': forms.TextInput(attrs={'class': 'form-control', 'aria-required': 'true'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'aria-required': 'true'}),
+            'date_time_order': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local', 'aria-required': 'true'}),
+            'comment_user': forms.Textarea(attrs={'class': 'form-control', 'rows': 2, 'style': 'resize: none;'}),
+        }
