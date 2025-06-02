@@ -41,7 +41,7 @@
 									<div class="cart_quantity_button">
 										<a
 											class="cart_quantity_up"
-											href="/check-list/increment?id={{ item.service_id }}"
+											href="{% url 'check_list:increment_check_list' %}"
 											data-services="{{ item.service_id }}">
 											+
 										</a>
@@ -56,7 +56,7 @@
 										/>
 										<a
 											class="cart_quantity_down"
-											href="/check-list/decrement?id={{ item.service_id }}"
+											href="{% url 'check_list:decrement_check_list' %}"
 											data-services="{{ item.service_id }}">
 											-
 										</a>
@@ -66,6 +66,7 @@
 									<span
 										data-services="{{ item.service_id }}"
 										class="glyphicon glyphicon-remove text-danger del-item"
+										href="{% url 'check_list:remove_check_list_item' %}"
 										aria-hidden="true">
 									</span>
 								</td>
@@ -85,77 +86,6 @@
 					</table>
 				</div>
 			</div>
-			<div class="mobile hidden-lg">
-				<div class="table">
-					<table class="table table-check-list">
-						<thead>
-							<tr>
-								<th class="centered">Ваш выбор</th>
-							</tr>
-						</thead>
-						<tbody>
-							{% for item in check_list_items %}
-							<tr>
-								<td>
-									<div class="row">
-										<div class="col-xs-10">
-											<p>{{ item.service_name }}</p>
-										</div>
-										<div class="col-xs-2">
-											<span
-												data-services="{{ item.service_id }}"
-												class="glyphicon glyphicon-remove text-danger del-item"
-												aria-hidden="true">
-											</span>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<img
-												class="imgModalBlock"
-												src="{{ item.img_url }}"
-												alt=""
-											/>
-										</div>
-										<div class="col-xs-6">
-											<div class="cart_quantity_button">
-												<p>Выберите кол-во:</p>
-												<a
-													class="cart_quantity_up"
-													href="/check-list/increment?id={{ item.service_id }}"
-													data-services="{{ item.service_id }}">
-													+
-												</a>
-												<input
-													class="cart_quantity_input qty"
-													type="text"
-													id="qty-{{ item.service_id }}"
-													name="quantity"
-													value="{{ item.quantity }}"
-													autocomplete="off"
-													size="1"
-													disabled
-												/>
-												<a
-													class="cart_quantity_down"
-													href="/check-list/decrement?id={{ item.service_id }}"
-													data-services="{{ item.service_id }}">
-													-
-												</a>
-											</div>
-										</div>
-									</div>
-									<hr/>
-								</td>
-							</tr>
-							{% endfor %}
-							<tr>
-								<td>Количество выбранных услуг: {{ check_list_count }} шт.</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
 			<div class="form-check-list-order">
 				<div class="centered">
 					<h3 class="pretty-header left-right-line-short-header">
@@ -163,12 +93,14 @@
 					</h3>
 				</div>
 				<div class="check-list-form-style">
-					<form id="form-order-check-list" action="/check-list" method="post">
+					<form id="form-order-check-list" method="post">
 						{% csrf_token %}
 						<div class="row">
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label for="{{ form.name.id_for_label }}">Ваше имя</label>
+									<label for="{{ form.name.id_for_label }}">
+										Ваше имя
+									</label>
 									{{ form.name }} 
 									{% if form.name.errors %}
 										<div class="help-block text-danger">
@@ -207,7 +139,7 @@
 						<div class="row">
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label for="{{ form.car_mark.id_for_label }}">
+									<label for="form-order-check-list-car_mark">
 										Марка автомобиля
 									</label>
 									{{ form.car_mark }} 
@@ -220,7 +152,7 @@
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label for="{{ form.car_model.id_for_label }}">
+									<label for="form-order-check-list-car_model">
 										Модель автомобиля
 									</label>
 									{{ form.car_model }} 
@@ -233,7 +165,7 @@
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label for="{{ form.car_modification.id_for_label }}">
+									<label for="form-order-check-list-car_modification">
 										Модификация (поколение)
 									</label>
 									{{ form.car_modification }} 
@@ -246,20 +178,25 @@
 							</div>
 						</div>
 						<div class="row">
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="{{ form.date_time_order.id_for_label }}">
+										Дата и время
+									</label>
+									{{ form.date_time_order }} 
+									{% if form.date_time_order.errors %}
+										<div class="help-block text-danger">
+											{{ form.date_time_order.errors.0 }}
+										</div>
+									{% endif %}
+								</div>
+							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
 									<label for="{{ form.comment_user.id_for_label }}">
 										Комментарий пользователя
 									</label>
 									{{ form.comment_user }}
-								</div>
-							</div>
-							<div class="col-lg-3 col-lg-offset-3">
-								<div class="form-group">
-									<label for="{{ form.quantity.id_for_label }}">
-										Количество услуг
-									</label>
-									{{ form.quantity }}
 								</div>
 							</div>
 						</div>
@@ -272,6 +209,15 @@
 				</div>
 			</div>
 		{% else %}
+			{% if messages %}
+				<div class="messages">
+					{% for message in messages %}
+						<div class="alert alert-{{ message.tags }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
 			<div class="empty-shopping-check-list">
 				<p>В данный момент вы не добавили еще ни одной услуги</p>
 				<p>
