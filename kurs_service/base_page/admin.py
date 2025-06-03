@@ -1,3 +1,4 @@
+from unittest.mock import Base
 from django.contrib import admin
 from .models import (
 	SiteVisitor,
@@ -12,6 +13,8 @@ from .models import (
 	BasePageSocialImages,
 	BasePageHeader,
 	BasePageNotification,
+	BasePageAddOrderServiceModal,
+	BasePageAddOrderServiceModalForm,
 )
 
 
@@ -47,6 +50,16 @@ class CarServiceAdmin(admin.ModelAdmin):
 
 @admin.register(BasePageSideMenu)
 class BasePageSideMenuAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(BasePageAddOrderServiceModal)
+class BasePageAddOrderServiceModalAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(BasePageAddOrderServiceModalForm)
+class BasePageAddOrderServiceModalFormAdmin(admin.ModelAdmin):
 	pass
 
 
