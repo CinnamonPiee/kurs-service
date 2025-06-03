@@ -122,7 +122,7 @@
 		<div class="bottom-fix2 hidden-xs hidden-md">
 			<a
 				class="productBtn add-to-order-service"
-				href="/order-service/add-modal"
+				href="{% url 'base_page:add_order_service_modal' %}?type=t_o"
 				data-services="2"
 				data-title="Запись на техническое обслуживание"
 				>
@@ -134,7 +134,7 @@
 			</a>
 			<a
 				class="productBtn add-to-order-service"
-				href="/order-service/add-modal"
+				href="{% url 'base_page:add_order_service_modal' %}?type=diagnostics"
 				data-services="3"
 				data-title="Запись на диагностику"
 				>
@@ -146,7 +146,7 @@
 			</a>
 			<a
 				class="productBtn add-to-order-service"
-				href="/order-service/add-modal"
+				href="{% url 'base_page:add_order_service_modal' %}?type=tyre"
 				data-services="4"
 				data-title="Запись на шиномантаж"
 				>
@@ -375,7 +375,7 @@
 						<li>
 							<a
 								class="productBtn add-to-order-service"
-								href="/order-service/add-modal"
+								href="{% url 'base_page:add_order_service_modal' %}?type=t_o"
 								data-services="2"
 								data-title="Запись на техническое обслуживание">
 								Запись на тех. обслуживание
@@ -384,7 +384,7 @@
 						<li>
 							<a
 								class="productBtn add-to-order-service"
-								href="/order-service/add-modal"
+								href="{% url 'base_page:add_order_service_modal' %}?type=diagnostics"
 								data-services="3"
 								data-title="Запись на диагностику">
 								Запись на диагностику
@@ -393,7 +393,7 @@
 						<li>
 							<a
 								class="productBtn add-to-order-service"
-								href="/order-service/add-modal"
+								href="{% url 'base_page:add_order_service_modal' %}?type=tyre"
 								data-services="4"
 								data-title="Запись на шиномантаж">
 								Запись на шиномантаж
@@ -402,7 +402,7 @@
 						<li>
 							<a
 								class="productBtn add-to-order-service"
-								href="/order-service/add-modal"
+								href="{% url 'base_page:add_order_service_modal' %}?type=shod_razval"
 								data-services="5"
 								data-title="Запись на сход - развал">
 								Запись на сход-развал

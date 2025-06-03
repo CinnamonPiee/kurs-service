@@ -1,0 +1,89 @@
+{% load static %}
+
+<div class="preview_services">
+	<div class="row">
+		<div class="imgModalBlock col-lg-4 col-xs-4">
+			<img
+				class="imgModal"
+				src="{{ base_page_add_order_service_modal.img.url }}"
+				alt=""
+			/>
+		</div>
+		<div class="titleModalBlock col-lg-8 col-xs-8">
+			<p>
+				{{ base_page_add_order_service_modal.description }}
+			</p>
+		</div>
+	</div>
+	<div>
+		<form
+			id="form-services-modal"
+			action="{% url 'base_page:add_order_service_modal' %}"
+			method="post">
+			{% csrf_token %}
+			<input type="hidden" name="service_id" value="2" />
+			<input type="hidden" name="type" value="Услуга" />
+			<input
+				type="hidden"
+				name="title_service"
+				value="Запись на техническое обслуживание"/>
+			<div class="form-group">
+				<label class="control-label" for="name_user">Ваше имя</label>
+				<input
+					type="text"
+					id="name_user"
+					class="form-control"
+					name="name_user"
+					required
+				/>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="call_number">Номер телефона</label>
+				<input
+					type="text"
+					id="call_number"
+					class="form-control"
+					name="call_number"
+					required
+				/>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="email">Адрес электронной почты</label>
+				<input
+					type="email"
+					id="email"
+					class="form-control"
+					name="email"
+					required
+				/>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="datetimepicker-2"
+					>Выберите дату и время</label
+				>
+				<div id="datetimepicker-2-datetime" class="input-group date">
+					<input
+						type="text"
+						id="datetimepicker-2"
+						class="form-control"
+						name="date_time_order"
+						required
+					/>
+					<span
+						class="input-group-addon kv-datetime-remove"
+						title="Очистить поле"
+					>
+						<i class="glyphicon glyphicon-remove kv-dp-icon"></i>
+					</span>
+					<span
+						class="input-group-addon kv-datetime-picker"
+						title="Выбрать дату &amp; время"
+					>
+						<i class="glyphicon glyphicon-calendar kv-dp-icon"></i>
+					</span>
+				</div>
+			</div>
+			<button type="submit" class="kursStyleButton">Жду звонка</button>
+		</form>
+	</div>
+</div>
