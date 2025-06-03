@@ -246,15 +246,14 @@ function showModal(modalId, data) {
 }
 
 // Универсальный обработчик для модальных окон
-function setupModalHandler(buttonClass, url, modalId) {
+function setupModalHandler(buttonClass, modalId) {
 	$(document).on('click', buttonClass, function (e) {
 		e.preventDefault()
-		const id = $(this).data('id')
+		const url = $(this).attr('href')
 		const title = $(this).data('title')
 		loadAjax({
 			url,
-			type: 'POST',
-			data: { id, title },
+			type: 'GET',
 			success: function (data) {
 				if (data) {
 					getTitleModal(title)
@@ -271,7 +270,6 @@ function setupModalHandler(buttonClass, url, modalId) {
 // Настройка обработчиков для различных модальных окон
 setupModalHandler(
 	'.add-to-order-service',
-	'/order-service/add-modal',
 	'addToOrderServices'
 )
 setupModalHandler(
