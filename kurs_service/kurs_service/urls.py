@@ -32,6 +32,7 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_page.urls', namespace='main_page')),
+	path('base-page/', include('base_page.urls', namespace='base_page')),
 	path('photo-gallery/', include('photo_gallery.urls', namespace='photo_gallery')),
 	path('warranty/', include('warranty.urls', namespace='warranty')),
 	path('contacts/', include('contacts.urls', namespace='contacts')),
