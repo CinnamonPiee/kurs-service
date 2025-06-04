@@ -5,6 +5,7 @@ from .models import (
     BasePageHeader,
     BasePageSideMenu,
     BasePageNotification,
+    BasePageAddOrderServiceModal,
 )
 
 
@@ -16,4 +17,5 @@ def base_page(request):
         "base_page_social_images": BasePageSocialImages.objects.all(),
         "base_page_footer": BasePageFooter.objects.first(),
         "base_page_notification": BasePageNotification.objects.first(),
+        "base_page_add_order_service_modal": BasePageAddOrderServiceModal.objects.all(),
     }
