@@ -16,11 +16,9 @@ class SiteVisitor(models.Model):
     notes = models.TextField(blank=True, null=True, verbose_name="Заметки")
 
     def set_password(self, raw_password):
-        """Устанавливает хэшированный пароль."""
         self.password = make_password(raw_password)
 
     def check_password(self, raw_password):
-        """Проверяет, соответствует ли пароль хэшу."""
         return check_password(raw_password, self.password)
 
     def __str__(self):
@@ -120,6 +118,36 @@ class BasePageSideMenu(models.Model):
         db_table = "base_page_side_menu"
         verbose_name = "Боковое меню"
         verbose_name_plural = "Боковое меню"
+
+
+class BasePageAddOrderServiceModal(models.Model):
+    img = models.ImageField(upload_to="img", blank=True, null=True, verbose_name="Изображение")
+    title = models.CharField(max_length=255, blank=True, null=True, verbose_name="Заголовок")
+    description = models.TextField(blank=True, null=True, verbose_name="Описание")
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        db_table = "base_page_add_order_service_modal"
+        verbose_name = "Модальное окно"
+        verbose_name_plural = "Модальные окна"
+
+
+class BasePageAddOrderServiceModalForm(models.Model):
+    name = models.CharField(max_length=255, verbose_name="Имя")
+    call_number = models.CharField(max_length=20, verbose_name="Номер телефона")
+    email = models.EmailField(verbose_name="Электронная почта")
+    date_time_order = models.DateTimeField(verbose_name="Дата и время заказа")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+
+    def __str__(self):
+        return f"{self.name} - {self.created_at.strftime('%Y-%m-%d %H:%M')}"
+    
+    class Meta:
+        db_table = "base_page_add_order_service_modal_form"
+        verbose_name = "Форма запись на техническое обслуживание"
+        verbose_name_plural = "Формы записи на техническое обслуживание"
 
 
 class BasePageHeader(models.Model):
